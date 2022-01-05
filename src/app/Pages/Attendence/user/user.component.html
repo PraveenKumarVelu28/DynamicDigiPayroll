@@ -1,0 +1,225 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href="" class="Heading newFont">User</a>
+                    <hr class="HrLine">
+                </div>
+            </div>
+            <div class="row FilterClass">
+                <div class="col-lg-2">
+                    Filter By
+                </div>
+                <!-- <div class="col-lg-2">
+                    <input class="form-control" type="date" placeholder="Duration">
+                </div> -->
+                <div class="col-lg-6">
+                    <input class="form-control" type="search" placeholder="Search for User Name or Role ">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-8 View">
+                    <ul>
+                        <li><a class="active">View</a></li>
+                        <!-- <li><a routerLink="/#/UserFormPreFill">Modify</a></li> -->
+                        <li><a href="/#/UserFormPreFill">Modify</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <a href="/#/UserForm"><button class="button">Add</button> </a>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table">
+                            <!-- <thead>
+                                <tr class="newFont">
+                                    <th class="SelectData">Select</th>
+                                    <th scope="col">User Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Date Added </th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                                <tr  class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>Testing</td>
+                                    <td>0098</td>
+                                    <td>This department responsible for testing</td>
+                                    <td>20-12-2021</td>
+                                    <td><img class="imgcancel" src="../../../assets/cancel (1).png"></td>
+                                </tr>
+                                <tr class="newFont" >
+                                    <td>Development</td>
+                                    <td>0096</td>
+                                    <td>This department responsible for WebsiteDevelopment</td>
+                                    <td>20-12-2021</td>
+                                    <td><img class="imgcancel" src="../../../assets/cancel (1).png"></td>
+                                </tr>
+                            </thead> -->
+                            <thead>
+                                <tr class="newFont">
+                                    <th class="SelectData">Select</th>
+                                    <th>User Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Date Added</th>
+                                    <th>Is Active?</th>
+                                    <th>Model Access</th>
+                                    <th>Reset Password</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                <tr>
+                                <!-- <tr *ngFor="let user of userdetails">
+                                    <td class="SelectData"><input type="checkbox">{{user.selectedData}}</td>
+                                    <td>{{user.userName}}</td>
+                                    <td>{{user.email}}</td>
+                                    <td>{{user.role}}</td>
+                                    <td>{{user.dateAdded}}</td>
+                                    <td>{{user.isActive}}</td>
+                                    <td>{{user.isTotal}}</td>
+                                    <td>{{user.isLocked}}</td>
+                                    <td>{{user.modelAccess}}</td>
+                                    <td>
+                                        <img class="img" src="/assets/cancel (1).png" alt="delete"
+                                            (click)="Ondelete(user.id)">
+                                    </td>
+                                <tr> -->
+                                <tr class="newFont">
+                                    <td class="SelectData" ><input type="checkbox"></td>
+                                    <td>admin</td>
+                                    <td>andrew@pitaca.com</td>
+                                    <td>Super Admin</td>
+                                    <td>20-12-2021</td>
+                                    <td>True</td>
+                                    <td>Pay Group, Company Profile, OT Rates</td>
+                                    <td><button class="ResetBTN" data-toggle="modal"
+                                        data-target="#User">Reset</button></td>
+                                    <td><label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                      </label></td>
+                                    <td><img class="imgcancel" src="assets/cancel (1).png"></td>
+                                </tr>
+                                <tr class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>alex</td>
+                                    <td>alex@pitaca.com</td>
+                                    <td>HR</td>
+                                    <td>12-10-2021</td>
+                                    <td>True</td>
+                                    <td>Employee, Leaves</td>
+                                    <td><button class="ResetBTN" data-toggle="modal"
+                                        data-target="#User">Reset</button></td>
+                                    <td><label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                      </label></td>
+                                    <td><img class="imgcancel" src="assets/cancel (1).png"></td>
+                                </tr>
+                                <tr class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>ela</td>
+                                    <td>ela@pitaca.com</td>
+                                    <td>Developer</td>
+                                    <td>10-07-2020</td>
+                                    <td>True</td>
+                                    <td>Project Works</td>
+                                    <td><button class="ResetBTN" data-toggle="modal"
+                                        data-target="#User">Reset</button></td>
+                                    <td><label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                      </label></td>
+                                    <td><img class="imgcancel" src="assets/cancel (1).png"></td>
+                                </tr>
+                                <tr class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>jeny</td>
+                                    <td>jeny@pitaca.com</td>
+                                    <td>Team Lead</td>
+                                    <td>07-02-2020</td>
+                                    <td>True</td>
+                                    <td>Project Works</td>
+                                    <td><button class="ResetBTN" data-toggle="modal"
+                                        data-target="#User">Reset</button></td>
+                                    <td><label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                      </label></td>
+                                    <td><img class="imgcancel" src="assets/cancel (1).png"></td>
+                                </tr>
+                                <tr class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>adam</td>
+                                    <td>adam@pitaca.com</td>
+                                    <td>Devops Engineer</td>
+                                    <td>11-03-2021</td>
+                                    <td>True</td>
+                                    <td>Devolepment Works</td>
+                                    <td><button class="ResetBTN" data-toggle="modal"
+                                        data-target="#User">Reset</button></td>
+                                    <td><label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                      </label></td>
+                                    <td><img class="imgcancel" src="assets/cancel (1).png"></td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+
+
+<div id="User" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">User Reset Password</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <label class="Text">User Name : </label>
+                        <label class="Text">Role :</label>
+                        <label class="Text">Old Password :</label>
+                        <label class="Text">New Password :</label>
+                        <label class="Text">Confirm New Password :</label>
+                    </div>
+                    <div class="col-lg-2">
+                        <input type="form-control" placeholder="alex">
+                        <input type="form-control" placeholder="HR">
+                        <input type="form-control" >
+                        <input type="form-control" >
+                        <input type="form-control" >
+                    </div>
+                    
+                </div> <br>
+
+                <div class="row">
+                    <div class="col-lg-5"></div>
+                    <div class="col-lg-2">
+                        <button class="form-control Reset">Reset Password</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+                <hr>
+                <div class="col-lg-2">
+                    <button class="Button">Close</button>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>

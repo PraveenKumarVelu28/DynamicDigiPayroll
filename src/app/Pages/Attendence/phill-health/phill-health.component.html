@@ -1,0 +1,102 @@
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href="" class="Heading">Phill Health</a>
+                    <hr class="HrLine">
+                </div>
+            </div>
+            <!-- <div class="row FilterClass">
+                <div class="col-lg-2">
+                    Filter By
+                </div>
+                <div class="col-lg-2">
+                    <input class="form-control" type="date" placeholder="Duration">
+                </div>
+                <div class="col-lg-6">
+                    <input class="form-control" type="search" placeholder="Search for date , Type or Code">
+                </div>
+            </div><br> -->
+            <div class="row">
+                <div class="col-lg-8 View">
+                    <ul>
+                        <li><a class="active">View</a></li>
+                        <!-- <li><a href="/PhilHealthForm" >Modify</a></li> -->
+                        <li><a (click)="update()">Modify</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <a href="/PhilHealthForm"><button class="button">Add</button> </a>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="SelectData">Select</th>
+                                    <th>Monthly Basic Salary x 5.00 %</th>
+                                    <th>Monthly Share</th>
+                                    <th>Personal Share</th>
+                                    <th>Employer Share</th>
+                                    <th>Actions</th>
+                                <tr>
+                            </thead>
+                            <tbody>
+                                <tr class="newFont" *ngFor="let salary of salarylist">
+                                    <td class="SelectData" (click)="GetId(salary.id)"><input type="checkbox"></td>
+                                    <!-- <td>{{salary.monthly_Basic_Salary_Into_Five|number:'1.2-2'}}</td> -->
+                                    <td>{{salary.monthly_Basic_Salary_Into_Five}}</td>
+                                    <td>{{salary.monthly_Share}}</td>
+                                    <td>{{salary.personal_Share}}</td>
+                                    <td>{{salary.employee_Share}}</td>
+                                    <td><img class="imgcancel" src="/assets/cancel (1).png"
+                                            (click)="delete(salary.id)"></td>
+                                </tr>
+                                <!-- <tr class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>₱ 10,001 to ₱ 20,000</td>
+                                    <td>₱ 501 to ₱ 1000</td>
+                                    <td>₱ 301 to ₱ 400</td>
+                                    <td>₱ 251 to ₱ 450</td>
+                                    <td><img class="imgcancel" src="../../../assets/cancel (1).png"></td>
+                                </tr>
+                                <tr class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>₱ 20,001 to ₱ 40,000</td>
+                                    <td>₱ 1001 to ₱ 2000</td>
+                                    <td>₱ 401 to ₱ 500</td>
+                                    <td>₱ 451 to ₱ 650</td>
+                                    <td><img class="imgcancel" src="../../../assets/cancel (1).png"></td>
+                                </tr>
+                                <tr class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>₱ 40,001 to ₱ 60,000</td>
+                                    <td>₱ 2001 to ₱ 3000</td>
+                                    <td>₱ 501 to ₱ 600</td>
+                                    <td>₱ 651 to ₱ 850</td>
+                                    <td><img class="imgcancel" src="../../../assets/cancel (1).png"></td>
+                                </tr>
+                                <tr class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>₱ 60,001 to above</td>
+                                    <td>₱ 3001 to ₱ 4000 Max</td>
+                                    <td>₱ 601 to ₱ 900 Max</td>
+                                    <td>₱ 851 to ₱ 1000 Max</td>
+                                    <td><img class="imgcancel" src="../../../assets/cancel (1).png"></td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>

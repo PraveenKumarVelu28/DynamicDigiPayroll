@@ -1,0 +1,95 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <div>
+                <div>
+                    <ul>
+                        <li><a class="active"> <u>Staff Dashboard</u></a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-2">
+                    Filter By
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control" type="date" placeholder="Duration" id="date" name="date"
+                        [(ngModel)]="date" (change)="getdate($event)">
+                </div>
+                <div class="col-md-6">
+                    <input class="form-control" type="search" [(ngModel)]="term"
+                        placeholder="search for Staff , Date of joining or Role">
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <p class="show3res">SHOWING <span style="color: black;">{{stafflist.length}}</span>&nbsp;RESULTS
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <button class="form-control requestbtn" routerLink="/EmployeeForm">Add Staff</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table" id="lvs">
+                        <thead>
+                            <tr>
+                                <!-- <th>Check Box</th> -->
+                                <th>Employee Id</th>
+                                <th>Employee Name</th>
+                                <th>Role</th>
+                                <th>Phone Number</th>
+                                <th>Email</th>
+                                <th>Date Of Joining</th>
+                                <th>Manager</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of stafflist">
+
+                                <td>000{{item.id}}</td>
+                                <td>{{item.name}}</td>
+                                <td>{{item.role}}</td>
+                                <td>{{item.mobile}}</td>
+                                <td>{{item.emailID}}</td>
+                                <td>{{item.joiningDate|date}}</td>
+                                <td>
+                                    <p *ngIf="item.manager==null">
+                                        NA
+                                    </p>
+                                    <p *ngIf="item.manager!=null">
+                                        {{item.manager}}
+                                    </p>
+                                </td>
+                                <td> <button class="upload"
+                                        [routerLink]="['/EmployeeForm',item.id]">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button class="upload">Delete</button>&nbsp;
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />

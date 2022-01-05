@@ -1,0 +1,81 @@
+/* .container-fluid{
+    background-color: rgb(226, 224, 224);
+  } */
+  /* .container{
+    background-color: white;
+  } */
+  /* .Adolfo{
+    background-color:lightgray;
+    color:black;
+    text-align: center;
+    font-weight:bold;
+    font-size:15px;
+  } */
+  .negative-padding{
+    padding:0px;
+  }
+  .Empinfo{
+    background-color:#2F87CC ;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    padding:10px;
+  }
+  .Salary{
+    background-color:#2F87CC ;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    padding:10px;
+  }
+  .Job{
+    background-color:#2F87CC ;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    padding:10px;
+  
+  }
+  .Employee{
+    background-color:#2F87CC ;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    padding:10px;
+  }
+  .Dependents{
+    background-color:#2F87CC ;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    padding:10px;
+  }
+  .Bank{
+    background-color:#2F87CC ;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    padding:10px;
+  }
+  .Previous{
+    background-color:#2F87CC ;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    padding:10px;
+  
+  }
+  .img{
+    width:15px;
+    height: auto;
+  }
+  .btn{
+  
+    border: none;
+    background-color: #2F87CC ;
+    text-align: center;
+    border-radius: 16px;
+    color: white;
+    margin-top: 6px;
+    padding:5px;
+  }

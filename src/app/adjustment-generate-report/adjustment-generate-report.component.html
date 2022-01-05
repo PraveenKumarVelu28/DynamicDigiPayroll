@@ -1,0 +1,319 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href="" class="Heading fontheading">ADJUSTMENT REPORT</a>
+                    <hr class="HrLine">
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <ul>
+                        <li><a class="active fontheading">Select ALL</a></li>
+                        <li><a class="active fontheading">Uncheck ALL</a></li>
+                        <!-- <li><a class="active fontheading">Select Employees</a></li> -->
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table table-bordered fonttxt">
+                            <thead>
+                                <tr class="newFont">
+                                    <th class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo1" (click)="selectALL(true)"> &nbsp; Select</th>
+                                    <th>Employee ID</th>
+                                    <th>Name</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo" (click)="showone()"></td>
+                                    <td>21028</td>
+                                    <td>Tan, Marina Ela Navarro</td>
+                                    <td>Active</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo"></td>
+                                    <td>21032</td>
+                                    <td>Rac, Lyla Gonzales</td>
+                                    <td>Terminated</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo"></td>
+                                    <td>21037</td>
+                                    <td>Bodoso, Mary Rose banico</td>
+                                    <td>Active</td>
+                                </tr>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo"></td>
+                                    <td>21040</td>
+                                    <td>Cedilla,Luclita Montreo</td>
+                                    <td>Terminated</td>
+                                </tr>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo"></td>
+                                    <td>21043</td>
+                                    <td>Gumapac,Glenn Eddie</td>
+                                    <td>Active</td>
+                                </tr>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo"></td>
+                                    <td>21046</td>
+                                    <td>Sagala,Joaaquin Jr.Aquine</td>
+                                    <td>Active</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="container-fluid">
+                        <div class="container-fluid" id="demo1" class="collapse" *ngIf="selectone==false">
+                            <div class="row">
+                                <ul>
+                                    <li><a class="active fontheading">Salary Details of Employee in selected Period</a></li>
+                                    <li> <button class="generate5" (click)="exportexcel()">Export to Excel</button></li>
+                                </ul>
+                            </div>
+                            <div class="row" class="rowwidth">
+                                <div class="col-lg-12">
+                                    <table class="table table-bordered fonttxt">
+                                        <thead>
+                                            <tr class="newFont">
+
+                                                <th>Employee ID*</th>
+                                                <th>Last Name</th>
+                                                <th>First Name</th>
+                                                <!-- <th>Middle Name</th> -->
+                                                <th>Department</th>
+                                                <th>Adjustment Type</th>
+                                                <th>Adjustment Name</th>
+                                                <th>Adjustment Code</th>
+                                                <!-- <th>Adjustment Entry Code</th> -->
+                                                <th>Adjustment Effectivity Date</th>
+                                                <th>Adjustment Amount</th>
+                                                <th>Remaining Balance</th>
+                                                <th>Remarks</th>
+                                                <th>Applied Before Tax</th>
+                                                <th>Is Taxable</th>
+                                                <th>Maximum Amount</th>
+                                                <!-- <th>Divided Per Period</th>
+                                                <th>Apply Period</th>
+                                                <th>Reference Number</th> -->
+                                            </tr>
+                                            <tr>
+
+                                                <td>20-005</td>
+                                                <td>Bersamira</td>
+                                                <td>Carlo</td>
+                                                <!-- <td>de Guzman</td> -->
+                                                <td>CREFCO Team</td>
+                                                <td>SSS Loan</td>
+                                                <td>SSS2 Loan</td>
+                                                <td>Sal Loan</td>
+                                                <!-- <td></td> -->
+                                                <td>2/1/2021</td>
+                                                <td>10963.06</td>
+                                                <td>35024.48</td>
+                                                <td>for Carlo Bersamira</td>
+                                                <td>False</td>
+                                                <td>False</td>
+                                                <td>45987.54</td>
+                                              
+                                            </tr>
+                                            <tr>
+
+                                                <td>20-012</td>
+                                                <td>Labasan</td>
+                                                <td>Carlo</td>
+                                                <!-- <td>Asuncion</td> -->
+                                                <td>CREFCO Team</td>
+                                                <td>SSS Loan</td>
+                                                <td>SSS2 Loan</td>
+                                                <td>Sal Loan</td>
+                                                <!-- <td></td> -->
+                                                <td>2/1/2021</td>
+                                                <td>10963.06</td>
+                                                <td>35024.48</td>
+                                                <td>for Carlo Bersamira</td>
+                                                <td>False</td>
+                                                <td>False</td>
+                                                <td>45987.54</td>
+                                                <!-- <td>No</td>
+                                                <td>0</td>
+                                                <td></td> -->
+                                            </tr>
+                                            <tr>
+
+                                                <td>20-052</td>
+                                                <td>Sagun</td>
+                                                <td>Alexander Jr</td>
+                                                <!-- <td>Capinding</td> -->
+                                                <td>CREFCO Team</td>
+                                                <td>Calamity Loan</td>
+                                                <td>SSS Calamity Loan</td>
+                                                <td>Sal Loan</td>
+                                                <!-- <td></td> -->
+                                                <td>2/1/2021</td>
+                                                <td>-10963.06</td>
+                                                <td>-35024.48</td>
+                                                <td>for Carlo Bersamira</td>
+                                                <td>False</td>
+                                                <td>False</td>
+                                                <td>-45987.54</td>
+                                                <!-- <td>No</td>
+                                                <td>0</td>
+                                                <td></td> -->
+                                            </tr>
+                                            <tr>
+
+                                                <td>20-029</td>
+                                                <td>Bodoso</td>
+                                                <td>Mary Rose</td>
+                                                <!-- <td>de Guzman</td> -->
+                                                <td>CREFCO Team</td>
+                                                <td>Loan</td>
+                                                <td>Laptop Loan</td>
+                                                <td>LAP-Loan</td>
+                                                <!-- <td></td> -->
+                                                <td>12/6/2020</td>
+                                                <td>2500.06</td>
+                                                <td>37499.48</td>
+                                                <td>1 year payment for laptop</td>
+                                                <td>False</td>
+                                                <td>False</td>
+                                                <td>40000.54</td>
+                                                <!-- <td>No</td>
+                                                <td>0</td>
+                                                <td></td> -->
+                                            </tr>
+                                            <tr>
+
+                                                <td>21-042</td>
+                                                <td>Tan</td>
+                                                <td>Marina Ela</td>
+                                                <!-- <td>Navarro</td> -->
+                                                <td>Management Team</td>
+                                                <td>Deminimis Allowance</td>
+                                                <td>Rice Allowance</td>
+                                                <td>RI-ALL</td>
+                                                <!-- <td></td> -->
+                                                <td>3/1/2021</td>
+                                                <td>3000</td>
+                                                <td>0.00</td>
+                                                <td>Can cover for Internet or Mobile Subsidy</td>
+                                                <td>False</td>
+                                                <td>False</td>
+                                                <td>3000</td>
+                                                <!-- <td>No</td>
+                                                <td>1</td>
+                                                <td></td> -->
+                                            </tr>
+                                            <tr>
+
+                                                <td>21-049</td>
+                                                <td>Sagala</td>
+                                                <td>Joaquin Jr.</td>
+                                                <!-- <td>Aquino</td> -->
+                                                <td>CREFCO Team</td>
+                                                <td>External Loan</td>
+                                                <td>HDMF MPL</td>
+                                                <td>HDMFMPL</td>
+                                                <!-- <td></td> -->
+                                                <td>11/15/2021</td>
+                                                <td>-1476.74</td>
+                                                <td>-13016.54</td>
+                                                <td>HDMF loan for Joaquin Sagala</td>
+                                                <td>False</td>
+                                                <td>False</td>
+                                                <td>-14493.28</td>
+                                                <!-- <td>No</td>
+                                                <td>2</td>
+                                                <td></td> -->
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-fluid" id="demo" class="collapse" *ngIf="selectone==true">
+                            <div class="row">
+                                <ul>
+                                    <li><a class="active fontheading">Salary Details of Employee in selected Period</a></li>
+                                    <li> <button class="generate5" (click)="exportexcel()">Export to Excel</button></li>
+                                </ul>
+                            </div>
+                            <br />
+                            <div class="container-fluid" id="demo" class="collapse">
+                                <div class="row" class="rowwidth">
+                                    <div class="col-lg-12" style="overflow:auto;">
+                                        <table class="table table-bordered fonttxt">
+                                            <thead>
+                                                <tr class="newFont">
+
+                                                    <th>Employee ID*</th>
+                                                    <th>Last Name</th>
+                                                    <th>First Name</th>
+                                                    <!-- <th>Middle Name</th> -->
+                                                    <th>Department</th>
+                                                    <th>Adjustment Type</th>
+                                                    <th>Adjustment Name</th>
+                                                    <th>Adjustment Code</th>
+                                                    <!-- <th>Adjustment Entry Code</th> -->
+                                                    <th>Adjustment Effectivity Date</th>
+                                                    <th>Adjustment Amount</th>
+                                                    <th>Remaining Balance</th>
+                                                    <th>Remarks</th>
+                                                    <th>Applied Before Tax</th>
+                                                    <th>Is Taxable</th>
+                                                    <th>Maximum Amount</th>
+                                                    <!-- <th>Divided Per Period</th>
+                                                    <th>Apply Period</th>
+                                                    <th>Reference Number</th> -->
+                                                </tr>
+                                                <tr>
+
+                                                    <td>20-005</td>
+                                                    <td>Bersamira</td>
+                                                    <td>Carlo</td>
+                                                    <!-- <td>de Guzman</td> -->
+                                                    <td>CREFCO Team</td>
+                                                    <td>SSS Loan</td>
+                                                    <td>SSS2 Loan</td>
+                                                    <td>Sal Loan</td>
+                                                    <!-- <td></td> -->
+                                                    <td>2/1/2021</td>
+                                                    <td>10963.06</td>
+                                                    <td>35024.48</td>
+                                                    <td>for Carlo Bersamira</td>
+                                                    <td>False</td>
+                                                    <td>False</td>
+                                                    <td>45987.54</td>
+                                                    <!-- <td>No</td>
+                                                    <td>0</td>
+                                                    <td></td> -->
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>

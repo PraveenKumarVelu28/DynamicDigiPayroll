@@ -1,0 +1,188 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <p class="taxtable">R1-A</p> <hr>
+
+            <div class="container">
+            
+                <div class="row FilterClass">
+                   
+                  
+                  <div class="col-lg-3">
+
+                  </div>
+                    <div class="col-lg-2">
+                        Select Date Coverage:
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="dropdown">
+                            <select class="form-control inputfield" id="Month" name="Month"  [(ngModel)]="Month" ><br/>
+                                <option value="Select">Select Month </option>
+                                <option value="jan">January </option>
+                                <option value="Feb">February </option>
+                                <option value="Mar">March </option>
+                                <option value="April">April </option>
+                                <option value="May">May </option>
+                                <option value="june">June </option>
+                                <option value="july">July</option>
+                                <option value="August">August </option>
+                                <option value="Sept">September </option>
+                                <option value="Oct">October </option>
+                                <option value="Nov">November </option>
+                                <option value="December">December </option>
+                                
+                            </select>
+                        </div>
+                       
+                    </div>
+                   
+                   
+                    
+                        <div class="col-lg-2">
+                            <div class="dropdown">
+                                <select class="form-control " id="Year" name="Year" [(ngModel)]="Year"><br/>
+                                    <option value="Select">Select Year </option>
+                                    <option value="2021">2021 </option>
+                                    <option value="2020">2020 </option>
+                                    <option value="2019">2019 </option>
+                                    
+                                </select>
+                            </div>
+                           
+                        </div>
+                   
+                    <div class="col-lg-3"></div>
+                    </div>
+                    <br/>
+                     
+                <div class="row ">
+                   
+                  
+                    <div class="col-lg-3">
+  
+                    </div>
+                      <div class="col-lg-2">
+                         SIGNATORY PERSON:
+                      </div>
+                      <div class="col-lg-2">
+                          <div class="dropdown">
+                              <select class="form-control inputfield" id="Month" name="Month"  [(ngModel)]="Person" ><br/>
+                                  <option value="Select">Select Person </option>
+                                  <option value="Admin">Admin </option>
+                                  <option value="Admin">HR </option>
+                                  <option value="Admin">FINANCE </option>
+                                
+                                  
+                              </select>
+                          </div>
+                         
+                      </div>
+                     
+                     
+                      
+                       
+                     
+                      <div class="col-lg-3"></div>
+                      </div>
+                    <br/>
+              <div class="row">
+                  <div class="col-lg-5">
+
+                  </div>
+                  <div class="col-lg-3">
+                      <button class="generate" (click)="showpdf()">GENERATE</button>
+                  </div>
+              </div>
+              <br/>
+         
+              <br>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    </div>
+    <hr>    
+    <br>
+    <div class="row" *ngIf="showleaseforprint==1">
+        <div class="col-lg-5">
+    
+        </div>
+        <div class="col-lg-5">
+            <button class="button1" (click)="convetToPDF1()">Export to PDF <i class="fa fa-download" aria-hidden="true"></i></button>
+        </div>
+    <div id="downloadaplication" style="position:absolute;left:50%;margin-left:-504px;top:0px;width:1008px;height:612px;border-style:outset;overflow:hidden;margin-top:400px;">
+        <div style="position:absolute;left:0px;top:0px">
+        <img src="assets/images/Payroll.jpg" width=1008 height=612></div>
+        <div style="position:absolute;left:24.90px;top:125.64px" class="cls_004"><span class="cls_004">8</span></div>
+        <div style="position:absolute;left:36.41px;top:125.64px" class="cls_004"><span class="cls_004">0</span></div>
+        <div style="position:absolute;left:49.37px;top:125.64px" class="cls_004"><span class="cls_004">0</span></div>
+        <div style="position:absolute;left:61.61px;top:125.64px" class="cls_004"><span class="cls_004">2</span></div>
+        <div style="position:absolute;left:74.57px;top:125.64px" class="cls_004"><span class="cls_004">0</span></div>
+        <div style="position:absolute;left:88.26px;top:125.64px" class="cls_004"><span class="cls_004">5</span></div>
+        <div style="position:absolute;left:101.95px;top:125.64px" class="cls_004"><span class="cls_004">1</span></div>
+        <div style="position:absolute;left:114.19px;top:125.64px" class="cls_004"><span class="cls_004">0</span></div>
+        <div style="position:absolute;left:124.99px;top:125.64px" class="cls_004"><span class="cls_004">0</span></div>
+        <div style="position:absolute;left:137.95px;top:125.64px" class="cls_004"><span class="cls_004">4</span></div>
+        <div style="position:absolute;left:187.23px;top:126.38px" class="cls_003"><span class="cls_003">TalentUS Inc.</span></div>
+        <div style="position:absolute;left:935.97px;top:144.53px" class="cls_003"><span class="cls_003">1210</span></div>
+        <div style="position:absolute;left:21.60px;top:145.79px" class="cls_005"><span class="cls_005">5F Phinma Plaza, 39 Phinma Dr,</span></div>
+        <div style="position:absolute;left:837.59px;top:180.56px" class="cls_006"><span class="cls_006">6 0</span></div>
+        <div style="position:absolute;left:860.50px;top:180.96px" class="cls_006"><span class="cls_006">0</span></div>
+        <div style="position:absolute;left:872.49px;top:180.95px" class="cls_006"><span class="cls_006">1</span></div>
+        <div style="position:absolute;left:884.85px;top:181.34px" class="cls_006"><span class="cls_006">9</span></div>
+        <div style="position:absolute;left:897.52px;top:181.34px" class="cls_006"><span class="cls_006">4</span></div>
+        <div style="position:absolute;left:911.10px;top:180.95px" class="cls_006"><span class="cls_006">0 1</span></div>
+        <div style="position:absolute;left:935.11px;top:180.58px" class="cls_006"><span class="cls_006">2</span></div>
+        <div style="position:absolute;left:955.23px;top:180.95px" class="cls_006"><span class="cls_006">000</span></div>
+        <div style="position:absolute;left:26.21px;top:221.32px" class="cls_002"><span class="cls_002">3</span></div>
+        <div style="position:absolute;left:37.74px;top:221.32px" class="cls_002"><span class="cls_002">3</span></div>
+        <div style="position:absolute;left:50.70px;top:221.32px" class="cls_002"><span class="cls_002">5</span></div>
+        <div style="position:absolute;left:62.94px;top:221.32px" class="cls_002"><span class="cls_002">4</span></div>
+        <div style="position:absolute;left:75.90px;top:221.32px" class="cls_002"><span class="cls_002">0</span></div>
+        <div style="position:absolute;left:89.59px;top:221.32px" class="cls_002"><span class="cls_002">6</span></div>
+        <div style="position:absolute;left:103.25px;top:221.32px" class="cls_002"><span class="cls_002">5</span></div>
+        <div style="position:absolute;left:115.50px;top:221.32px" class="cls_002"><span class="cls_002">4</span></div>
+        <div style="position:absolute;left:126.30px;top:221.32px" class="cls_002"><span class="cls_002">6</span></div>
+        <div style="position:absolute;left:139.25px;top:221.32px" class="cls_002"><span class="cls_002">8</span></div>
+        <div style="position:absolute;left:150.15px;top:221.18px" class="cls_003"><span class="cls_003">1. Dela Cruz</span></div>
+        <div style="position:absolute;left:224.33px;top:221.37px" class="cls_003"><span class="cls_003">Julie Anne</span></div>
+        <div style="position:absolute;left:296.45px;top:221.37px" class="cls_003"><span class="cls_003">San Jose</span></div>
+        <div style="position:absolute;left:421.55px;top:221.18px" class="cls_003"><span class="cls_003">0</span></div>
+        <div style="position:absolute;left:434.25px;top:220.61px" class="cls_003"><span class="cls_003">7</span></div>
+        <div style="position:absolute;left:447.65px;top:221.54px" class="cls_003"><span class="cls_003">0</span></div>
+        <div style="position:absolute;left:458.42px;top:220.98px" class="cls_003"><span class="cls_003">4</span></div>
+        <div style="position:absolute;left:472.12px;top:220.98px" class="cls_003"><span class="cls_003">1</span></div>
+        <div style="position:absolute;left:484.51px;top:221.37px" class="cls_003"><span class="cls_003">9</span></div>
+        <div style="position:absolute;left:497.64px;top:221.37px" class="cls_003"><span class="cls_003">7</span></div>
+        <div style="position:absolute;left:509.29px;top:220.61px" class="cls_003"><span class="cls_003">9</span></div>
+        <div style="position:absolute;left:523.39px;top:220.49px" class="cls_003"><span class="cls_003">0</span></div>
+        <div style="position:absolute;left:535.49px;top:220.24px" class="cls_003"><span class="cls_003">1</span></div>
+        <div style="position:absolute;left:548.33px;top:220.75px" class="cls_003"><span class="cls_003">0</span></div>
+        <div style="position:absolute;left:560.80px;top:220.61px" class="cls_003"><span class="cls_003">4</span></div>
+        <div style="position:absolute;left:574.44px;top:220.98px" class="cls_003"><span class="cls_003">2</span></div>
+        <div style="position:absolute;left:586.54px;top:220.98px" class="cls_003"><span class="cls_003">0</span></div>
+        <div style="position:absolute;left:599.67px;top:220.98px" class="cls_003"><span class="cls_003">2</span></div>
+        <div style="position:absolute;left:612.03px;top:220.98px" class="cls_003"><span class="cls_003">1</span></div>
+        <div style="position:absolute;left:773.83px;top:218.99px" class="cls_003"><span class="cls_003">45,000</span></div>
+        <div style="position:absolute;left:800.11px;top:219.35px" class="cls_007"><span class="cls_007">Closing Officer</span></div>
+        <div style="position:absolute;left:150.15px;top:237.81px" class="cls_003"><span class="cls_003">2.</span></div>
+        <div style="position:absolute;left:150.15px;top:254.26px" class="cls_003"><span class="cls_003">3.</span></div>
+        <div style="position:absolute;left:150.15px;top:270.70px" class="cls_003"><span class="cls_003">4.</span></div>
+        <div style="position:absolute;left:150.15px;top:287.14px" class="cls_003"><span class="cls_003">5.</span></div>
+        <div style="position:absolute;left:150.15px;top:303.58px" class="cls_003"><span class="cls_003">6.</span></div>
+        <div style="position:absolute;left:150.15px;top:320.02px" class="cls_003"><span class="cls_003">7.</span></div>
+        <div style="position:absolute;left:150.15px;top:336.46px" class="cls_003"><span class="cls_003">8.</span></div>
+        <div style="position:absolute;left:150.15px;top:352.90px" class="cls_003"><span class="cls_003">9.</span></div>
+        <div style="position:absolute;left:149.19px;top:367.47px" class="cls_003"><span class="cls_003">10</span></div>
+        <div style="position:absolute;left:149.43px;top:387.14px" class="cls_003"><span class="cls_003">11</span></div>
+        <div style="position:absolute;left:149.19px;top:406.82px" class="cls_003"><span class="cls_003">12</span></div>
+        <div style="position:absolute;left:149.19px;top:426.49px" class="cls_003"><span class="cls_003">13</span></div>
+        <div style="position:absolute;left:80.45px;top:458.73px" class="cls_002"><span class="cls_002">1</span></div>
+        <div style="position:absolute;left:663.73px;top:457.85px" class="cls_005"><span class="cls_005">1</span></div>
+        <div style="position:absolute;left:688.85px;top:457.85px" class="cls_005"><span class="cls_005">1</span></div>
+        <div style="position:absolute;left:506.05px;top:461.67px" class="cls_002"><span class="cls_002">Admin Manager</span></div>
+        <div style="position:absolute;left:585.38px;top:461.67px" class="cls_002"><span class="cls_002">1/4/2022</span></div>
+        <div style="position:absolute;left:319.93px;top:465.24px" class="cls_002"><span class="cls_002">Lovely Cabalfin</span></div>
+        </div>
+    </div>

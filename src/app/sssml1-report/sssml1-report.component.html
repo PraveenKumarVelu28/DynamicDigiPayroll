@@ -1,0 +1,113 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <p class="taxtable">ML-1</p>
+            <hr>
+            <div class="container">
+                <div class="row FilterClass">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-2">
+                        Select Date Coverage:
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="dropdown">
+                            <select class="form-control inputfield" id="Month" name="Month" [(ngModel)]="Month"><br />
+                                <option value="Select">Select Month </option>
+                                <option value="jan">January </option>
+                                <option value="Feb">February </option>
+                                <option value="Mar">March </option>
+                                <option value="April">April </option>
+                                <option value="May">May </option>
+                                <option value="june">June </option>
+                                <option value="july">July</option>
+                                <option value="August">August </option>
+                                <option value="Sept">September </option>
+                                <option value="Oct">October </option>
+                                <option value="Nov">November </option>
+                                <option value="December">December </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="dropdown">
+                            <select class="form-control inputfield" id="Year" name="Year" [(ngModel)]="Year"><br />
+                                <option value="Select">Select Year </option>
+                                <option value="2021">2021 </option>
+                                <option value="2020">2020 </option>
+                                <option value="2019">2019 </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+                <br />
+                <div class="row FilterClass">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-2">
+                        Signatory Person:
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="dropdown">
+                            <select class="form-control inputfield" id="Month" name="Month" [(ngModel)]="Person"><br />
+                                <option value="Select">Select Person </option>
+                                <option value="Admin">Admin </option>
+                                <option value="Admin">HR </option>
+                                <option value="Admin">FINANCE </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-5">
+                    </div>
+                    <div class="col-lg-3">
+                        <button class="generate" (click)="showpdf()">GENERATE</button>
+                    </div>
+                </div>
+                <br />
+                <br>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
+<hr>
+<br>
+<div class="row" *ngIf="showleaseforprint==1">
+    <div class="col-lg-5">
+    </div>
+    <div class="col-lg-4">
+        <button class="button1" (click)="convetToPDF1()">Export to PDF <i class="fa fa-download"
+                aria-hidden="true"></i></button>
+    </div>
+    <div id="downloadaplication"
+        style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden;margin-top:400px;">
+        <div style="position:absolute;left:0px;top:0px">
+            <img src="assets/images/MLReport.jpg" width=612 height=792>
+        </div>
+        <div style="position:absolute;left:50.40px;top:200.65px" class="cls_002"><span class="cls_002">8002051004</span>
+        </div>
+        <div style="position:absolute;left:43.20px;top:232.34px" class="cls_002"><span class="cls_002">TalentUS
+                Inc.</span></div>
+        <div style="position:absolute;left:43.20px;top:243.84px" class="cls_002"><span class="cls_002">5F Phinma Plaza,
+                39 Phinma Dr, Rockwell Center, Makati</span></div>
+        <div style="position:absolute;left:43.20px;top:255.34px" class="cls_002"><span class="cls_002">City</span></div>
+        <div style="position:absolute;left:331.20px;top:258.25px" class="cls_002"><span class="cls_002">SSS LOAN</span>
+        </div>
+        <div style="position:absolute;left:460.80px;top:258.25px" class="cls_002"><span class="cls_002">JANUARY
+                2021</span></div>
+        <div style="position:absolute;left:460.80px;top:301.31px" class="cls_002"><span class="cls_002">1,197.46</span>
+        </div>
+        <div style="position:absolute;left:460.80px;top:402.57px" class="cls_002"><span class="cls_002">1,197.46</span>
+        </div>
+        <div style="position:absolute;left:324.00px;top:448.35px" class="cls_002"><span class="cls_002">One Thousand One
+                Hundred Ninety Seven and 46/100</span></div>
+        <div style="position:absolute;left:462.29px;top:531.54px" class="cls_002"><span class="cls_002">Lovely
+                Cabalfin</span></div>
+    </div>
+</div>

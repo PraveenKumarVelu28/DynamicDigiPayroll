@@ -1,0 +1,1371 @@
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-4">
+                <ul>
+                    <!-- <li><button class="active form-control">
+                                <a routerLink="/LeaveListDashboard" class="BackEnt"><span
+                                        class="BACK">&#8592;</span></a>
+                            </button></li> -->
+                    <li><a class="applyleavetxt">Company Profile</a></li>
+                </ul>
+            </div>
+            <div class="col-md-8"></div>
+        </div>
+        <hr>
+        <div class="card">
+            <div class="row ">
+                <div class="col-lg-12 negative-padding">
+                    <p class="companyinfo">Company Information</p>
+                </div>
+            </div>
+            <div class="row leavereq">
+                <div class="col-md-2">
+                    <p class="newFont">Company Logo</p>
+                </div>
+                <div class="col-md-2">
+                    <p class="newFont"> Company Name<span style="color: red;">*</span></p>
+                </div>
+                <div class="col-md-2">
+                    <p class="newFont">Nature of Business</p>
+                </div>
+                <div class="col-md-3">
+                    <p class="newFont">Address1</p>
+                </div>
+                <div class="col-md-3">
+                    <p class="newFont">Address2</p>
+                </div>
+            </div>
+            <div class="row leavereq">
+
+                <div class="col-md-2">
+                    <!-- <ngx-dropzone (change)="onSelect($event)" style="height: 60px;">
+                        <ngx-dropzone-label>Drop it here!</ngx-dropzone-label>
+                        <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                        </ngx-dropzone-preview>
+                    </ngx-dropzone> -->
+                    <img src="/assets/images/AmazeLogo.jpg" width=70 height=70>
+
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control inputfield" placeholder="Amaze Inc." [(ngModel)]="Company_Name">
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control inputfield" placeholder="Business Process Outsourcing" [(ngModel)]="Nature_Of_Business">
+                </div>
+                <div class="col-md-3">
+                    <textarea class="form-control inputfield" placeholder="5F Phinma Plaza, 39 Phinma Dr, " [(ngModel)]="Address1"></textarea>
+                </div>
+                <div class="col-md-3">
+                    <textarea class="form-control inputfield" placeholder="Rockwell Center, Makati City " [(ngModel)]="Address2"></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="row leavereq">
+                <div class="col-md-2">
+                    <p class="newFont">Zip Code</p>
+                </div>
+                <div class="col-md-2">
+                    <p class="newFont">RDO</p>
+                </div>
+                <div class="col-md-2">
+                    <p class="newFont">Email</p>
+                </div>
+                <div class="col-md-2">
+                    <p class="newFont">Phone</p>
+                </div>
+                <!-- <div class="col-md-2">
+                    <p class="newFont">Password</p>
+                </div> -->
+                <div class="col-md-2">
+                    <p class="newFont">Fax</p>
+                </div>
+                <div class="col-md-2">
+                    <p class="newFont">TIN</p>
+                </div>
+            </div>
+            <div class="row leavereq">
+                <div class="col-md-2">
+                    <input class="form-control inputfield" placeholder="1210" [(ngModel)]="Zipcode">
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control inputfield" placeholder="049" [(ngModel)]="RDO">
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control inputfield" placeholder="andrew@talentusph.com" [(ngModel)]="Email">
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control inputfield" placeholder="0284212755" [(ngModel)]="Phone">
+                </div>
+                <!-- <div class="col-md-2">
+                    <input class="form-control inputfield" placeholder="" [(ngModel)]="Password">
+                </div> -->
+                <div class="col-md-2">
+                    <input class="form-control inputfield" placeholder="001" [(ngModel)]="Fax">
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control inputfield" placeholder="600-194-012-000" [(ngModel)]="Tin">
+                </div>
+            </div>
+            <br>
+            <div class="row leavereq">
+                <div class="col-md-2">
+                    <p class="newFont">SSS No.</p>
+                </div>
+                <div class="col-md-2">
+                    <p class="newFont">PhilHealth No.</p>
+                </div>
+                <div class="col-md-2">
+                    <p class="newFont">HDMF No.</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="newFont">Admin Signatory(<span style="color: red;">*</span>For Payroll Summary and
+                        Employer Contribution)</p>
+                </div>
+            </div>
+            <div class="row leavereq">
+
+                <div class="col-md-2">
+                    <input class="form-control inputfield" placeholder="80-0205100-4" [(ngModel)]="SSN_No">
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control inputfield" placeholder="00-400001024-4" [(ngModel)]="PhilHealthNumber">
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control inputfield" placeholder="2097-5475-0003" [(ngModel)]="HDMFNumber">
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-lg-2"> <label class="newFont">Authorized Person:</label></div>
+                        <div class="col-lg-4"> <input class="form-control inputfield" placeholder="Lovely Cabalfin"
+                                [(ngModel)]="Admin_AuthorisedPerson"></div>
+                        <div class="col-lg-2"> <label class="newFont">Position Title:</label></div>
+                        <div class="col-lg-4"> <input class="form-control inputfield" placeholder="Admin Manager"
+                                [(ngModel)]="Admin_PositionTitle"></div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row leavereq">
+                <div class="col-md-6">
+                    <p class="newFont">HR Signatory</p>
+                </div>
+                <div class="col-md-3">
+                    <p class="newFont">Finance Signatory</p>
+                </div>
+            </div>
+            <div class="row leavereq">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-lg-2"> <label class="newFont">Authorized Person:</label></div>
+                        <div class="col-lg-4"> <input class="form-control inputfield" placeholder="Marina Ela Tan"
+                                [(ngModel)]="HR_AuthorisedPerson"></div>
+                        <div class="col-lg-2"> <label class="newFont">Position Title:</label></div>
+                        <div class="col-lg-4"> <input class="form-control inputfield" placeholder="HR Officer"
+                                [(ngModel)]="HR_PositionTitle"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-lg-2"> <label class="newFont">Authorized Person:</label></div>
+                        <div class="col-lg-4"> <input class="form-control inputfield" placeholder="Andrew Raymond Fernandez"
+                                [(ngModel)]="Finance_AuthorisedPerson"></div>
+                        <div class="col-lg-2"> <label class="newFont">Position Title:</label></div>
+                        <div class="col-lg-4"> <input class="form-control inputfield" placeholder="President"
+                                [(ngModel)]="Finance_PositionTitle"></div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row leavereq">
+                <div class="col-md-2">
+                    <p class="newFont">E-Signatory</p>
+                </div>
+            </div>
+            <div class="row leavereq">
+                <div class="col-md-2">
+                    <!-- <ngx-dropzone (change)="onSelect2($event)" style="height: 60px;">
+                        <ngx-dropzone-label>Drop it here!</ngx-dropzone-label>
+                        <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove2(f)">
+                            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                        </ngx-dropzone-preview>
+                    </ngx-dropzone> -->
+                    <img src="/assets/images/sign.png" width=70 height=70>
+                </div>
+            </div>
+            <br>
+            <div class="col-md-1">
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="row ">
+                <div class="col-lg-12 negative-padding">
+                    <p class="companyinfo">WORK POLICY</p>
+                </div>
+            </div>
+
+            <div class="row leavereq">
+                <div class="col-md-2">
+                    <p class="newFont">Work Days Per Year<span style="color: red;">*</span></p>
+                </div>
+                <div class="col-md-2">
+                    <p class="newFont">Work Hours Per Day</p>
+                </div>
+                <div class="col-md-2">
+                    <p class="newFont">Work Months Per Year<span style="color: red;">*</span></p>
+                </div>
+                <div class="col-md-2">
+                    <p class="newFont">Work Hours Start</p>
+                </div>
+                <div class="col-md-2">
+                    <p class="newFont">Work Hours End</p>
+                </div>
+                <div class="col-md-2">
+                    <p class="newFont">Break Hours</p>
+                </div>
+            </div>
+            <div class="row leavereq">
+
+                <div class="col-md-2">
+                    <input class="form-control inputfield" placeholder="365" [(ngModel)]="Work_Days_Per_Year">
+                </div>
+                <div class="col-md-2">
+                    <input class="form-control inputfield" placeholder="8" [(ngModel)]="Work_Days_Per_Day">
+                </div>
+                <div class="col-md-2">
+                    <select class="form-control inputfield" [(ngModel)]="Work_Months_Per_Year" >
+                        <!-- <select class="form-control inputfield"> -->
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control inputfield" placeholder="10:00 AM" [(ngModel)]="Work_hour_Start">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control inputfield" placeholder="7:00 PM" [(ngModel)]="Work_hour_End">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control inputfield" placeholder="00:30" [(ngModel)]="Break_Hours">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="row ">
+                <div class="col-lg-12 negative-padding">
+                    <p class="companyinfo">PAYROLL COMPUTATION</p>
+                </div>
+            </div>
+            <div class="row leavereq">
+                <div class="col-md-2">
+                    <p class="newFont"> Periods Per Month<span style="color: red;">*</span></p>
+                </div>
+                <div class="col-md-5">
+                    <p class="newFont ">Absent Deduction</p>
+                </div>
+                <div class="col-md-5">
+                    <p class="newFont ">Late Deduction</p>
+                </div>
+            </div>
+            <div class="row leavereq">
+                <div class="col-md-2">
+                    <select class="form-control newFont" [(ngModel)]="Periods_Per_Month">
+                        <!-- <select class="form-control newFont"> -->
+                        <option value="1(Semi-Monthly)">1(Semi-Monthly)</option>
+                        <option value="2(Semi-Monthly)">2(Semi-Monthly)</option>
+
+                    </select>
+                </div>
+                <div class="col-md-5">
+                    <div class="card tiles">
+                        <div class="row ">
+
+                            <div class="col-lg-5">
+                                <!-- <input type="checkbox" id="Basic_Salary1" name="Absent_Deduction"
+                                     value="Basic Salary">
+                                    <label for="Basic_Salary1" class="checkboxtxt"></label> -->
+                                <input type="checkbox" id="Basic_Salary" class="checkboxtxt"
+                                    (change)="GetAbsent_Deduction_BasicSalary($event)" name="Basic_Salary"
+                                    value="Basic_Salary" checked>
+                                <label for="Basic_Salary" class="checkboxtxt" class="newFont"> Basic Salary</label><br>
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="checkbox" class="checkboxtxt" id="Deminimis1" name="Deminimis1"
+                                    (change)="GetAbsent_Deduction_Deminimis($event)" value="Deminimis" checked>
+                                <label for="Deminimis1" class="checkboxtxt" class="newFont">Deminimis</label>
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="checkbox" class="checkboxtxt" id="Allowance1" name="Absent_Deduction"
+                                    (change)="GetAbsent_Deduction_Allowance($event)" value="Allowance">
+                                <label for="Allowance1" class="checkboxtxt" class="newFont" checked>Allowance</label>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-lg-5">
+                                <input type="checkbox" class="checkboxtxt" id="Reimbursement_Allowance1"
+                                    name="Absent_Deduction" (change)="GetAbsent_Deduction_Reimbursement($event)"
+                                    value="Reimbursement Allowance">
+                                <label for="Reimbursement_Allowance1" class="checkboxtxt" class="newFont">Reimbursement
+                                    Allowance</label>
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="checkbox" class="checkboxtxt" id="ECOLA1" name="Absent_Deduction"
+                                    (change)="GetAbsent_Deduction_ECOLA($event)" value="ECOLA">
+                                <label for="ECOLA1" class="checkboxtxt" class="newFont">ECOLA</label>
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="checkbox" class="checkboxtxt" id="Bonus1" name="Absent_Deduction"
+                                    (change)="GetAbsent_Deduction_bonus($event)" value="Bonus">
+                                <label for="Bonus1" class="checkboxtxt" class="newFont">Bonus</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-5">
+                    <div class="card tiles">
+                        <div class="row ">
+                            <div class="col-lg-5">
+                                <input type="checkbox" id="Late_Deduction" name="Late_Deduction"
+                                    (change)="GetLate_Deduction_BasicSalary($event)" value="Basic Salary" checked>
+                                <label class="checkboxtxt" class="newFont">Basic Salary</label>
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="checkbox" class="checkboxtxt" id="Late_Deduction" name="Late_Deduction"
+                                    (change)="GetLate_Deduction_Deminimis($event)" value="Deminimis">
+                                <label class="checkboxtxt newFont">Deminimis</label>
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="checkbox" class="checkboxtxt" id="Late_Deduction" name="Late_Deduction"
+                                    (change)="GetLate_Deduction_ECOLA($event)" value="Allowance" checked>
+                                <label class="checkboxtxt newFont">Allowance</label>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-lg-5">
+                                <input type="checkbox" class="checkboxtxt" id="Late_Deduction" name="Late_Deduction"
+                                    (change)="GetLate_Deduction_Allowance($event)" value="Reimbursement Allowance">
+                                <label class="checkboxtxt newFont" checked>Reimbursement Allowance</label>
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="checkbox" class="checkboxtxt" id="Late_Deduction" name="Late_Deduction"
+                                    (change)="GetLate_Deduction_Reimbursement($event)" value="ECOLA">
+                                <label class="checkboxtxt newFont">ECOLA</label>
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="checkbox" class="checkboxtxt" id="Late_Deduction" name="Late_Deduction"
+                                    (change)="GetLate_Deduction_bonus($event)" value="Bonus">
+                                <label class="checkboxtxt newFont">Bonus</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <div class="row leavereq">
+                <div class="col-md-2">
+                    <p class="newFont">Over Time Computation</p>
+                </div>
+            </div>
+            <div class="row leavereq">
+                <div class="col-md-1"></div>
+                <div class="col-md-1">
+                    <p class="newFont">Optional:</p>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" name="OverTime_Comeptition_Optional_BasicSalary"
+                        (change)="GetOverTime_Comeptition_Optional_BasicSalary($event)" value="Basic Salary" checked>
+                    <label class="checkboxtxt newFont" checked>Basic Salary</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt"
+                        (change)="GetOverTime_Comeptition_Optional_Deminimis($event)"
+                        name="OverTime_Comeptition_Optional_Deminimis" value="Deminimis" checked>
+                    <label class="checkboxtxt newFont" >Deminimis</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt"
+                        (change)="GetOverTime_Comeptition_Optional_Allowance($event)"
+                        name="OverTime_Comeptition_Optional_Allowance"
+                        (change)="OverTime_Comeptition_Optional_Allowance($event)" value="Allowance" checked>
+                    <label class="checkboxtxt newFont" >Allowance</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt"
+                        (change)="GetOverTime_Comeptition_Optional_Reimbursement($event)"
+                        name="OverTime_Comeptition_Optional_Reimbursement"
+                        (change)="OverTime_Comeptition_Optional_Reimbursement($event)" value="Reimbursement Allowance">
+                    <label class="checkboxtxt newFont" checked>Reimbursement Allowance</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" (change)="GetOverTime_Comeptition_Optional_ECOLA($event)"
+                        name="OverTime_Comeptition_Optional_ECOLA"
+                        (change)="OverTime_Comeptition_Optional_ECOLA($event)" value="ECOLA">
+                    <label class="checkboxtxt newFont">ECOLA</label>
+                </div>
+            </div><br>
+            <div class="row ">
+                <div class="col-lg-10 ">
+                    <div class="row leavereq">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-2">
+                            <p class="newFont" style="margin-left: 20px;">OT Rates:</p>
+                        </div>
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" id="OverTime_Comeptition_OTRates" name="OverTime_Comeptition_OTRates"
+                                (change)="Getord_ot($event)" value="Ord-OT" checked>
+                            <label class="checkboxtxt newFont" >Ord-OT</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" class="checkboxtxt" id="OverTime_Comeptition_OTRates"
+                                name="OverTime_Comeptition_OTRates" (change)="Getord_nd($event)" value="Ord-ND" checked>
+                            <label class="checkboxtxt newFont" >Ord-ND</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" class="checkboxtxt" id="OverTime_Comeptition_OTRates"
+                                name="OverTime_Comeptition_OTRates" (change)="Getord_nd_ot($event)" value="Ord-ND-OT" checked> 
+                            <label class="checkboxtxt newFont" >Ord-ND-OT</label>
+                        </div>
+                    </div>
+
+                    <div class="row leavereq">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-1"></div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" id="OverTime_Comeptition_OTRates" name="OverTime_Comeptition_OTRates"
+                                (change)="Getrd($event)" value="RD" checked>
+                            <label class="checkboxtxt newFont" >RD</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" id="OverTime_Comeptition_OTRates" name="OverTime_Comeptition_OTRates"
+                                (change)="Getrd_ot($event)" value="RD-OT" checked>
+                            <label class="checkboxtxt newFont" >RD-OT</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" class="checkboxtxt" id="OverTime_Comeptition_OTRates"
+                                name="OverTime_Comeptition_OTRates" (change)="Getrd_nd($event)" value="RD-ND" checked>
+                            <label class="checkboxtxt newFont" >RD-ND</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" class="checkboxtxt" id="OverTime_Comeptition_OTRates"
+                                name="OverTime_Comeptition_OTRates" (change)="Getrd_nd_ot($event)" value="RD-ND-OT" checked>
+                            <label class="checkboxtxt newFont" >RD-ND-OT</label>
+                        </div>
+                    </div>
+
+                    <div class="row leavereq">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-1"></div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" id="OverTime_Comeptition_OTRates" name="OverTime_Comeptition_OTRates"
+                                (change)="Getsh($event)" value="SH" checked>
+                            <label class="checkboxtxt newFont" >SH</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" id="OverTime_Comeptition_OTRates" name="OverTime_Comeptition_OTRates"
+                                (change)="Getsh_ot($event)" value="SH-OT" checked>
+                            <label class="checkboxtxt newFont" >SH-OT</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" class="checkboxtxt" id="OverTime_Comeptition_OTRates"
+                                name="OverTime_Comeptition_OTRates" (change)="Getsh_nd($event)" value="SH-ND" checked>
+                            <label class="checkboxtxt newFont" >SH-ND</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" class="checkboxtxt" id="OverTime_Comeptition_OTRates"
+                                name="OverTime_Comeptition_OTRates" (change)="Getsh_nd_ot($event)" value="SH-ND-OT" checked>
+                            <label class="checkboxtxt newFont" >SH-ND-OT</label>
+                        </div>
+                    </div>
+
+                    <div class="row leavereq">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-1"> </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" id="OverTime_Comeptition_OTRates" name="OverTime_Comeptition_OTRates"
+                                (change)="Getlh($event)" value="LH" checked>
+                            <label class="checkboxtxt newFont" >LH</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" id="OverTime_Comeptition_OTRates" name="OverTime_Comeptition_OTRates"
+                                (change)="Getlh_ot($event)" value="LH-OT" checked>
+                            <label class="checkboxtxt newFont">LH-OT</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" class="checkboxtxt" id="OverTime_Comeptition_OTRates"
+                                name="OverTime_Comeptition_OTRates" (change)="Getlh_nd($event)" value="LH-ND" checked>
+                            <label class="checkboxtxt newFont" >LH-ND</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" class="checkboxtxt" id="OverTime_Comeptition_OTRates"
+                                name="OverTime_Comeptition_OTRates" (change)="Getlh_nd_ot($event)" value="LH-ND-OT" checked>
+                            <label class="checkboxtxt newFont" >LH-ND-OT</label>
+                        </div>
+                    </div>
+
+                    <div class="row leavereq">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-1"></div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" id="OverTime_Comeptition_OTRates" name="OverTime_Comeptition_OTRates"
+                                (change)="Getsh_rd($event)" value="SH-RD" checked>
+                            <label class="checkboxtxt newFont" >SH-RD</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" id="OverTime_Comeptition_OTRates" name="OverTime_Comeptition_OTRates"
+                                (change)="Getsh_rd_ot($event)" value="SH-RD-OT" checked>
+                            <label class="checkboxtxt newFont" >SH-RD-OT</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" class="checkboxtxt" id="OverTime_Comeptition_OTRates"
+                                name="OverTime_Comeptition_OTRates" (change)="Getsh_rd_nd($event)" value="SH-RD-ND">
+                            <label class="checkboxtxt newFont">SH-RD-ND</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" class="checkboxtxt" id="OverTime_Comeptition_OTRates"
+                                name="OverTime_Comeptition_OTRates" (change)="Getsh_rd_nd_ot($event)"
+                                value="SH-RD-ND-OT">
+                            <label class="checkboxtxt newFont">SH-RD-ND-OT</label>
+                        </div>
+                    </div>
+
+                    <div class="row leavereq">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-1"></div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" id="OverTime_Comeptition_OTRates" name="OverTime_Comeptition_OTRates"
+                                (change)="Getlh_rd($event)" value="LH-RD" checked>
+                            <label class="checkboxtxt newFont" >LH-RD</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" (change)="Getlh_rd_ot($event)" value="LH-RD-OT">
+                            <label class="checkboxtxt newFont">LH-RD-OT</label>
+                        </div>
+                        <div class="col-lg-2">
+
+                            <input type="checkbox" class="checkboxtxt" (change)="Getlh_rd_nd($event)" value="LH-RD-ND">
+                            <label class="checkboxtxt newFont">LH-RD-ND</label>
+                        </div>
+                        <div class="col-lg-2">
+
+                            <input type="checkbox" class="checkboxtxt" (change)="Getlh_rd_nd_ot($event)"
+                                value="LH-RD-ND-OT">
+                            <label class="checkboxtxt newFont">LH-RD-ND-OT</label>
+                        </div>
+                    </div>
+
+                    <div class="row leavereq">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-1"></div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" id="OverTime_Comeptition_OTRates" name="OverTime_Comeptition_OTRates"
+                                (change)="Getdh($event)" value="DH" checked>
+                            <label class="checkboxtxt newFont" >DH</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" id="OverTime_Comeptition_OTRates" name="OverTime_Comeptition_OTRates"
+                                (change)="Getdh_ot($event)" value="DH-OT">
+                            <label class="checkboxtxt newFont">DH-OT</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" class="checkboxtxt" id="OverTime_Comeptition_OTRates"
+                                name="OverTime_Comeptition_OTRates" (change)="Getdh_nd($event)" value="DH-ND">
+                            <label class="checkboxtxt newFont">DH-ND</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" class="checkboxtxt" id="OverTime_Comeptition_OTRates"
+                                name="OverTime_Comeptition_OTRates" (change)="Getdh_nd_ot($event)" value="DH-ND-OT">
+                            <label class="checkboxtxt newFont">DH-ND-OT</label>
+                        </div>
+                    </div>
+
+                    <div class="row leavereq">
+                        <div class="col-md-2"></div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" id="OverTime_Comeptition_OTRates" name="OverTime_Comeptition_OTRates"
+                                (change)="Getdh_rd($event)" value="DH-RD">
+                            <label class="checkboxtxt newFont">DH-RD</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" id="OverTime_Comeptition_OTRates" name="OverTime_Comeptition_OTRates"
+                                (change)="Getdh_rd_ot($event)" value="DH-RD-OT">
+                            <label class="checkboxtxt newFont ">DH-RD-OT</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" class="checkboxtxt" id="OverTime_Comeptition_OTRates"
+                                name="OverTime_Comeptition_OTRates" (change)="Getdh_rd_nd($event)" value="DH-RD-ND">
+                            <label class="checkboxtxt newFont">DH-RD-ND</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="checkbox" class="checkboxtxt" id="OverTime_Comeptition_OTRates"
+                                name="OverTime_Comeptition_OTRates" (change)="Getdh_rd_nd_ot($event)"
+                                value="DH-RD-ND-OT">
+                            <label class="checkboxtxt newFont">DH-RD-ND-OT</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <!-- <img src="../../../assets/images/eye.png" data-toggle="collapse" data-target="#demo"> -->
+                    <!-- <div class="legend collapse" id="demo"> -->
+                        <div class="legend">
+                        <p>Ord: Ordinary Day<br>
+                            RD: Rest Day<br>
+                            SH: Special Holiday<br>
+                            LH: Legal Holiday<br>
+                            SH-RD: Special Holiday and Rest Day<br>
+                            LH-RD: Legal Holiday and Rest Day<br>
+                            DH: Doulble Holiday<br>
+                            DH-RD: Doulble Holiday and Rest Day<br>
+                            OT: OverTime<br>
+                            ND: Night Differential<br>
+                            ND-OT: Night Differential OverTime<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row leavereq">
+                <div class="col-md-2">
+                    <p class="newFont">Rest Days</p>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" id="RestDays" name="RestDays" (change)="Getmonday($event)" value="Monday">
+                    <label class="checkboxtxt newFont">Monday</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" id="RestDays" name="RestDays"
+                        (change)="Gettuesday($event)" value="Tuesday">
+                    <label class="checkboxtxt newFont">Tuesday</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" id="RestDays" name="RestDays"
+                        (change)="Getwednesday($event)" value="Wednesday">
+                    <label class="checkboxtxt newFont">Wednesday</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" id="RestDays" name="RestDays"
+                        (change)="Getthursday($event)" value="Thursday">
+                    <label class="checkboxtxt newFont">Thursday</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" id="RestDays" name="RestDays"
+                        (change)="Getfriday($event)" value="Friday">
+                    <label class="checkboxtxt newFont">Friday</label>
+                </div>
+            </div>
+            <div class="row leavereq">
+                <div class="col-md-2"></div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" id="RestDays" name="RestDays"
+                        (change)="Getsaturday($event)" value="Saturday" checked>
+                    <label class="checkboxtxt newFont" >Saturday</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" id="RestDays" name="RestDays"
+                        (change)="Getsunday($event)" value="Sunday" checked>
+                    <label class="checkboxtxt newFont" >Sunday</label>
+                </div>
+            </div>
+            <br>
+
+            <div class="row leavereq ">
+                <div class="col-md-12">
+                    <p class="newFont">New Hire Prorated Computation</p>
+                </div>
+            </div>
+            <div class="row leavereq">
+                <div class="col-md-1"></div>
+                <div class="col-md-1">
+                    <p class="newFont">Optional:</p>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" name="OverTime_Comeptition_Optional_BasicSalary"
+                        (change)="GetOverTime_Comeptition_Optional_BasicSalary($event)" value="Basic Salary" checked>
+                    <label class="checkboxtxt newFont" >Basic Salary</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt"
+                        (change)="GetOverTime_Comeptition_Optional_Deminimis($event)"
+                        name="OverTime_Comeptition_Optional_Deminimis" value="Deminimis" checked>
+                    <label class="checkboxtxt newFont" >Deminimis</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt"
+                        (change)="GetOverTime_Comeptition_Optional_Allowance($event)"
+                        name="OverTime_Comeptition_Optional_Allowance"
+                        (change)="OverTime_Comeptition_Optional_Allowance($event)" value="Allowance">
+                    <label class="checkboxtxt newFont">Allowance</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt"
+                        (change)="GetOverTime_Comeptition_Optional_Reimbursement($event)"
+                        name="OverTime_Comeptition_Optional_Reimbursement"
+                        (change)="OverTime_Comeptition_Optional_Reimbursement($event)" value="Reimbursement Allowance">
+                    <label class="checkboxtxt newFont">Reimbursement Allowance</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" (change)="GetOverTime_Comeptition_Optional_ECOLA($event)"
+                        name="OverTime_Comeptition_Optional_ECOLA"
+                        (change)="OverTime_Comeptition_Optional_ECOLA($event)" value="ECOLA" checked>
+                    <label class="checkboxtxt newFont" >ECOLA</label>
+                </div>
+            </div>
+            <div class="row leavereq ">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <p class="newFont"> Proration method:</p>
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="thirteen_Month_Compuatation_Type"
+                                    name="thirteen_Month_Compuatation_Type"
+                                    [(ngModel)]="thirteen_Month_Compuatation_Type" value="Pro-rated/Advanced" checked>
+                                <label class="form-check-label newFont" for="flexRadioDefault1">
+                                    Prorated / Daily multiply by days present
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="thirteen_Month_Compuatation_Type"
+                                    name="thirteen_Month_Compuatation_Type"
+                                    [(ngModel)]="thirteen_Month_Compuatation_Type"
+                                    value="Pro-rated/Current/Full Salary">
+                                <label class="form-check-label newFont" for="flexRadioDefault1">
+                                    Prorated / Salary less absent
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <br>
+
+
+            <div class="card tiles">
+                <div class="row leavereq tiles">
+                    <div class="col-md-12">
+                        <p class="newFont">13th Month Computation</p>
+                    </div>
+                </div>
+                <div class="row leavereq tiles">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <p class="newFont"> Computation Type:</p>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="thirteen_Month_Compuatation_Type"
+                                        name="thirteen_Month_Compuatation_Type"
+                                        [(ngModel)]="thirteen_Month_Compuatation_Type" value="Pro-rated/Advanced">
+                                    <label class="form-check-label newFont" for="flexRadioDefault1">
+                                        Pro-rated/Advanced
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="thirteen_Month_Compuatation_Type"
+                                        name="thirteen_Month_Compuatation_Type"
+                                        [(ngModel)]="thirteen_Month_Compuatation_Type"
+                                        value="Pro-rated/Current/Full Salary">
+                                    <label class="form-check-label newFont" for="flexRadioDefault1">
+                                        Pro-rated/Current/Full Salary
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <p class="newFont">Deduct Absent:</p>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="thirteen_Month_Deduct_Absent"
+                                        name="thirteen_Month_Deduct_Absent" [(ngModel)]="thirteen_Month_Deduct_Absent"
+                                        value="Yes">
+                                    <label class="form-check-label newFont " for="flexRadioDefault1">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="thirteen_Month_Deduct_Absent"
+                                        name="thirteen_Month_Deduct_Absent" [(ngModel)]="thirteen_Month_Deduct_Absent"
+                                        value="No">
+                                    <label class="form-check-label newFont" for="flexRadioDefault1">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <p class="newFont">Deduct Late/Undertime?</p>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="thirteen_Month_Deduct_Late"
+                                        name="thirteen_Month_Deduct_Late" [(ngModel)]="thirteen_Month_Deduct_Late"
+                                        value="Yes">
+                                    <label class="form-check-label newFont " for="flexRadioDefault1">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="thirteen_Month_Deduct_Late"
+                                        name="thirteen_Month_Deduct_Late" [(ngModel)]="thirteen_Month_Deduct_Late"
+                                        value="No">
+                                    <label class="form-check-label newFont" for="flexRadioDefault1">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <br><br>
+                <div class="row leavereq tiles">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-1">
+                        <p class="newFont">Optional:</p>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" id="thirteen_Month_Optional" name="thirteen_Month_Optional"
+                            (change)="Getthirteen_Month_Optional_Basic($event)" value="Basic" checked>
+                        <label class="checkboxtxt newFont">Basic</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="thirteen_Month_Optional"
+                            name="thirteen_Month_Optional" (change)="Getthirteen_Month_Optional_ECOLA($event)"
+                            value="ECOLA" checked>
+                        <label class="checkboxtxt newFont">ECOLA</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="thirteen_Month_Optional"
+                            name="thirteen_Month_Optional" (change)="Getthirteen_Month_Optional_BasicAdjustment($event)"
+                            value="Basic Adjustment" checked>
+                        <label class="checkboxtxt newFont">Basic Adjustment</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="thirteen_Month_Optional"
+                            name="thirteen_Month_Optional"
+                            (change)=" Getthirteen_Month_Optional_OtherTaxableIncome($event)"
+                            value="Other Taxable Income" checked>
+                        <label class="checkboxtxt newFont">Other Taxable Income</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="thirteen_Month_Optional"
+                            name="thirteen_Month_Optional" (change)="Getthirteen_Month_Optional_OverTime($event)"
+                            value="OverTime">
+                        <label class="checkboxtxt newFont">OverTime</label>
+                    </div>
+                </div>
+
+                <div class="row leavereq tiles">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="thirteen_Month_Optional"
+                            name="thirteen_Month_Optional" (change)="Getthirteen_Month_Optional_Allowance($event)"
+                            value="Allowance" checked>
+                        <label class="checkboxtxt newFont">Allowance</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="thirteen_Month_Optional"
+                            name="thirteen_Month_Optional" (change)="Getthirteen_Month_Optional_Deminimis($event)"
+                            value="Deminimis">
+                        <label class="checkboxtxt newFont">Deminimis</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="thirteen_Month_Optional"
+                            name="thirteen_Month_Optional" (change)="Getthirteen_Month_Optional_Reimbursement($event)"
+                            value="Reimbursable Allowance">
+                        <label class="checkboxtxt newFont">Reimbursable Allowance</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="thirteen_Month_Optional"
+                            name="thirteen_Month_Optional" (change)="Getthirteen_Month_Optional_Bonus($event)"
+                            value="Bonus">
+                        <label class="checkboxtxt newFont">Bonus</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="thirteen_Month_Optional"
+                            name="thirteen_Month_Optional"
+                            (change)="Getthirteen_Month_Optional_SalaryAdjustment($event)" value="Salary Adjustment">
+                        <label class="checkboxtxt newFont">Salary Adjustment</label>
+                    </div>
+                </div>
+                <div class="row leavereq tiles">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="thirteen_Month_Optional"
+                            name="thirteen_Month_Optional" (change)="Getthirteen_Month_Optional_Commission($event)"
+                            value="Commission">
+                        <label class="checkboxtxt newFont">Commission</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+            <div class="row leavereq">
+                <div class="col-md-12">
+                    <p class="newFont"> Final Pay Computation</p>
+                </div>
+            </div>
+            <div class="row leavereq">
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <p class="newFont">Deduct Absent?</p>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="FinalPay_Deduct_Absent"
+                                    name="FinalPay_Deduct_Absent" [(ngModel)]="FinalPay_Deduct_Absent" value="Yes">
+                                <label class="form-check-label newFont" for="flexRadioDefault1">
+                                    Yes
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="FinalPay_Deduct_Absent"
+                                    name="FinalPay_Deduct_Absent" [(ngModel)]="FinalPay_Deduct_Absent" value="No">
+                                <label class="form-check-label newFont" for="flexRadioDefault1">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <p class="newFont">Deduct Late/Undertime?</p>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="FinalPay_Deduct_Late"
+                                    name="FinalPay_Deduct_Late" [(ngModel)]="FinalPay_Deduct_Late" value="Yes">
+                                <label class="form-check-label newFont" for="flexRadioDefault1">
+                                    Yes
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="FinalPay_Deduct_Late"
+                                    name="FinalPay_Deduct_Late" [(ngModel)]="FinalPay_Deduct_Late" value="No">
+                                <label class="form-check-label newFont" for="flexRadioDefault1">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <p class="newFont">Include 13th Month Pay?</p>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="thirteen_Month_Deduct_Late"
+                                    name="thirteen_Month_Deduct_Late" [(ngModel)]="thirteen_Month_Deduct_Late"
+                                    value="Yes">
+                                <label class="form-check-label newFont" for="flexRadioDefault1">
+                                    Yes
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="thirteen_Month_Deduct_Late"
+                                    name="thirteen_Month_Deduct_Late" [(ngModel)]="thirteen_Month_Deduct_Late"
+                                    value="No">
+                                <label class="form-check-label newFont" for="flexRadioDefault1">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- <div class="row leavereq">
+                <div class="col-md-2">
+                    <p class="newFont"> Net Pay Threshold</p>
+                </div>
+                <div class="col-lg-6">
+                    <input type="checkbox" class="checkboxtxt" id="NetPay_Threshold" name="NetPay_Threshold"
+                        [(ngModel)]="NetPay_Threshold" value="Enable Net Pay Threshold">
+                    <label class="checkboxtxt newFont">Enable Net Pay Threshold</label>
+                </div>
+            </div> -->
+        </div>
+        <br>
+        <div class="card">
+            <div class="row ">
+                <div class="col-lg-12 negative-padding">
+                    <p class="companyinfo">GOVERNMENT CONTRIBUTIONS</p>
+                </div>
+            </div>
+            <div class="card tiles">
+                <div class="row leavereq tiles">
+                    <div class="col-lg-1">
+                        <label class="newFont">SSS</label>
+                    </div>
+                </div>
+                <div class="row leavereq tiles">
+                    <div class="col-lg-1"> </div>
+                    <div class="col-md-5">
+                        <p class="newFont">Coverage:</p>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="thirteen_Month_Compuatation_Type"
+                                        name="thirteen_Month_Compuatation_Type"
+                                        [(ngModel)]="thirteen_Month_Compuatation_Type" value="Pro-rated/Advanced">
+                                    <label class="form-check-label newFont" for="flexRadioDefault1">
+                                        By Month(custom)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="SSS_Coverage" name="SSS_Coverage"
+                                        [(ngModel)]="SSS_Coverage" value="By Period(Gross)">
+                                    <label class="form-check-label newFont" for="flexRadioDefault1">
+                                        By Period(Gross)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row leavereq tiles">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-1">
+                        <p class="newFont">Optional:</p>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" id="SSS_Optional" name="SSS_Optional"
+                            (change)="GetSSS_Optional_BasicSalary($event)" value="Basic Salary" checked>
+                        <label class="checkboxtxt newFont">Basic Salary</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="SSS_Optional" name="SSS_Optional"
+                            (change)="GetSSS_Optional_Deminimis($event)" value="Dominimis">
+                        <label class="checkboxtxt newFont">Dominimis</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="SSS_Optional" name="SSS_Optional"
+                            (change)="GetSSS_Optional_Bonuses($event)" value="Bonuses">
+                        <label class="checkboxtxt newFont">Bonuses</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="SSS_Optional" name="SSS_Optional"
+                            (change)="GetSSS_Optional_OverTime($event)" value="OverTime" checked>
+                        <label class="checkboxtxt newFont">OverTime</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="SSS_Optional" name="SSS_Optional"
+                            (change)="GetSSS_Optional_SalaryAdjustment($event)" value="Salary Adjustment" checked>
+                        <label class="checkboxtxt newFont">Salary Adjustment</label>
+                    </div>
+                </div>
+                <div class="row leavereq tiles">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="SSS_Optional" name="SSS_Optional"
+                            (change)="GetSSS_Optional_ECOLA($event)" value="ECOLA">
+                        <label class="checkboxtxt newFont">ECOLA</label>
+                    </div>
+
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="SSS_Optional" name="SSS_Optional"
+                            (change)="GetSSS_Optional_Allowance($event)" value="Allowance">
+                        <label class="checkboxtxt newFont">Allowance</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="SSS_Optional" name="SSS_Optional"
+                            (change)="GetSSS_Optional_Reimbursement($event)" value="Reimbursement Allowance">
+                        <label class="checkboxtxt newFont">Reimbursement Allowance</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="checkbox" class="checkboxtxt" id="SSS_Optional" name="SSS_Optional"
+                            (change)="GetSSS_Optional_Commission($event)" value="Commision">
+                        <label class="checkboxtxt newFont">Commision</label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card tiles">
+                <div class="row leavereq tiles">
+                    <div class="col-lg-12">
+                        <label class="newFont">PhilHealth</label>
+                        <span class="newFont" style="color: red; margin-left: 22px;font-size: 13px; ">The basic for
+                            PhilHealth
+                            contribution should be monthly basic
+                            salary only.</span>
+                    </div>
+                </div>
+                <div class="row tiles">
+                    <div class="col-lg-1"></div>
+                    <div class="col-md-5">
+                        <p class="newFont">Coverage:</p>
+                        <div class="row tiles">
+                            <div class="col-lg-5">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="PhilHealth_Coverage"
+                                        name="PhilHealth_Coverage" [(ngModel)]="PhilHealth_Coverage"
+                                        value="By Month(custom)">
+                                    <label class="form-check-label newFont" for="flexRadioDefault1">
+                                        By Month(custom)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="PhilHealth_Coverage"
+                                        name="PhilHealth_Coverage" [(ngModel)]="PhilHealth_Coverage"
+                                        value="By Period(Gross)">
+                                    <label class="form-check-label newFont" for="flexRadioDefault1">
+                                        By Period(Gross)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- <div class="row leavereq">
+                <div class="col-md-1"></div>
+                <div class="col-md-1">
+                    <p class="newFont">Optional:</p>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" id="PhilHealth_Optional" name="PhilHealth_Optional"
+                        (change)="GetPhilHealth_Optional_BasicSalary($event)" value="Basic Salary">
+                    <label class="checkboxtxt newFont">Basic Salary</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" id="PhilHealth_Optional" name="PhilHealth_Optional"
+                        (change)="GetPhilHealth_Optional_Deminimis($event)" value="Dominimis">
+                    <label class="checkboxtxt newFont">Dominimis</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" id="PhilHealth_Optional" name="PhilHealth_Optional"
+                        (change)="GetPhilHealth_Optional_Bonuses($event)" value="Bonuses">
+                    <label class="checkboxtxt newFont">Bonuses</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" id="PhilHealth_Optional" name="PhilHealth_Optional"
+                        (change)="GetPhilHealth_Optional_OverTime($event)" value="OverTime">
+                    <label class="checkboxtxt newFont">OverTime</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" id="PhilHealth_Optional" name="PhilHealth_Optional"
+                        (change)="GetPhilHealth_Optional_Absent_late($event)" value="Absent/Late">
+                    <label class="checkboxtxt newFont">Absent/Late</label>
+                </div>
+            </div>
+            <div class="row leavereq">
+                <div class="col-md-2"></div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" id="PhilHealth_Optional" name="PhilHealth_Optional"
+                        (change)="GetPhilHealth_Optional_SalaryAdjustment($event)" value="Salary Adjustment">
+                    <label class="checkboxtxt newFont">Salary Adjustment</label>
+                </div>
+
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" id="PhilHealth_Optional" name="PhilHealth_Optional"
+                        (change)="GetPhilHealth_Optional_ECOLA($event)" value="ECOLA">
+                    <label class="checkboxtxt newFont">ECOLA</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" id="PhilHealth_Optional" name="PhilHealth_Optional"
+                        (change)="GetPhilHealth_Optional_Allowance($event)" value="Allowance">
+                    <label class="checkboxtxt newFont">Allowance</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="checkboxtxt" id="PhilHealth_Optional" name="PhilHealth_Optional"
+                        (change)="GetPhilHealth_Optional_Reimbursement($event)" value="Reimbursement Allowance">
+                    <label class="checkboxtxt newFont">Reimbursement Allowance</label>
+                </div>
+            </div> <br> -->
+            <div class="card tiles">
+                <div class="row tiles">
+                    <div class="col-lg-1">
+                        <label class="newFont">HDMF</label>
+                    </div>
+                </div>
+                <div class="row tiles">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="HDMS" name="HDMS" [(ngModel)]="HDMF"
+                                value="Fixed deduction of PHP 100.00 per month from each employee">
+                            <label class="form-check-label newFont" for="flexRadioDefault1">
+                                Fixed deduction of PHP 100.00 per month from each employee
+                            </label>
+                        </div>
+                        <div>
+                            <label class="newFont" style="margin-left: 18px;">Employer Contribution:</label>
+                        </div>
+                        <div class="row tiles">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-5">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="HDMF_Employer_Contribution"
+                                        name="HDMF_Employer_Contribution" [(ngModel)]="HDMF_Employer_Contribution"
+                                        value="Same as Employee(PHP 100.00)">
+                                    <label class="form-check-label newFont" for="flexRadioDefault1">
+                                        Same as Employee (PHP 100.00)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="HDMF_Employer_Contribution"
+                                        name="HDMF_Employer_Contribution" [(ngModel)]="HDMF_Employer_Contribution"
+                                        value="Fixed deduction">
+                                    <label class="form-check-label newFont" for="flexRadioDefault1">
+                                        Fixed deduction
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 newFont">
+                                PHP<span><input class="form-control php"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card ">
+            <div class="row ">
+                <div class="col-lg-12 negative-padding">
+                    <p class="companyinfo">TAX COMPUTATIONS</p>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-2">
+                    <label class="newFont">Payroll Calender</label>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="PayRoll_Calender" name="PayRoll_Calender"
+                            [(ngModel)]="PayRoll_Calender" value="Calender Year(From January to December)">
+                        <label class="form-check-label newFont" for="flexRadioDefault1">
+                            Calender Year(From January to December)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col-lg-2">
+                    <label class="newFont">Tax Table</label>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="Tax_Table" name="Tax_Table"
+                            [(ngModel)]="Tax_Table" value="Normal">
+                        <label class="form-check-label newFont" for="flexRadioDefault1">
+                            Normal
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="Tax_Table" name="Tax_Table"
+                            [(ngModel)]="Tax_Table" value="Pre-Annualised">
+                        <label class="form-check-label newFont" for="flexRadioDefault1">
+                            Pre-Annualised
+                        </label>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <p class="newFont" style="text-align: right;">Pre-Annualised starts on:</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <select class="form-control" [(ngModel)]="Tax_Table_Starts_on">
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input  " type="checkbox" id="Tax_Table_Including_13thmonth"
+                            name="Tax_Table_Including_13thmonth" [(ngModel)]="Tax_Table_Including_13thmonth"
+                            value="Including 13th month pay">
+                        <label class="form-check-label newFont" for="flexCheckDefault">Including 13th month pay</label>
+                    </div>
+                </div>
+            </div> -->
+            <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label class="newFont">Non-Tax Exemption Ceiling<span style="color: red;">*</span></label>
+                </div>
+                <div class="col-lg-4">
+                    <label class="newFont">Deminimis Exemption Ceiling<span style="color: red;">*</span></label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <input class="form-control" placeholder="90,00,000" [(ngModel)]="Non_Tax_Essential_Sealing">
+                </div>
+                <div class="col-lg-4">
+                    <input class="form-control" placeholder="80,00,000" [(ngModel)]="Deminimis_Exemption">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-1">
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-lg-5"></div>
+    <div class="col-lg-1">
+        <button class="btn" *ngIf="id==null || id==undefined" type="submit" (click)="onSave()">SAVE</button>
+        <button class="btn" *ngIf="id!=null || id!=undefined" (click)="Update()">UPDATE</button>
+    </div>
+    <div class="col-lg-1">
+        <button class="btn ">AUDIT TRAIL</button>
+    </div>
+    <div class="col-lg-5"></div>
+</div>
+<br><br>

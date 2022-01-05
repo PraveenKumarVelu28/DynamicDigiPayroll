@@ -1,0 +1,202 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <p class="taxtable">Pag-ibig Short-term Loan Remittance Excel</p>
+            <hr>
+            <div class="container">
+                <div class="row FilterClass">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-2">
+                        Loan Type:
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="dropdown">
+                            <select class="form-control inputfield" id="Loan" name="Loan" [(ngModel)]="Loan"><br />
+                                <option value="Select">Select Loan </option>
+                                <option value="HDMF">HDMF Loan </option>
+                                <option value="Calamity">Calamity Loan </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+                <br />
+                <div class="row FilterClass">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-2">
+                        <p>Select Start Month And Year:</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="dropdown">
+                            <select class="form-control inputfield" id="Month" name="Month" [(ngModel)]="Month"><br />
+                                <option value="Select">Select Month </option>
+                                <option value="jan">January </option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="dropdown">
+                            <select class="form-control inputfield" id="Year" name="Year" [(ngModel)]="Year"><br />
+                                <option value="Select">Select Year </option>
+                                <option value="2021">2021 </option>
+                                <option value="2020">2020 </option>
+                                <option value="2019">2019 </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+                <br />
+                <div class="row FilterClass">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-2">
+                        Signatory Person:
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="dropdown">
+                            <select class="form-control inputfield" id="Month" name="Month" [(ngModel)]="Person"><br />
+                                <option value="Select">Select Person </option>
+                                <option value="Admin">Admin </option>
+                                <option value="Admin">HR </option>
+                                <option value="Admin">FINANCE </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-5">
+                    </div>
+                    <div class="col-lg-3">
+                        <button class="generate" data-toggle="collapse" data-target="#demo">GENERATE</button>
+                    </div>
+                </div>
+                <br />
+                <br>
+            </div>
+
+            <div class="container-fluid" id="demo" class="collapse">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <P>Employer ID: </P>
+                    </div>
+                    <div class="col-lg-2">
+                        <h6>209754750003</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <P>Employer Name: </P>
+                    </div>
+                    <div class="col-lg-2">
+                        <h6>TalentZone Inc</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <P>Address: </P>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6>5F Phinma Plaza, 39 Phinma Dr, Rockwell Center, Makati City.</h6>
+                    </div>
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-2">
+                        <button class="form-control button" (click)="exportexcel()">EXPORT TO EXCEL</button>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table table-bordered fonttxt">
+                            <thead>
+                                <tr class="newFont">
+                                    <th class="SelectData"><input type="checkbox" (click)="selectALL(true)">&nbsp; Select</th>
+                                    <th>Pag-IBIG ID/RTN</th>
+                                    <th>APPLICATION NO.</th>
+                                    <th>LAST NAME</th>
+                                    <th>FIRST NAME</th>
+                                    <th>LOAN TYPE</th>
+                                    <th>AMOUNT</th>
+                                    <th>REMARKS</th>
+                                </tr>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo1"></td>
+                                    <td>121166372089</td>
+                                    <td>66768229</td>
+                                    <td>Intal</td>
+                                    <td>Maria Cassandra</td>
+                                    <td>HDMF Loan</td>
+                                    <td>13,550.00</td>
+                                    <td>Terminated</td>
+                                </tr>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo1"></td>
+                                    <td>108002278259</td>
+                                    <td>66789980</td>
+                                    <td>Olaguer</td>
+                                    <td>Ajel</td>
+                                    <td>Calmity Loan</td>
+                                    <td>21,800.00</td>
+                                    <td>Active</td>
+                                </tr>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo1"></td>
+                                    <td>506002778288</td>
+                                    <td>67445767</td>
+                                    <td>Bersamira</td>
+                                    <td>Carlo</td>
+                                    <td>Calmity Loan</td>
+                                    <td>23,250.00</td>
+                                    <td>Terminated</td>
+                                </tr>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo1"></td>
+                                    <td>226678799098</td>
+                                    <td>67789876</td>
+                                    <td>Rac</td>
+                                    <td>Lyla</td>
+                                    <td>HDMF Loan</td>
+                                    <td>16,100.00</td>
+                                    <td>Active</td>
+                                </tr>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo1"></td>
+                                    <td>110098293878</td>
+                                    <td>68779334</td>
+                                    <td>Sager</td>
+                                    <td>Edmond Albert Moses</td>
+                                    <td>HDMF Loan</td>
+                                    <td>19,000.00</td>
+                                    <td>Active</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<br>

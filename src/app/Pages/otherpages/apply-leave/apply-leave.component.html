@@ -1,0 +1,182 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-4">
+                    <ul>
+                        <li><button class="active form-control">
+                            <a routerLink="/LeaveListDashboard" class="BackEnt"><span class="BACK">&#8592;</span></a>
+                        </button></li>
+                        
+                        <li><a class="applyleavetxt">Apply Leave</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-8"></div>
+            </div>
+            <hr>
+            <div class="card">
+                <div>
+                    <label class="leavebalance">Leave Request</label>
+                </div>
+                <hr>
+                <div class="row leavereq">
+                    <div class="col-md-2">
+                        <p>Leave Type<span style="color: red;">*</span></p>
+                    </div>
+                    <div class="col-md-2">
+                        <p>Leave Reason<span style="color: red;">*</span></p>
+                    </div>
+                    <div class="col-md-2">
+                        <p>Start Date<span style="color: red;">*</span></p>
+                    </div>
+                    <div class="col-md-2">
+                        <p>End Date<span style="color: red;">*</span></p>
+                    </div>
+                    <div class="col-md-2">
+                        <p>Applied Leave</p>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+                <div class="row leavereq">
+
+                    <div class="col-md-2">
+                        <select class="form-control inputfield">
+                            <option value="Select">Select</option>
+                            <option value="Paid Time off Leave">Annual Leave</option>
+                            <option value="Vacation Leave">Urgent Leave </option>
+                            <option value="Vacation Leave">No Pay Leave </option>
+                            <option value="Vacation Leave">Hospitalisation Leave  </option>
+                            <option value="Vacation Leave">Marriage  Leave  </option>
+                            <option value="Vacation Leave">Maternity Leave  </option>
+                            <option value="Vacation Leave">Paternity Leave  </option>
+                            <option value="Vacation Leave">Childcare Leave   </option>
+                            <option value="Vacation Leave">Extended Childcare Leave    </option>
+                            <option value="Vacation Leave">Compassionate Leave    </option>
+                            <option value="Vacation Leave">National Service     </option>
+                            <option value="Vacation Leave">Off in-lieu      </option>
+                       
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <input class="form-control inputfield" placeholder="Reason">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="date" class="form-control inputfield" placeholder="Start Date">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="date" class="form-control inputfield" placeholder="End Date">
+                    </div>
+                    <div class="col-md-2">
+                        <p>0</p>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+                <br>
+               
+                <div class="row leavereq">
+                   
+                    <div class="col-md-1">
+                        <button class="active form-control "><img  src="/assets/images/attachment-clip.png"></button>
+                    </div>
+                    <div class="col-md-5"></div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li><button class="active form-control btnhover">CANCEL</button></li>
+                            <li class="leavelist"><button class=" form-control btnhover">SUBMIT</button></li>
+                        </ul>
+                    </div>
+                </div>
+             
+                <br>
+
+
+                <!-- <div class="row">
+                    <div class="col-md-12">
+                        <div class="container-fluid">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Leave Type</th>
+                                        <th>Annual Quota</th>
+                                        <th>Carried Forward</th>
+                                        <th>Entitlement Till Date</th>
+                                        <th>Availed Till Date</th>
+                                        <th>Current Balance</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div> -->
+
+                
+            </div>
+            <br>
+            <div class="card">
+                <div>
+                    <p class="leavebalance">Leave Balance</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="container-fluid">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Leave Type</th>
+                                        <th>Annual Quota</th>
+                                        <th>Carried Forward</th>
+                                        <th>Entitlement Till Date</th>
+                                        <th>Availed Till Date</th>
+                                        <th>Current Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let leaveBalance of myleaveBalanceList">
+                                        <td>{{leaveBalance.sL_No}}</td>
+                                        <td>{{leaveBalance.leaveType}}</td>
+                                        <td>{{leaveBalance.annualQuota}}</td>
+                                        <td>{{leaveBalance.carriedForward}}</td>
+                                        <td>{{leaveBalance.entitlementTillDate}}</td>
+                                        <td>{{leaveBalance.availedTillDate}}</td>
+                                        <td>{{leaveBalance.currentBalance}}</td>
+                                    </tr>
+                                    <!-- <tr>
+                                        <td>1</td>
+                                        <td>Sick Leave</td>
+                                        <td>10</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Casual leave</td>
+                                        <td>12</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>11</td>
+                                        <td>0</td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div><br><br><br>
+            <div class="row">
+                <div class="col-md-9"></div>
+                <div class="col-md-3">
+                   
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+    </div>
+</div>

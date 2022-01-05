@@ -1,0 +1,159 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <p class="taxtable">Pag-ibig Short-term Loan Remittance Form</p> <hr>
+
+            <div class="container">
+                <div class="row FilterClass">
+                   
+                  
+                    <div class="col-lg-3">
+  
+                    </div>
+                      <div class="col-lg-2">
+                       Loan Type:
+                      </div>
+
+
+                      <div class="col-lg-2">
+                          <div class="dropdown">
+                              <select class="form-control inputfield" id="Loan" name="Loan"  [(ngModel)]="Loan" ><br/>
+                                  <option value="Select">Select Loan </option>
+                                  <option value="HDMF">HDMF Loan </option>
+                                  <option value="Calamity">Calamity Loan </option>
+                                
+                                  
+                              </select>
+                          </div>
+                         
+                      </div>
+                     
+                     
+                      
+                       
+                     
+                      <div class="col-lg-3"></div>
+                      </div>
+                    <br/>
+                <div class="row FilterClass">
+                   
+                  
+                  <div class="col-lg-3">
+
+                  </div>
+                    <div class="col-lg-2">
+                        <p >Select Start Month And Year:</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="dropdown">
+                            <select class="form-control inputfield" id="Month" name="Month"  [(ngModel)]="Month" ><br/>
+                                <option value="Select">Select Month </option>
+                                <option value="jan">January </option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option> 
+                                
+                            </select>
+                        </div>
+                       
+                    </div>
+                   
+                   
+                    
+                        <div class="col-lg-2">
+                            <div class="dropdown">
+                                <select class="form-control inputfield" id="Year" name="Year" [(ngModel)]="Year"><br/>
+                                    <option value="Select">Select Year </option>
+                                    <option value="2021">2021 </option>
+                                    <option value="2020">2020 </option>
+                                    <option value="2019">2019 </option>
+                                    
+                                </select>
+                            </div>
+                           
+                        </div>
+                   
+                    <div class="col-lg-3"></div>
+                    </div>
+                    <br/>
+                     
+                <div class="row FilterClass">
+                   
+                  
+                    <div class="col-lg-3">
+  
+                    </div>
+                      <div class="col-lg-2">
+                         Signatory Person:
+                      </div>
+
+
+                      <div class="col-lg-2">
+                          <div class="dropdown">
+                              <select class="form-control inputfield" id="Month" name="Month"  [(ngModel)]="Person" ><br/>
+                                  <option value="Select">Select Person </option>
+                                  <option value="Admin">Admin </option>
+                                  <option value="Admin">HR </option>
+                                  <option value="Admin">FINANCE </option>
+                                
+                                  
+                              </select>
+                          </div>
+                         
+                      </div>
+                     
+                     
+                      
+                       
+                     
+                      <div class="col-lg-3"></div>
+                      </div>
+                    <br/>
+              <div class="row">
+                  <div class="col-lg-5">
+
+                  </div>
+                  <div class="col-lg-2">
+                    <button class="generate" (click)="showpdf()">GENERATE</button>
+                  </div>
+              </div>
+         
+              <br>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    </div>
+    <hr> 
+<div class="row" *ngIf="showleaseforprint==1">
+    <div class="col-lg-5">
+    </div>
+    <div class="col-lg-4">
+        <button class="button1" (click)="convetToPDF1()">Convert To PDF</button>
+    </div>
+    <div id="downloadaplication" style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden;margin-top:425px">
+        <div style="position:absolute;left:0px;top:0px">
+        <img src="assets/images/PagiBigstlrf.jpg" width=612 height=792></div>
+        <div style="position:absolute;left:477.82px;top:99.85px" class="cls_002"><span class="cls_002">209754750003</span></div>
+        <div style="position:absolute;left:21.60px;top:158.05px" class="cls_003"><span class="cls_003">TalentUS Inc.</span></div>
+        <div style="position:absolute;left:496.80px;top:186.85px" class="cls_003"><span class="cls_003">JANUARY 2021</span></div>
+        <div style="position:absolute;left:21.60px;top:190.46px" class="cls_003"><span class="cls_003">5F Phinma Plaza, 39 Phinma Dr,</span></div>
+        <div style="position:absolute;left:21.60px;top:215.65px" class="cls_003"><span class="cls_003">Rockwell Center, Makati City</span></div>
+        <div style="position:absolute;left:417.60px;top:215.65px" class="cls_003"><span class="cls_003">1210</span></div>
+        <div style="position:absolute;left:496.80px;top:215.65px" class="cls_003"><span class="cls_003">0284212755</span></div>
+        <div style="position:absolute;left:115.20px;top:604.96px" class="cls_004"><span class="cls_004">0</span></div>
+        <div style="position:absolute;left:577.25px;top:604.96px" class="cls_004"><span class="cls_004">0.00</span></div>
+        <div style="position:absolute;left:107.55px;top:676.46px" class="cls_003"><span class="cls_003">Lovely Cabalfin</span></div>
+        <div style="position:absolute;left:337.13px;top:676.46px" class="cls_003"><span class="cls_003">Admin Manager</span></div>
+        <div style="position:absolute;left:507.40px;top:676.46px" class="cls_003"><span class="cls_003">1/4/2022</span></div>
+        </div>
+    </div>

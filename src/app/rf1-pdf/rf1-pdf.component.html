@@ -1,0 +1,858 @@
+
+<app-spinner *ngIf="loader"></app-spinner>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-4">
+                    <a href=""class="Heading fontheading"> RF-1 PDF</a>
+                </div>
+            </div> <hr>
+            <div class="row FilterClass fontheading">
+             <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                   <p> Select Start Month & Year</p>
+                </div>
+                <div class="col-lg-2">
+                    <select name="cars" id="Month" class="form-control">
+                        <option value="Select">Select</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>                       
+                      </select>
+                </div>
+                <div class="col-lg-2">
+                    <select name="cars" id="Month" class="form-control">
+                        <!-- <option value="Select">Select</option> -->
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>                                          
+                      </select>
+                </div>            
+            </div><br> 
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p>Signatory Person</p>
+                </div>
+                <div class="col-lg-2">
+                    <select name="cars" id="Month" class="form-control">
+                        <option value="Select">Select</option>
+                        <option value="Admin">Admin</option>
+                        <option value="HR">HR</option>                 
+                        <option value="Finance">Finance</option>                                          
+                      </select>
+                </div>
+            </div> <br>
+           
+           <div class="row">
+               <div class="col-lg-5"></div>
+               <div class="col-lg-2">
+                   <button class="generate" (click)="showpdf()">GENERATE</button>
+               </div>
+           </div>
+             
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+
+
+<br/>
+<br/>
+<div class="row" *ngIf="showleaseforprint==1">
+    <div class="col-lg-5">
+
+    </div>
+    <div class="col-lg-5">
+       <button class="button1" (click)="convetToPDF1()">Convert To PDF</button>
+    </div>
+    <div id="downloadaplication">
+<div   style="position:absolute;left:50%;margin-left:-504px;top:0px;width:1008px;height:612px;border-style:outset;overflow:hidden;margin-top:340px;">
+    <div style="position:absolute;left:0px;top:0px">
+    <img src="assets/images/RF-1.jpg" width=1008 height=612></div>
+    <div style="position:absolute;left:177.55px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:202.75px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:231.55px;top:77.78px" class="cls_002"><span class="cls_002">4</span></div>
+    <div style="position:absolute;left:256.75px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:278.35px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:299.95px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:322.99px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:344.59px;top:77.78px" class="cls_002"><span class="cls_002">1</span></div>
+    <div style="position:absolute;left:368.35px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:389.95px;top:77.78px" class="cls_002"><span class="cls_002">2</span></div>
+    <div style="position:absolute;left:415.15px;top:77.78px" class="cls_002"><span class="cls_002">4</span></div>
+    <div style="position:absolute;left:443.95px;top:77.78px" class="cls_002"><span class="cls_002">4</span></div>
+    <div style="position:absolute;left:177.55px;top:92.18px" class="cls_002"><span class="cls_002">6</span></div>
+    <div style="position:absolute;left:200.59px;top:92.18px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:223.64px;top:92.18px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:255.30px;top:92.18px" class="cls_002"><span class="cls_002">1</span></div>
+    <div style="position:absolute;left:278.35px;top:92.18px" class="cls_002"><span class="cls_002">9</span></div>
+    <div style="position:absolute;left:300.66px;top:92.18px" class="cls_002"><span class="cls_002">4</span></div>
+    <div style="position:absolute;left:330.70px;top:92.18px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:353.95px;top:92.18px" class="cls_002"><span class="cls_002">1</span></div>
+    <div style="position:absolute;left:377.19px;top:92.18px" class="cls_002"><span class="cls_002">2</span></div>
+    <div style="position:absolute;left:180.00px;top:108.38px" class="cls_002"><span class="cls_002">TalentUS Inc.</span></div>
+    <div style="position:absolute;left:180.00px;top:121.69px" class="cls_002"><span class="cls_002">5F Phinma Plaza, 39 Phinma Dr,</span></div>
+    <div style="position:absolute;left:880.97px;top:137.18px" class="cls_002"><span class="cls_002">Jan 2021</span></div>
+    <div style="position:absolute;left:180.00px;top:144.38px" class="cls_002"><span class="cls_002">0284212755</span></div>
+    <div style="position:absolute;left:388.80px;top:144.38px" class="cls_002"><span class="cls_002">andrew@talentusph.com</span></div>
+    <div style="position:absolute;left:49.59px;top:213.70px" class="cls_003"><span class="cls_003">1.</span></div>
+    <div style="position:absolute;left:66.73px;top:212.69px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:212.69px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:95.53px;top:212.69px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:212.69px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:212.69px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:135.13px;top:212.69px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:147.37px;top:212.69px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:160.33px;top:212.69px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:172.57px;top:212.69px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:184.82px;top:212.69px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:199.93px;top:212.69px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:217.22px;top:212.69px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:282.32px;top:212.69px" class="cls_004"><span class="cls_004">Intal</span></div>
+    <div style="position:absolute;left:383.95px;top:212.69px" class="cls_004"><span class="cls_004">Maria Cassandra</span></div>
+    <div style="position:absolute;left:552.46px;top:212.69px" class="cls_004"><span class="cls_004">Grajo</span></div>
+    <div style="position:absolute;left:622.65px;top:212.69px" class="cls_004"><span class="cls_004">07</span></div>
+    <div style="position:absolute;left:641.06px;top:212.69px" class="cls_004"><span class="cls_004">23</span></div>
+    <div style="position:absolute;left:664.02px;top:212.69px" class="cls_004"><span class="cls_004">1987</span></div>
+    <div style="position:absolute;left:696.86px;top:212.69px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:212.69px" class="cls_004"><span class="cls_004">19</span></div>
+    <div style="position:absolute;left:757.62px;top:212.69px" class="cls_004"><span class="cls_004">375.00</span></div>
+    <div style="position:absolute;left:808.02px;top:214.19px" class="cls_004"><span class="cls_004">375.00</span></div>
+    <div style="position:absolute;left:49.59px;top:236.06px" class="cls_003"><span class="cls_003">2.</span></div>
+    <div style="position:absolute;left:66.73px;top:235.06px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:235.06px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:95.53px;top:235.06px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:235.06px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:235.06px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:235.06px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:147.37px;top:235.06px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:160.33px;top:235.06px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:172.57px;top:235.06px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:184.82px;top:235.06px" class="cls_004"><span class="cls_004">4</span></div>
+    <div style="position:absolute;left:199.93px;top:235.06px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:217.22px;top:235.06px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:277.31px;top:235.06px" class="cls_004"><span class="cls_004">Olaguer</span></div>
+    <div style="position:absolute;left:401.80px;top:235.06px" class="cls_004"><span class="cls_004">Ajel</span></div>
+    <div style="position:absolute;left:547.29px;top:235.06px" class="cls_004"><span class="cls_004">Celestino</span></div>
+    <div style="position:absolute;left:622.65px;top:235.06px" class="cls_004"><span class="cls_004">06</span></div>
+    <div style="position:absolute;left:641.06px;top:235.06px" class="cls_004"><span class="cls_004">25</span></div>
+    <div style="position:absolute;left:664.02px;top:235.06px" class="cls_004"><span class="cls_004">1984</span></div>
+    <div style="position:absolute;left:696.86px;top:235.06px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:235.06px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:235.06px" class="cls_004"><span class="cls_004">600.00</span></div>
+    <div style="position:absolute;left:808.02px;top:236.56px" class="cls_004"><span class="cls_004">600.00</span></div>
+    <div style="position:absolute;left:49.59px;top:258.43px" class="cls_003"><span class="cls_003">3.</span></div>
+    <div style="position:absolute;left:66.73px;top:257.42px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:257.42px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:95.53px;top:257.42px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:257.42px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:257.42px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:257.42px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:147.37px;top:257.42px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:160.33px;top:257.42px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:172.57px;top:257.42px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:184.82px;top:257.42px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:199.93px;top:257.42px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:217.22px;top:257.42px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:274.32px;top:257.42px" class="cls_004"><span class="cls_004">Bersamira</span></div>
+    <div style="position:absolute;left:399.63px;top:257.42px" class="cls_004"><span class="cls_004">Carlo</span></div>
+    <div style="position:absolute;left:544.28px;top:257.42px" class="cls_004"><span class="cls_004">de Guzman</span></div>
+    <div style="position:absolute;left:622.65px;top:257.42px" class="cls_004"><span class="cls_004">05</span></div>
+    <div style="position:absolute;left:641.06px;top:257.42px" class="cls_004"><span class="cls_004">30</span></div>
+    <div style="position:absolute;left:664.02px;top:257.42px" class="cls_004"><span class="cls_004">1991</span></div>
+    <div style="position:absolute;left:696.19px;top:257.42px" class="cls_004"><span class="cls_004">M</span></div>
+    <div style="position:absolute;left:722.41px;top:257.42px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:257.42px" class="cls_004"><span class="cls_004">525.00</span></div>
+    <div style="position:absolute;left:808.02px;top:258.92px" class="cls_004"><span class="cls_004">525.00</span></div>
+    <div style="position:absolute;left:49.59px;top:280.79px" class="cls_003"><span class="cls_003">4.</span></div>
+    <div style="position:absolute;left:66.73px;top:279.79px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:81.13px;top:279.79px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:95.53px;top:279.79px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:279.79px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:279.79px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:279.79px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:147.37px;top:279.79px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:160.33px;top:279.79px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:172.57px;top:279.79px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:184.82px;top:279.79px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:199.93px;top:279.79px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:217.22px;top:279.79px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:276.99px;top:279.79px" class="cls_004"><span class="cls_004">Baltazar</span></div>
+    <div style="position:absolute;left:391.95px;top:279.79px" class="cls_004"><span class="cls_004">Ruby Rose</span></div>
+    <div style="position:absolute;left:545.12px;top:279.79px" class="cls_004"><span class="cls_004">Matusalem</span></div>
+    <div style="position:absolute;left:622.64px;top:279.79px" class="cls_004"><span class="cls_004">08</span></div>
+    <div style="position:absolute;left:641.05px;top:279.79px" class="cls_004"><span class="cls_004">19</span></div>
+    <div style="position:absolute;left:664.02px;top:279.79px" class="cls_004"><span class="cls_004">1987</span></div>
+    <div style="position:absolute;left:696.85px;top:279.79px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:279.79px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.61px;top:279.79px" class="cls_004"><span class="cls_004">637.50</span></div>
+    <div style="position:absolute;left:808.02px;top:281.29px" class="cls_004"><span class="cls_004">637.50</span></div>
+    <div style="position:absolute;left:49.59px;top:303.16px" class="cls_003"><span class="cls_003">5.</span></div>
+    <div style="position:absolute;left:66.73px;top:302.15px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:302.15px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:95.53px;top:302.15px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:302.15px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:302.15px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:135.13px;top:302.15px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:147.37px;top:302.15px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:160.33px;top:302.15px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:172.57px;top:302.15px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:184.82px;top:302.15px" class="cls_004"><span class="cls_004">6</span></div>
+    <div style="position:absolute;left:199.93px;top:302.15px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:217.22px;top:302.15px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:274.32px;top:302.15px" class="cls_004"><span class="cls_004">Bersamira</span></div>
+    <div style="position:absolute;left:399.12px;top:302.15px" class="cls_004"><span class="cls_004">Aldrin</span></div>
+    <div style="position:absolute;left:543.78px;top:302.15px" class="cls_004"><span class="cls_004">De Guzman</span></div>
+    <div style="position:absolute;left:622.64px;top:302.15px" class="cls_004"><span class="cls_004">06</span></div>
+    <div style="position:absolute;left:641.05px;top:302.15px" class="cls_004"><span class="cls_004">08</span></div>
+    <div style="position:absolute;left:664.02px;top:302.15px" class="cls_004"><span class="cls_004">1992</span></div>
+    <div style="position:absolute;left:696.19px;top:302.15px" class="cls_004"><span class="cls_004">M</span></div>
+    <div style="position:absolute;left:722.41px;top:302.15px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:302.15px" class="cls_004"><span class="cls_004">525.00</span></div>
+    <div style="position:absolute;left:808.02px;top:303.65px" class="cls_004"><span class="cls_004">525.00</span></div>
+    <div style="position:absolute;left:49.59px;top:325.52px" class="cls_003"><span class="cls_003">6.</span></div>
+    <div style="position:absolute;left:66.73px;top:324.52px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:81.13px;top:324.52px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:95.53px;top:324.52px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:324.52px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:122.17px;top:324.52px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:135.13px;top:324.52px" class="cls_004"><span class="cls_004">4</span></div>
+    <div style="position:absolute;left:147.37px;top:324.52px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:160.33px;top:324.52px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:172.57px;top:324.52px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:184.82px;top:324.52px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:199.93px;top:324.52px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:217.22px;top:324.52px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:282.66px;top:324.52px" class="cls_004"><span class="cls_004">Rac</span></div>
+    <div style="position:absolute;left:401.29px;top:324.52px" class="cls_004"><span class="cls_004">Lyla</span></div>
+    <div style="position:absolute;left:547.11px;top:324.52px" class="cls_004"><span class="cls_004">Gonzales</span></div>
+    <div style="position:absolute;left:622.64px;top:324.52px" class="cls_004"><span class="cls_004">08</span></div>
+    <div style="position:absolute;left:641.05px;top:324.52px" class="cls_004"><span class="cls_004">03</span></div>
+    <div style="position:absolute;left:664.02px;top:324.52px" class="cls_004"><span class="cls_004">1976</span></div>
+    <div style="position:absolute;left:696.85px;top:324.52px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:324.52px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.61px;top:324.52px" class="cls_004"><span class="cls_004">562.50</span></div>
+    <div style="position:absolute;left:808.02px;top:326.02px" class="cls_004"><span class="cls_004">562.50</span></div>
+    <div style="position:absolute;left:49.59px;top:347.89px" class="cls_003"><span class="cls_003">7.</span></div>
+    <div style="position:absolute;left:276.49px;top:346.88px" class="cls_004"><span class="cls_004">Tiamson</span></div>
+    <div style="position:absolute;left:398.13px;top:346.88px" class="cls_004"><span class="cls_004">Shaira</span></div>
+    <div style="position:absolute;left:549.79px;top:346.88px" class="cls_004"><span class="cls_004">Espiritu</span></div>
+    <div style="position:absolute;left:622.64px;top:346.88px" class="cls_004"><span class="cls_004">07</span></div>
+    <div style="position:absolute;left:641.05px;top:346.88px" class="cls_004"><span class="cls_004">30</span></div>
+    <div style="position:absolute;left:664.02px;top:346.88px" class="cls_004"><span class="cls_004">1998</span></div>
+    <div style="position:absolute;left:696.85px;top:346.88px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:346.88px" class="cls_004"><span class="cls_004">24</span></div>
+    <div style="position:absolute;left:757.61px;top:346.88px" class="cls_004"><span class="cls_004">450.00</span></div>
+    <div style="position:absolute;left:808.02px;top:348.38px" class="cls_004"><span class="cls_004">450.00</span></div>
+    <div style="position:absolute;left:49.59px;top:370.25px" class="cls_003"><span class="cls_003">8.</span></div>
+    <div style="position:absolute;left:66.73px;top:369.25px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:369.25px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:95.53px;top:369.25px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:369.25px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:369.25px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:135.13px;top:369.25px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:147.37px;top:369.25px" class="cls_004"><span class="cls_004">6</span></div>
+    <div style="position:absolute;left:160.33px;top:369.25px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:172.57px;top:369.25px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:184.82px;top:369.25px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:199.93px;top:369.25px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:217.22px;top:369.25px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:274.82px;top:369.25px" class="cls_004"><span class="cls_004">Jumao-as</span></div>
+    <div style="position:absolute;left:381.44px;top:369.25px" class="cls_004"><span class="cls_004">Maria Nelia Angela</span></div>
+    <div style="position:absolute;left:549.45px;top:369.25px" class="cls_004"><span class="cls_004">Amante</span></div>
+    <div style="position:absolute;left:622.65px;top:369.25px" class="cls_004"><span class="cls_004">10</span></div>
+    <div style="position:absolute;left:641.06px;top:369.25px" class="cls_004"><span class="cls_004">20</span></div>
+    <div style="position:absolute;left:664.02px;top:369.25px" class="cls_004"><span class="cls_004">1988</span></div>
+    <div style="position:absolute;left:696.86px;top:369.25px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:369.25px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:369.25px" class="cls_004"><span class="cls_004">525.00</span></div>
+    <div style="position:absolute;left:808.02px;top:370.75px" class="cls_004"><span class="cls_004">525.00</span></div>
+    <div style="position:absolute;left:49.59px;top:392.62px" class="cls_003"><span class="cls_003">9.</span></div>
+    <div style="position:absolute;left:66.73px;top:391.61px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:81.13px;top:391.61px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:95.53px;top:391.61px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:391.61px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:122.17px;top:391.61px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:391.61px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:147.37px;top:391.61px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:160.33px;top:391.61px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:172.57px;top:391.61px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:184.82px;top:391.61px" class="cls_004"><span class="cls_004">6</span></div>
+    <div style="position:absolute;left:199.93px;top:391.61px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:217.22px;top:391.61px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:276.48px;top:391.61px" class="cls_004"><span class="cls_004">Labasan</span></div>
+    <div style="position:absolute;left:398.95px;top:391.61px" class="cls_004"><span class="cls_004">Diana</span></div>
+    <div style="position:absolute;left:547.46px;top:391.61px" class="cls_004"><span class="cls_004">Asuncion</span></div>
+    <div style="position:absolute;left:622.64px;top:391.61px" class="cls_004"><span class="cls_004">10</span></div>
+    <div style="position:absolute;left:641.05px;top:391.61px" class="cls_004"><span class="cls_004">09</span></div>
+    <div style="position:absolute;left:664.02px;top:391.61px" class="cls_004"><span class="cls_004">1978</span></div>
+    <div style="position:absolute;left:696.85px;top:391.61px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:391.61px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.61px;top:391.61px" class="cls_004"><span class="cls_004">900.00</span></div>
+    <div style="position:absolute;left:808.02px;top:393.11px" class="cls_004"><span class="cls_004">900.00</span></div>
+    <div style="position:absolute;left:48.35px;top:414.98px" class="cls_003"><span class="cls_003">10.</span></div>
+    <div style="position:absolute;left:66.73px;top:413.98px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:413.98px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:95.53px;top:413.98px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:413.98px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:413.98px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:413.98px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:147.37px;top:413.98px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:160.33px;top:413.98px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:172.57px;top:413.98px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:184.82px;top:413.98px" class="cls_004"><span class="cls_004">4</span></div>
+    <div style="position:absolute;left:199.93px;top:413.98px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:217.22px;top:413.98px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:270.65px;top:413.98px" class="cls_004"><span class="cls_004">de los Reyes</span></div>
+    <div style="position:absolute;left:393.28px;top:413.98px" class="cls_004"><span class="cls_004">Jacquelyn</span></div>
+    <div style="position:absolute;left:549.13px;top:413.98px" class="cls_004"><span class="cls_004">Morales</span></div>
+    <div style="position:absolute;left:622.65px;top:413.98px" class="cls_004"><span class="cls_004">09</span></div>
+    <div style="position:absolute;left:641.06px;top:413.98px" class="cls_004"><span class="cls_004">26</span></div>
+    <div style="position:absolute;left:664.02px;top:413.98px" class="cls_004"><span class="cls_004">1986</span></div>
+    <div style="position:absolute;left:696.86px;top:413.98px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:413.98px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:413.98px" class="cls_004"><span class="cls_004">525.00</span></div>
+    <div style="position:absolute;left:808.02px;top:415.48px" class="cls_004"><span class="cls_004">525.00</span></div>
+    <div style="position:absolute;left:872.92px;top:413.98px" class="cls_004"><span class="cls_004">S</span></div>
+    <div style="position:absolute;left:48.35px;top:437.35px" class="cls_003"><span class="cls_003">11.</span></div>
+    <div style="position:absolute;left:66.73px;top:436.34px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:436.34px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:95.53px;top:436.34px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:436.34px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:436.34px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:135.13px;top:436.34px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:147.37px;top:436.34px" class="cls_004"><span class="cls_004">6</span></div>
+    <div style="position:absolute;left:160.33px;top:436.34px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:172.57px;top:436.34px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:184.82px;top:436.34px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:199.93px;top:436.34px" class="cls_004"><span class="cls_004">6</span></div>
+    <div style="position:absolute;left:217.22px;top:436.34px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:279.99px;top:436.34px" class="cls_004"><span class="cls_004">Sager</span></div>
+    <div style="position:absolute;left:377.28px;top:436.34px" class="cls_004"><span class="cls_004">Edmond Albert Moses</span></div>
+    <div style="position:absolute;left:549.45px;top:436.34px" class="cls_004"><span class="cls_004">Catipan</span></div>
+    <div style="position:absolute;left:622.65px;top:436.34px" class="cls_004"><span class="cls_004">12</span></div>
+    <div style="position:absolute;left:641.06px;top:436.34px" class="cls_004"><span class="cls_004">07</span></div>
+    <div style="position:absolute;left:664.02px;top:436.34px" class="cls_004"><span class="cls_004">1988</span></div>
+    <div style="position:absolute;left:696.19px;top:436.34px" class="cls_004"><span class="cls_004">M</span></div>
+    <div style="position:absolute;left:722.41px;top:436.34px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:436.34px" class="cls_004"><span class="cls_004">900.00</span></div>
+    <div style="position:absolute;left:808.02px;top:437.85px" class="cls_004"><span class="cls_004">900.00</span></div>
+    <div style="position:absolute;left:755.09px;top:466.17px" class="cls_004"><span class="cls_004">6,525.00</span></div>
+    <div style="position:absolute;left:805.49px;top:466.17px" class="cls_004"><span class="cls_004">6,525.00</span></div>
+    <div style="position:absolute;left:778.62px;top:482.36px" class="cls_004"><span class="cls_004">13,050.00</span></div>
+    <div style="position:absolute;left:85.08px;top:483.87px" class="cls_002"><span class="cls_002">11</span></div>
+    <div style="position:absolute;left:754.26px;top:499.27px" class="cls_004"><span class="cls_004">18057.76</span></div>
+    <div style="position:absolute;left:804.66px;top:499.27px" class="cls_004"><span class="cls_004">18057.76</span></div>
+    <div style="position:absolute;left:778.62px;top:513.67px" class="cls_004"><span class="cls_004">36,115.52</span></div>
+    <div style="position:absolute;left:323.11px;top:546.87px" class="cls_002"><span class="cls_002">LOVELY CABALFIN</span></div>
+    <div style="position:absolute;left:491.90px;top:546.87px" class="cls_002"><span class="cls_002">Admin Manager</span></div>
+    </div>
+    <div style="position:absolute;left:50%;margin-left:-504px;top:622px;width:1008px;height:612px;border-style:outset;overflow:hidden;margin-top:400px;">
+    <div style="position:absolute;left:0px;top:0px">
+    <img src="assets/images/RF-2.jpg" width=1008 height=612></div>
+    <div style="position:absolute;left:177.55px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:202.75px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:231.55px;top:77.78px" class="cls_002"><span class="cls_002">4</span></div>
+    <div style="position:absolute;left:256.75px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:278.35px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:299.95px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:322.99px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:344.59px;top:77.78px" class="cls_002"><span class="cls_002">1</span></div>
+    <div style="position:absolute;left:368.35px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:389.95px;top:77.78px" class="cls_002"><span class="cls_002">2</span></div>
+    <div style="position:absolute;left:415.15px;top:77.78px" class="cls_002"><span class="cls_002">4</span></div>
+    <div style="position:absolute;left:443.95px;top:77.78px" class="cls_002"><span class="cls_002">4</span></div>
+    <div style="position:absolute;left:177.55px;top:92.18px" class="cls_002"><span class="cls_002">6</span></div>
+    <div style="position:absolute;left:200.59px;top:92.18px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:223.64px;top:92.18px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:255.30px;top:92.18px" class="cls_002"><span class="cls_002">1</span></div>
+    <div style="position:absolute;left:278.35px;top:92.18px" class="cls_002"><span class="cls_002">9</span></div>
+    <div style="position:absolute;left:300.66px;top:92.18px" class="cls_002"><span class="cls_002">4</span></div>
+    <div style="position:absolute;left:330.70px;top:92.18px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:353.95px;top:92.18px" class="cls_002"><span class="cls_002">1</span></div>
+    <div style="position:absolute;left:377.19px;top:92.18px" class="cls_002"><span class="cls_002">2</span></div>
+    <div style="position:absolute;left:180.00px;top:108.38px" class="cls_002"><span class="cls_002">TalentUS Inc.</span></div>
+    <div style="position:absolute;left:180.00px;top:121.69px" class="cls_002"><span class="cls_002">5F Phinma Plaza, 39 Phinma Dr,</span></div>
+    <div style="position:absolute;left:880.97px;top:137.18px" class="cls_002"><span class="cls_002">Jan 2021</span></div>
+    <div style="position:absolute;left:180.00px;top:144.38px" class="cls_002"><span class="cls_002">0284212755</span></div>
+    <div style="position:absolute;left:388.80px;top:144.38px" class="cls_002"><span class="cls_002">andrew@talentusph.com</span></div>
+    <div style="position:absolute;left:48.35px;top:213.70px" class="cls_003"><span class="cls_003">12.</span></div>
+    <div style="position:absolute;left:66.73px;top:212.69px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:212.69px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:95.53px;top:212.69px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:212.69px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:212.69px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:135.13px;top:212.69px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:147.37px;top:212.69px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:160.33px;top:212.69px" class="cls_004"><span class="cls_004">6</span></div>
+    <div style="position:absolute;left:172.57px;top:212.69px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:184.82px;top:212.69px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:199.93px;top:212.69px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:217.22px;top:212.69px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:276.99px;top:212.69px" class="cls_004"><span class="cls_004">Ancheta</span></div>
+    <div style="position:absolute;left:396.11px;top:212.69px" class="cls_004"><span class="cls_004">Abigaile</span></div>
+    <div style="position:absolute;left:549.28px;top:212.69px" class="cls_004"><span class="cls_004">Gatdula</span></div>
+    <div style="position:absolute;left:622.65px;top:212.69px" class="cls_004"><span class="cls_004">06</span></div>
+    <div style="position:absolute;left:641.06px;top:212.69px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:664.02px;top:212.69px" class="cls_004"><span class="cls_004">1993</span></div>
+    <div style="position:absolute;left:696.86px;top:212.69px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:212.69px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:212.69px" class="cls_004"><span class="cls_004">900.00</span></div>
+    <div style="position:absolute;left:808.02px;top:214.19px" class="cls_004"><span class="cls_004">900.00</span></div>
+    <div style="position:absolute;left:48.35px;top:236.06px" class="cls_003"><span class="cls_003">13.</span></div>
+    <div style="position:absolute;left:66.73px;top:235.06px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:235.06px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:95.53px;top:235.06px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:235.06px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:235.06px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:235.06px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:147.37px;top:235.06px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:160.33px;top:235.06px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:172.57px;top:235.06px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:184.82px;top:235.06px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:199.93px;top:235.06px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:217.22px;top:235.06px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:275.66px;top:235.06px" class="cls_004"><span class="cls_004">Gutierrez</span></div>
+    <div style="position:absolute;left:396.45px;top:235.06px" class="cls_004"><span class="cls_004">Jonalyn</span></div>
+    <div style="position:absolute;left:549.45px;top:235.06px" class="cls_004"><span class="cls_004">Arnaldo</span></div>
+    <div style="position:absolute;left:622.65px;top:235.06px" class="cls_004"><span class="cls_004">06</span></div>
+    <div style="position:absolute;left:641.06px;top:235.06px" class="cls_004"><span class="cls_004">02</span></div>
+    <div style="position:absolute;left:664.02px;top:235.06px" class="cls_004"><span class="cls_004">1986</span></div>
+    <div style="position:absolute;left:696.86px;top:235.06px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:235.06px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:235.06px" class="cls_004"><span class="cls_004">825.00</span></div>
+    <div style="position:absolute;left:808.02px;top:236.56px" class="cls_004"><span class="cls_004">825.00</span></div>
+    <div style="position:absolute;left:872.91px;top:235.06px" class="cls_004"><span class="cls_004">S</span></div>
+    <div style="position:absolute;left:48.35px;top:258.43px" class="cls_003"><span class="cls_003">14.</span></div>
+    <div style="position:absolute;left:66.73px;top:257.42px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:257.42px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:95.53px;top:257.42px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:257.42px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:257.42px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:257.42px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:147.37px;top:257.42px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:160.33px;top:257.42px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:172.57px;top:257.42px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:184.82px;top:257.42px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:199.93px;top:257.42px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:217.22px;top:257.42px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:274.15px;top:257.42px" class="cls_004"><span class="cls_004">Villanueva</span></div>
+    <div style="position:absolute;left:386.96px;top:257.42px" class="cls_004"><span class="cls_004">Aissah Camille</span></div>
+    <div style="position:absolute;left:549.11px;top:257.42px" class="cls_004"><span class="cls_004">Sta.Ana</span></div>
+    <div style="position:absolute;left:622.65px;top:257.42px" class="cls_004"><span class="cls_004">12</span></div>
+    <div style="position:absolute;left:641.06px;top:257.42px" class="cls_004"><span class="cls_004">11</span></div>
+    <div style="position:absolute;left:664.02px;top:257.42px" class="cls_004"><span class="cls_004">1983</span></div>
+    <div style="position:absolute;left:696.86px;top:257.42px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:257.42px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:257.42px" class="cls_004"><span class="cls_004">600.00</span></div>
+    <div style="position:absolute;left:808.02px;top:258.92px" class="cls_004"><span class="cls_004">600.00</span></div>
+    <div style="position:absolute;left:48.35px;top:280.79px" class="cls_003"><span class="cls_003">15.</span></div>
+    <div style="position:absolute;left:66.73px;top:279.79px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:279.79px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:95.53px;top:279.79px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:279.79px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:279.79px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:279.79px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:147.37px;top:279.79px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:160.33px;top:279.79px" class="cls_004"><span class="cls_004">4</span></div>
+    <div style="position:absolute;left:172.57px;top:279.79px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:184.82px;top:279.79px" class="cls_004"><span class="cls_004">4</span></div>
+    <div style="position:absolute;left:199.93px;top:279.79px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:217.22px;top:279.79px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:280.16px;top:279.79px" class="cls_004"><span class="cls_004">Burac</span></div>
+    <div style="position:absolute;left:385.29px;top:279.79px" class="cls_004"><span class="cls_004">Mary Joy Noelle</span></div>
+    <div style="position:absolute;left:548.62px;top:279.79px" class="cls_004"><span class="cls_004">Campos</span></div>
+    <div style="position:absolute;left:622.65px;top:279.79px" class="cls_004"><span class="cls_004">12</span></div>
+    <div style="position:absolute;left:641.06px;top:279.79px" class="cls_004"><span class="cls_004">24</span></div>
+    <div style="position:absolute;left:664.02px;top:279.79px" class="cls_004"><span class="cls_004">1984</span></div>
+    <div style="position:absolute;left:696.86px;top:279.79px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:279.79px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:279.79px" class="cls_004"><span class="cls_004">900.00</span></div>
+    <div style="position:absolute;left:808.02px;top:281.29px" class="cls_004"><span class="cls_004">900.00</span></div>
+    <div style="position:absolute;left:48.35px;top:303.16px" class="cls_003"><span class="cls_003">16.</span></div>
+    <div style="position:absolute;left:66.73px;top:302.15px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:81.13px;top:302.15px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:95.53px;top:302.15px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:302.15px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:302.15px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:302.15px" class="cls_004"><span class="cls_004">4</span></div>
+    <div style="position:absolute;left:147.37px;top:302.15px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:160.33px;top:302.15px" class="cls_004"><span class="cls_004">4</span></div>
+    <div style="position:absolute;left:172.57px;top:302.15px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:184.82px;top:302.15px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:199.93px;top:302.15px" class="cls_004"><span class="cls_004">4</span></div>
+    <div style="position:absolute;left:217.22px;top:302.15px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:277.16px;top:302.15px" class="cls_004"><span class="cls_004">Carreon</span></div>
+    <div style="position:absolute;left:397.46px;top:302.15px" class="cls_004"><span class="cls_004">Rachel</span></div>
+    <div style="position:absolute;left:548.79px;top:302.15px" class="cls_004"><span class="cls_004">Cabilete</span></div>
+    <div style="position:absolute;left:622.65px;top:302.15px" class="cls_004"><span class="cls_004">05</span></div>
+    <div style="position:absolute;left:641.06px;top:302.15px" class="cls_004"><span class="cls_004">28</span></div>
+    <div style="position:absolute;left:664.02px;top:302.15px" class="cls_004"><span class="cls_004">1966</span></div>
+    <div style="position:absolute;left:696.86px;top:302.15px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:302.15px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:302.15px" class="cls_004"><span class="cls_004">750.00</span></div>
+    <div style="position:absolute;left:808.02px;top:303.65px" class="cls_004"><span class="cls_004">750.00</span></div>
+    <div style="position:absolute;left:48.35px;top:325.52px" class="cls_003"><span class="cls_003">17.</span></div>
+    <div style="position:absolute;left:66.73px;top:324.52px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:324.52px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:95.53px;top:324.52px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:324.52px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:324.52px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:135.13px;top:324.52px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:147.37px;top:324.52px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:160.33px;top:324.52px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:172.57px;top:324.52px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:184.82px;top:324.52px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:199.93px;top:324.52px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:217.22px;top:324.52px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:278.82px;top:324.52px" class="cls_004"><span class="cls_004">Cedillo</span></div>
+    <div style="position:absolute;left:398.79px;top:324.52px" class="cls_004"><span class="cls_004">Lucita</span></div>
+    <div style="position:absolute;left:548.79px;top:324.52px" class="cls_004"><span class="cls_004">Montero</span></div>
+    <div style="position:absolute;left:622.65px;top:324.52px" class="cls_004"><span class="cls_004">01</span></div>
+    <div style="position:absolute;left:641.06px;top:324.52px" class="cls_004"><span class="cls_004">30</span></div>
+    <div style="position:absolute;left:664.02px;top:324.52px" class="cls_004"><span class="cls_004">1987</span></div>
+    <div style="position:absolute;left:696.86px;top:324.52px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:324.52px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:324.52px" class="cls_004"><span class="cls_004">750.00</span></div>
+    <div style="position:absolute;left:808.02px;top:326.02px" class="cls_004"><span class="cls_004">750.00</span></div>
+    <div style="position:absolute;left:48.35px;top:347.89px" class="cls_003"><span class="cls_003">18.</span></div>
+    <div style="position:absolute;left:66.73px;top:346.88px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:346.88px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:95.53px;top:346.88px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:346.88px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:122.17px;top:346.88px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:135.13px;top:346.88px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:147.37px;top:346.88px" class="cls_004"><span class="cls_004">4</span></div>
+    <div style="position:absolute;left:160.33px;top:346.88px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:172.57px;top:346.88px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:184.82px;top:346.88px" class="cls_004"><span class="cls_004">6</span></div>
+    <div style="position:absolute;left:199.93px;top:346.88px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:217.22px;top:346.88px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:278.66px;top:346.88px" class="cls_004"><span class="cls_004">Galvez</span></div>
+    <div style="position:absolute;left:392.12px;top:346.88px" class="cls_004"><span class="cls_004">Francy Joy</span></div>
+    <div style="position:absolute;left:542.45px;top:346.88px" class="cls_004"><span class="cls_004">delos Santos</span></div>
+    <div style="position:absolute;left:622.65px;top:346.88px" class="cls_004"><span class="cls_004">07</span></div>
+    <div style="position:absolute;left:641.06px;top:346.88px" class="cls_004"><span class="cls_004">18</span></div>
+    <div style="position:absolute;left:664.02px;top:346.88px" class="cls_004"><span class="cls_004">1997</span></div>
+    <div style="position:absolute;left:696.86px;top:346.88px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:346.88px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:346.88px" class="cls_004"><span class="cls_004">675.00</span></div>
+    <div style="position:absolute;left:808.02px;top:348.38px" class="cls_004"><span class="cls_004">675.00</span></div>
+    <div style="position:absolute;left:48.35px;top:370.25px" class="cls_003"><span class="cls_003">19.</span></div>
+    <div style="position:absolute;left:66.73px;top:369.25px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:369.25px" class="cls_004"><span class="cls_004">6</span></div>
+    <div style="position:absolute;left:95.53px;top:369.25px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:369.25px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:369.25px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:369.25px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:147.37px;top:369.25px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:160.33px;top:369.25px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:172.57px;top:369.25px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:184.82px;top:369.25px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:199.93px;top:369.25px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:217.22px;top:369.25px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:279.31px;top:369.25px" class="cls_004"><span class="cls_004">Sagun</span></div>
+    <div style="position:absolute;left:389.95px;top:369.25px" class="cls_004"><span class="cls_004">Alexander Jr</span></div>
+    <div style="position:absolute;left:546.28px;top:369.25px" class="cls_004"><span class="cls_004">Capinding</span></div>
+    <div style="position:absolute;left:622.65px;top:369.25px" class="cls_004"><span class="cls_004">12</span></div>
+    <div style="position:absolute;left:641.06px;top:369.25px" class="cls_004"><span class="cls_004">22</span></div>
+    <div style="position:absolute;left:664.02px;top:369.25px" class="cls_004"><span class="cls_004">1990</span></div>
+    <div style="position:absolute;left:696.19px;top:369.25px" class="cls_004"><span class="cls_004">M</span></div>
+    <div style="position:absolute;left:722.41px;top:369.25px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:369.25px" class="cls_004"><span class="cls_004">900.00</span></div>
+    <div style="position:absolute;left:808.02px;top:370.75px" class="cls_004"><span class="cls_004">900.00</span></div>
+    <div style="position:absolute;left:48.35px;top:392.62px" class="cls_003"><span class="cls_003">20.</span></div>
+    <div style="position:absolute;left:66.73px;top:391.61px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:391.61px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:95.53px;top:391.61px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:391.61px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:391.61px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:135.13px;top:391.61px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:147.37px;top:391.61px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:160.33px;top:391.61px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:172.57px;top:391.61px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:184.82px;top:391.61px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:199.93px;top:391.61px" class="cls_004"><span class="cls_004">6</span></div>
+    <div style="position:absolute;left:217.22px;top:391.61px" class="cls_004"><span class="cls_004">6</span></div>
+    <div style="position:absolute;left:274.99px;top:391.61px" class="cls_004"><span class="cls_004">Gumapac</span></div>
+    <div style="position:absolute;left:390.29px;top:391.61px" class="cls_004"><span class="cls_004">Glenn Eddie</span></div>
+    <div style="position:absolute;left:549.28px;top:391.61px" class="cls_004"><span class="cls_004">Coronel</span></div>
+    <div style="position:absolute;left:622.65px;top:391.61px" class="cls_004"><span class="cls_004">09</span></div>
+    <div style="position:absolute;left:641.06px;top:391.61px" class="cls_004"><span class="cls_004">05</span></div>
+    <div style="position:absolute;left:664.02px;top:391.61px" class="cls_004"><span class="cls_004">1991</span></div>
+    <div style="position:absolute;left:696.19px;top:391.61px" class="cls_004"><span class="cls_004">M</span></div>
+    <div style="position:absolute;left:722.41px;top:391.61px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:391.61px" class="cls_004"><span class="cls_004">450.00</span></div>
+    <div style="position:absolute;left:808.02px;top:393.11px" class="cls_004"><span class="cls_004">450.00</span></div>
+    <div style="position:absolute;left:48.35px;top:414.98px" class="cls_003"><span class="cls_003">21.</span></div>
+    <div style="position:absolute;left:66.73px;top:413.98px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:413.98px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:95.53px;top:413.98px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:413.98px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:413.98px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:413.98px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:147.37px;top:413.98px" class="cls_004"><span class="cls_004">4</span></div>
+    <div style="position:absolute;left:160.33px;top:413.98px" class="cls_004"><span class="cls_004">6</span></div>
+    <div style="position:absolute;left:172.57px;top:413.98px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:184.82px;top:413.98px" class="cls_004"><span class="cls_004">6</span></div>
+    <div style="position:absolute;left:199.93px;top:413.98px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:217.22px;top:413.98px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:276.49px;top:413.98px" class="cls_004"><span class="cls_004">Ordoñez</span></div>
+    <div style="position:absolute;left:390.79px;top:413.98px" class="cls_004"><span class="cls_004">Vania Marie</span></div>
+    <div style="position:absolute;left:547.12px;top:413.98px" class="cls_004"><span class="cls_004">Labarada</span></div>
+    <div style="position:absolute;left:622.65px;top:413.98px" class="cls_004"><span class="cls_004">03</span></div>
+    <div style="position:absolute;left:641.06px;top:413.98px" class="cls_004"><span class="cls_004">09</span></div>
+    <div style="position:absolute;left:664.02px;top:413.98px" class="cls_004"><span class="cls_004">1978</span></div>
+    <div style="position:absolute;left:696.86px;top:413.98px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:413.98px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:413.98px" class="cls_004"><span class="cls_004">600.00</span></div>
+    <div style="position:absolute;left:808.02px;top:415.48px" class="cls_004"><span class="cls_004">600.00</span></div>
+    <div style="position:absolute;left:48.35px;top:437.35px" class="cls_003"><span class="cls_003">22.</span></div>
+    <div style="position:absolute;left:66.73px;top:436.34px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:436.34px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:95.53px;top:436.34px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:436.34px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:436.34px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:436.34px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:147.37px;top:436.34px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:160.33px;top:436.34px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:172.57px;top:436.34px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:184.82px;top:436.34px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:199.93px;top:436.34px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:217.22px;top:436.34px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:277.83px;top:436.34px" class="cls_004"><span class="cls_004">Bodoso</span></div>
+    <div style="position:absolute;left:392.29px;top:436.34px" class="cls_004"><span class="cls_004">Mary Rose</span></div>
+    <div style="position:absolute;left:550.62px;top:436.34px" class="cls_004"><span class="cls_004">Banico</span></div>
+    <div style="position:absolute;left:622.65px;top:436.34px" class="cls_004"><span class="cls_004">03</span></div>
+    <div style="position:absolute;left:641.06px;top:436.34px" class="cls_004"><span class="cls_004">15</span></div>
+    <div style="position:absolute;left:664.02px;top:436.34px" class="cls_004"><span class="cls_004">1987</span></div>
+    <div style="position:absolute;left:696.86px;top:436.34px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:436.34px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:436.34px" class="cls_004"><span class="cls_004">600.00</span></div>
+    <div style="position:absolute;left:808.02px;top:437.85px" class="cls_004"><span class="cls_004">600.00</span></div>
+    <div style="position:absolute;left:872.91px;top:436.34px" class="cls_004"><span class="cls_004">S</span></div>
+    <div style="position:absolute;left:755.09px;top:466.17px" class="cls_004"><span class="cls_004">7,950.00</span></div>
+    <div style="position:absolute;left:805.49px;top:466.17px" class="cls_004"><span class="cls_004">7,950.00</span></div>
+    <div style="position:absolute;left:778.62px;top:482.36px" class="cls_004"><span class="cls_004">15,900.00</span></div>
+    <div style="position:absolute;left:85.08px;top:483.87px" class="cls_002"><span class="cls_002">11</span></div>
+    <div style="position:absolute;left:754.26px;top:499.27px" class="cls_004"><span class="cls_004">18057.76</span></div>
+    <div style="position:absolute;left:804.66px;top:499.27px" class="cls_004"><span class="cls_004">18057.76</span></div>
+    <div style="position:absolute;left:778.62px;top:513.67px" class="cls_004"><span class="cls_004">36,115.52</span></div>
+    <div style="position:absolute;left:323.11px;top:546.87px" class="cls_002"><span class="cls_002">LOVELY CABALFIN</span></div>
+    <div style="position:absolute;left:491.90px;top:546.87px" class="cls_002"><span class="cls_002">Admin Manager</span></div>
+    </div>
+    <div style="position:absolute;left:50%;margin-left:-504px;top:1244px;width:1008px;height:612px;border-style:outset;overflow:hidden;margin-top:400px;">
+    <div style="position:absolute;left:0px;top:0px">
+    <img  src="assets/images/RF-3.jpg" width=1008 height=612></div>
+    <div style="position:absolute;left:177.55px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:202.75px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:231.55px;top:77.78px" class="cls_002"><span class="cls_002">4</span></div>
+    <div style="position:absolute;left:256.75px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:278.35px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:299.95px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:322.99px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:344.59px;top:77.78px" class="cls_002"><span class="cls_002">1</span></div>
+    <div style="position:absolute;left:368.35px;top:77.78px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:389.95px;top:77.78px" class="cls_002"><span class="cls_002">2</span></div>
+    <div style="position:absolute;left:415.15px;top:77.78px" class="cls_002"><span class="cls_002">4</span></div>
+    <div style="position:absolute;left:443.95px;top:77.78px" class="cls_002"><span class="cls_002">4</span></div>
+    <div style="position:absolute;left:177.55px;top:92.18px" class="cls_002"><span class="cls_002">6</span></div>
+    <div style="position:absolute;left:200.59px;top:92.18px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:223.64px;top:92.18px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:255.30px;top:92.18px" class="cls_002"><span class="cls_002">1</span></div>
+    <div style="position:absolute;left:278.35px;top:92.18px" class="cls_002"><span class="cls_002">9</span></div>
+    <div style="position:absolute;left:300.66px;top:92.18px" class="cls_002"><span class="cls_002">4</span></div>
+    <div style="position:absolute;left:330.70px;top:92.18px" class="cls_002"><span class="cls_002">0</span></div>
+    <div style="position:absolute;left:353.95px;top:92.18px" class="cls_002"><span class="cls_002">1</span></div>
+    <div style="position:absolute;left:377.19px;top:92.18px" class="cls_002"><span class="cls_002">2</span></div>
+    <div style="position:absolute;left:180.00px;top:108.38px" class="cls_002"><span class="cls_002">TalentUS Inc.</span></div>
+    <div style="position:absolute;left:180.00px;top:121.69px" class="cls_002"><span class="cls_002">5F Phinma Plaza, 39 Phinma Dr,</span></div>
+    <div style="position:absolute;left:880.97px;top:137.18px" class="cls_002"><span class="cls_002">Jan 2021</span></div>
+    <div style="position:absolute;left:180.00px;top:144.38px" class="cls_002"><span class="cls_002">0284212755</span></div>
+    <div style="position:absolute;left:388.80px;top:144.38px" class="cls_002"><span class="cls_002">andrew@talentusph.com</span></div>
+    <div style="position:absolute;left:48.35px;top:213.70px" class="cls_003"><span class="cls_003">23.</span></div>
+    <div style="position:absolute;left:66.73px;top:212.69px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:212.69px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:95.53px;top:212.69px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:212.69px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:212.69px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:212.69px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:147.37px;top:212.69px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:160.33px;top:212.69px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:172.57px;top:212.69px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:184.82px;top:212.69px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:199.93px;top:212.69px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:217.22px;top:212.69px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:279.99px;top:212.69px" class="cls_004"><span class="cls_004">Lorilla</span></div>
+    <div style="position:absolute;left:389.78px;top:212.69px" class="cls_004"><span class="cls_004">Joseph John</span></div>
+    <div style="position:absolute;left:543.61px;top:212.69px" class="cls_004"><span class="cls_004">de los reyes</span></div>
+    <div style="position:absolute;left:622.65px;top:212.69px" class="cls_004"><span class="cls_004">07</span></div>
+    <div style="position:absolute;left:641.06px;top:212.69px" class="cls_004"><span class="cls_004">07</span></div>
+    <div style="position:absolute;left:664.02px;top:212.69px" class="cls_004"><span class="cls_004">1983</span></div>
+    <div style="position:absolute;left:696.19px;top:212.69px" class="cls_004"><span class="cls_004">M</span></div>
+    <div style="position:absolute;left:722.41px;top:212.69px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:212.69px" class="cls_004"><span class="cls_004">675.00</span></div>
+    <div style="position:absolute;left:808.02px;top:214.19px" class="cls_004"><span class="cls_004">675.00</span></div>
+    <div style="position:absolute;left:48.35px;top:236.06px" class="cls_003"><span class="cls_003">24.</span></div>
+    <div style="position:absolute;left:66.73px;top:235.06px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:81.13px;top:235.06px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:95.53px;top:235.06px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:235.06px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:235.06px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:235.06px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:147.37px;top:235.06px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:160.33px;top:235.06px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:172.57px;top:235.06px" class="cls_004"><span class="cls_004">4</span></div>
+    <div style="position:absolute;left:184.82px;top:235.06px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:199.93px;top:235.06px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:217.22px;top:235.06px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:277.16px;top:235.06px" class="cls_004"><span class="cls_004">Eusebio</span></div>
+    <div style="position:absolute;left:385.95px;top:235.06px" class="cls_004"><span class="cls_004">Michael Joseph</span></div>
+    <div style="position:absolute;left:550.29px;top:235.06px" class="cls_004"><span class="cls_004">Ramos</span></div>
+    <div style="position:absolute;left:622.65px;top:235.06px" class="cls_004"><span class="cls_004">02</span></div>
+    <div style="position:absolute;left:641.06px;top:235.06px" class="cls_004"><span class="cls_004">27</span></div>
+    <div style="position:absolute;left:664.02px;top:235.06px" class="cls_004"><span class="cls_004">1980</span></div>
+    <div style="position:absolute;left:696.19px;top:235.06px" class="cls_004"><span class="cls_004">M</span></div>
+    <div style="position:absolute;left:722.41px;top:235.06px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:235.06px" class="cls_004"><span class="cls_004">600.00</span></div>
+    <div style="position:absolute;left:808.02px;top:236.56px" class="cls_004"><span class="cls_004">600.00</span></div>
+    <div style="position:absolute;left:48.35px;top:258.43px" class="cls_003"><span class="cls_003">25.</span></div>
+    <div style="position:absolute;left:66.73px;top:257.42px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:81.13px;top:257.42px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:95.53px;top:257.42px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:257.42px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:257.42px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:135.13px;top:257.42px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:147.37px;top:257.42px" class="cls_004"><span class="cls_004">4</span></div>
+    <div style="position:absolute;left:160.33px;top:257.42px" class="cls_004"><span class="cls_004">6</span></div>
+    <div style="position:absolute;left:172.57px;top:257.42px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:184.82px;top:257.42px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:199.93px;top:257.42px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:217.22px;top:257.42px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:277.83px;top:257.42px" class="cls_004"><span class="cls_004">Chavez</span></div>
+    <div style="position:absolute;left:391.13px;top:257.42px" class="cls_004"><span class="cls_004">Ma. Russell</span></div>
+    <div style="position:absolute;left:548.96px;top:257.42px" class="cls_004"><span class="cls_004">Bullecer</span></div>
+    <div style="position:absolute;left:622.65px;top:257.42px" class="cls_004"><span class="cls_004">08</span></div>
+    <div style="position:absolute;left:641.06px;top:257.42px" class="cls_004"><span class="cls_004">04</span></div>
+    <div style="position:absolute;left:664.02px;top:257.42px" class="cls_004"><span class="cls_004">1976</span></div>
+    <div style="position:absolute;left:696.86px;top:257.42px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:257.42px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:257.42px" class="cls_004"><span class="cls_004">525.00</span></div>
+    <div style="position:absolute;left:808.02px;top:258.92px" class="cls_004"><span class="cls_004">525.00</span></div>
+    <div style="position:absolute;left:48.35px;top:280.79px" class="cls_003"><span class="cls_003">26.</span></div>
+    <div style="position:absolute;left:66.73px;top:279.79px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:81.13px;top:279.79px" class="cls_004"><span class="cls_004">6</span></div>
+    <div style="position:absolute;left:95.53px;top:279.79px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:279.79px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:279.79px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:279.79px" class="cls_004"><span class="cls_004">4</span></div>
+    <div style="position:absolute;left:147.37px;top:279.79px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:160.33px;top:279.79px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:172.57px;top:279.79px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:184.82px;top:279.79px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:199.93px;top:279.79px" class="cls_004"><span class="cls_004">4</span></div>
+    <div style="position:absolute;left:217.22px;top:279.79px" class="cls_004"><span class="cls_004">4</span></div>
+    <div style="position:absolute;left:278.65px;top:279.79px" class="cls_004"><span class="cls_004">Aquino</span></div>
+    <div style="position:absolute;left:387.61px;top:279.79px" class="cls_004"><span class="cls_004">Samantha Joy</span></div>
+    <div style="position:absolute;left:547.80px;top:279.79px" class="cls_004"><span class="cls_004">Camiring</span></div>
+    <div style="position:absolute;left:622.65px;top:279.79px" class="cls_004"><span class="cls_004">07</span></div>
+    <div style="position:absolute;left:641.06px;top:279.79px" class="cls_004"><span class="cls_004">17</span></div>
+    <div style="position:absolute;left:664.02px;top:279.79px" class="cls_004"><span class="cls_004">1990</span></div>
+    <div style="position:absolute;left:696.86px;top:279.79px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:279.79px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:279.79px" class="cls_004"><span class="cls_004">375.00</span></div>
+    <div style="position:absolute;left:808.02px;top:281.29px" class="cls_004"><span class="cls_004">375.00</span></div>
+    <div style="position:absolute;left:48.35px;top:303.16px" class="cls_003"><span class="cls_003">27.</span></div>
+    <div style="position:absolute;left:66.73px;top:302.15px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:81.13px;top:302.15px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:95.53px;top:302.15px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:302.15px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:122.17px;top:302.15px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:135.13px;top:302.15px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:147.37px;top:302.15px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:160.33px;top:302.15px" class="cls_004"><span class="cls_004">7</span></div>
+    <div style="position:absolute;left:172.57px;top:302.15px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:184.82px;top:302.15px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:199.93px;top:302.15px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:217.22px;top:302.15px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:277.32px;top:302.15px" class="cls_004"><span class="cls_004">Velasco</span></div>
+    <div style="position:absolute;left:396.78px;top:302.15px" class="cls_004"><span class="cls_004">Lareina</span></div>
+    <div style="position:absolute;left:553.13px;top:302.15px" class="cls_004"><span class="cls_004">Trufil</span></div>
+    <div style="position:absolute;left:622.65px;top:302.15px" class="cls_004"><span class="cls_004">09</span></div>
+    <div style="position:absolute;left:641.06px;top:302.15px" class="cls_004"><span class="cls_004">22</span></div>
+    <div style="position:absolute;left:664.02px;top:302.15px" class="cls_004"><span class="cls_004">1988</span></div>
+    <div style="position:absolute;left:696.86px;top:302.15px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:302.15px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:302.15px" class="cls_004"><span class="cls_004">525.00</span></div>
+    <div style="position:absolute;left:808.02px;top:303.65px" class="cls_004"><span class="cls_004">525.00</span></div>
+    <div style="position:absolute;left:48.35px;top:325.52px" class="cls_003"><span class="cls_003">28.</span></div>
+    <div style="position:absolute;left:66.73px;top:324.52px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:81.13px;top:324.52px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:95.53px;top:324.52px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:324.52px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:122.17px;top:324.52px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:135.13px;top:324.52px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:147.37px;top:324.52px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:160.33px;top:324.52px" class="cls_004"><span class="cls_004">3</span></div>
+    <div style="position:absolute;left:172.57px;top:324.52px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:184.82px;top:324.52px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:199.93px;top:324.52px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:217.22px;top:324.52px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:274.65px;top:324.52px" class="cls_004"><span class="cls_004">Dela Cruz</span></div>
+    <div style="position:absolute;left:392.78px;top:324.52px" class="cls_004"><span class="cls_004">Julie Anne</span></div>
+    <div style="position:absolute;left:547.29px;top:324.52px" class="cls_004"><span class="cls_004">San Jose</span></div>
+    <div style="position:absolute;left:622.65px;top:324.52px" class="cls_004"><span class="cls_004">07</span></div>
+    <div style="position:absolute;left:641.06px;top:324.52px" class="cls_004"><span class="cls_004">04</span></div>
+    <div style="position:absolute;left:664.02px;top:324.52px" class="cls_004"><span class="cls_004">1979</span></div>
+    <div style="position:absolute;left:696.86px;top:324.52px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:324.52px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:324.52px" class="cls_004"><span class="cls_004">357.76</span></div>
+    <div style="position:absolute;left:808.02px;top:326.02px" class="cls_004"><span class="cls_004">357.76</span></div>
+    <div style="position:absolute;left:48.35px;top:347.89px" class="cls_003"><span class="cls_003">29.</span></div>
+    <div style="position:absolute;left:66.73px;top:346.88px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:81.13px;top:346.88px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:95.53px;top:346.88px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:107.77px;top:346.88px" class="cls_004"><span class="cls_004">5</span></div>
+    <div style="position:absolute;left:122.17px;top:346.88px" class="cls_004"><span class="cls_004">2</span></div>
+    <div style="position:absolute;left:135.13px;top:346.88px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:147.37px;top:346.88px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:160.33px;top:346.88px" class="cls_004"><span class="cls_004">9</span></div>
+    <div style="position:absolute;left:172.57px;top:346.88px" class="cls_004"><span class="cls_004">0</span></div>
+    <div style="position:absolute;left:184.82px;top:346.88px" class="cls_004"><span class="cls_004">8</span></div>
+    <div style="position:absolute;left:199.93px;top:346.88px" class="cls_004"><span class="cls_004">1</span></div>
+    <div style="position:absolute;left:217.22px;top:346.88px" class="cls_004"><span class="cls_004">6</span></div>
+    <div style="position:absolute;left:276.49px;top:346.88px" class="cls_004"><span class="cls_004">Cardeno</span></div>
+    <div style="position:absolute;left:400.62px;top:346.88px" class="cls_004"><span class="cls_004">Dina</span></div>
+    <div style="position:absolute;left:547.61px;top:346.88px" class="cls_004"><span class="cls_004">Quintana</span></div>
+    <div style="position:absolute;left:622.65px;top:346.88px" class="cls_004"><span class="cls_004">12</span></div>
+    <div style="position:absolute;left:641.06px;top:346.88px" class="cls_004"><span class="cls_004">10</span></div>
+    <div style="position:absolute;left:664.02px;top:346.88px" class="cls_004"><span class="cls_004">1966</span></div>
+    <div style="position:absolute;left:696.86px;top:346.88px" class="cls_004"><span class="cls_004">F</span></div>
+    <div style="position:absolute;left:722.41px;top:346.88px" class="cls_004"><span class="cls_004">29</span></div>
+    <div style="position:absolute;left:757.62px;top:346.88px" class="cls_004"><span class="cls_004">525.00</span></div>
+    <div style="position:absolute;left:808.02px;top:348.38px" class="cls_004"><span class="cls_004">525.00</span></div>
+    <div style="position:absolute;left:755.09px;top:466.17px" class="cls_004"><span class="cls_004">3,582.76</span></div>
+    <div style="position:absolute;left:805.49px;top:466.17px" class="cls_004"><span class="cls_004">3,582.76</span></div>
+    <div style="position:absolute;left:780.29px;top:482.36px" class="cls_004"><span class="cls_004">7,165.52</span></div>
+    <div style="position:absolute;left:87.17px;top:483.87px" class="cls_002"><span class="cls_002">7</span></div>
+    <div style="position:absolute;left:754.26px;top:499.27px" class="cls_004"><span class="cls_004">18057.76</span></div>
+    <div style="position:absolute;left:804.66px;top:499.27px" class="cls_004"><span class="cls_004">18057.76</span></div>
+    <div style="position:absolute;left:778.62px;top:513.67px" class="cls_004"><span class="cls_004">36,115.52</span></div>
+    <div style="position:absolute;left:323.11px;top:546.87px" class="cls_002"><span class="cls_002">LOVELY CABALFIN</span></div>
+    <div style="position:absolute;left:491.90px;top:546.87px" class="cls_002"><span class="cls_002">Admin Manager</span></div>
+    </div>
+</div>
+</div>

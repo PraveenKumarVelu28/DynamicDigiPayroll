@@ -1,0 +1,104 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-4">
+                    <ul>
+                        <li><a class="active" routerLink="/LeaveListDashboard"> My Leave Reports</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-8"></div>
+            </div>
+            <hr>
+            <div class="card">
+                <div class="row ">
+                    <div class="col-md-3 FilterClass" >
+                       <p> START DATE:</p>
+                    </div>
+                    <div class="col-md-3 FilterClass">
+                        <p> END DATE: </p>
+                      </div> 
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <input class="form-control" type="date" placeholder="Duration">
+                    </div> 
+                    <div class="col-md-3">
+                        <input class="form-control" type="date" placeholder="Duration">
+                    </div> 
+                    <div class="col-md-2">
+                        <button class=" form-control submitbtn leavelist" (click)="refresh()">Refresh</button>
+                    </div> 
+                    <div class="col-md-2">
+                        <button class=" form-control submitbtn leavelist">Download</button>
+                    </div> 
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>From Date</th>
+                                <th>To Date</th>
+                                <th>Leave Type & Leave Reason</th>
+                                <th>Leave Days Count</th>
+                                <th>Stage & Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let leaveReport of myleaveReportList">                              
+                                <td>{{leaveReport.fromDate}}</td>
+                                <td>{{leaveReport.toDate}}</td>
+                                <td>{{leaveReport.leaveType}}<br>
+                                    <span style="color: silver;font-size: 12px;">{{leaveReport.leaveReason}}</span>
+                                </td>
+                                <td>{{leaveReport.leaveDaysCount}}</td>
+                                <td>{{leaveReport.leaveStage}}<br>
+                                    <span style="color: #4282be;">{{leaveReport.leaveStatus}}</span>
+                                </td>
+                            </tr>
+                            <!-- <tr>                         
+                                <td>12 Aug 2021 </td>
+                                <td>21 Aug 2021 </td>
+                                <td>Vacation Type<br>
+                                    <span style="color: silver;font-size: 12px;">Others</span>
+                                </td>
+                                <td>1day</td>
+                                <td>Manager Approval<br>
+                                    <span style="color: #4282be;">Pending</span>
+                                </td>
+                                
+                            </tr>
+                            <tr>                        
+                                <td>10 Sep 2021 </td>
+                                <td>10 Sep 2021 </td>
+                                <td>Paid time off leave<br>
+                                    <span style="color: silver;font-size: 12px;">Others</span>
+                                </td>
+                                <td>2days</td>
+                                <td>Manager Approval<br>
+                                    <span style="color: #4282be;">Pending</span>
+                                </td>
+                            </tr>
+                            <tr>                              
+                                <td>22 Nov 2021 </td>
+                                <td>23 Nov 2021 </td>
+                                <td>Vacation Type<br>
+                                    <span style="color: silver;font-size: 12px;">Others</span>
+                                </td>
+                                <td>5days</td>
+                                <td>Manager Approval<br>
+                                    <span style="color: #4282be;">Pending</span>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>

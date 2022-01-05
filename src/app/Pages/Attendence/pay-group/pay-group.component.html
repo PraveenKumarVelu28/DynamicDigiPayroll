@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href=""class="Heading">Paygroup</a>
+                    <hr class="HrLine">
+                </div>
+            </div>
+            <!-- <div class="row FilterClass">
+                <div class="col-lg-2">
+                    Filter By
+                </div>
+                <div class="col-lg-2 ">
+                    <input class="form-control" type="date" placeholder="Duration">
+                </div>
+                <div class="col-lg-6">
+                    <input class="form-control" type="search" placeholder="Search for date , Type or Code">
+                </div>
+            </div><br> -->
+            <div class="row">
+                <div class="col-lg-8 View">
+                    <ul>
+                        <li><a class="active">View</a></li>
+                        <li ><a (click)="update()">Modify</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <a href="/PayGroupForm"><button class="button">Add</button> </a>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table">
+                            <thead>
+                                <tr class="newFont">
+                                    <th class="SelectData">Select</th>
+                                    <th>Description</th>
+                                    <th>Action</th>
+                                <tr>
+                            </thead>
+                            <tbody>
+                                <tr  class="newFont"  *ngFor="let details of result">
+                                    <td class="SelectData"  (click)="GetId(details.id)"><input type="checkbox"></td>
+                                    <td>{{details.description}}</td>
+                                    <td><img class="imgcancel" (click)="Ondelete(details.id)"  src="/assets/cancel (1).png"></td>
+                                </tr>
+                                <!-- <tr  class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>Officer</td>
+                                    <td><img class="imgcancel" src="/assets/cancel (1).png"></td>
+                                </tr>
+                                <tr  class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>Rank and file - Deployeed</td>
+                                    <td><img class="imgcancel" src="/assets/cancel (1).png"></td>
+                                </tr>
+                                <tr  class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>Officer - Deployeed</td>
+                                    <td><img class="imgcancel" src="../../../assets/cancel (1).png"></td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>

@@ -1,0 +1,122 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href="" class="Heading">Company Adjustment</a>
+                    <hr class="HrLine">
+                </div>
+            </div>
+            <div class="row FilterClass">
+                <div class="col-lg-2">
+                    Filter By
+                </div>
+                <div class="col-lg-2">
+                    <input class="form-control" type="date" placeholder="Duration">
+                </div>
+                <div class="col-lg-6">
+                    <input class="form-control" type="search" placeholder="Search for date , Type or Code">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-8 View">
+                    <ul>
+                        <li><a class="active">View</a></li>
+                        <li><a (click)="Update">Modify</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <a href="/CompanyAdjustmentForm"><button class="button">Add</button> </a>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table">
+                            <thead>
+                                <tr class="newFont">
+                                    <th class="SelectData">Select</th>
+                                    <th>Type</th>
+                                    <th>Name</th>
+                                    <th>Code</th>
+                                    <th>Amount</th>
+                                    <th>Remarks</th>
+                                    <th>Before</th>
+                                    <th>Taxable</th>
+                                    <th>Max Accumulated</th>
+                                    <th>Action</th>
+                                <tr>
+                            </thead>
+                            <tbody>
+                                <tr class="newFont" *ngFor="let company of companylist">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>{{company.type}}</td>
+                                    <td>{{company.name}}</td>
+                                    <td>{{company.code}}</td>
+                                    <td>{{company.amount}}</td>
+                                    <td>{{company.remarks}}</td>
+                                    <td>{{company.beforeTax}}</td>
+                                    <td>{{company.taxable}}</td>
+                                    <td>{{company.maxAccumulated}}</td>
+                                    <td><img class="imgcancel" src="/assets/cancel (1).png" (click)="delete(company.id)"></td>
+                                </tr>
+                                <!-- <tr class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>B</td>
+                                    <td>Lothbrok</td>
+                                    <td>CN004</td>
+                                    <td>₱ 25,000</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>Yes</td>
+                                    <td><img class="imgcancel" src="/assets/cancel (1).png"></td>
+                                </tr>
+                                <tr class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>A</td>
+                                    <td>Alfred</td>
+                                    <td>CN006</td>
+                                    <td>₱ 42,000</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>Yes</td>
+                                    <td><img class="imgcancel" src="/assets/cancel (1).png"></td>
+                                </tr>
+                                <tr class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>A</td>
+                                    <td>Athelstan</td>
+                                    <td>CN008</td>
+                                    <td>₱ 50,000</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>Yes</td>
+                                    <td><img class="imgcancel" src="/assets/cancel (1).png"></td>
+                                </tr>
+                                <tr class="newFont">
+                                    <td class="SelectData"><input type="checkbox"></td>
+                                    <td>A</td>
+                                    <td>Beyorn</td>
+                                    <td>CN010</td>
+                                    <td>₱ 34,000</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>Yes</td>
+                                    <td><img class="imgcancel" src="/assets/cancel (1).png"></td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>

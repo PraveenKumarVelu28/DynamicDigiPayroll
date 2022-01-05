@@ -1,0 +1,152 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="Heading fontheading">Payroll adjustments YTD Report</p>
+                    <hr class="HrLine">
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-2" style="text-align: right;"><P>Select Year:</P></div>
+                    <div class="col-lg-2">
+                        <select class="form-control">
+                            <option value="" >Select</option>
+                            <option value="1" >2021</option>
+                            <option value="2">2020</option>
+                            <option value="3">2019</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-3">
+                    <button class="generate" data-toggle="collapse" data-target="#demo">FETCH</button>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+            <br>
+
+            <div class="container-fluid" id="demo" class="collapse">
+                <div class="row View">
+                    <div class="col-lg-2">
+                        <a class="active fontheading">Employees in selected Period</a>
+                    </div>
+                    <div class="col-lg-8"></div>
+                    <div class="col-lg-2">
+                      <button class="generate5" (click)="exportexcel()">EXPORT TO EXCEL</button>
+                    </div>
+                </div>
+                    
+                <br>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table table-bordered fonttxt">
+                            <thead>
+                                <tr class="newFont">
+                                    <th class="SelectData">Select</th>
+                                    <th>Employee ID</th>
+                                    <th>Employee Name</th>
+                                    <th>Description</th>
+                                    <th>Month</th>
+                                    <th>Adjustment Type</th>
+                                    <th>Adjustment Name</th>
+                                    <th>Adjustment Code</th>
+                                    <th>Adjustment Amount</th>
+                                    <th>Adjustment Remarks</th>
+                                    <th>Apply Before Tax</th>
+                                    <th>IsTaxable</th>
+                                </tr>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo1"></td>
+                                    <td>20-005</td>
+                                    <td>Bersamira, Carlo, de Guzman</td>
+                                    <td>Payroll for 6/1/2021 - 6/15/2021</td>
+                                    <td>JUN</td>
+                                    <td>Deminimis Allowance</td>
+                                    <td>Rice Allowance</td>
+                                    <td>RI-ALL</td>
+                                    <td>800</td>
+                                    <td>for employee discretion use</td>
+                                    <td>NO</td>
+                                    <td>NO</td>
+                                </tr>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo1"></td>
+                                    <td>20-007</td>
+                                    <td>Labasan, Diana, Asuncion</td>
+                                    <td>Payroll for 10/1/2021 - 10/15/2021</td>
+                                    <td>OCT</td>
+                                    <td>Deminimis Allowance</td>
+                                    <td>Rice Allowance</td>
+                                    <td>RI-ALL</td>
+                                    <td>1000.00</td>
+                                    <td>Can cover for Internet Subsidy</td>
+                                    <td>NO</td>
+                                    <td>NO</td>
+                                </tr>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo1"></td>
+                                    <td>20-009</td>
+                                    <td>Bodoso, Mary Rose, Banico</td>
+                                    <td>Payroll for 12/16/2021 - 12/31/2021</td>
+                                    <td>DEC</td>
+                                    <td>Loan</td>
+                                    <td>Laptop Loan</td>
+                                    <td>LAP-LOAN</td>
+                                    <td>833.34</td>
+                                    <td>1 year payment for laptop</td>
+                                    <td>NO</td>
+                                    <td>NO</td>
+                                </tr>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo1"></td>
+                                    <td>20-022</td>
+                                    <td>Cancino, Micko, Manalili</td>
+                                    <td>13th Month</td>
+                                    <td>DEC</td>
+                                    <td>13th Month Non Taxable</td>
+                                    <td>13th Month Non Taxable</td>
+                                    <td>13MOFPAY</td>
+                                    <td>5478.93</td>
+                                    <td></td>
+                                    <td>NO</td>
+                                    <td>NO</td>
+                                </tr>
+                                <tr>
+                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
+                                            data-target="#demo1"></td>
+                                    <td>20-027</td>
+                                    <td>Galvez, Francy Joy, delos Santos</td>
+                                    <td>Payroll for 9/1/2020 - 9/15/2020</td>
+                                    <td>SEP</td>
+                                    <td>SSS Loan</td>
+                                    <td>SSS Salary Loan</td>
+                                    <td>SSSLoan</td>
+                                    <td>738.32</td>
+                                    <td></td>
+                                    <td>NO</td>
+                                    <td>NO</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div>
+                
+            </div><br>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>

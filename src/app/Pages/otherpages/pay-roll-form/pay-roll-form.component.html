@@ -1,0 +1,106 @@
+
+<div class="container-fluid">
+    
+  <div class="row">
+    <div class="col-lg-1"></div>
+    <div  class="col-lg-10">
+        <div class="row">
+            <div class="col-lg-2">
+                <p class="FormHeadText">PAY ROLL</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10"></div>
+        </div>
+        <br>
+        <div class="row LocDashboard">
+            <div class="col-lg-12">
+                <label class="fontheading">PayRoll Details</label>
+            </div>
+        </div>
+        <div class="card BOXCARD">
+            <div class="row leavereq">
+                <div class="col-md-2">
+                    <label class="fonttxt">Year<span style="color: red;">*</span></label>
+                </div>
+                <div class="col-md-2">
+                    <label class="fonttxt">Month<span style="color: red;">*</span></label>
+                </div>
+                <div class="col-md-2">
+                    <label class="fonttxt">Period<span style="color: red;">*</span></label>
+                </div>
+                <div class="col-md-2">
+                    <label class="fonttxt">PayRoll Run Type<span style="color: red;">*</span></label>
+                </div>
+                <div class="col-md-2">
+                    <label class="fonttxt">Pay Group<span style="color: red;">*</span></label>
+                </div>
+                <div class="col-md-2">
+                    <label class="fonttxt">Description<span style="color: red;">*</span></label>
+                </div>
+            </div>
+            <div class="row leavereq">
+                <div class="col-md-2">
+                    <input type="text" class="form-control inputfield" placeholder="YYYY" [(ngModel)]="Year">
+                </div>
+                <div class="col-md-2">
+                    <input type="month" class="form-control inputfield" [(ngModel)]="Month">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control inputfield" [(ngModel)]="Period">
+                </div>
+                <div class="col-md-2">
+                    <div class="dropdown">
+                        <select class="form-control inputfield fonttxt" [(ngModel)]="Pay_Roll_Run_Type">
+                            <option value="Select">Select PayRoll Run Type</option>
+                            <option value="1">Normal</option>
+                            <option value="1">Final</option>
+                            <option value="1">13th Month</option>
+                          
+                          
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control inputfield" [(ngModel)]="Pay_Group">
+                </div>
+                <div class="col-md-2">
+                    <textarea type="text" class="form-control inputfield" [(ngModel)]="description"></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="row leavereq">
+                <div class="col-md-2">
+                    <label class="fonttxt " >Transactiona Date<span style="color: red;">*</span></label>
+                </div>
+                <div class="col-md-2">
+                    <label class="fonttxt " >Status<span style="color: red;">*</span></label>
+                </div>
+            </div>
+            <div class="row leavereq">
+                <div class="col-md-2">
+                    <input type="date" class="form-control inputfield" [(ngModel)]="Transaction_Date">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control inputfield" [(ngModel)]="Status">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-10"></div>
+                <div class="col-lg-1">
+                    <button class="form-control CancelBTN fontheading">Cancel</button>
+                </div>
+                <div class="col-lg-1">
+                   
+                    <button class="form-control SubmitBTN" *ngIf="id==undefined"  (click)="OnSubmit()" >Save</button>
+                    <button class="form-control SubmitBTN" *ngIf="id!= undefined"   (click)="Update()">Update</button>  
+                </div>
+            </div>
+        </div><br>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+
+  
+</div>

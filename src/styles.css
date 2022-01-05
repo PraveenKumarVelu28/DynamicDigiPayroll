@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~ng-wizard/themes/ng_wizard.min.css';
+@import '~ng-wizard/themes/ng_wizard_theme_arrows.min.css';
+@import '~ng-wizard/themes/ng_wizard_theme_circles.min.css';
+@import '~ng-wizard/themes/ng_wizard_theme_dots.min.css';
+
+
+
+.container-fluid{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+
+@font-face {
+    font-family: 'DIN Regular';
+    src: 
+      
+      url('assets/D-DIN.otf') 
+      format('opentype');
+  }
+  @font-face {
+    font-family: 'DIN Bold';
+    src: 
+      
+      url('assets/D-DIN-Bold.otf') 
+      format('opentype');
+  }
+
+  @font-face {
+    font-family: 'DIN Medium';
+    src: 
+      
+      url('assets/DIN Medium.otf') 
+      format('opentype');
+  }
+  body,p,button,a{
+    font-family: 'DIN Bold';
+    cursor: pointer; 
+  }
+  .Dinbold{
+    font-family: 'DIN Bold';
+  }
+ 
+
+   table thead tr th {
+   
+    min-width: 50px;
+    color: #404040 !important;
+    font-size: 12px;
+    background: #e4e5e6 !important;
+    vertical-align: middle;
+    font-family: "DIN Bold";
+    border-color: #5a5959;
+}
+
+ .table td {
+  color: #494949;
+  font-size: 12px;
+  vertical-align: middle;
+  font-family: "DIN Medium";
+
+}
+
+
+

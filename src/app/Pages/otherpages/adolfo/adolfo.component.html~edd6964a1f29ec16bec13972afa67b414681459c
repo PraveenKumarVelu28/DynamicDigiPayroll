@@ -1,0 +1,789 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-12 negative-padding">
+                    <p class="Empinfo">Employee Information</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <p>Employee ID*</p>
+                </div>
+                <div class="col-lg-4">
+                    <input class="form-control" placeholder="Employee ID">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <p>Last Name*</p>
+                </div>
+                <div class="col-lg-4">
+                    <input class="form-control" placeholder="Last Name">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <p>First Name*</p>
+                </div>
+                <div class="col-lg-4">
+                    <input class="form-control" placeholder="First Name">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <p>Middle Name</p>
+                </div>
+                <div class="col-lg-4">
+                    <input class="form-control" placeholder="Middle Name">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <p>Gender</p>
+                </div>
+                <div class="col-lg-4">
+                      <input class="form-check-input" type="radio" id="Male" name="Gender" value="Male">
+                      <label class="form-check-label" for="Male">Male</label> &nbsp;
+                    <input class="form-check-input" style="margin-left:10px" type="radio" id="Female" name="Gender"
+                        value="Female">
+                      <label class="form-check-label" style="margin-left:20px" for="Female">Female</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <p>Date Of Birth</p>
+                </div>
+                <div class="col-lg-4">
+                    <input type="date" class="form-control">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Civil Status*</label>
+                </div>
+                <div class="col-lg-3">
+                    <select class="form-control">
+                        <option value="Married">Married</option>
+                        <option value="Single">Single</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Contact Number</label>
+                </div>
+                <div class="col-lg-4">
+                    <input class="form-control" placeholder="Contact Number">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Home Address</label>
+                </div>
+                <div class="col-lg-4">
+                    <input class="form-control" placeholder="Home Address">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Zip Code</label>
+                </div>
+                <div class="col-lg-4">
+                    <input class="form-control" placeholder="Zip Code">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Email Address</label>
+                </div>
+                <div class="col-lg-4">
+                    <input class="form-control" placeholder="Email Address">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Username</label>
+                </div>
+                <div class="col-lg-4">
+                    <input class="form-control" placeholder="Username">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Password</label>
+                </div>
+                <div class="col-lg-4">
+                    <input class="form-control">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Lock User</label>
+                </div>
+                <div class="col-lg-3">
+                    <input type="checkbox">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 negative-padding">
+                    <p class="Salary">Salary Details</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Tax Status*</label>
+                </div>
+                <div class="col-lg-3">
+                    <select class="form-control">
+                        <option value="Me">ME</option>
+                        <option value="Single">Single</option>
+                        <option value="S1">S1</option>
+                        <option value="S3">S3</option>
+                        <option value="ME1">ME1</option>
+                        <option value="ME2">ME2</option>
+                        <option value="ME3">ME3</option>
+                        <option value="ME4">ME4</option>
+                    </select>
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Minium Wage Earner</label>
+                </div>
+                <div class="col-lg-3">
+                    <input type="checkbox">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>COLA</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="COLA">
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Work Days Per Year*</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="Work Days Per Year">
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Basic Salary*</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="Basic Salary">
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>De Minimals*</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="De Minimals">
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>OT Computation Table</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="OT Computation Table">
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div> <br>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>SSS Contibution</label>
+                </div>
+                <div class="col-lg-3">
+                    <select class="form-control">
+                        <option value="Let System Decide ">Let System Decide</option>
+                        <!-- <option value="Single">Single</option>
+                        <option value="S1">S1</option>
+                        <option value="S3">S3</option>
+                        <option value="ME1">ME1</option>
+                        <option value="ME2">ME2</option>
+                        <option value="ME3">ME3</option>
+                        <option value="ME4">ME4</option> -->
+                    </select>
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>PhillHealth Contribution</label>
+                </div>
+                <div class="col-lg-3">
+                    <input type="checkbox">&nbsp;&nbsp;
+                    <label>Let System Decide</label>
+                </div>
+            </div> <br>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>HDMF Contibution</label>
+                </div>
+                <div class="col-lg-3">
+                    <select class="form-control">
+                        <option value="Let System Decide ">Let System Decide</option>
+                        <!-- <option value="Single">Single</option>
+                        <option value="S1">S1</option>
+                        <option value="S3">S3</option>
+                        <option value="ME1">ME1</option>
+                        <option value="ME2">ME2</option>
+                        <option value="ME3">ME3</option>
+                        <option value="ME4">ME4</option> -->
+                    </select>
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Additional HDMF Contibution</label>
+                </div>
+                <div class="col-lg-3">
+                    <select class="form-control">
+                        <option value="Let System Decide ">Let System Decide</option>
+                        <!-- <option value="Single">Single</option>
+                        <option value="S1">S1</option>
+                        <option value="S3">S3</option>
+                        <option value="ME1">ME1</option>
+                        <option value="ME2">ME2</option>
+                        <option value="ME3">ME3</option>
+                        <option value="ME4">ME4</option> -->
+                    </select>
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-12 negative-padding">
+                    <p class="Job">Job Details</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Job Title</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control">
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Department</label>
+                </div>
+                <div class="col-lg-3">
+                    <select class="form-control">
+                        <option value="CREFCO Team ">CREFCO Team</option>
+                        <!-- <option value="Single">Single</option>
+                        <option value="S1">S1</option>
+                        <option value="S3">S3</option>
+                        <option value="ME1">ME1</option>
+                        <option value="ME2">ME2</option>
+                        <option value="ME3">ME3</option>
+                        <option value="ME4">ME4</option> -->
+                    </select>
+                </div>
+            </div> <br>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Cost Center</label>
+                </div>
+                <div class="col-lg-3">
+                    <select class="form-control">
+                        <option value="CREFCO Team ">CREFCO </option>
+                        <!-- <option value="Single">Single</option>
+                        <option value="S1">S1</option>
+                        <option value="S3">S3</option>
+                        <option value="ME1">ME1</option>
+                        <option value="ME2">ME2</option>
+                        <option value="ME3">ME3</option>
+                        <option value="ME4">ME4</option> -->
+                    </select>
+                </div>
+            </div><br>
+
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Hire Date*</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" type="Date">
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Employement Status*</label>
+                </div>
+                <div class="col-lg-3">
+                    <select class="form-control">
+                        <option value="Active">Active </option>
+                        <!-- <option value="Single">Single</option>
+                        <option value="S1">S1</option>
+                        <option value="S3">S3</option>
+                        <option value="ME1">ME1</option>
+                        <option value="ME2">ME2</option>
+                        <option value="ME3">ME3</option>
+                        <option value="ME4">ME4</option> -->
+                    </select>
+                </div>
+            </div><br>
+
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Status Date*</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" type="Date">
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Work Hours Per Day</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="Work Hours Per Day">
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Pay Group*</label>
+                </div>
+                <div class="col-lg-3">
+                    <select class="form-control">
+                        <option value="Rank and File Deployed">Rank and File Deployed </option>
+                        <!-- <option value="Single">Single</option>
+                        <option value="S1">S1</option>
+                        <option value="S3">S3</option>
+                        <option value="ME1">ME1</option>
+                        <option value="ME2">ME2</option>
+                        <option value="ME3">ME3</option>
+                        <option value="ME4">ME4</option> -->
+                    </select>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>ROHQ</label>
+                </div>
+                <div class="col-lg-1">
+                    <input type="checkbox">
+                </div>
+                <div class="col-lg-2">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Consultant</label>
+                </div>
+                <div class="col-lg-1">
+                    <input type="checkbox">
+                </div>
+                <div class="col-lg-2">
+                    <select class="form-control">
+                        <option value="Select Tax">Select Tax</option>
+                        <option value="2%">2%</option>
+                        <option value="5%">5%</option>
+                        <option value="8%">8%</option>
+                        <option value="10%">10%</option>
+                        <option value="15%">15%</option>
+                        <option value="20%">20%</option>
+                        <option value="25%">25%</option>
+                    </select>
+                </div>
+                <div class="col-lg-2">
+                    <select class="form-control">
+                        <option value="WI 050">WI 050</option>
+                        <!-- <option value="Single">Single</option>
+                <option value="S1">S1</option>
+                <option value="S3">S3</option>
+                <option value="ME1">ME1</option>
+                <option value="ME2">ME2</option>
+                <option value="ME3">ME3</option>
+                <option value="ME4">ME4</option> -->
+                    </select>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>TIN*</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="TIN Number">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>RDO</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="RDO">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>PhillHealth NO.</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="PhillHealth No.">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>SSS NO.</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="SSS_No .">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>HDMF NO.</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="HDMF No.">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-12 negative-padding">
+                    <p class="Employee">Employement Information</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label> SL </label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="0.00">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label> VL </label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="0.00">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label> Leave Credit </label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="0.00">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-12 negative-padding">
+                    <p class="Dependents">Dependents</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Dependent1</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="Dependent1">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Dependent1 Date Of Birth</label>
+                </div>
+                <div class="col-lg-3">
+                    <input type=date class="form-control">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Dependent2</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="Dependent2">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Dependent2 Date Of Birth</label>
+                </div>
+                <div class="col-lg-3">
+                    <input type=date class="form-control">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Dependent3</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="Dependent3">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Dependent3 Date Of Birth</label>
+                </div>
+                <div class="col-lg-3">
+                    <input type=date class="form-control">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Dependent4</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="Dependent4">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Dependent4 Date Of Birth</label>
+                </div>
+                <div class="col-lg-3">
+                    <input type=date class="form-control">
+                </div>
+            </div> <br>
+
+
+            <div class="row">
+                <div class="col-lg-12 negative-padding">
+                    <p class="Bank">Bank Details</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Bank</label>
+                </div>
+                <div class="col-lg-3">
+                    <select class="form-control">
+                        <option value="bankname">bankname</option>
+                        <!-- <option value="Single">Single</option>
+                    <option value="S1">S1</option>
+                    <option value="S3">S3</option>
+                    <option value="ME1">ME1</option>
+                    <option value="ME2">ME2</option>
+                    <option value="ME3">ME3</option>
+                    <option value="ME4">ME4</option> -->
+                    </select>
+                </div><br>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Bank Account Type</label>
+                </div>
+
+
+                <div class="col-lg-2">
+                    <input type="radio" id="Bank_AccountType" name="Bank_AccountType" value="Savings">&nbsp;
+                    <label for="Savings" value="Savings">Savings</label>
+                </div>
+                <div class="col-lg-3">
+                    <input type="radio" id="Bank_AccountType" name="Bank_AccountType">&nbsp;
+                    <label for="Current" value="Current">Current</label>
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Bank Account No.</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="Bank Account No.">
+                </div>
+            </div> <br>
+
+            <div class="row">
+                <div class="col-lg-12 negative-padding">
+                    <p class="Previous">Previous Employement Details</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Has Previous Employement</label>
+                </div>
+                <div class="col-lg-3">
+                    <input type="checkbox">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Non-Tax 13th Month</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="0.00">
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Non-Tax Other Bonus </label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="0.00">
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Non-Tax Salaries </label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="0.00">
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div> <br>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>13th Month </label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="0.00">
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Other Bonus</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="0.00">
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Taxable Gross</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="0.00">
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Tax With held</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="0.00">
+                </div>
+                <div class="col-lg-1">
+                    <img src="assets/images/question.png" class="img">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Government Deductions</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control">
+                </div>
+                <div class="col-lg-1">
+                    <img src="assets/images/question.png" class="img">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>De Minimis</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="0.00">
+                </div>
+                <div class="col-lg-1">
+                    <img src="assets/images/question.png" class="img">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Taxable Compensation</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="0.00">
+                </div>
+                <div class="col-lg-1">
+                    <img src="../../../assets/images/question.png" class="img">
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Monitized Leave</label>
+                </div>
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="0.00">
+                </div>
+                <div class="col-lg-1">
+                    <img src="assets/images/question.png" class="img">
+                </div>
+            </div> <br>
+
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-3">
+                    <button class="btn">Save</button> &nbsp;
+                    <button class="btn">Update</button>
+                </div>
+
+                <div class="col-lg-3"></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>

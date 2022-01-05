@@ -1,0 +1,71 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href=""class="Heading">Adjustment</a>
+                    <hr class="HrLine">
+                </div>
+            </div>
+            <!-- <div class="row FilterClass">
+                <div class="col-lg-2">
+                    Filter By
+                </div>
+                <div class="col-lg-2">
+                    <input class="form-control" type="date" placeholder="Duration">
+                </div>
+                <div class="col-lg-6">
+                    <input class="form-control" type="search" placeholder="Search for date , Type or Code">
+                </div>
+            </div><br> -->
+            <div class="row">
+                <div class="col-lg-8 View">
+                    <ul>
+                        <li><a class="active">View</a></li>
+                        <li><a  href="" (click)="update()">Modify</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <a href="#/AdjustmentForm"><button class="button">Add</button> </a>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table">
+                            <thead>
+                                <tr class="newFont">
+                                    <th class="SelectData">Select</th>
+                                    <th>Type</th>
+                                    <th>Name</th>
+                                    <th>Code</th>
+                                    <th>Amount</th>
+                                    <th>Remarks</th>
+                                    <th>Before Tax</th>
+                                    <th>Taxable</th>
+                                    <th>Max Accumulated</th>
+                                    <!-- <th>Action</th> -->
+                                <tr>
+                                    <tr *ngFor="let employee of employeedetails">
+                                        <td class="SelectData" (click)="GetId(employee.id)"><input type="checkbox"></td>
+                                        <td>{{employee.type}}</td>
+                                        <td>{{employee.name}}</td>
+                                        <td>{{employee.code}}</td>
+                                        <td>{{employee.amount}}</td>
+                                        <td>{{employee.remarks}}</td>
+                                        <td>{{employee.before}}</td>
+                                        <td>{{employee.taxable}}</td>
+                                        <td>{{employee.maxAccumulated}}</td>
+                                    </tr>
+                            </thead>
+                         </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
