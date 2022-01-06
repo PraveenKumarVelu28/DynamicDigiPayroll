@@ -1,0 +1,14 @@
+.heading{
+    text-align: center;
+}
+.heading1{
+    font-size: 20PX;
+    text-align: center;
+}
+.heading2{
+    font-size: 20PX;
+    text-align: center;
+}
+.table-border{
+    border: solid 5px black;
+}
