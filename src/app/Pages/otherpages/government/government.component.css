@@ -60,6 +60,38 @@
     padding: 10px;
 }
 
+.rowwidth{
+    width: 100%;
+    overflow-x: scroll;
+}
+.img{
+    width: 25px;
+    height: 10%;
+  }
+  .img:hover{
+      background-color: chartreuse;
+      color: white;
+  }
+  .imgcancel{
+    width: 25px;
+    height: 10%;
+  }
+  .imgcancel:hover{
+    background-color: red;
+    color: white;
+  }
+
+  .fonttxt{
+    font-size: 12px;
+    font-weight: bold;
+  }
+  td {
+    color: #494949;
+    font-size: 12px;
+    vertical-align: middle;
+    background-color: white;
+  }
+
 /* .taxtable{   
     font-size: 15px;
     font-weight: bold;

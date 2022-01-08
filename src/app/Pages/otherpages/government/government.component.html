@@ -17,11 +17,14 @@
                    
                 </div><br> <br>
                 <div class="row">
-                    <div class="col-lg-3"></div>
+                    <div class="col-lg-2"></div>
                     <div class="col-lg-2">
                     </div>
                     <div class="col-lg-2">
                         <p class="text1">SBR/OR Number</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p class="text1">Attachment</p>
                     </div>
                     <div class="col-lg-2">
                         <p class="text1"> Date Paid </p>
@@ -29,99 +32,155 @@
                     <div class="col-lg-3"></div>
                   </div>
                   <div class="row">
-                    <div class="col-lg-3"></div>
+                    <div class="col-lg-2"></div>
                     <div class="col-lg-2 text">
                         <p class="sideheading">SSS</p>                       
                     </div>
                     <div class="col-lg-2">
-                       <input class="form-control input" ><br>
+                       <input class="form-control input" [(ngModel)]="ssS_Number"><br>
                     </div>
                     <div class="col-lg-2">
-                        <input class="form-control input"  type="date"><br>
+                        <ngx-dropzone (change)="onSelect($event)" style="height: 60px;">
+                            <ngx-dropzone-label>Drop it here!</ngx-dropzone-label>
+                            <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                            </ngx-dropzone-preview>
+                        </ngx-dropzone>
+                     </div>
+                    <div class="col-lg-3">
+                        <input class="form-control input"  type="date" [(ngModel)]="ssS_DatePaid"><br>
                     </div>
                     <div class="col-lg-3"></div>
                   </div>
                     
                    <div class="row">
-                    <div class="col-lg-3"></div>
+                    <div class="col-lg-2"></div>
                     <div class="col-lg-2 text">
                         <p class="sideheading">SSS Loan</p>       
                       
                     </div>
                     <div class="col-lg-2">
-                       <input class="form-control input" ><br>
+                       <input class="form-control input" [(ngModel)]="sssLoan_Number"><br>
                     </div>
-                    <div class="col-lg-2 ">
-                        <input class="form-control input" type="date"><br>
+                    <div class="col-lg-2">
+                        <ngx-dropzone (change)="onSelect($event)" style="height: 60px;">
+                            <ngx-dropzone-label>Drop it here!</ngx-dropzone-label>
+                            <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                            </ngx-dropzone-preview>
+                        </ngx-dropzone>
+                     </div>
+                    <div class="col-lg-3 ">
+                        <input class="form-control input" type="date" [(ngModel)]="sssLoan_DatePaid"><br>
                     </div>
                     <div class="col-lg-3"></div>
                    </div>                
                     <br>
                     <div class="row">
-                        <div class="col-lg-3"></div>
+                        <div class="col-lg-2"></div>
                         <div class="col-lg-2 text">
                             <p class="sideheading"> SSS Calamity Loan</p>                             
                         </div>
                         <div class="col-lg-2">
-                           <input class="form-control input"><br>
+                           <input class="form-control input" [(ngModel)]="sssCalamityLoan_Number"><br>
                         </div>
                         <div class="col-lg-2">
-                            <input class="form-control input" type="date" ><br>
+                            <ngx-dropzone (change)="onSelect($event)" style="height: 60px;">
+                                <ngx-dropzone-label>Drop it here!</ngx-dropzone-label>
+                                <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                                    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                                </ngx-dropzone-preview>
+                            </ngx-dropzone>
+                         </div>
+                        <div class="col-lg-3">
+                            <input class="form-control input" type="date" [(ngModel)]="sssCalamityLoan_DatePaid"><br>
                         </div>
                         <div class="col-lg-3"></div>
                     </div><br>
                    <div class="row">
-                    <div class="col-lg-3"></div>
+                    <div class="col-lg-2"></div>
                     <div class="col-lg-2 text">
                         <p class="sideheading">PhilHealth</p>                      
                     </div>
                     <div class="col-lg-2">
-                       <input class="form-control input"> <br>
+                       <input class="form-control input" [(ngModel)]="philHealth_Number"> <br>
                     </div>
                     <div class="col-lg-2">
-                        <input class="form-control input"  type="date" ><br>
+                        <ngx-dropzone (change)="onSelect($event)" style="height: 60px;">
+                            <ngx-dropzone-label>Drop it here!</ngx-dropzone-label>
+                            <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                            </ngx-dropzone-preview>
+                        </ngx-dropzone>
+                     </div>
+                    <div class="col-lg-3">
+                        <input class="form-control input"  type="date" [(ngModel)]="philHealth_DatePaid"><br>
                     </div>
                     <div class="col-lg-3"></div>
                    </div> <br>
                    <div class="row">
-                    <div class="col-lg-3"></div>
+                    <div class="col-lg-2"></div>
                     <div class="col-lg-2 text">
                         <p class="sideheading">HDMF</p>
-                        HDMF
+                     
                     </div>
                     <div class="col-lg-2">
-                       <input class="form-control input"><br>
+                       <input class="form-control input" [(ngModel)]="hdmF_Number"><br>
                     </div>
                     <div class="col-lg-2">
-                        <input class="form-control input"  type="date"><br>
+                        <ngx-dropzone (change)="onSelect($event)" style="height: 60px;">
+                            <ngx-dropzone-label>Drop it here!</ngx-dropzone-label>
+                            <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                            </ngx-dropzone-preview>
+                        </ngx-dropzone>
+                     </div>
+                    <div class="col-lg-3">
+                        <input class="form-control input"  type="date" [(ngModel)]="hdmF_DatePaid"><br>
                     </div>
                     <div class="col-lg-3"></div>
                    </div> <br>
                 
                   <div class="row">
-                    <div class="col-lg-3"></div>
+                    <div class="col-lg-2"></div>
                     <div class="col-lg-2 text">
                         <p class="sideheading"> HDMF Loan</p>     
                     </div>
                     <div class="col-lg-2">
-                       <input class="form-control input" ><br>
+                       <input class="form-control input" [(ngModel)]="hdmfLoan_Number"><br>
                     </div>
                     <div class="col-lg-2">
-                        <input class="form-control input"  type="date" ><br>
+                        <ngx-dropzone (change)="onSelect($event)" style="height: 60px;">
+                            <ngx-dropzone-label>Drop it here!</ngx-dropzone-label>
+                            <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                            </ngx-dropzone-preview>
+                        </ngx-dropzone>
+                     </div>
+                    <div class="col-lg-3">
+                        <input class="form-control input"  type="date" [(ngModel)]="hdmfLoan_DatePaid"><br>
                     </div>
                     <div class="col-lg-3"></div>
                   </div>                  
                <br>
                <div class="row">
-                <div class="col-lg-3"></div>
+                <div class="col-lg-2"></div>
                 <div class="col-lg-2 text">
                     <p class="sideheading"> Hdmp Calamity Loan</p>                  
                 </div>
                 <div class="col-lg-2">
-                   <input class="form-control input" ><br>
+                   <input class="form-control input" [(ngModel)]="hdmpCalamityLoan_Number"><br>
                 </div>
                 <div class="col-lg-2">
-                    <input class="form-control input"  type="date" ><br>
+                    <ngx-dropzone (change)="onSelect($event)" style="height: 60px;">
+                        <ngx-dropzone-label>Drop it here!</ngx-dropzone-label>
+                        <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                        </ngx-dropzone-preview>
+                    </ngx-dropzone>
+                 </div>
+                <div class="col-lg-3">
+                    <input class="form-control input"  type="date" [(ngModel)]="hdmpCalamityLoan_DatePaid"><br>
                 </div>
                 <div class="col-lg-3"></div>
                </div>                 
@@ -129,7 +188,7 @@
                 <div class="row">
                     <div class="col-lg-6"></div>
                 <div class="col-lg-2">
-                  <button class="save input" >Save</button> <br>
+                  <button class="save input" (click)="save()">Save</button> <br>
                 </div>
                 </div>               
               <br>
@@ -140,6 +199,99 @@
     </div>
     <hr>    
     <br>
+
+    <br>
+    <div class="container-fluid">
+        <div class="row rowwidth">
+            <div class="col-lg-12">
+                <table class="table table-bordered fonttxt">
+                    <thead>
+                        <tr class="newFont">
+                            <th class="SelectData">Select</th>
+                          
+                            <th>SSS SBR/OR Number</th>
+                            <!-- <th><img></th> -->
+                            <th>SSS Date Paid</th>
+
+                            <th>SSS Loan SBR/OR Number</th>
+                            <!-- <th><img></th> -->
+                            <th>SSS Loan Date Paid</th>
+
+                            <th>SSS Calamity Loan SBR/OR Number</th>
+                            <!-- <th><img></th> -->
+                            <th>SSS Calamity Loan Date Paid</th>
+
+                            <th>
+                                PhilHealth SBR/OR Number</th>
+                            <!-- <th><img></th> -->
+                            <th>
+                                PhilHealth Date Paid</th>
+
+                            <th>
+                                HDMF SBR/OR Number</th>
+                            <!-- <th><img></th> -->
+                            <th>
+                                HDMF Date Paid</th>
+
+                            <th>HDMF Loan SBR/OR Number</th>
+                            <!-- <th><img></th> -->
+                            <th>HDMF Loan Date Paid</th>
+
+                            <th>
+                                Hdmp Calamity Loan SBR/OR Number</th>
+                            <!-- <th><img></th> -->
+                            <th>
+                                Hdmp Calamity Loan Date Paid</th>
+                            <th>Action</th>
+                        <tr>
+                    </thead>
+                    <tbody>
+                        <tr class="newFont" *ngFor="let application of govtlist">
+                            <td class="SelectData" ><input type="checkbox"></td>
+                            <td>{{application.ssS_Number}}</td>
+                            <td>{{application.ssS_DatePaid}}</td>
+                            <td>{{application.sssLoan_Number}}</td>
+                            <td>{{application.sssLoan_DatePaid}}</td>
+                            <td>{{application.sssCalamityLoan_Number}}</td>
+                            <td>{{application.sssCalamityLoan_DatePaid}}</td>
+                            <td>{{application.philHealth_Number}}</td>
+                            <td>{{application.philHealth_DatePaid}}</td>
+                            <td>{{application.hdmF_Number}}</td>
+                            <td>{{application.hdmF_DatePaid}}</td>
+                            <td>{{application.hdmfLoan_Number}}</td>
+                            <td>{{application.hdmfLoan_DatePaid}}</td>
+                            <td>{{application.hdmpCalamityLoan_Number}}</td>
+                            <td>{{application.hdmpCalamityLoan_DatePaid}}</td>
+
+                            <td><img class="imgcancel" src="/assets/cancel (1).png" (click)="delete(application.id)"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 <!-- 
         <div class="col-lg-3"></div>
