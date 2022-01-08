@@ -31,15 +31,15 @@
                             </tr>
                         </thead>
                         <tr>
-                            <td class="SelectData"><input type="checkbox" data-toggle="collapse" data-target="#demo">
+                            <td class="SelectData"><input type="checkbox" data-toggle="collapse" (change)="getpaygrouplist()" data-target="#demo">
                             </td>
                             <td>2021</td>
                             <td>December</td>
                             <td>Normal</td>
                             <td>
-                                <select class="form-control">
+                                <select class="form-control"  [(ngModel)]="paygroup" >
                                     <option value=" ">Select</option>
-                                    <option value="description" *ngFor="let paygroup of result">
+                                    <option value="{{paygroup.description}}" *ngFor="let paygroup of result">
                                         {{paygroup.description}}</option>
                                 </select>
                             </td>
@@ -51,9 +51,9 @@
                             <td>December</td>
                             <td>13th Month</td>
                             <td>
-                                <select class="form-control">
+                                <select class="form-control" [(ngModel)]="paygroup">
                                     <option value=" ">Select</option>
-                                    <option value="description" *ngFor="let paygroup of result">
+                                    <option value="{{paygroup.description}}" *ngFor="let paygroup of result">
                                         {{paygroup.description}}</option>
                                 </select>
                             </td>
@@ -79,7 +79,7 @@
                             <td>November</td>
                             <td>Normal</td>
                             <td>
-                                <select class="form-control">
+                                <select class="form-control"  [(ngModel)]="paygroup">
                                     <option value=" ">Select</option>
                                     <option value="description" *ngFor="let paygroup of result">
                                         {{paygroup.description}}</option>
@@ -114,7 +114,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <table class="table table-bordered fonttxt">
+                        <!-- <table class="table table-bordered fonttxt">
                             <thead>
                                 <tr class="newFont">
                                     <th class="SelectData"data-toggle="collapse"
@@ -190,6 +190,49 @@
                                 </tr>
                                
                             </thead>
+                        </table> -->
+                   
+                   
+                        <table  class="table table-bordered fonttxt" id="downloadaplication">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Employee Id</th>
+                                    <th>Employee Name</th>
+                                    <th>Role</th>
+                                    <th>Phone Number</th>
+                                    <th>Email</th>
+                                    <th>Date Of Joining</th>
+                                    <th>Manager</th>
+                                    <th>Paygroup</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of stafflist">
+                                    <td>
+                                        <input type="checkbox" [(ngModel)]="item.checked" [value]="item.value" (change)="getmonthlyreport(item.name)" data-toggle="collapse" data-target="#demo1">&nbsp;
+                                    </td>
+    
+                                    <td>000{{item.id}}</td>
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.role}}</td>
+                                    <td>{{item.mobile}}</td>
+                                    <td>{{item.emailID}}</td>
+                                    <td>{{item.joiningDate|date}}</td>
+                                    <td>
+                                        <p *ngIf="item.manager==null">
+                                            NA
+                                        </p>
+                                        <p *ngIf="item.manager!=null">
+                                            {{item.manager}}
+                                        </p>
+                                    </td>
+                                    <td>{{item.paygroup}}</td>
+                                  
+    
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -207,9 +250,9 @@
                    <p style="font-size: 15px; padding-left: 16px;">Grand Total:27,875</p>
                 </div>
             </div> <br>
-            <div class="row" *ngIf="showtable==1">
+            <div class="row" *ngIf="showtable==1" id="demo1" class="collapse">
                 <div class="col-lg-12" style="overflow:auto;">
-                    <table class="table table-bordered fonttxt" id="download">
+                    <!-- <table class="table table-bordered fonttxt" id="download">
                         <thead>
                             <tr class="newFont">
                                 <th>Employee ID*</th>
@@ -330,6 +373,40 @@
                                <td>100.00</td>
                             </tr>
                         </thead>
+                    </table> -->
+                    <table class="table" id="lvs">
+                        <thead>
+                            <tr>
+                                <!-- <th>Check Box</th> -->
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Employee Name</th>
+                                <th>Gross Salary</th>
+                                <th>SSS Rate</th>
+                                <th>Pag big Rate</th>
+                                <th>PhilHealth Contribution</th>
+                                <th>Tax</th>
+                                <th>Lop Days</th>
+                                <th>Lop Amount</th>
+                                <th>Net Pay</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of employeelist">
+                                <td>{{item.startdate|date}}</td>
+                                <td>{{item.enddate|date}}</td>
+                                <td>{{item.staffname}}</td>
+                                <td>{{item.grossSalary}}</td>
+                                <td>{{item.contribution}}</td>
+                                <td>{{item.pagBig}}</td>
+                                <td>{{item.philHealthContribution}}</td>
+                                <td>{{item.tax}}</td>
+                                <td>{{item.lopdays}}</td>
+                                <td>{{item.lopamount}}</td>
+                                <td>{{item.netMonthSalary}}</td>
+
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>

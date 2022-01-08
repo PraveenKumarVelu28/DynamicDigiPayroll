@@ -764,12 +764,49 @@ export class DigipayrollServiceService {
       this.host + "/Master/DeleteCityType?ID=" + ID);
   }
 
+  
+  public GetCompanyDetails() {
+    return this.http.get<any[]>(
+      this.host + "/Building/GetCompanyDetails"
+    );
+  }
+
 
   public GetLoginTypeMaster() {
     debugger
     let APIURL = this.baseURL + "Master/GetLoginTypeMaster";
     return this.http.get<any[]>(APIURL);
   }
+
+  public DeleteEmployeeSalary(ID: any) {
+    return this.http.get<any[]>(
+      this.host + "/Announcement/DeleteEmployeeSalary?ID=" + ID);
+  }
+
+  public GetStaffLeavesForPayrollByDate(startdate: any, enddate: any, StaffID: any) {
+    debugger
+    return this.http.get<any[]>(this.host + "/Announcement/GetStaffLeavesForPayrollByDate?startdate=" + startdate + "&enddate=" + enddate + "&StaffID=" + StaffID);
+  }
+
+  public Get_Salary_Splitsfor15days(EmployeeID: any, LopdaysCount: any, startdate: any, enddate: any) {
+    debugger
+    return this.http.get<any[]>(this.host + "/Announcement/Get_Salary_Splitsfor15days?EmployeeID=" + EmployeeID + "&LopdaysCount=" + LopdaysCount + "&startdate=" + startdate + "&enddate=" + enddate);
+  }
+
+  public Get_Salary_Splits(EmployeeID: any, LopdaysCount: any, startdate: any, enddate: any) {
+    debugger
+    return this.http.get<any[]>(this.host + "/Announcement/Get_Salary_Splits?EmployeeID=" + EmployeeID + "&LopdaysCount=" + LopdaysCount + "&startdate=" + startdate + "&enddate=" + enddate);
+  }
+
+  public GetEmployeeSalary() {
+    debugger
+    return this.http.get<any[]>(
+      this.host + "/Announcement/GetEmployeeSalary"
+    );
+  }
+
+  
+
 
 }
 

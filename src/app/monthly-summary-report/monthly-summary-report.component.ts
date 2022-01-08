@@ -14,9 +14,13 @@ export class MonthlySummaryReportComponent implements OnInit {
 result:any;
 showtable:any;
 Checked:any;
+stafflist:any;
+paygroup:any;
 Tax_Table_Starts_on:any;
   ngOnInit(): void {
     this.GetPayGroup();
+
+    
   }
 
   public GetPayGroup() {
@@ -27,7 +31,21 @@ Tax_Table_Starts_on:any;
         this.result = data;
       })
   }
+  employeelist:any;
+public getmonthlyreport(name:any){
+  this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
+    debugger
+    this.employeelist = data.filter(x=>x.staffname==name);
+  });
+}
+ 
 
+  public getpaygrouplist(){
+    this.DigipayrollServiceService.GetMyDetails().subscribe(data => {
+      debugger
+      this.stafflist = data.filter(x => x.paygroup == this.paygroup && x.deniminimis != null);
+    });
+  }
  
   fileName = 'Monthly Summary Report.xlsx';
   exportexcel(): void {

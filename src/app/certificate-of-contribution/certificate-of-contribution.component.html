@@ -9,61 +9,19 @@
                 </div>
             </div>
             <div class="row FilterClass fontheading">
-                <div class="col-lg-1">
+                <div class="col-md-2">
                     From
                 </div>
-                <div class="col-lg-2">
-                    <select name="cars" id="Month" class="form-control">
-                        <option value="Select">Select</option>
-                        <option value="January">January</option>
-                        <option value="February">February</option>
-                        <option value="March">March</option>
-                        <option value="April">April</option>
-                        <option value="May">May</option>
-                        <option value="June">June</option>
-                        <option value="July">July</option>
-                        <option value="August">August</option>
-                        <option value="September">September</option>
-                        <option value="October">October</option>
-                        <option value="November">November</option>
-                        <option value="December">December</option>
-                    </select>
+                <div class="col-md-4">
+                    <input class="form-control" type="date" placeholder="startdate" id="startdate" name="startdate"
+                        [(ngModel)]="startdate">
                 </div>
-                <div class="col-lg-2">
-                    <select name="cars" id="Month" class="form-control">
-                        <option value="Select">Select</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>
-                    </select>
+                <div class="col-md-2">
+                    To
                 </div>
-                <div class="col-lg-1">
-                    <p>To</p>
-                </div>
-                <div class="col-lg-2">
-                    <select name="cars" id="Month" class="form-control">
-                        <option value="Select">Select</option>
-                        <option value="January">January</option>
-                        <option value="February">February</option>
-                        <option value="March">March</option>
-                        <option value="April">April</option>
-                        <option value="May">May</option>
-                        <option value="June">June</option>
-                        <option value="July">July</option>
-                        <option value="August">August</option>
-                        <option value="September">September</option>
-                        <option value="October">October</option>
-                        <option value="November">November</option>
-                        <option value="December">December</option>
-                    </select>
-                </div>
-                <div class="col-lg-2">
-                    <select name="cars" id="Month" class="form-control">
-                        <option value="Select">Select</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>
-                    </select>
+                <div class=" col-md-4">
+                    <input class="form-control" type="date" placeholder="enddate" id="enddate" name="enddate"
+                        [(ngModel)]="enddate" (change)="getdate($event)">
                 </div>
             </div><br>
             <div class="row FilterClass fontheading">
@@ -72,7 +30,7 @@
                     <p>Signatory Person</p>
                 </div>
                 <div class="col-lg-2">
-                    <select name="cars" id="Month" class="form-control">
+                    <select name="cars" id="Month" class="form-control" [(ngModel)]="sign" (change)="getsign()">
                         <option value="Select">Select</option>
                         <option value="HR">HR</option>
                         <option value="Admin">Admin</option>
@@ -106,133 +64,18 @@
                                     <th>Status</th>
                                 <tr>
                             </thead>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>21-059</td>
-                                <td>Adolfo</td>
-                                <td>Noeme Marie</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>21-023</td>
-                                <td>Amor</td>
-                                <td>Robbie</td>
-                                <td>Terminated</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>21-017</td>
-                                <td>Aquino</td>
-                                <td>Ruby Rose</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>21-050</td>
-                                <td>Baltazar</td>
-                                <td>Ruby Rose</td>
-                                <td>Terminated</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>21-017</td>
-                                <td>Aquino</td>
-                                <td>Ruby Rose</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>21-033</td>
-                                <td>Baniares</td>
-                                <td>Jimlyn</td>
-                                <td>terminated</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>21-018</td>
-                                <td>Barcelona</td>
-                                <td>Ana Meo Joy </td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>21-028</td>
-                                <td>Burac</td>
-                                <td>Mary Rose</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>21-098</td>
-                                <td>Cardeno</td>
-                                <td>Dina</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>21-026</td>
-                                <td>De Leon</td>
-                                <td>Mary Christs</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>21-087</td>
-                                <td>Collada</td>
-                                <td>Jacquelin</td>
-                                <td>Terminated</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>20-052</td>
-                                <td>Geomez</td>
-                                <td>Ruby Rose</td>
-                                <td>Active</td>
-                            </tr>
+                            <tr *ngFor="let item of stafflist">
+                                <td>
+                                    <input type="checkbox" [(ngModel)]="item.checked" [value]="item.id" (change)="getCheckbocdetails(item)">&nbsp;
+                                </td>
 
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>21-021</td>
-                                <td>Endaya</td>
-                                <td>Laliet</td>
+                                <td>000{{item.id}}</td>
+                                <td>{{item.last_Name}}</td>
+                                <td>{{item.name}}</td>
                                 <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>19-002</td>
-                                <td>Fernandez</td>
-                                <td>Andrew</td>
-                                <td>Terminated</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>21-017</td>
-                                <td>Esubiep</td>
-                                <td>Michel Joeshep</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>19-023</td>
-                                <td>Galvez</td>
-                                <td>Francy Joy</td>
-                                <td>Active</td>
-                            </tr>
+                               
+                              
 
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>21-017</td>
-                                <td>Aquino</td>
-                                <td>Ruby Rose</td>
-                                <td>Active</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>20-009</td>
-                                <td>Gumapac</td>
-                                <td>Nina</td>
-                                <td>Terminated</td>
                             </tr>
 
                         </table>
@@ -310,7 +153,7 @@
     </div>
 
     <div id="downloadaplication"
-        style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden;margin-top: 1180px;background-color: white;">
+        style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden;margin-top: 600px;background-color: white;">
         <div style="position:absolute;left:0px;top:0px">
             <img src="assets/images/AmazeLogo.jpg" width=60 height=70>
         </div>
@@ -321,11 +164,10 @@
         <div style="position:absolute;left:73.87px;top:127.94px" class="cls_002"><span class="cls_002">This is to
                 certify that the following contributions has been remitted to </span><span class="cls_003">Social
                 Security System (SSS) </span><span class="cls_002">for</span></div>
-        <div style="position:absolute;left:73.87px;top:139.45px" class="cls_003"><span class="cls_003">Ms. NOEME MARIE
-                A. ADOLFO</span><span class="cls_002"> with </span><span class="cls_003">SSS No. 06-3428661-4
-            </span><span class="cls_002">from January to January 2021</span></div>
-        <div style="position:absolute;left:66.39px;top:181.16px" class="cls_005"><span class="cls_005">Month /
-                Year</span></div>
+        <div style="position:absolute;left:73.87px;top:139.45px" class="cls_003"><span class="cls_003">{{fullname}}
+               </span><span class="cls_002"> with </span><span class="cls_003">SSS No. 06-3428661-4
+            </span><span class="cls_002">from {{startmonth}}  to {{endmonth}} </span></div>
+        <div style="position:absolute;left:66.39px;top:181.16px" class="cls_005"><span class="cls_005">Date Range</span></div>
         <div style="position:absolute;left:142.50px;top:181.16px" class="cls_005"><span class="cls_005">SSS
                 Contribution</span></div>
         <div style="position:absolute;left:231.19px;top:181.16px" class="cls_005"><span class="cls_005">ER
@@ -339,25 +181,23 @@
 
 
         <div style="position:absolute;left:66.39px;top:200.16px" class="cls_005"><span class="cls_005">
-                Jan 2022</span></div>
+            {{startmonth}}  <br/> to <br/> {{endmonth}}</span></div>
         <div style="position:absolute;left:142.50px;top:200.16px" class="cls_005"><span class="cls_005">
-                20,000</span></div>
+            {{sssrate}}</span></div>
         <div style="position:absolute;left:231.19px;top:200.16px" class="cls_005"><span class="cls_005">
-                2478.90 </span></div>
+            {{ss_er}} </span></div>
         <div style="position:absolute;left:317.59px;top:200.16px" class="cls_005"><span class="cls_005">
-                3001.00</span></div>
+            {{ss_ec}} </span></div>
         <div style="position:absolute;left:414.26px;top:200.16px" class="cls_005"><span class="cls_005">
                 07896</span></div>
         <div style="position:absolute;left:495.64px;top:200.16px" class="cls_005"><span class="cls_005">
-                03-01-2022 </span></div>
+                {{myDate}}</span></div>
 
         <div style="position:absolute;left:73.87px;top:251.05px" class="cls_002"><span class="cls_002">This
-                certification is issued to </span><span class="cls_003">Ms. ADOLFO</span><span class="cls_002"> this 3rd
-                day of January 2022, at TalentUS Inc., 5F Phinma</span></div>
-        <div style="position:absolute;left:73.87px;top:262.56px" class="cls_002"><span class="cls_002">Plaza, 39 Phinma
-                Dr, , for whatever purpose it may serve.</span></div>
-        <div style="position:absolute;left:73.87px;top:330px" class="cls_008"><span class="cls_008">TalentUS
-                Inc.</span></div>
+                certification is issued to </span><span class="cls_003">{{fullname}}</span><span class="cls_002"> {{myDate}}, at {{companyname }}., {{Address}}</span></div>
+        <div style="position:absolute;left:73.87px;top:262.56px" class="cls_002"><span class="cls_002"> for whatever purpose it may serve.</span></div>
+        <div style="position:absolute;left:73.87px;top:330px" class="cls_008"><span class="cls_008">{{companyname }}
+               </span></div>
         <div style="position:absolute;left:73.87px;top:342.36px" class="cls_008"><span class="cls_008">SSS no.
                 80-0205100-4</span></div>
         <div style="position:absolute;left:74.01px;top:340.62px" class="cls_007"><span class="cls_007"><img
@@ -365,10 +205,8 @@
                     margin-top: 11px;
                     margin-left: -1px;"></span>
         </div>
-        <div style="position:absolute;left:74.01px;top:400.93px" class="cls_008"><span class="cls_008">Lovely
-                Cabalfin</span></div>
-        <div style="position:absolute;left:74.01px;top:412.42px" class="cls_008"><span class="cls_008">Admin
-                Manager</span></div>
+        <div style="position:absolute;left:74.01px;top:400.93px" class="cls_008"><span class="cls_008">{{signname}}</span></div>
+        <div style="position:absolute;left:74.01px;top:412.42px" class="cls_008"><span class="cls_008">{{department}}</span></div>
 
     </div>
 </div>
@@ -387,7 +225,7 @@
         <br />
     </div>
     <div id="downloadaplication"
-        style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden;margin-top: 1220px;background-color: white;">
+        style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden;margin-top: 600px;background-color: white;">
         <div style="position:absolute;left:0px;top:0px">
             <img src="assets/images/AmazeLogo.jpg" width=60 height=70>
         </div>
@@ -399,32 +237,30 @@
             <div style="position:absolute;left:165.12px;top:82.97px" class="cls_004"><span class="cls_004">CERTIFICATION
                     OF PHILHEALTH PREMIUM PAYMENTS</span></div>
             <div style="position:absolute;left:38.01px;top:127.94px" class="cls_002"><span class="cls_002">This is to
-                    certify that </span><span class="cls_003">TalentUS Inc.</span><span class="cls_002"> has remitted to
+                    certify that </span><span class="cls_003">{{companyname}}.</span><span class="cls_002"> has remitted to
                 </span><span class="cls_003">PhilHealth </span><span class="cls_002">the monthly contributions of
-                </span><span class="cls_003">Ms. NOEME MARIE A.</span></div>
+                </span><span class="cls_003">{{fullname}}</span></div>
             <div style="position:absolute;left:38.01px;top:139.45px" class="cls_003"><span
-                    class="cls_003">ADOLFO</span><span class="cls_002"> under </span><span class="cls_003">PhilHealth
-                    number. 12-051236413-1 </span><span class="cls_002">from January to January 2021</span></div>
+                    class="cls_003"></span><span class="cls_002"> under </span><span class="cls_003">PhilHealth
+                    number. 12-051236413-1 </span><span class="cls_002">from  {{startmonth}} to {{endmonth}}  </span></div>
             <div style="position:absolute;left:59.61px;top:179.05px" class="cls_002"><span class="cls_002">A.</span>
             </div>
             <div style="position:absolute;left:88.41px;top:193.45px" class="cls_003"><span class="cls_003">Employee
                     details</span></div>
             <div style="position:absolute;left:88.41px;top:207.85px" class="cls_002"><span class="cls_002">Employee
                     name:</span></div>
-            <div style="position:absolute;left:203.61px;top:207.85px" class="cls_002"><span class="cls_002">NOEME MARIE
-                    AYCO ADOLFO</span></div>
+            <div style="position:absolute;left:203.61px;top:207.85px" class="cls_002"><span class="cls_002">{{fullname}}</span></div>
             <div style="position:absolute;left:88.41px;top:222.25px" class="cls_002"><span
                     class="cls_002">PhilHealth:</span></div>
             <div style="position:absolute;left:203.61px;top:222.11px" class="cls_003"><span
-                    class="cls_003">12-051236413-1</span></div>
+                    class="cls_003">{{PhilHealth}}</span></div>
             <div style="position:absolute;left:88.41px;top:236.65px" class="cls_002"><span
                     class="cls_002">Birthday:</span></div>
-            <div style="position:absolute;left:203.61px;top:237.11px" class="cls_002"><span class="cls_002">May 11,
-                    1991</span></div>
+            <div style="position:absolute;left:203.61px;top:237.11px" class="cls_002"><span class="cls_002">{{dob}}</span></div>
             <div style="position:absolute;left:88.41px;top:251.05px" class="cls_002"><span class="cls_002">Employment
                     date:</span></div>
-            <div style="position:absolute;left:203.61px;top:251.34px" class="cls_002"><span class="cls_002">September
-                    20, 2021 up to Present.</span></div>
+            <div style="position:absolute;left:203.61px;top:251.34px" class="cls_002"><span class="cls_002">
+                    {{joiningdate}} up to Present.</span></div>
             <div style="position:absolute;left:59.61px;top:272.63px" class="cls_002"><span class="cls_002">B.</span>
             </div>
             <div style="position:absolute;left:88.41px;top:287.02px" class="cls_003"><span class="cls_003">Monthly
@@ -439,30 +275,28 @@
                     No.</span></div>
             <div style="position:absolute;left:445.27px;top:303.53px" class="cls_005"><span class="cls_005">Payment
                     Date</span></div>
-            <div style="position:absolute;left:114.72px;top:323.93px" class="cls_005"><span class="cls_005">Jan 2022</span>
+            <div style="position:absolute;left:114.72px;top:323.93px" class="cls_005"><span class="cls_005"> {{endmonth}}</span>
             </div>
             <div style="position:absolute;left:181.11px;top:323.53px" class="cls_005"><span class="cls_005">
-                    0.00</span></div>
+                    {{PhilHealthEC}}</span></div>
             <div style="position:absolute;left:268.24px;top:323.53px" class="cls_005"><span class="cls_005">
-                    2345.98</span></div>
+                {{PhilHealthEC}}</span></div>
             <div style="position:absolute;left:364.17px;top:323.53px" class="cls_005"><span class="cls_005">
                     09876 </span></div>
-            <div style="position:absolute;left:445.27px;top:323.53px" class="cls_005"><span class="cls_005"> 02-01-2022
+            <div style="position:absolute;left:445.27px;top:323.53px" class="cls_005"><span class="cls_005"> {{myDate}}
                 </span></div>
             <div style="position:absolute;left:38.01px;top:373.42px" class="cls_002"><span class="cls_002">This
-                    certification is issued to </span><span class="cls_003">Ms. ADOLFO</span><span class="cls_002"> this
-                    4th day of January 2022, at TalentUS Inc., 5F Phinma Plaza, 39 Phinma</span></div>
-            <div style="position:absolute;left:38.01px;top:384.93px" class="cls_002"><span class="cls_002">Dr, , for
+                    certification is issued to </span><span class="cls_003">{{fullname}}</span><span class="cls_002"> this
+                    {{myDate}}, at {{</span></div>
+            <div style="position:absolute;left:38.01px;top:384.93px" class="cls_002"><span class="cls_002"> for
                     whatever purpose it may serve.</span></div>
             <div style="position:absolute;left:74.01px;top:340.62px" class="cls_007"><span class="cls_007"><img
                         src="assets/images/sign.png"
                         style="    width: 25%;margin-top: 56px; margin-left: -32px;"></span></div>
-            <div style="position:absolute;left:38.01px;top:430.22px" class="cls_007"><span class="cls_007">Lovely
-                    Cabalfin</span></div>
-            <div style="position:absolute;left:38.01px;top:440.71px" class="cls_007"><span class="cls_007">Admin
-                    Manager</span></div>
-            <div style="position:absolute;left:38.01px;top:450.19px" class="cls_007"><span class="cls_007">TalentUS
-                    Inc.</span></div>
+            <div style="position:absolute;left:38.01px;top:430.22px" class="cls_007"><span class="cls_007">{{signname}}</span></div>
+            <div style="position:absolute;left:38.01px;top:440.71px" class="cls_007"><span class="cls_007">{{department}}</span></div>
+            <div style="position:absolute;left:38.01px;top:450.19px" class="cls_007"><span class="cls_007">{{companyname}}
+                    </span></div>
             <div style="position:absolute;left:38.01px;top:460.68px" class="cls_007"><span class="cls_007">PhilHealth
                     no. 00-400001024-4</span></div>
         </div>
@@ -481,7 +315,7 @@
         <br />
     </div>
     <div id="downloadaplication"
-        style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden;margin-top: 1300px;background-color: white;">
+        style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden;margin-top: 600px;background-color: white;">
         <div style="position:absolute;left:0px;top:0px">
             <img src="assets/images/AmazeLogo.jpg" width=60 height=70>
         </div>
@@ -490,11 +324,10 @@
         <div style="position:absolute;left:93.09px;top:82.97px" class="cls_004"><span class="cls_004">CERTIFICATION OF
                 HOME DEVELOPMENT MUTUAL FUND (HDMF) CONTRIBUTIONS</span></div>
         <div style="position:absolute;left:74.01px;top:127.94px" class="cls_002"><span class="cls_002">This is to
-                certify that the contribution of </span><span class="cls_003">Ms. NOEME MARIE A. ADOLFO</span><span
+                certify that the contribution of </span><span class="cls_003">{{fullname}}</span><span
                 class="cls_002"> have been remitted to </span><span class="cls_003">Home</span></div>
         <div style="position:absolute;left:74.01px;top:139.45px" class="cls_003"><span class="cls_003">Development Fund
-                (HDMF)</span><span class="cls_002"> as indicated in the summary below from January to January
-                2021</span></div>
+                (HDMF)</span><span class="cls_002"> as indicated in the summary below from {{startmonth}} to {{endmonth}} </span></div>
         <div style="position:absolute;left:102.39px;top:181.16px" class="cls_005"><span class="cls_005">Month /
                 Year</span></div>
         <div style="position:absolute;left:180.79px;top:181.16px" class="cls_005"><span class="cls_005">Employee
@@ -508,28 +341,25 @@
         <div style="position:absolute;left:114.41px;top:200.56px" class="cls_005"><span class="cls_005">Jan 2022</span>
         </div>
         <div style="position:absolute;left:180.79px;top:200.16px" class="cls_005"><span class="cls_005">
-                0.00</span></div>
+                {{paginigec}}</span></div>
         <div style="position:absolute;left:267.93px;top:200.16px" class="cls_005"><span class="cls_005">
-                2398.00</span></div>
+            {{paginigec}}</span></div>
         <div style="position:absolute;left:363.86px;top:200.16px" class="cls_005"><span class="cls_005">
                 023456</span></div>
         <div style="position:absolute;left:445.32px;top:200.16px" class="cls_005"><span class="cls_005">
-                01-01-2022</span></div>
+                {{myDate}}</span></div>
         <div style="position:absolute;left:74.01px;top:251.05px" class="cls_002"><span class="cls_002">This
-                certification is issued to </span><span class="cls_003">Ms. ADOLFO</span><span class="cls_002"> this 4th
-                day of January 2022, at TalentUS Inc., 5F Phinma</span></div>
-        <div style="position:absolute;left:74.01px;top:262.56px" class="cls_002"><span class="cls_002">Plaza, 39 Phinma
-                Dr, , for whatever purpose it may serve.</span></div>
+                certification is issued to </span><span class="cls_003">{{fullname}}</span><span class="cls_002"> this  {{myDate}}, at {{companyname}}</span></div>
+        <div style="position:absolute;left:74.01px;top:262.56px" class="cls_002"><span class="cls_002">
+                , for whatever purpose it may serve.</span></div>
         <div style="position:absolute;left:74.01px;top:340.62px" class="cls_007"><span class="cls_007"><img
                     src="assets/images/sign.png" style="       width: 31%;
                     margin-top: -56px;
                     margin-left: -7px;"></span></div>
-        <div style="position:absolute;left:74.01px;top:340.62px" class="cls_007"><span class="cls_007">Lovely
-                Cabalfin</span></div>
-        <div style="position:absolute;left:74.01px;top:350.10px" class="cls_007"><span class="cls_007">Admin
-                Manager</span></div>
-        <div style="position:absolute;left:74.01px;top:360.59px" class="cls_007"><span class="cls_007">TalentUS
-                Inc.</span></div>
+        <div style="position:absolute;left:74.01px;top:340.62px" class="cls_007"><span class="cls_007">{{signname}}</span></div>
+        <div style="position:absolute;left:74.01px;top:350.10px" class="cls_007"><span class="cls_007">{{department}}</span></div>
+        <div style="position:absolute;left:74.01px;top:360.59px" class="cls_007"><span class="cls_007">{{companyname}}
+                </span></div>
         <div style="position:absolute;left:74.01px;top:370.08px" class="cls_007"><span class="cls_007">HDMF no.
                 20-975475000-3</span></div>
     </div>
