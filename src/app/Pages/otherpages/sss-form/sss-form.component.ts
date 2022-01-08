@@ -109,5 +109,8 @@ export class SssFormComponent implements OnInit {
       Swal.fire("Updated Sucessfully....!");
     })
   }
+  cancel(){
+    location.href="#/SSS/"
+  }
 
 }
