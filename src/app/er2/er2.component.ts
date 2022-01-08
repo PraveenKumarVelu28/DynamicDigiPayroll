@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
+import { DigipayrollServiceService } from '../digipayroll-service.service';
 
 @Component({
   selector: 'app-er2',
@@ -9,14 +10,58 @@ import html2canvas from 'html2canvas';
 })
 export class ER2Component implements OnInit {
   showleaseforprint:any;
-  constructor() { }
-
+  constructor(public DigipayrollServiceService: DigipayrollServiceService) { }
+  stafflist:any;
+  employeeid:any;
   ngOnInit(): void {
     this.showleaseforprint = 0;
+    
+    this.DigipayrollServiceService.GetMyDetails().subscribe(data => {
+      debugger
+      this.stafflist = data.filter(x => x.deniminimis != null);
+    });
   }
 
-  
+  emailid:any;
+  EmployeeNo:any;
+  PhilhealthNo:any;
+  basesalary:any;
+  dateofjoining:any;
+  role:any;
+  fullname:any;
+  sign:any;
+  department:any;
+  signname:any;
+  stafflist1:any;
+  public getsign(){
+    this.DigipayrollServiceService.GetMyDetails().subscribe(data => {
+      debugger
+      this.stafflist1 = data.filter(x => x.department_name == this.sign);
+      this.signname = this.stafflist1[0].fullname
+    });
+  }
+
+
   public showpdf(){
+    this.DigipayrollServiceService.GetMyDetails().subscribe(data => {
+      debugger
+      this.stafflist = data.filter(x=>x.id==this.employeeid);
+      this.emailid = this.stafflist[0].emailID
+      this.EmployeeNo = this.stafflist[0].id
+      this.PhilhealthNo = this.stafflist[0].philiHealth,
+      this.role = this.stafflist[0].role,
+      this.basesalary = this.stafflist[0].baseSal,
+      this.dateofjoining = this.stafflist[0].joiningDate,
+      this.fullname = this.stafflist[0].fullname,
+      this.department = this.stafflist[0].department_name
+    });
+  
+   
+
+  }
+
+
+  public showpdf1(){
     this.showleaseforprint = 1;
   }
 

@@ -83,6 +83,8 @@ import { PreliminaryReportComponent } from './preliminary-report/preliminary-rep
 import { UserFormPreFillComponent } from './user-form-pre-fill/user-form-pre-fill.component';
 import { UserResetComponent } from './user-reset/user-reset.component';
 import { RF1PDFNewComponent } from './rf1-pdfnew/rf1-pdfnew.component';
+import { R1aFormComponent } from './r1a-form/r1a-form.component';
+import { M11MCRFComponent } from './m11-mcrf/m11-mcrf.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Login', pathMatch: 'full' },
@@ -249,7 +251,9 @@ const routes: Routes = [
   { path: 'YTDReport', component: YTDReportComponent },
   { path: 'AdjustmentGenerateReport', component: AdjustmentGenerateReportComponent },
   { path: 'PreliminaryReport', component: PreliminaryReportComponent },
-  {path:'RF1PDFNew',component:RF1PDFNewComponent}
+  {path:'RF1PDFNew',component:RF1PDFNewComponent},
+  { path: 'R1aForm', component: R1aFormComponent },
+  { path: 'M11MCRF', component: M11MCRFComponent },
 
 
 ];

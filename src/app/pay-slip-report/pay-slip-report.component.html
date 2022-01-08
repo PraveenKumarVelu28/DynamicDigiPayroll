@@ -31,151 +31,18 @@
                                 <tr>
                             </thead>
                             <tbody>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>December </td>
-                                    <td>2</td>
-                                    <td>Final Pay</td>
-                                    <td>Final Pay(Rank and File - Deployed)</td>
-                                </tr>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>December </td>
-                                    <td>1</td>
+                                <tr *ngFor="let item of uniquelist">
+                                    <td class="SelectData"><input type="checkbox" (change)="getemployeelist(item.startdate,item.enddate)" data-toggle="collapse"
+                                        data-target="#demo"></td>
+                                    <td>{{item.endyear}}</td>
+                                    <td>{{item.endmonth}}</td>
+                                    <td>{{item.payrolltype}}</td>
                                     <td>Normal</td>
-                                    <td>Payroll for 12/1/2021 - 12/15/2021(Rank and File,Rank and File - Deployed)</td>
+                                    <td>Payroll For {{item.startdate|date}} - {{item.enddate}}({{item.paygroup|date}}) </td>
+                                    
                                 </tr>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>November</td>
-                                    <td>2</td>
-                                    <td>Normal</td>
-                                    <td>Payroll for 11/16/2021 - 11/30/2021(Rank and File,Rank and File - Deployed)</td>
-                                </tr>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>November</td>
-                                    <td>1</td>
-                                    <td>Normal</td>
-                                    <td>Payroll for 11/1/2021 - 11/15/2021(Rank and File,Rank and File - Deployed)</td>
-                                </tr>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>December</td>
-                                    <td>1</td>
-                                    <td>13th Month</td>
-                                    <td>13th Month(Rank and File,Rank and File - Deployed)</td>
-                                </tr>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>October</td>
-                                    <td>2</td>
-                                    <td>Normal </td>
-                                    <td>Payroll for 10/16/2021 - 10/31/2021(Rank and File,Rank and File - Deployed)</td>
-                                </tr>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>October</td>
-                                    <td>1</td>
-                                    <td>Normal </td>
-                                    <td>Payroll for 10/1/2021 - 10/15/2021(Rank and File,Rank and File - Deployed)</td>
-                                </tr>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>September</td>
-                                    <td>3</td>
-                                    <td>Final Pay </td>
-                                    <td>Final Pay(Rank and File - Deployed)</td>
-                                </tr>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>September</td>
-                                    <td>2</td>
-                                    <td>Normal</td>
-                                    <td>Payroll for 9/16/2021 - 9/30/2021(Rank and File,Rank and File - Deployed)</td>
-                                </tr>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>August</td>
-                                    <td>3</td>
-                                    <td>Final Pay</td>
-                                    <td>Final Pay(Rank and File - Deployed)</td>
-                                </tr>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>September</td>
-                                    <td>1</td>
-                                    <td>Normal</td>
-                                    <td>Payroll for 9/1/2021 - 9/15/2021(Rank and File,Rank and File - Deployed)</td>
-                                </tr>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>August</td>
-                                    <td>2</td>
-                                    <td>Normal</td>
-                                    <td>Payroll for 8/16/2021 - 8/31/2021(Rank and File,Rank and File - Deployed)</td>
-                                </tr>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>August</td>
-                                    <td>2</td>
-                                    <td>Final Pay</td>
-                                    <td>Final Pay(Rank and File,Officer,Rank and File - Deployed,Officer - Deployed)
-                                    </td>
-                                </tr>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>August</td>
-                                    <td>1</td>
-                                    <td>Normal</td>
-                                    <td>Payroll for 8/1/2021 - 8/15/2021(Rank and File,Rank and File - Deployed)</td>
-                                </tr>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>July</td>
-                                    <td>2</td>
-                                    <td>Normal</td>
-                                    <td>Payroll for 7/16/2021 - 7/31/2021(Rank and File,Rank and File - Deployed)</td>
-                                </tr>
-                                <tr class="newFont">
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>2021</td>
-                                    <td>July</td>
-                                    <td>1</td>
-                                    <td>Normal</td>
-                                    <td>Payroll for 7/1/2021 - 7/15/2021(Rank and File,Rank and File - Deployed)</td>
-                                </tr>
+
+                               
                             </tbody>
                         </table>
                     </div>
@@ -200,46 +67,19 @@
                                         <th>Status</th>
                                         <th>Pay Group</th>
                                     </tr>
-                                    <tr>
-                                        <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                                data-target="#demo1"></td>
-                                        <td>21042</td>
-                                        <td>Tan, Marina Ela Navarro</td>
+                                    <tr *ngFor="let item of employeelist">
+                                        <td class="SelectData"><input type="checkbox" (change)="getpayslip(item.id)" data-toggle="collapse"
+                                        data-target="#demo1" ></td>
+                                        <td>{{item.staffname}}</td>
+                                        <td>{{item.id}}</td>
                                         <td>Active</td>
-                                        <td>Rank & File</td>
+                                       
+                                        <td>{{item.paygroup}}</td>
+                                   
+        
                                     </tr>
-                                    <tr>
-                                        <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                                data-target="#demo1"></td>
-                                        <td>21049</td>
-                                        <td>Jerry Hason</td>
-                                        <td>Active</td>
-                                        <td>Rank & File Deployed</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                                data-target="#demo1"></td>
-                                        <td>21051</td>
-                                        <td>Tom Crise</td>
-                                        <td>Active</td>
-                                        <td>Officers</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                                data-target="#demo1"></td>
-                                        <td>21062</td>
-                                        <td>Michel Jordon</td>
-                                        <td>Active</td>
-                                        <td>Officers deployed</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                                data-target="#demo1"></td>
-                                        <td>21067</td>
-                                        <td>Perry Jay</td>
-                                        <td>Active</td>
-                                        <td>Rank & File</td>
-                                    </tr>
+
+                                   
                                 </thead>
 
                             </table>
@@ -281,33 +121,33 @@
                                     </tr>
                                     <tr>
                                         <td style="color: #494949; font-weight: bold;">NAME:</td>
-                                        <td  >Tan, Marina Ela Navarro</td>
+                                        <td  >{{fullname}}</td>
                                         <td style="color: #494949; font-weight: bold;">TAX STATUS:</td>
                                         <td  colspan="3">ME</td>
                                     </tr>
                                     <tr>
                                         <td style="color: #494949; font-weight: bold;">PAYROLL DATE:</td>
-                                        <td  >15 December 2021</td>
+                                        <td  >{{payrolldate|date}}</td>
                                         <td style="color: #494949; font-weight: bold;">TIN:</td>
-                                        <td  colspan="3">234189991000</td>
+                                        <td  colspan="3">{{tin}}</td>
                                     </tr>
                                     <tr>
                                         <td style="color: #494949; font-weight: bold;">DATE COVERED:</td>
-                                        <td  >Payroll for 6/1/2021 - 6/15/2021</td>
+                                        <td  >{{startdate|date}} - {{enddate|date}} </td>
                                         <td style="color: #494949; font-weight: bold;">SSS NO.:</td>
-                                        <td  colspan="3">3392624104</td>
+                                        <td  colspan="3">{{SSS}}</td>
                                     </tr>
                                     <tr>
                                         <td style="color: #494949; font-weight: bold;">DEPARTMENT:</td>
-                                        <td  >CREFCO Team</td>
+                                        <td  >{{department}}</td>
                                         <td style="color: #494949; font-weight: bold;">PHILHEALTH NO.:</td>
-                                        <td  colspan="3">170501522123</td>
+                                        <td  colspan="3">{{PhilHealth}}</td>
                                     </tr>
                                     <tr>
                                         <td style="color: #494949; font-weight: bold;">POSITION:</td>
-                                        <td  >Closing Coordinator</td>
+                                        <td  >{{role}}</td>
                                         <td style="color: #494949; font-weight: bold;">HDMF:</td>
-                                        <td  colspan="3">121017175731</td>
+                                        <td  colspan="3">{{hdmf}}</td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" style="color: #494949; font-weight: bold; text-align: center; "> COMPENSATION</td>
@@ -316,31 +156,31 @@
                                     </tr>
                                     <tr>
                                         <td style="color: #494949; font-weight: bold;">BASIC:</td>
-                                        <td  >12,643.68</td>
+                                        <td  >{{BaseSalary}}</td>
                                         <!-- <td style="color: #494949; font-weight: bold;">DE MINIMIS:</td>
                                         <td  >500.00</td> -->
                                         <td style="color: #494949; font-weight: bold;">ADJUSTMENT:</td>
                                         <td  >450.00</td>
                                         <td style="color: #494949; font-weight: bold;">TAXABLE GROSS:</td>
-                                        <td  >15,019.20</td>
+                                        <td  >{{tax}}</td>
                                     </tr>
                                     <tr>
                                         <td style="color: #494949; font-weight: bold;">DE MINIMIS BENEFITS:</td>
-                                        <td  >100.00</td>
+                                        <td  >{{deminimisamount}}</td>
                                         <!-- <td style="color: #494949; font-weight: bold;">LATE/UNDERTIME (0m):</td>
                                         <td  >0</td> -->
                                         <td style="color: #494949; font-weight: bold;">SSS:</td>
-                                        <td  >640.00</td>
+                                        <td  >{{sssamount}}</td>
                                         <td style="color: #494949; font-weight: bold;">TAX:</td>
-                                        <td  >920.44</td>
+                                        <td  >{{tax}}</td>
                                     </tr>
                                     <tr>
                                         <td style="color: #494949; font-weight: bold;">ABSENCES (LOP):</td>
-                                        <td  >0</td>
+                                        <td  >{{lopamount}}</td>
                                         <td style="color: #494949; font-weight: bold;">PHILHEALTH:</td>
-                                        <td  >244.82</td>
+                                        <td  >{{philHealthContribution}} </td>
                                         <td style="color: #494949; font-weight: bold;">SSS:</td>
-                                        <td  >1,440.00</td>
+                                        <td  >{{sssamount}}</td>
                                         <!-- <td style="color: #494949; font-weight: bold;">ADJUSTMENT:</td>
                                         <td  >450.00</td> -->
                                         <!-- <td style="color: #494949; font-weight: bold;">SSS:</td>
@@ -380,11 +220,11 @@
                                     </tr>
                                     <tr>
                                         <td style="color: #494949; font-weight: bold;">TOTAL COMPENSATION:</td>
-                                        <td  >16,054.03</td>
+                                        <td  >{{BaseSalary}}</td>
                                         <td style="color: #494949; font-weight: bold;">TOTAL DEDUCTIONS:</td>
-                                        <td  >2,305.26</td>
+                                        <td  >{{deductions}}</td>
                                         <td style="color: #494949; font-weight: bold;">NET PAY:</td>
-                                        <td  >13,748.77</td>
+                                        <td  >{{netMonthSalary}}</td>
                                     </tr>
                                 </thead>
                             </table>

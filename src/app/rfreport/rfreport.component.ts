@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import * as XLSX from 'xlsx';
+
+import { jsPDF } from "jspdf";
+import html2canvas from 'html2canvas';
+import { DigipayrollServiceService } from '../digipayroll-service.service';
 @Component({
   selector: 'app-rfreport',
   templateUrl: './rfreport.component.html',
@@ -7,9 +11,15 @@ import * as XLSX from 'xlsx';
 })
 export class RFreportComponent implements OnInit {
   loader:any;
-  constructor() { }
-
+  employeelist:any;
+  constructor(public DigipayrollServiceService: DigipayrollServiceService) { }
+  stafflist:any;
   ngOnInit(): void {
+
+    this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
+      debugger
+      this.stafflist = data;
+    });
   }
   fileName = 'RF-1 Summary.xlsx';
   exportexcel(): void {

@@ -14,30 +14,13 @@
                 <div class="col-lg-2">
                     <p> Select Start Month & Year</p>
                 </div>
-                <div class="col-lg-2">
-                    <select name="cars" id="Month" class="form-control">
-                        <option value="Select">Select</option>
-                        <option value="January">January</option>
-                        <option value="February">February</option>
-                        <option value="March">March</option>
-                        <option value="April">April</option>
-                        <option value="May">May</option>
-                        <option value="June">June</option>
-                        <option value="July">July</option>
-                        <option value="August">August</option>
-                        <option value="September">September</option>
-                        <option value="October">October</option>
-                        <option value="November">November</option>
-                        <option value="December">December</option>
-                    </select>
+                <div class="col-lg-3">
+                    <input class="form-control" type="date" placeholder="startdate" id="startdate" name="startdate"
+                        [(ngModel)]="startdate">
                 </div>
-                <div class="col-lg-2">
-                    <select name="cars" id="Month" class="form-control">
-                        <!-- <option value="Select">Select</option> -->
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>
-                    </select>
+                <div class=" col-lg-3">
+                    <input class="form-control" type="date" placeholder="enddate" id="enddate" name="enddate"
+                        [(ngModel)]="enddate" (change)="getdate($event)">
                 </div>
             </div><br>
             <!-- <div class="row FilterClass fontheading">
@@ -58,7 +41,7 @@
                 <div class="row">
                     <div class="col-lg-5"></div>
                     <div class="col-lg-2">
-                        <button class="generate" data-toggle="collapse" data-target="#demo">GENERATE</button>
+                        <button class="generate" data-toggle="collapse" data-target="#demo" (click)="SelectAll()">GENERATE</button>
                     </div>
                 </div>
             </div>
@@ -110,71 +93,20 @@
                                     <th>ER SHARE</th>
                                     <th>REMARKS</th>
                                 </tr>
-                                <tr>
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo1"></td>
-                                    <td>121166372089</td>
-                                    <td>1002887332</td>
-                                    <td> Pag-IBIG I</td>
-                                    <td>Intal</td>
-                                    <td>Maria Cassandra</td>
-                                    <td>012021</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                    <td>Terminated</td>
+                                <tr *ngFor="let item of employeelist">
+                                    <td>{{item.lastName}}</td>
+                                    <td>{{item.staffname}}</td>
+                                    <td>{{item.philHealth}}</td>
+                                    <td></td>
+                                    <td>{{item.lastName}}</td>
+                                    <td>{{item.staffname}}</td>
+                                    <td>{{item.dob|date}}</td>
+                                    <td>{{item.pagBig/2}}</td>
+                                    <td>{{item.pagBig/2}}</td>
+                                  
+    
                                 </tr>
-                                <tr>
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo1"></td>
-                                    <td>108002278259</td>
-                                    <td>1005652656</td>
-                                    <td> Modified Pag-IBIG II </td>
-                                    <td>Olaguer</td>
-                                    <td>Ajel</td>
-                                    <td>012021</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                    <td>Active</td>
-                                </tr>
-                                <tr>
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo1"></td>
-                                    <td>506002778288</td>
-                                    <td>1018378272</td>
-                                    <td>Modified Pag-IBIG II </td>
-                                    <td>Bersamira</td>
-                                    <td>Carlo</td>
-                                    <td>012021</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                    <td>Terminated</td>
-                                </tr>
-                                <tr>
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo1"></td>
-                                    <td>226678799098</td>
-                                    <td>1012287827</td>
-                                    <td>Pag-IBIG I</td>
-                                    <td>Rac</td>
-                                    <td>Lyla</td>
-                                    <td>012021</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                    <td>Active</td>
-                                </tr>
-                                <tr>
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo1"></td>
-                                    <td>110098293878</td>
-                                    <td>1012456528</td>
-                                    <td>Pag-IBIG II</td>
-                                    <td>Sager</td>
-                                    <td>Edmond Albert Moses</td>
-                                    <td>012021</td>
-                                    <td>100</td>
-                                    <td>100</td>
-                                    <td>Active</td>
-                                </tr>
+
                             </thead>
                         </table>
                     </div>

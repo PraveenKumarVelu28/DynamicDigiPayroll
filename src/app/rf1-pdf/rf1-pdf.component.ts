@@ -11,10 +11,11 @@ export class RF1PDFComponent implements OnInit {
   showleaseforprint:any;
   loader:any;
   constructor() { }
-
+  stafflist:any;
   ngOnInit(): void {
     this.showleaseforprint = 0;
     this.loader=false
+   
   }
 
 
