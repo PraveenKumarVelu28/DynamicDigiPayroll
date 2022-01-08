@@ -90,6 +90,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { PreliminaryReportComponent } from './preliminary-report/preliminary-report.component';
 import { R1aFormComponent } from './r1a-form/r1a-form.component';
+import { M11MCRFComponent } from './m11-mcrf/m11-mcrf.component';
 
 const ngWizardConfig: NgWizardConfig = {
   theme: THEME.circles
@@ -182,7 +183,8 @@ const ngWizardConfig: NgWizardConfig = {
     AdjustmentGenerateReportComponent,
     SpinnerComponent,
     PreliminaryReportComponent,
-    R1aFormComponent
+    R1aFormComponent,
+    M11MCRFComponent
 
   ],
   imports: [
