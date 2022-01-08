@@ -16,8 +16,85 @@ export class PaySlipReportComponent implements OnInit {
 
   result:any;
   Company_logo:any;
+  employeelist:any;
+  uniquelist:any;
   ngOnInit(): void {
     this.GetPayGroup();
+
+  
+   
+    this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
+      debugger
+      this.employeelist = data;
+      const key = 'startdate';
+
+      this.uniquelist  = [...new Map(this.employeelist.map((item: { [x: string]: any; }) =>
+        [item[key], item])).values()];
+      //  this.uniquelist = [...new Set(data.map(item => item))];
+     
+    });
+
+
+
+  }
+
+  employeelist1:any;
+  public getemployeelist(startdate:any,enddate:any){
+    this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
+      debugger
+      this.employeelist1 = data.filter(x=>x.startdate==startdate && x.enddate==enddate);
+    }
+    )
+  }
+  fullname:any;
+  payrolldate:any;
+  datecovered:any;
+  department:any;
+  role:any;
+  tin:any;
+  PhilHealth:any;
+  SSS:any;
+  hdmf:any;
+  deminimisamount:any;
+  BaseSalary:any;
+  lopamount:any;
+  sssamount:any;
+  philHealthContribution:any;
+  pagBig:any;
+  tax:any;
+  netMonthSalary:any;
+  deductions:any;
+  startdate:any;
+  enddate:any;
+  public getpayslip(id:any){
+    this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
+      debugger
+      this.employeelist1 = data.filter(x=>x.id==id);
+      this.fullname =  this.employeelist1[0].staffname + this.employeelist1[0].lastName ,
+      this.payrolldate = this.employeelist1[0].enddate,
+      this.startdate = this.employeelist1[0].startdate; 
+      this.enddate = this.employeelist1[0].enddate,
+      this.department = this.employeelist1[0].department_name,
+      this.role = this.employeelist1[0].role,
+      this.tin = this.employeelist1[0].tiNNo,
+      this.SSS = this.employeelist1[0].ssSRate,
+      this.PhilHealth = this.employeelist1[0].philiHealth,
+      this.hdmf = this.employeelist1[0].pagiBigAccountNo,
+      this.BaseSalary = this.employeelist1[0].baseSalary, 
+      this.deminimisamount = this.employeelist1[0].deMINIMIS, 
+      this.lopamount = this.employeelist1[0].lopamount,
+      this.sssamount = this.employeelist1[0].contribution,
+      this.philHealthContribution = this.employeelist1[0].philHealthContribution,
+      this.pagBig = this.employeelist1[0].pagBig,
+      this.tax = this.employeelist1[0].tax,
+      this.netMonthSalary = this.employeelist1[0].netMonthSalary,
+      this.deductions = this.employeelist1[0].baseSalary - this.employeelist1[0].netMonthSalary
+
+
+
+
+    }
+    )
   }
 
   public GetPayGroup() {
