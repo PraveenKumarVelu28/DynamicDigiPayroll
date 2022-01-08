@@ -89,6 +89,7 @@ import { AdjustmentGenerateReportComponent } from './adjustment-generate-report/
 import { SpinnerComponent } from './spinner/spinner.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { PreliminaryReportComponent } from './preliminary-report/preliminary-report.component';
+import { RF1PDFNewComponent } from './rf1-pdfnew/rf1-pdfnew.component';
 import { R1aFormComponent } from './r1a-form/r1a-form.component';
 import { M11MCRFComponent } from './m11-mcrf/m11-mcrf.component';
 import { GovernmentComponent } from './Pages/otherpages/government/government.component';
@@ -185,6 +186,7 @@ const ngWizardConfig: NgWizardConfig = {
     AdjustmentGenerateReportComponent,
     SpinnerComponent,
     PreliminaryReportComponent,
+    RF1PDFNewComponent,
     R1aFormComponent,
     M11MCRFComponent,
     GovernmentComponent
