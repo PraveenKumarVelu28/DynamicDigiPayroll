@@ -84,6 +84,8 @@ import { PagibigSTLRFExcelComponent } from './pagibig-stlrfexcel/pagibig-stlrfex
 import { PreliminaryReportComponent } from './preliminary-report/preliminary-report.component';
 import { UserFormPreFillComponent } from './user-form-pre-fill/user-form-pre-fill.component';
 import { UserResetComponent } from './user-reset/user-reset.component';
+import { R1aFormComponent } from './r1a-form/r1a-form.component';
+import { M11MCRFComponent } from './m11-mcrf/m11-mcrf.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Login', pathMatch: 'full' },
@@ -252,7 +254,9 @@ const routes: Routes = [
   { path: 'YTDReportAdjustment', component: YTDReportAdjustmentComponent },
   { path: 'YTDReport', component: YTDReportComponent },
   { path: 'AdjustmentGenerateReport', component: AdjustmentGenerateReportComponent },
-  { path: 'PreliminaryReport', component: PreliminaryReportComponent }
+  { path: 'PreliminaryReport', component: PreliminaryReportComponent },
+  { path: 'R1aForm', component: R1aFormComponent },
+  { path: 'M11MCRF', component: M11MCRFComponent },
 
 
 ];
