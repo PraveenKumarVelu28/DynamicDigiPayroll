@@ -63,7 +63,6 @@ import { PaySlipReportComponent } from './pay-slip-report/pay-slip-report.compon
 import { CertificateOfLoanComponent } from './certificate-of-loan/certificate-of-loan.component';
 import { M1excelComponent } from './m1excel/m1excel.component';
 import { M1mcrfComponent } from './m1mcrf/m1mcrf.component';
-
 import { SSSR3ReportComponent } from './sssr3-report/sssr3-report.component';
 import { MonthlySummaryReportComponent } from './monthly-summary-report/monthly-summary-report.component';
 import { CertificateOfContributionComponent } from './certificate-of-contribution/certificate-of-contribution.component';
@@ -75,7 +74,6 @@ import { YTDReportComponent } from './ytdreport/ytdreport.component';
 import { SSSR5ReportComponent } from './sssr5-report/sssr5-report.component';
 import { SSSLMSComponent } from './ssslms/ssslms.component';
 import { SSSAMSCCLReportComponent } from './sssamscclreport/sssamscclreport.component';
-
 import { AdjustmentGenerateReportComponent } from './adjustment-generate-report/adjustment-generate-report.component';
 import { SSSML1ReportComponent } from './sssml1-report/sssml1-report.component';
 import { SSSRL1ReportComponent } from './sssrl1-report/sssrl1-report.component';
@@ -84,6 +82,7 @@ import { PagibigSTLRFExcelComponent } from './pagibig-stlrfexcel/pagibig-stlrfex
 import { PreliminaryReportComponent } from './preliminary-report/preliminary-report.component';
 import { UserFormPreFillComponent } from './user-form-pre-fill/user-form-pre-fill.component';
 import { UserResetComponent } from './user-reset/user-reset.component';
+import { RF1PDFNewComponent } from './rf1-pdfnew/rf1-pdfnew.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Login', pathMatch: 'full' },
@@ -233,10 +232,7 @@ const routes: Routes = [
   { path: 'M1mcrf', component: M1mcrfComponent },
   { path: 'UserFormPreFill', component: UserFormPreFillComponent },
   { path: 'UserReset', component: UserResetComponent },
-
-
-
-  { path: 'CurrencyMaster', component: CurrencyMasterComponent },
+ { path: 'CurrencyMaster', component: CurrencyMasterComponent },
   { path: 'StaffReportComponent', component: StaffReportComponent },
   { path: 'TaxtableAnnual', component: TaxtableAnnualComponent },
   { path: 'Updatecompanyprofile', component: UpdatecompanyprofileComponent },
@@ -252,7 +248,8 @@ const routes: Routes = [
   { path: 'YTDReportAdjustment', component: YTDReportAdjustmentComponent },
   { path: 'YTDReport', component: YTDReportComponent },
   { path: 'AdjustmentGenerateReport', component: AdjustmentGenerateReportComponent },
-  { path: 'PreliminaryReport', component: PreliminaryReportComponent }
+  { path: 'PreliminaryReport', component: PreliminaryReportComponent },
+  {path:'RF1PDFNew',component:RF1PDFNewComponent}
 
 
 ];
