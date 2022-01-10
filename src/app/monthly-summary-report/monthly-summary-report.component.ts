@@ -17,9 +17,27 @@ Checked:any;
 stafflist:any;
 paygroup:any;
 Tax_Table_Starts_on:any;
+uniquelist:any;
+stafflist1:any;
+daysInMonth:any;
   ngOnInit(): void {
-    this.GetPayGroup();
+    var dt = new Date();
 
+  
+    this.GetPayGroup();
+    this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
+      debugger
+      this.employeelist = data;
+      const key = 'month';
+      const key1 ='endyear';
+
+      this.uniquelist  = [...new Map(this.employeelist.map((item: { [x: string]: any; }) =>
+        [item[key] , item])).values()];
+      //  this.uniquelist = [...new Set(data.map(item => item))];
+     this.stafflist1 =  this.uniquelist.filter((x: { endyear: number; })=>x.endyear==2022)
+    });
+
+    
     
   }
 
@@ -32,13 +50,44 @@ Tax_Table_Starts_on:any;
       })
   }
   employeelist:any;
-public getmonthlyreport(name:any){
+  leavelist:any;
+  BankAccountNumber:any;
+ 
+  days:any;
+  getDaysInMonth:any;
+
+
+  month:any;
+  year:any;
+  basicday:any;
+  basichour:any;
+
+public getmonthlyreport(id:any){
   this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
     debugger
-    this.employeelist = data.filter(x=>x.staffname==name);
+   
+    this.employeelist = data.filter(x=>x.id==id);
+    this.month = this.employeelist[0].month
+    this.year = this.employeelist[0].endyear
+    this.daysInMonth = new Date(this.year, this.month, 0).getDate();
+    this.basicday = (this.employeelist[0].grossSalary)/this.daysInMonth
+    this.basichour = (this.employeelist[0].grossSalary)/8
+    
   });
+  this.DigipayrollServiceService.GetBankDetails().subscribe(
+    data => {
+      debugger
+
+      this.leavelist = data.filter(x => x.staffId == id);
+      
+        this.BankAccountNumber = this.leavelist[0].bankAccountNumber
+
+    },
+  );
 }
  
+
+
 
   public getpaygrouplist(){
     this.DigipayrollServiceService.GetMyDetails().subscribe(data => {

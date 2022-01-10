@@ -1,393 +1,176 @@
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-lg-10">
             <div class="row">
-                <div class="col-lg-5"></div>
-                <div class="col-lg-4">
-                    <a href=""class="Heading fontheading">Preliminary Report</a>
+                <div class="col-lg-12">
+                    <a href="" class="Heading">Payroll Summary Report</a>
+                    <hr class="HrLine">
                 </div>
-            </div> <hr>
-            <div class="row  ">
-             <div class="col-lg-1"></div>
-                <div class="col-lg-2">
-                   <p> Select Start Month & Year :</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 View">
+                    <ul>
+                        <li><a class="active">View</a></li>
+                    </ul>
                 </div>
-                <div class="col-lg-2">
-                    <select name="Month" id="Month" class="form-control">
-                        <option value="Select">Select</option>
-                        <option value="January">January</option>
-                        <option value="February">February</option>
-                        <option value="March">March</option>
-                        <option value="April">April</option>
-                        <option value="May">May</option>
-                        <option value="June">June</option>
-                        <option value="July">July</option>
-                        <option value="August">August</option>
-                        <option value="September">September</option>
-                        <option value="October">October</option>
-                        <option value="November">November</option>
-                        <option value="December">December</option>                       
-                      </select>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table">
+                            <thead>
+                                <tr class="newFont">
+                                    <th class="SelectData">Select</th>
+                                    <th>Year</th>
+                                    <th>Month</th>
+                                    <th>Period</th>
+                                    <th>Payroll Run Type</th>
+                                    <th>Description</th>
+                                <tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of uniquelist">
+                                    <td class="SelectData"><input type="checkbox" (change)="getemployeelist(item.startdate,item.enddate)" data-toggle="collapse"
+                                        data-target="#demo"></td>
+                                    <td>{{item.endyear}}</td>
+                                    <td>{{item.month}}</td>
+                                    <td>{{item.payrolltype}}</td>
+                                    <td>Normal</td>
+                                    <td>Payroll For {{item.startdate|date}} - {{item.enddate|date}}({{item.paygroup}}) </td>
+                                    
+                                </tr>
+
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div><br>
+                <div class="container-fluid" id="demo" class="collapse">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul>
+                                <li><a class="active fontheading">Select ALL</a></li>
+                                <li><a class="active fontheading">Uncheck ALL</a></li>
+                                <li><a class="active fontheading">Employees in selected Period</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <table class="table table-bordered fonttxt">
+                                <thead>
+                                    <tr class="newFont">
+                                        <th class="SelectData">Select</th>
+                                        <th>Employee ID</th>
+                                        <th>Employee Name</th>
+                                        <th>Status</th>
+                                        <th>Pay Group</th>
+                                    </tr>
+                                    <tr *ngFor="let item of employeelist">
+                                        <td class="SelectData"><input type="checkbox" (change)="getpayslip(item.id)" data-toggle="collapse"
+                                        data-target="#paygroup" ></td>
+                                        <td>{{item.staffname}}</td>
+                                        <td>{{item.id}}</td>
+                                        <td>Active</td>
+                                       
+                                        <td>{{item.paygroup}}</td>
+                                   
+        
+                                    </tr>
+
+                                   
+                                </thead>
+
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-2">
-                    <select name="cars" id="Month" class="form-control">
-                        <!-- <option value="Select">Select</option> -->
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>                                          
-                      </select>
-                </div>      
-                <div class="col-lg-1">
-                    <p> Pay Period :</p>
-                 </div>
-                <div class="col-lg-2">
-                    <input class="form-control" placeholder="1 or 2">
-                </div>       
-                <div class="col-lg-2">
-                    <button class="button" data-toggle="collapse"
-                    data-target="#employee">Fetch</button>
-                </div>   
-            </div><br> 
-           
              
-
-           <div class="container-fluid" id="employee" class="collapse"> 
-            <div class="row">
-                <ul>
-                    <!-- <li><a class="active fontheading" >Select ALL</a></li>
-                    <li><a class="active fontheading">Uncheck ALL</a></li> -->
-                    
-                    <li><a class="active fontheading">Employees in selected Period</a></li>
-                </ul>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <table class="table table-bordered fonttxt">
-                        <thead>
-                            <tr class="newFont">
-                                <th class="SelectData" data-toggle="collapse"
-                                data-target="#details1"><input type="checkbox"  (click)="selectALL(true)">&nbsp; Select</th>
-                                <th>Employee ID</th>
-                                <th>Name</th>
-                                <th>Status</th>
-                                <th>Pay Group</th>
-                            </tr>
-                            <tr> 
-                                <td class="SelectData"data-toggle="collapse"
-                                data-target="#details"><input type="checkbox" (click)="showone()"></td>
-                                <td>21-042</td>
-                                <td>Tan, Marina Ela Navarro</td>
-                                <td>Active</td>
-                                <td>Rank and File Deployed</td>
-                            </tr>
-                            <tr>
-                                <td class="SelectData"data-toggle="collapse"
-                                data-target="#details"><input type="checkbox" ></td>
-                                <td>21-045</td>
-                                <td>Jerry Hason</td>
-                                <td>Active</td>
-                                <td>Rank and File Deployed</td>
-                            </tr>
-                            <tr>
-                                <td class="SelectData"data-toggle="collapse"
-                                data-target="#details"><input type="checkbox" ></td>
-                                <td>21-049</td>
-                                <td>Michel Jordon</td>
-                                <td>Active</td>
-                                <td>Rank and File Deployed</td>
-                            </tr>
-                            <tr>
-                                <td class="SelectData"data-toggle="collapse"
-                                data-target="#details"><input type="checkbox" ></td>
-                                <td>21-056</td>
-                                <td>Perry Jay</td>
-                                <td>Active</td>
-                                <td>Rank and File Deployed</td>
-                            </tr>
-                            <tr>
-                                <td class="SelectData"data-toggle="collapse"
-                                data-target="#details"><input type="checkbox" ></td>
-                                <td>21-077</td>
-                                <td>Tom Crise</td>
-                                <td>Active</td>
-                                <td>Rank and File Deployed</td>
-                            </tr>
-                            <tr>
-                                <td class="SelectData"data-toggle="collapse"
-                                data-target="#details"><input type="checkbox" ></td>
-                                <td>21-083</td>
-                                <td>Blanch, Stephaine</td>
-                                <td>Active</td>
-                                <td>Rank and File Deployed</td>
-                            </tr>
-                            <tr>
-                                <td class="SelectData"data-toggle="collapse"
-                                data-target="#details"><input type="checkbox" ></td>
-                                <td>21-091</td>
-                                <td>Lagartha Ragnar</td>
-                                <td>Active</td>
-                                <td>Rank and File Deployed</td>
-                            </tr>
-                            <tr>
-                                <td class="SelectData"data-toggle="collapse"
-                                data-target="#details"><input type="checkbox" ></td>
-                                <td>21-095</td>
-                                <td>Enedya,Lalit</td>
-                                <td>Active</td>
-                                <td>Rank and File Deployed</td>
-                            </tr>
-                            <tr>
-                                <td class="SelectData"data-toggle="collapse"
-                                data-target="#details"><input type="checkbox" ></td>
-                                <td>21-123</td>
-                                <td>Iver Lee Odin</td>
-                                <td>Active</td>
-                                <td>Rank and File Deployed</td>
-                            </tr>
-                            <tr>
-                                <td class="SelectData"data-toggle="collapse"
-                                data-target="#details"><input type="checkbox" ></td>
-                                <td>21-134</td>
-                                <td>Dela,Cruz</td>
-                                <td>Active</td>
-                                <td>Rank and File Deployed</td>
-                            </tr>
-                            <tr>
-                                <td class="SelectData"data-toggle="collapse"
-                                data-target="#details"><input type="checkbox" ></td>
-                                <td>21-141</td>
-                                <td>Chavez, Ma. Russell Bullecer</td>
-                                <td>Active</td>
-                                <td>Rank and File Deployed</td>
-                            </tr>
-                            <tr>
-                                <td class="SelectData"data-toggle="collapse"
-                                data-target="#details"><input type="checkbox" ></td>
-                                <td>21-147</td>
-                                <td>Cardeno, Dina Quintana</td>
-                                <td>Active</td>
-                                <td>Rank and File Deployed</td>
-                            </tr>
-                            <tr>
-                                <td class="SelectData"data-toggle="collapse"
-                                data-target="#details"><input type="checkbox" ></td>
-                                <td>21-152</td>
-                                <td>Blanch, Aldrin De Guzman</td>
-                                <td>Active</td>
-                                <td>Rank and File Deployed</td>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
             </div>
         </div>
+    </div>
+      <div class="row" id="paygroup" class="collapse" >
+        <div class="col-lg-5">
+        </div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-3"  style="    margin-left: 938px;">
+            <button class="Button" (click)="convetToPDF1()">Convert To PDF </button> &nbsp;&nbsp;
+            <button class="Button" (click)="exportexcel()">Export to Excel</button>       
+        </div> 
+    </div> <br>
+    <div class="row" id="paygroup" class="collapse" >
+        <div class="col-lg-9"></div>
+        <div class="col-lg-2" style="    margin-left: 938px;">
+           <p style="font-size: 15px;"> Grand Total: 19,214.76</p>
+        </div>
+    </div> <br>
+    
 
 
-        <div class="container-fluid" id="details1" class="collapse" *ngIf="selectone==false"> 
+    <div class="row"  id="paygroup" class="collapse">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10" style="    margin-left: 138px;">
             <div class="row">
-                <ul>
-                    <li><a class="active fontheading">Salary Details of Employee in selected Period</a></li>
-                    <li> <button class="generate5" (click)="exportexcel()">Export to Excel</button></li>
-                </ul>
-            </div> <br>
-            <div class="row">
-                <div class="col-lg-9"></div>
-                <div class="col-lg-3">
-                    <p class="grand" style="margin-left: 45px;"> Grand Total : 1,22,584.66</p>
-                </div>
-             </div>
-            <br/>    
-            <div class="row">
-                <div class="col-lg-12">
-                    <table class="table table-bordered fonttxt" id="downloadaplication">
+                <div class="col-lg-12" style="overflow:auto;">
+                    <table class="table table-bordered" id="downloadaplication">
                         <thead>
                             <tr class="newFont">
-                                <th>Employee ID</th>
-                                <th>Name</th>
-                                <th>Role</th>
-                                <th>Pay Group</th>
+                                <th>Employee Id</th>    
+                                <th>Employee Name</th>
+                                <th>Tax Status</th>
                                 <th>Basic Salary</th>
-                                <th>Basic Salary (Semi-Monthly)</th>
-                                <th>Deminimis Benifits</th>         
+                                <th>Monthly Deminimis Benifits </th>
+                                <th>Total Monthly Salary</th>
+                                <th>Semi Monthly Basic Salary </th>
+                                <th>Basic/Day</th>
+                                <th>Basic/Hr</th>                
+                                <th>ECOLA</th>
                                 <th>OT Amount</th>
-                                <th>SSS Deduction</th>
-                                <th>Pag-IBIG</th>
-                                <th>PhilHealth Deduction</th>
-                                <th>Tax deduction</th>
-                                <th>LOP Amount</th>
+                                <th>Total Salary</th>                                
+                                <th>Tax</th>
+                                <th>SSS</th>
+                                <th>PHIL</th>
+                                <th>HDMF</th>
+                                <th>Adjustments</th>
+                                <th>SSS/CAL Loan</th>
+                                <th>HDMF/CAL Loan</th>                                
+                                <th>Total Deduction</th>                               
                                 <th>Net Pay</th>
-                                <!-- <th>Grand Total</th> -->
-                               
-                               
-
+                            </tr>        
+                            <tr>
+                             <td>{{id}}</td>
+                             <td>{{fullname}}</td>
+                             <td>ME 1</td>
+                             <td>{{BaseSalary}}</td>
+                             <td>{{deniminimis_amount}}</td>
+                             <td>{{GrossSalary}}</td>
+                             <td>{{semimonthly}}</td>
+                             <td>{{basicday}}</td>
+                             <td>{{basichour}}</td>
+                             <td>0.00</td>
+                             <td>0.00</td>
+                             <td>{{semimonthly}}</td>
+                             <td>{{tax}}</td>
+                             <td>{{SSS}}</td>
+                             <td>{{philHealthContribution}}</td>
+                             <td>{{pagBig}}</td>
+                             <td>0.00</td>
+                             <td>0.00</td>
+                             <td>0,00</td>
+                             <td>{{deductions}}</td>
+                             <td>{{netMonthSalary}}</td>
                             </tr>
-                            <tr> 
-                            
-                                <td>21-042</td>
-                                <td>Tan, Marina Ela Navarro</td>
-                                <td>Manager</td>
-                                <td>Rank and File Deployed</td>
-                                <td>65,000.00</td>
-                                <td>32,500.00</td>
-                                <td>350.00</td>
-                                <td>5,229.88</td>
-                                <td>250.00</td>
-                                <td>50.00</td>
-                                <td>450.00</td>
-                                <td>6,585.73</td>
-                                <td>7,085.73</td>
-                                <td>30,644.15</td>
-                                <!-- <td>30,644.15</td> -->
-                                <!-- <td>
-                                  
-                                    <button class="edit">Send Email</button>
-                                </td> -->
-                            </tr>
-                            <tr> 
-                            
-                                <td>21-042</td>
-                                <td>Tan, Marina Ela Navarro</td>
-                                <td>Manager</td>
-                                <td>Rank and File Deployed</td>
-                                <td>65,000.00</td>
-                                <td>32,500.00</td>
-                                <td>350.00</td>
-                                <td>5,229.88</td>
-                                <td>250.00</td>
-                                <td>50.00</td>
-                                <td>450.00</td>
-                                <td>6,585.73</td>
-                                <td>7,085.73</td>
-                                <td>30,644.15</td>
-                                <!-- <td>20,244.15</td> -->
-                                <!-- <td>
-                                  
-                                    <button class="edit">Send Email</button>
-                                </td> -->
-                            </tr>
-                            <tr> 
-                            
-                                <td>21-042</td>
-                                <td>Tan, Marina Ela Navarro</td>
-                                <td>Manager</td>
-                                <td>Rank and File Deployed</td>
-                                <td>65,000.00</td>
-                                <td>32,500.00</td>
-                                <td>350.00</td>
-                                <td>5,229.88</td>
-                                <td>250.00</td>
-                                <td>50.00</td>
-                                <td>450.00</td>
-                                <td>6,585.73</td>
-                                <td>7,085.73</td>
-                                <td>30,644.15</td>
-                                <!-- <td>25,544.10</td> -->
-                                <!-- <td>
-                                  
-                                    <button class="edit">Send Email</button>
-                                </td> -->
-                            </tr>
-                            <tr> 
-                            
-                                <td>21-042</td>
-                                <td>Tan, Marina Ela Navarro</td>
-                                <td>Manager</td>
-                                <td>Rank and File Deployed</td>
-                                <td>65,000.00</td>
-                                <td>32,500.00</td>
-                                <td>350.00</td>
-                                <td>5,229.88</td>
-                                <td>250.00</td>
-                                <td>50.00</td>
-                                <td>450.00</td>
-                                <td>6,585.73</td>
-                                <td>7,085.73</td>
-                                <td>30,644.15</td>
-                                <!-- <td>24,644.15</td> -->
-                                <!-- <td>
-                                  
-                                    <button class="edit">Send Email</button>
-                                </td> -->
-                            </tr>
+                           
                         </thead>
                     </table>
                 </div>
             </div>
-        </div>
-
-        <div class="container-fluid" id="details" class="collapse" *ngIf="selectone==true"> 
-            <div class="row">
-                <ul>
-                    <li><a class="active fontheading">Salary Details of Employee in selected Period</a></li>
-                    <li> <button class="generate5" (click)="exportexcel()">Export to Excel</button></li>
-                </ul>
-            </div>
-            <br/>
-         
            
-            <div class="row">
-                <div class="col-lg-12">
-                    <table class="table table-bordered fonttxt" id="downloadaplication">
-                        <thead>
-                            <tr class="newFont">
-                                <th>Employee ID</th>
-                                <th>Name</th>
-                                <th>Role</th>
-                                <th>Pay Group</th>
-                                <th>Basic Salary</th>
-                                <th>Basic Salary (Semi-Monthly)</th>
-                                <th>Deminimis</th>         
-                                <th>OT Amount</th>
-                                <th>SSS Deduction</th>
-                                <th>Pag-IBIG</th>
-                                <th>PhilHealth Deduction</th>
-                                <th>Tax deduction</th>
-                                <th>LOP Amount</th>
-                                <th>Net Pay</th>
-                                <!-- <th>Grand Total</th> -->
-                               
-                               
-
-                            </tr>
-                            <tr> 
-                            
-                                <td>21-042</td>
-                                <td>Tan, Marina Ela Navarro</td>
-                                <td>Manager</td>
-                                <td>Rank and File Deployed</td>
-                                <td>30,000</td>
-                                <td>15,000</td>
-                                <td>00.00</td>
-                                <td>2,000</td>
-                                <td>500</td>
-                                <td>50</td>
-                                <td>450</td>
-                                <td>800</td>
-                                <td>1000</td>
-                                <td>14,200</td>
-                               
-                                <!-- <td>
-                                  
-                                    <button class="edit">Send Email</button>
-                                </td> -->
-                            </tr>
-                          
-                        </thead>
-                    </table>
-                </div>
-            </div>
-        </div>
-        </div>
+        </div> 
     </div>
     <div class="col-lg-1"></div>
 </div>
-
-
-
-
-
-
-
-
 
