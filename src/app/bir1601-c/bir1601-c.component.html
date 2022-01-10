@@ -1,0 +1,198 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-4">
+                    <a href="" class="Heading fontheading"> 1601-C</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p> Select Start Month & Year</p>
+                </div>
+                <div class="col-lg-2">
+                    <select name="cars" id="Month" class="form-control">
+                        <option value="Select">Select</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                </div>
+                <div class="col-lg-2">
+                    <select name="cars" id="Month" class="form-control">
+                        <option value="Select">Select</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                    </select>
+                </div>
+            </div><br>
+
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p>Amended Return?</p>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="option2">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                    </div>
+                </div>
+            </div> <br>
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p>Any Taxes Withheld? </p>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="option2">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                    </div>
+                </div>
+            </div> <br>
+
+
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p>Signatory Person</p>
+                </div>
+                <div class="col-lg-2">
+                    <select name="cars" id="Month" class="form-control">
+                        <option value="Select">Select</option>
+                        <option value="Admin">Admin</option>
+                        <option value="HR">HR</option>
+                        <option value="Finance">Finance</option>
+                    </select>
+                </div>
+            </div> <br>
+
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p>Version</p>
+                </div>
+                <div class="col-lg-2">
+                    <select name="cars" id="Month" class="form-control">
+                        <option value="Select">Select</option>
+                        <option value="Admin">July 2008</option>
+                        <option value="HR">January 2018</option>
+                    </select>
+                </div>
+            </div> <br>
+
+
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-2">
+                    <button class="generate" (click)="showpdf()">GENERATE</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+<div class="row" *ngIf="showleaseforprint==1">
+    <!-- <div class="col-lg-5">
+
+    </div>
+    <div class="col-lg-3">
+       <button class="button1" (click)="convetToPDF1()">Convert To PDF </button>
+    </div> -->
+
+    <div class="col-lg-4">
+    </div>
+    <div class="col-lg-4">
+        <button class="button1" (click)="convetToPDF1()">Convert To PDF</button>
+    </div>
+
+
+    <div id="downloadaplication"
+        style="   position: absolute;
+        left: 50%;
+        margin-left: -396px;
+        top: 0px;
+        width: 619px;
+        height: 993px;
+        border-style: outset;
+        overflow: hidden;
+        margin-top: 489px;">
+        <div style="position:absolute;left:0px;top:0px">
+            <img src="/assets/images/1601_C.jpg"
+            width=612 height=1009>
+        </div>
+        <div style="position:absolute;left:124.55px;top:154.45px" class="cls_002"><span class="cls_002">01</span></div>
+        <div style="position:absolute;left:158.40px;top:154.45px" class="cls_002"><span class="cls_002">2021</span>
+        </div>
+        <div style="position:absolute;left:259.20px;top:155.16px" class="cls_002"><span class="cls_002">X</span></div>
+        <div style="position:absolute;left:489.60px;top:155.16px" class="cls_002"><span class="cls_002">X</span></div>
+        <div style="position:absolute;left:64.80px;top:185.41px" class="cls_002"><span class="cls_002">600</span></div>
+        <div style="position:absolute;left:115.20px;top:185.41px" class="cls_002"><span class="cls_002">194</span></div>
+        <div style="position:absolute;left:165.60px;top:185.41px" class="cls_002"><span class="cls_002">012</span></div>
+        <div style="position:absolute;left:223.20px;top:185.41px" class="cls_002"><span class="cls_002">0000</span>
+        </div>
+        <div style="position:absolute;left:346.54px;top:185.41px" class="cls_002"><span class="cls_002">049</span></div>
+        <div style="position:absolute;left:460.80px;top:185.41px" class="cls_002"><span class="cls_002">Business Process
+                Outsourcing</span></div>
+        <div style="position:absolute;left:64.80px;top:217.10px" class="cls_002"><span class="cls_002">TalentUS
+                Inc.</span></div>
+        <div style="position:absolute;left:489.60px;top:217.07px" class="cls_002"><span
+                class="cls_002">0284212755</span></div>
+        <div style="position:absolute;left:64.80px;top:246.95px" class="cls_002"><span class="cls_002">5F Phinma Plaza,
+                39 Phinma Dr, Rockwell Center, Makati City</span></div>
+        <div style="position:absolute;left:535.25px;top:248.02px" class="cls_002"><span class="cls_002">1210</span>
+        </div>
+        <div style="position:absolute;left:64.09px;top:276.46px" class="cls_002"><span class="cls_002">X</span></div>
+        <div style="position:absolute;left:259.20px;top:320.36px" class="cls_002"><span
+                class="cls_002">1,583,821.69</span></div>
+        <div style="position:absolute;left:259.20px;top:339.81px" class="cls_002"><span class="cls_002">0.00</span>
+        </div>
+        <div style="position:absolute;left:259.20px;top:359.97px" class="cls_002"><span class="cls_002">0.00</span>
+        </div>
+        <div style="position:absolute;left:259.20px;top:381.57px" class="cls_002"><span class="cls_002">47,857.76</span>
+        </div>
+        <div style="position:absolute;left:259.20px;top:400.27px" class="cls_002"><span
+                class="cls_002">1,535,963.93</span></div>
+        <div style="position:absolute;left:439.20px;top:416.12px" class="cls_002"><span
+                class="cls_002">224,463.09</span></div>
+        <div style="position:absolute;left:439.20px;top:448.52px" class="cls_002"><span
+                class="cls_002">224,463.09</span></div>
+        <div style="position:absolute;left:439.20px;top:521.97px" class="cls_002"><span
+                class="cls_002">224,463.09</span></div>
+        <div style="position:absolute;left:439.20px;top:572.37px" class="cls_002"><span
+                class="cls_002">224,463.09</span></div>
+        <div style="position:absolute;left:406.35px;top:753.44px" class="cls_002"><span class="cls_002">Lovely
+                Cabalfin</span></div>
+        <div style="position:absolute;left:405.52px;top:786.55px" class="cls_002"><span class="cls_002">Admin
+                Manager</span></div>
+    </div>
+
+</div>

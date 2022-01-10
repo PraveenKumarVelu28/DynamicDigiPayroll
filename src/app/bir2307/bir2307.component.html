@@ -1,0 +1,146 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-4">
+                    <a href="" class="Heading fontheading"> 2307</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p>Select Quarter and Year: </p>
+                </div>
+                <div class="col-lg-2">
+                    <select name="cars" id="Month" class="form-control">
+                        <option value="Select">First</option>
+                        <option value="2021">First</option>
+                        <option value="2020">Second</option>
+                        <option value="2019">Third</option>
+                        <option value="2019">Fourth</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-2">
+                    <select name="cars" id="Month" class="form-control">
+                        <option value="Select">Select</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                    </select>
+                </div>
+            </div>
+        <br>
+
+
+        <div class="row FilterClass fontheading">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-2">
+                <p>Signatory Person</p>
+            </div>
+            <div class="col-lg-2">
+                <select name="cars" id="Month" class="form-control">
+                    <option value="Select">Select</option>
+                    <option value="Admin">Admin</option>
+                    <option value="HR">HR</option>
+                    <option value="Finance">Finance</option>
+                </select>
+            </div>
+        </div> <br>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-bordered fonttxt">
+                    <thead>
+                        <tr class="newFont">
+                            <th class="SelectData"><input type="checkbox"></th>
+                            <th> Employee ID</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td class="SelectData"><input type="checkbox"></td>
+                            <td>21042</td>
+                            <td>Tan, Marina Ela Navarro</td>
+                            <td>Active</td>
+                        </tr>
+                    </thead>
+
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-2">
+                <button class="generate" (click)="showpdf()">Print</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="col-lg-1"></div>
+</div>
+<div class="row" *ngIf="showleaseforprint==1">
+    <!-- <div class="col-lg-5">
+
+    </div>
+    <div class="col-lg-3">
+       <button class="button1" (click)="convetToPDF1()">Convert To PDF </button>
+    </div> -->
+
+    <div class="col-lg-5">
+    </div>
+    <div class="col-lg-4">
+        <button class="button1" (click)="convetToPDF1()">Convert To PDF</button>
+    </div>
+
+
+  
+
+    <div  id="downloadaplication"
+    style="position: absolute;
+    left: 50%;
+    margin-left: -396px;
+    top: 0px;
+    width: 618px;
+    height: 900px;
+    border-style: outset;
+    overflow: hidden;
+    margin-top: 410px;">
+        <div style="position:absolute;left:0px;top:0px">
+        <img src="/assets/images/2307report.jpg" width=612 height=1008></div>
+        <div style="position:absolute;left:102.96px;top:102.25px" class="cls_002"><span class="cls_002">01</span></div>
+        <div style="position:absolute;left:129.52px;top:102.25px" class="cls_002"><span class="cls_002">01</span></div>
+        <div style="position:absolute;left:157.61px;top:102.25px" class="cls_002"><span class="cls_002">21</span></div>
+        <div style="position:absolute;left:331.26px;top:102.25px" class="cls_002"><span class="cls_002">03</span></div>
+        <div style="position:absolute;left:357.85px;top:102.25px" class="cls_002"><span class="cls_002">31</span></div>
+        <div style="position:absolute;left:384.41px;top:102.25px" class="cls_002"><span class="cls_002">21</span></div>
+        <div style="position:absolute;left:122.40px;top:138.25px" class="cls_002"><span class="cls_002">237</span></div>
+        <div style="position:absolute;left:169.65px;top:138.25px" class="cls_002"><span class="cls_002">597</span></div>
+        <div style="position:absolute;left:216.03px;top:138.25px" class="cls_002"><span class="cls_002">576</span></div>
+        <div style="position:absolute;left:262.83px;top:138.25px" class="cls_002"><span class="cls_002">0000</span></div>
+        <div style="position:absolute;left:122.40px;top:155.52px" class="cls_002"><span class="cls_002">Tengco, Ma. Katrina Villarama</span></div>
+        <div style="position:absolute;left:122.40px;top:179.28px" class="cls_002"><span class="cls_002">134 Alfa Romeo St. Camella Homes, Sucat, Paranaque</span></div>
+        <div style="position:absolute;left:122.40px;top:187.90px" class="cls_002"><span class="cls_002">City</span></div>
+        <div style="position:absolute;left:122.40px;top:236.13px" class="cls_002"><span class="cls_002">600</span></div>
+        <div style="position:absolute;left:169.65px;top:236.13px" class="cls_002"><span class="cls_002">194</span></div>
+        <div style="position:absolute;left:216.03px;top:236.13px" class="cls_002"><span class="cls_002">012</span></div>
+        <div style="position:absolute;left:262.83px;top:236.13px" class="cls_002"><span class="cls_002">0000</span></div>
+        <div style="position:absolute;left:122.40px;top:253.71px" class="cls_002"><span class="cls_002">TalentUS Inc.</span></div>
+        <div style="position:absolute;left:122.40px;top:278.54px" class="cls_002"><span class="cls_002">5F Phinma Plaza, 39 Phinma Dr,</span></div>
+        <div style="position:absolute;left:554.43px;top:278.54px" class="cls_002"><span class="cls_002">1210</span></div>
+        <div style="position:absolute;left:21.60px;top:344.12px" class="cls_002"><span class="cls_002">Management & technical consultants</span></div>
+        <div style="position:absolute;left:161.26px;top:344.13px" class="cls_002"><span class="cls_002">WI 050</span></div>
+        <div style="position:absolute;left:424.83px;top:344.13px" class="cls_002"><span class="cls_002">0</span></div>
+        <div style="position:absolute;left:489.63px;top:344.13px" class="cls_002"><span class="cls_002">0</span></div>
+        <div style="position:absolute;left:72.00px;top:754.85px" class="cls_002"><span class="cls_002">Lovely Cabalfin</span></div>
+        <div style="position:absolute;left:459.75px;top:754.85px" class="cls_002"><span class="cls_002">Admin Manager</span></div>
+        <div style="position:absolute;left:72.00px;top:812.16px" class="cls_002"><span class="cls_002">Tengco, Ma. Katrina Villarama</span></div>
+        <div style="position:absolute;left:410.40px;top:812.16px" class="cls_002"><span class="cls_002">Operations Consultant</span></div>
+        </div>
+        
+</div>
