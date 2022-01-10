@@ -1,6 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
+import { DigipayrollServiceService } from '../digipayroll-service.service';
 @Component({
   selector: 'app-bir1601-c',
   templateUrl: './bir1601-c.component.html',
@@ -8,13 +10,57 @@ import html2canvas from 'html2canvas';
 })
 export class Bir1601CComponent implements OnInit {
 
-  constructor() { }
+  constructor(public DigipayrollServiceService: DigipayrollServiceService) { }
   showleaseforprint:any;
+  month:any;
   ngOnInit(): void {
     this.showleaseforprint = 0;
+    const d = new Date();
+  this.month = d.getMonth();
   }
 
+  employeelist:any;
+  uniquelist:any;
+  uniquelist1:any;
+  ssstotal:any;
+  sum:any;
+  sssec:any;;
+  total:any;
+  netMonthSalary:any;
+  deductions:any;
+  tax:any;
   public showpdf(){
+    this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
+      debugger
+      this.employeelist = data.filter(x=>x.month==this.month);
+      
+      this.sum = 0;
+      this.sssec = 0;
+      this.tax = 0;
+      for (let i = 0; i < this.employeelist.length; i++) {
+        this.sum += this.employeelist[i].baseSalary;
+      }
+      for (let i = 0; i < this.employeelist.length; i++) {
+        this.netMonthSalary += this.employeelist[i].netMonthSalary;
+      }
+      for (let i = 0; i < this.employeelist.length; i++) {
+        this.tax += this.employeelist[i].tax;
+      }
+
+      this.deductions = this.sum-this.netMonthSalary
+      
+      
+   
+     
+      // this.ssstotal = SUM(this.employeelist.contribution)
+
+    //   this.uniquelist  = [...new Map(this.employeelist.map((item: { [x: string]: any; }) =>
+    //     [(item[key]), item])).values()]
+    // this.uniquelist1 =  this.uniquelist.filter((x: { month: any; })=>x.month==this.Month)
+      //  this.uniquelist = [...new Set(data.map(item => item))];
+     
+  
+    });
     this.showleaseforprint = 1;
   }
   public convetToPDF1() {
