@@ -14,13 +14,45 @@ export class RFreportComponent implements OnInit {
   employeelist:any;
   constructor(public DigipayrollServiceService: DigipayrollServiceService) { }
   stafflist:any;
+  uniquelist:any;
   ngOnInit(): void {
-
     this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
       debugger
-      this.stafflist = data;
+      this.employeelist = data;
+      const key = 'ID';
+
+      this.uniquelist  = [...new Map(this.employeelist.map((item: { [x: string]: any; }) =>
+        [item[key], item])).values()];
+
+      
+      //  this.uniquelist = [...new Set(data.map(item => item))];
+     
+    });
+
+  }
+
+  sum:any;
+  sssec:any;
+  total:any;
+  public showpdf(){
+    
+    this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
+      debugger
+      this.stafflist = data.filter(x=>x.month==this.Month);
+      this.sum = 0;
+      this.sssec = 0;
+      for (let i = 0; i < this.employeelist.length; i++) {
+        this.sum += this.employeelist[i].contribution;
+      }
+      for (let i = 0; i < this.employeelist.length; i++) {
+        this.sssec += this.employeelist[i].ss_ec;
+      }
+
+      this.total = this.sum+this.sssec
     });
   }
+  Month:any;
+
   fileName = 'RF-1 Summary.xlsx';
   exportexcel(): void {
     this.loader = true;

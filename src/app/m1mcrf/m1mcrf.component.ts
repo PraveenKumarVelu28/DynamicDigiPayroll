@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { DigipayrollServiceService } from 'src/app/digipayroll-service.service';
+import Swal from 'sweetalert2';
+import * as XLSX from 'xlsx';
+
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
-
 @Component({
   selector: 'app-m1mcrf',
   templateUrl: './m1mcrf.component.html',
@@ -10,11 +13,17 @@ import html2canvas from 'html2canvas';
 export class M1mcrfComponent implements OnInit {
   showleaseforprint:any;
   loader:any;
-  constructor() { }
-
+  constructor(public DigiofficeService: DigipayrollServiceService) { }
+  employeelist:any
   ngOnInit(): void {
     this.showleaseforprint = 0;
     this.loader=false;
+    
+    this.DigiofficeService.GetEmployeeSalary().subscribe(data => {
+      debugger
+      this.employeelist = data;
+    });
+
   }
 
 

@@ -27,9 +27,9 @@ export class M1excelComponent implements OnInit {
   ngOnInit(): void {
     debugger
 
-    this.DigiofficeService.GetMyDetails().subscribe(data => {
+    this.DigiofficeService.GetEmployeeSalary().subscribe(data => {
       debugger
-      this.stafflist = data.filter(x => x.deniminimis != null);
+      this.employeelist = data;
     });
 
 

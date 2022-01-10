@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
 
+import { Component, OnInit } from '@angular/core';
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
+import { DigipayrollServiceService } from '../digipayroll-service.service';
 
 @Component({
   selector: 'app-sssrl1-report',
@@ -10,22 +11,63 @@ import html2canvas from 'html2canvas';
 })
 export class SSSRL1ReportComponent implements OnInit {
 
-  constructor() { }
+  constructor(public DigipayrollServiceService: DigipayrollServiceService) { }
 
   Month:any;
   Year:any;
   Person:any;
   showleaseforprint:any;
+  employeelist:any;
+  uniquelist:any;
+  uniquelist1:any;
   ngOnInit(): void {
-    this.Month="jan";
-    this.Year="2021";
-    this.Person="Admin";
+  
     this.showleaseforprint = 0;
+
+  
+
+
   }
 
+  
+
   public showpdf(){
+    this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
+      debugger
+      this.employeelist = data;
+      const key = 'staffname';
+      const key1 = 'month'
+
+      this.uniquelist  = [...new Map(this.employeelist.map((item: { [x: string]: any; }) =>
+        [(item[key]), item])).values()]
+    this.uniquelist1 =  this.uniquelist.filter((x: { month: any; })=>x.month==this.Month)
+      //  this.uniquelist = [...new Set(data.map(item => item))];
+     
+  
+    });
     this.showleaseforprint = 1;
   }
+
+
+  emailid:any;
+  EmployeeNo:any;
+  PhilhealthNo:any;
+  basesalary:any;
+  dateofjoining:any;
+  role:any;
+  fullname:any;
+  sign:any;
+  department:any;
+  signname:any;
+  stafflist1:any;
+  public getsign(){
+    this.DigipayrollServiceService.GetMyDetails().subscribe(data => {
+      debugger
+      this.stafflist1 = data.filter(x => x.department_name == this.sign);
+      this.signname = this.stafflist1[0].fullname
+    });
+  }
+
 
 
   public convetToPDF1() {

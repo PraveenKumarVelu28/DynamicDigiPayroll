@@ -13,20 +13,21 @@
                     </div>
                     <div class="col-lg-2">
                         <div class="dropdown">
-                            <select class="form-control inputfield" id="Month" name="Month" [(ngModel)]="Month"><br />
+                            <select class="form-control inputfield" id="Month" name="Month"  [(ngModel)]="Month" ><br/>
                                 <option value="Select">Select Month </option>
-                                <option value="jan">January </option>
-                                <option value="Feb">February </option>
-                                <option value="Mar">March </option>
-                                <option value="April">April </option>
-                                <option value="May">May </option>
-                                <option value="june">June </option>
-                                <option value="july">July</option>
-                                <option value="August">August </option>
-                                <option value="Sept">September </option>
-                                <option value="Oct">October </option>
-                                <option value="Nov">November </option>
-                                <option value="December">December </option>
+                                <option value="1">January </option>
+                                <option value="2">February </option>
+                                <option value="3">March </option>
+                                <option value="4">April </option>
+                                <option value="5">May </option>
+                                <option value="6">June </option>
+                                <option value="7">July</option>
+                                <option value="8">August </option>
+                                <option value="9">September </option>
+                                <option value="10">October </option>
+                                <option value="11">November </option>
+                                <option value="12">December </option>
+                                
                             </select>
                         </div>
                     </div>
@@ -43,24 +44,23 @@
                     <div class="col-lg-3"></div>
                 </div>
                 <br />
-                <div class="row FilterClass">
-                    <div class="col-lg-3">
-                    </div>
+                <div class="row FilterClass fontheading">
+                    <div class="col-lg-3"></div>
                     <div class="col-lg-2">
-                        Signatory Person:
+                        <p>Signatory Person</p>
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-4">
                         <div class="dropdown">
-                            <select class="form-control inputfield" id="Month" name="Month" [(ngModel)]="Person"><br />
-                                <option value="Select">Select Person </option>
-                                <option value="Admin">Admin </option>
-                                <option value="Admin">HR </option>
-                                <option value="Admin">FINANCE </option>
-                            </select>
+                        <select name="cars" id="Month" class="form-control" [(ngModel)]="sign" (change)="getsign()">
+                            <option value="Select">Select</option>
+                            <option value="Admin">Admin</option>
+                            <option value="HR">HR</option>                 
+                            <option value="Finance">Finance</option>                                          
+                          </select>
                         </div>
                     </div>
-                    <div class="col-lg-3"></div>
-                </div>
+                </div> <br> 
+                 
                 <br />
                 <div class="row">
                     <div class="col-lg-5">
@@ -113,23 +113,22 @@
         </div>
         <div style="position:absolute;left:111.27px;top:374.20px" class="cls_004"><span class="cls_004">2021</span>
         </div>
-        <div style="position:absolute;left:205.99px;top:374.20px" class="cls_004"><span class="cls_004">94,250.00</span>
+        <div style="position:absolute;left:205.99px;top:374.20px" class="cls_004"><span class="cls_004">{{sum}}</span>
         </div>
-        <div style="position:absolute;left:355.49px;top:374.20px" class="cls_004"><span class="cls_004">870.00</span>
+        <div style="position:absolute;left:355.49px;top:374.20px" class="cls_004"><span class="cls_004">{{sssec}}</span>
         </div>
-        <div style="position:absolute;left:488.95px;top:374.20px" class="cls_004"><span class="cls_004">95,120.00</span>
+        <div style="position:absolute;left:488.95px;top:374.20px" class="cls_004"><span class="cls_004">{{total}}</span>
         </div>
-        <div style="position:absolute;left:205.99px;top:560.65px" class="cls_004"><span class="cls_004">94,250.00</span>
+        <div style="position:absolute;left:205.99px;top:560.65px" class="cls_004"><span class="cls_004">{{sum}}</span>
         </div>
-        <div style="position:absolute;left:355.49px;top:560.65px" class="cls_004"><span class="cls_004">870.00</span>
+        <div style="position:absolute;left:355.49px;top:560.65px" class="cls_004"><span class="cls_004">{{sssec}}</span>
         </div>
-        <div style="position:absolute;left:485.35px;top:560.65px" class="cls_004"><span class="cls_004">95,120.00</span>
+        <div style="position:absolute;left:485.35px;top:560.65px" class="cls_004"><span class="cls_004">{{total}}</span>
         </div>
         <div style="position:absolute;left:324.00px;top:614.18px" class="cls_005"><span class="cls_005">Ninety Five
                 Thousand One Hundred Twenty and 0/100</span></div>
-        <div style="position:absolute;left:361.71px;top:657.38px" class="cls_005"><span class="cls_005">Lovely
-                Cabalfin</span></div>
-        <div style="position:absolute;left:257.89px;top:668.65px" class="cls_004"><span class="cls_004">95,120.00</span>
+        <div style="position:absolute;left:361.71px;top:657.38px" class="cls_005"><span class="cls_005">{{signname}}</span></div>
+        <div style="position:absolute;left:257.89px;top:668.65px" class="cls_004"><span class="cls_004">{{total}}</span>
         </div>
     </div>
 </div>
