@@ -17,7 +17,7 @@ export class GovernmentComponent implements OnInit {
 
   public GetGovernmentRecords() {
     debugger
-    this.DigipayrollServiceService.GetGovernmentRecords().subscribe(data => {
+    this.DigipayrollServiceService.GetNewGovernmentRecords().subscribe(data => {
       debugger
       this.govtlist = data;
       console.log('data', this.govtlist)
@@ -43,24 +43,27 @@ export class GovernmentComponent implements OnInit {
   save() {
     var json = {
 
-      "ssS_Number": this.ssS_Number,
-      "ssS_DatePaid": this.ssS_DatePaid,
-      "sssLoan_Number": this.sssLoan_Number,
-      "sssLoan_DatePaid": this.sssLoan_DatePaid,
-      "sssCalamityLoan_Number": this.sssCalamityLoan_Number,
-      "sssCalamityLoan_DatePaid": this.sssCalamityLoan_DatePaid,
-      "philHealth_Number": this.philHealth_Number,
-      "philHealth_DatePaid": this.philHealth_DatePaid,
-      "hdmF_Number": this.hdmF_Number,
-      "hdmF_DatePaid": this.hdmF_DatePaid,
-      "hdmfLoan_Number": this.hdmfLoan_Number,
-      "hdmfLoan_DatePaid": this.hdmfLoan_DatePaid,
-      "hdmpCalamityLoan_Number": this.hdmpCalamityLoan_Number,
-      "hdmpCalamityLoan_DatePaid": this.hdmpCalamityLoan_DatePaid,
+      // "ssS_Number": this.ssS_Number,
+      // "ssS_DatePaid": this.ssS_DatePaid,
+      // "sssLoan_Number": this.sssLoan_Number,
+      // "sssLoan_DatePaid": this.sssLoan_DatePaid,
+      // "sssCalamityLoan_Number": this.sssCalamityLoan_Number,
+      // "sssCalamityLoan_DatePaid": this.sssCalamityLoan_DatePaid,
+      // "philHealth_Number": this.philHealth_Number,
+      // "philHealth_DatePaid": this.philHealth_DatePaid,
+      // "hdmF_Number": this.hdmF_Number,
+      // "hdmF_DatePaid": this.hdmF_DatePaid,
+      // "hdmfLoan_Number": this.hdmfLoan_Number,
+      // "hdmfLoan_DatePaid": this.hdmfLoan_DatePaid,
+      // "hdmpCalamityLoan_Number": this.hdmpCalamityLoan_Number,
+      // "hdmpCalamityLoan_DatePaid": this.hdmpCalamityLoan_DatePaid,
+
+
+      
 
     };
 
-    this.DigipayrollServiceService.InsertGovernmentRecords(json).subscribe(
+    this.DigipayrollServiceService.InsertNewGovernmentRecords(json).subscribe(
       data => {
         debugger
         let result = data;
@@ -71,7 +74,7 @@ export class GovernmentComponent implements OnInit {
 
   delete(id: any){
     debugger;
-    this.DigipayrollServiceService.DeleteGovernmentRecords(id).subscribe(
+    this.DigipayrollServiceService.DeleteNewGovernmentRecords(id).subscribe(
       data => {
        Swal.fire('Deleted Successfully...!')   
        location.reload() 

@@ -99,9 +99,6 @@ export class Bir1601CComponent implements OnInit {
       debugger
       body.append('Dan', file);
       console.log('pdf', pdf1)
-    
-
-
     }).then(() => {
      
     });;
