@@ -35,10 +35,10 @@
                                     <td class="SelectData"><input type="checkbox" (change)="getemployeelist(item.startdate,item.enddate)" data-toggle="collapse"
                                         data-target="#demo"></td>
                                     <td>{{item.endyear}}</td>
-                                    <td>{{item.endmonth}}</td>
+                                    <td>{{item.month}}</td>
                                     <td>{{item.payrolltype}}</td>
                                     <td>Normal</td>
-                                    <td>Payroll For {{item.startdate|date}} - {{item.enddate}}({{item.paygroup|date}}) </td>
+                                    <td>Payroll For {{item.startdate|date}} - {{item.enddate|date}}({{item.paygroup}}) </td>
                                     
                                 </tr>
 
@@ -151,16 +151,16 @@
                              <td>{{basicday}}</td>
                              <td>{{basichour}}</td>
                              <td>0.00</td>
-                             <td>234.76</td>
-                             <td>20,284.76</td>
+                             <td>0.00</td>
+                             <td>{{semimonthly}}</td>
                              <td>{{tax}}</td>
                              <td>{{SSS}}</td>
                              <td>{{philHealthContribution}}</td>
                              <td>{{pagBig}}</td>
                              <td>0.00</td>
                              <td>0.00</td>
-                             <td>535.98</td>
-                             <td>1,070</td>
+                             <td>0,00</td>
+                             <td>{{deductions}}</td>
                              <td>{{netMonthSalary}}</td>
                             </tr>
                            
