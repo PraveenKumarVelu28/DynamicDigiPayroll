@@ -1,21 +1,77 @@
-
-   <div class="container-fluid">
+<div class="container-fluid">
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-lg-10">
-            <p class="taxtable">Government OR Records</p> <hr>
+            <p class="taxtable">Government OR Records</p>
+            <hr>
 
             <div class="container">
                 <div class="row FilterClass">
                     <div class="col-lg-4"></div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-1">
                         Filter By
                     </div>
                     <div class="col-lg-2">
                         <input class="form-control" type="date" placeholder="Date">
                     </div>
-                   
+
                 </div><br> <br>
+
+
+                <div class="row">
+
+                    <div class="col-lg-3">
+                        <p class="text1">Type</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p class="text1">SBR/OR Number</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p class="text1">Amount</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p class="text1">Attachment</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p class="text1"> Date Paid </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 text">
+
+                        <select class="form-control typepadding" [(ngModel)]="Type">
+                            <option class="form-control typepadding" value="SSS">SSS</option>
+                            <option class="form-control typepadding" value="SSS Loan">SSS Loan</option>
+                            <option class="form-control typepadding" value="SSS Calamity Loan">SSS Calamity Loan
+                            </option>
+                            <option class="form-control typepadding" value="PhilHealth">PhilHealth</option>
+                            <option class="form-control typepadding" value="HDMF">HDMF</option>
+                            <option class="form-control typepadding" value="HDMF Loan">HDMF Loan</option>
+                            <option class="form-control typepadding" value="Hdmp Calamity Loan">Hdmp Calamity Loan
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2">
+                        <input class="form-control input" [(ngModel)]="SBRORNumber"><br>
+                    </div>
+                    <div class="col-lg-2">
+                        <input class="form-control input" [(ngModel)]="Amount"><br>
+                    </div>
+                    <div class="col-lg-2">
+                        <ngx-dropzone (change)="onSelect($event)" style="height: 60px;">
+                            <ngx-dropzone-label>Drop it here!</ngx-dropzone-label>
+                            <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                                <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                            </ngx-dropzone-preview>
+                        </ngx-dropzone>
+                    </div>
+                    <div class="col-lg-2">
+                        <input class="form-control input" type="date" [(ngModel)]="DatePaid"><br>
+                    </div>
+                </div>
+
+                <!-- 
                 <div class="row">
                     <div class="col-lg-2"></div>
                     <div class="col-lg-2">
@@ -183,74 +239,89 @@
                     <input class="form-control input"  type="date" [(ngModel)]="hdmpCalamityLoan_DatePaid"><br>
                 </div>
                 <div class="col-lg-3"></div>
-               </div>                 
+               </div>                  -->
                 <br>
                 <div class="row">
-                    <div class="col-lg-6"></div>
-                <div class="col-lg-2">
-                  <button class="save input" (click)="save()">Save</button> <br>
+                    <div class="col-lg-5"></div>
+                    <div class="col-lg-2">
+                        <button class="save input" (click)="save()">Save</button> <br>
+                    </div>
                 </div>
-                </div>               
-              <br>
+                <br>
             </div>
         </div>
         <div class="col-lg-1"></div>
     </div>
-    </div>
-    <hr>    
-    <br>
+</div>
+<hr>
+<br>
 
-    <br>
-    <div class="container-fluid">
-        <div class="row rowwidth">
-            <div class="col-lg-12">
-                <table class="table table-bordered fonttxt">
-                    <thead>
-                        <tr class="newFont">
+<br>
+<div class="container-fluid">
+    <div class="row rowwidth">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <table class="table table-bordered fonttxt">
+                <thead>
+                    <!-- <tr class="newFont">
                             <th class="SelectData">Select</th>
                           
                             <th>SSS SBR/OR Number</th>
-                            <!-- <th><img></th> -->
-                            <th>SSS Date Paid</th>
+                           <th><img></th> -->
+                    <!-- <th>SSS Date Paid</th>
 
                             <th>SSS Loan SBR/OR Number</th>
-                            <!-- <th><img></th> -->
+                         <th><img></th> 
                             <th>SSS Loan Date Paid</th>
 
                             <th>SSS Calamity Loan SBR/OR Number</th>
-                            <!-- <th><img></th> -->
+                      <th><img></th> 
                             <th>SSS Calamity Loan Date Paid</th>
 
                             <th>
                                 PhilHealth SBR/OR Number</th>
-                            <!-- <th><img></th> -->
+                      <th><img></th> 
                             <th>
                                 PhilHealth Date Paid</th>
 
                             <th>
                                 HDMF SBR/OR Number</th>
-                            <!-- <th><img></th> -->
+                          <th><img></th> 
                             <th>
                                 HDMF Date Paid</th>
 
                             <th>HDMF Loan SBR/OR Number</th>
-                            <!-- <th><img></th> -->
+                           <th><img></th> 
                             <th>HDMF Loan Date Paid</th>
 
                             <th>
                                 Hdmp Calamity Loan SBR/OR Number</th>
-                            <!-- <th><img></th> -->
+                             <th><img></th> 
                             <th>
                                 Hdmp Calamity Loan Date Paid</th>
                             <th>Action</th>
-                        <tr>
-                    </thead>
-                    <tbody>
-                        <tr class="newFont" *ngFor="let application of govtlist">
-                            <td class="SelectData" ><input type="checkbox"></td>
+                        <tr>  -->
+                    <tr>
+                        <th class="SelectData"><input type="checkbox">&nbsp; Select</th>
+                        <th>Type</th>
+                        <th>SBR/OR Number</th>
+                        <th>Amount</th>
+                        <th>Date Paid</th>
+                        <th>Attachment</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="newFont" *ngFor="let application of govtlist">
+                        <td class="SelectData"><input type="checkbox"></td>
+                        <td>{{application.type}}</td>
+                        <td>{{application.sbrorNumber}}</td>
+                        <td>{{application.amount}}</td>
+                        <td>{{application.datePaid}}</td>
+                        <td>{{application.attachment}}</td>
+                        <td><img class="imgcancel" src="/assets/cancel (1).png" (click)="delete(application.id)"></td>
 
-                            
-                            <!-- <td>{{application.ssS_Number}}</td>
+                        <!-- <td>{{application.ssS_Number}}</td>
                             <td>{{application.ssS_DatePaid}}</td>
                             <td>{{application.sssLoan_Number}}</td>
                             <td>{{application.sssLoan_DatePaid}}</td>
@@ -264,14 +335,13 @@
                             <td>{{application.hdmfLoan_DatePaid}}</td>
                             <td>{{application.hdmpCalamityLoan_Number}}</td>
                             <td>{{application.hdmpCalamityLoan_DatePaid}}</td> -->
-
-                            <td><img class="imgcancel" src="/assets/cancel (1).png" (click)="delete(application.id)"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+        <div class="col-lg-1"></div>
     </div>
+</div>
 
 
 
@@ -294,7 +364,7 @@
 
 
 
-  
+
 <!-- 
         <div class="col-lg-3"></div>
         <div class="col-lg-2 text">
