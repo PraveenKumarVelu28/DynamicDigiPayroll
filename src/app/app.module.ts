@@ -93,6 +93,16 @@ import { RF1PDFNewComponent } from './rf1-pdfnew/rf1-pdfnew.component';
 import { R1aFormComponent } from './r1a-form/r1a-form.component';
 import { M11MCRFComponent } from './m11-mcrf/m11-mcrf.component';
 import { GovernmentComponent } from './Pages/otherpages/government/government.component';
+import { Bir1601CComponent } from './bir1601-c/bir1601-c.component';
+import { Bir1601EQComponent } from './bir1601-eq/bir1601-eq.component';
+import { Bir1604CComponent } from './bir1604-c/bir1604-c.component';
+import { Bir1604CFComponent } from './bir1604-cf/bir1604-cf.component';
+import { Bir2316Component } from './bir2316/bir2316.component';
+import { Bir2306Component } from './bir2306/bir2306.component';
+import { Bir2307Component } from './bir2307/bir2307.component';
+import { BirAnnualizationComponent } from './bir-annualization/bir-annualization.component';
+import { Biralphalist6Component } from './biralphalist6/biralphalist6.component';
+import { Biralphalist7Component } from './biralphalist7/biralphalist7.component';
 
 
 const ngWizardConfig: NgWizardConfig = {
@@ -189,7 +199,17 @@ const ngWizardConfig: NgWizardConfig = {
     RF1PDFNewComponent,
     R1aFormComponent,
     M11MCRFComponent,
-    GovernmentComponent
+    GovernmentComponent,
+    Bir1601CComponent,
+    Bir1601EQComponent,
+    Bir1604CComponent,
+    Bir1604CFComponent,
+    Bir2316Component,
+    Bir2306Component,
+    Bir2307Component,
+    BirAnnualizationComponent,
+    Biralphalist6Component,
+    Biralphalist7Component,
 
   ],
   imports: [

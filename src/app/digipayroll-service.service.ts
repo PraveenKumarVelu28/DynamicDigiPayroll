@@ -804,20 +804,38 @@ export class DigipayrollServiceService {
       this.host + "/Announcement/GetEmployeeSalary"
     );
   }
-  public InsertGovernmentRecords(data: any) {
+  // public InsertGovernmentRecords(data: any) {
+  //   debugger;
+  //   this.url = this.baseURL + '/Master/InsertGovernmentRecords';
+  //   return this.http.post(this.url, data);
+  // }
+  // public GetGovernmentRecords() {
+  //   debugger
+  //   let APIURL = this.baseURL + "/Master/GetGovernmentRecords";
+  //   return this.http.get<any[]>(APIURL);
+  // }
+
+  // public DeleteGovernmentRecords(ID: any) {
+  //   return this.http.get<any[]>(
+  //     this.baseURL + "/Master/DeleteGovernmentRecords?ID=" + ID);
+  // }
+
+
+  
+  public InsertNewGovernmentRecords(data: any) {
     debugger;
-    this.url = this.baseURL + '/Master/InsertGovernmentRecords';
+    this.url = this.baseURL + '/Master/InsertNewGovernmentRecords';
     return this.http.post(this.url, data);
   }
-  public GetGovernmentRecords() {
+  public GetNewGovernmentRecords() {
     debugger
-    let APIURL = this.baseURL + "/Master/GetGovernmentRecords";
+    let APIURL = this.baseURL + "/Master/GetNewGovernmentRecords";
     return this.http.get<any[]>(APIURL);
   }
 
-  public DeleteGovernmentRecords(ID: any) {
+  public DeleteNewGovernmentRecords(ID: any) {
     return this.http.get<any[]>(
-      this.baseURL + "/Master/DeleteGovernmentRecords?ID=" + ID);
+      this.baseURL + "/Master/DeleteNewGovernmentRecords?ID=" + ID);
   }
 }
 
