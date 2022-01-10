@@ -1,0 +1,152 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-4">
+                    <a href="" class="Heading fontheading"> 1601-EQ</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p> Select Quarter & Year</p>
+                </div>
+                <div class="col-lg-2">
+                    <select name="cars" id="Month" class="form-control">
+                        <option value="Select">First</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                </div>
+                <div class="col-lg-2">
+                    <select name="cars" id="Month" class="form-control">
+                        <option value="Select">Select</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                    </select>
+                </div>
+            </div><br>
+
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p>Amended Return?</p>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                      </div>
+                </div>
+            </div> <br>
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p>Any Taxes Withheld?	</p>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                      </div>
+                </div>
+            </div> <br>
+
+
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p>Signatory Person</p>
+                </div>
+                <div class="col-lg-2">
+                    <select name="cars" id="Month" class="form-control">
+                        <option value="Select">Select</option>
+                        <option value="Admin">Admin</option>
+                        <option value="HR">HR</option>
+                        <option value="Finance">Finance</option>
+                    </select>
+                </div>
+            </div> <br>
+
+
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-2">
+                    <button class="generate" (click)="showpdf()">GENERATE</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+<div class="row" *ngIf="showleaseforprint==1">
+    <!-- <div class="col-lg-5">
+
+    </div>
+    <div class="col-lg-3">
+       <button class="button1" (click)="convetToPDF1()">Convert To PDF </button>
+    </div> -->
+
+    <div class="col-lg-5">
+    </div>
+    <div class="col-lg-4">
+        <button class="button1" (click)="convetToPDF1()">Convert To PDF</button>
+    </div>
+
+
+    <div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:1008px;border-style:outset;overflow:hidden;     margin-top: 424px; ">
+        <div style="position:absolute;left:0px;top:0px">
+        <img src="assets/images/1601EQ1.jpg" width=612 height=1008></div>
+        <div style="position:absolute;left:36.00px;top:118.11px" class="cls_002"><span class="cls_002">2021</span></div>
+        <div style="position:absolute;left:120.76px;top:122.77px" class="cls_002"><span class="cls_002">X</span></div>
+        <div style="position:absolute;left:308.89px;top:122.76px" class="cls_002"><span class="cls_002">X</span></div>
+        <div style="position:absolute;left:408.93px;top:122.76px" class="cls_002"><span class="cls_002">X</span></div>
+        <div style="position:absolute;left:238.68px;top:150.54px" class="cls_002"><span class="cls_002">600</span></div>
+        <div style="position:absolute;left:295.82px;top:150.54px" class="cls_002"><span class="cls_002">194</span></div>
+        <div style="position:absolute;left:349.96px;top:150.54px" class="cls_002"><span class="cls_002">012</span></div>
+        <div style="position:absolute;left:417.63px;top:150.54px" class="cls_002"><span class="cls_002">0000</span></div>
+        <div style="position:absolute;left:564.07px;top:152.81px" class="cls_002"><span class="cls_002">049</span></div>
+        <div style="position:absolute;left:56.10px;top:182.09px" class="cls_002"><span class="cls_002">TalentUS Inc.</span></div>
+        <div style="position:absolute;left:56.10px;top:210.35px" class="cls_002"><span class="cls_002">5F Phinma Plaza, 39 Phinma Dr,  Rockwell Center, Makati City</span></div>
+        <div style="position:absolute;left:556.11px;top:226.91px" class="cls_002"><span class="cls_002">1210</span></div>
+        <div style="position:absolute;left:114.15px;top:249.56px" class="cls_002"><span class="cls_002">0284212755</span></div>
+        <div style="position:absolute;left:450.54px;top:251.00px" class="cls_002"><span class="cls_002">X</span></div>
+        <div style="position:absolute;left:114.15px;top:266.11px" class="cls_002"><span class="cls_002">andrew@talentusph.com</span></div>
+        <div style="position:absolute;left:408.93px;top:436.08px" class="cls_002"><span class="cls_002">0</span></div>
+        <div style="position:absolute;left:408.93px;top:455.04px" class="cls_002"><span class="cls_002">0</span></div>
+        <div style="position:absolute;left:430.07px;top:683.97px" class="cls_002"><span class="cls_002">Lovely Cabalfin</span></div>
+        <div style="position:absolute;left:429.25px;top:700.52px" class="cls_002"><span class="cls_002">Admin Manager</span></div>
+        </div>
+        <div style="position:absolute;left:50%;margin-left:-306px;top:1018px;width:612px;height:1008px;border-style:outset;overflow:hidden ; margin-top: 417px; ">
+        <div style="position:absolute;left:0px;top:0px">
+        <img src="assets/images/1601EQ2.jpg" width=612 height=1008></div>
+        <div style="position:absolute;left:29.25px;top:110.66px" class="cls_002"><span class="cls_002">600</span></div>
+        <div style="position:absolute;left:65.99px;top:110.66px" class="cls_002"><span class="cls_002">194</span></div>
+        <div style="position:absolute;left:101.99px;top:110.66px" class="cls_002"><span class="cls_002">012</span></div>
+        <div style="position:absolute;left:141.00px;top:110.66px" class="cls_002"><span class="cls_002">0000</span></div>
+        <div style="position:absolute;left:227.08px;top:112.47px" class="cls_002"><span class="cls_002">TalentUS Inc.</span></div>
+        </div>
+</div>

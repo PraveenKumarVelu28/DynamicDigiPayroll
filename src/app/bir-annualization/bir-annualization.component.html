@@ -1,0 +1,147 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-4">
+                    <a href="" class="Heading fontheading"> Annualization</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p> Select Year</p>
+                </div>
+
+                <div class="col-lg-2">
+                    <select name="cars" id="Month" class="form-control">
+                        <option value="Select">Select</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                    </select>
+                </div>
+            </div><br>
+
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p>It will include:</p>
+                </div>
+            </div>
+          
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked disabled>
+                        <label class="form-check-label"  >Normal Payroll</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked disabled>
+                        <label class="form-check-label"  >13th Month</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Part Time</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Special Run</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Special Run Part Time</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >YTD Upload</label>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Final Pay</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Final Pay Part Time</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Adjustments</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Reimbursements</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Commission</label>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+
+
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-2">
+                    <button class="generate" (click)="exportexcel()">GENERATE</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+
+
+<!-- <div class="row" >
+    <div class="col-lg-10"></div>
+    <div class="col-lg-2">
+        <button class="Fetch" style="margin-left: 10px;">Export to Excel</button>
+    </div>
+</div> <br> -->
+<!-- <div class="row" *ngIf="showtable==1">
+    <div class="col-lg-10"></div>
+    <div class="col-lg-2">
+       <p style="font-size: 15px; padding-left: 16px;">Grand Total:27,875</p>
+    </div>
+</div> <br> -->
+<div class="row"   id="download" >
+    <div class="col-lg-12" style="overflow:auto;">
+        <table class="table table-bordered fonttxt">
+            <thead>
+                <tr class="newFont">
+                    <th>Employee ID*</th>
+                    <th>Employeename(First Name and Last Name)</th>
+                    <th>TIN</th>
+                    <th>TAX STATUS</th>
+                    <th>Gross Compensation Income from present employer (item 19 in 2316)</th>
+                    <th>Less: Total Non-Taxable/Exempt Compensation Income (item 20 in 2316)</th>
+                    <th>Taxable Compensation Income from present employer  (item 21 in 2316)</th>
+                    <th>ADD: Taxable Compensation Income from previous employer (item 22 in 2316)</th>
+                    <th>Gross Taxable Compensation Income  (item 23 in 2316)</th>
+                    <th>Exemption</th>
+                    <th>Net Taxable Compensation Income</th>
+                    <th>Tax Due (Use the Annual income tax bracket) </th>
+                    <th>Tax (Over/Refund) Under/Payable</th>
+                    <th>Total Basic Taxable from present employer (2316) item 37 (Basic Salary) plus item 34 (SSS, PHIC & Pag-ibig) in 2316</th>
+                    <th>De Minimis Benefits (Semi-Monthly)</th>
+                    <th>13th Month NonTaxable</th>
+                    <th>13th Month Taxable </th>                              
+                    <th>Withholding Tax </th>
+                    <th>SSS</th>
+                    <th>Philhealth </th>
+                    <th>HDMF</th>
+                </tr>              
+            </thead>
+        </table>
+    </div>
+</div>

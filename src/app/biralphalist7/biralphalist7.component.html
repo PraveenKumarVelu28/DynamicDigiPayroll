@@ -1,0 +1,270 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-4">
+                    <a href="" class="Heading fontheading">Alpha List 7.0</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p> Select Year</p>
+                </div>
+
+                <div class="col-lg-2">
+                    <select name="cars" id="Month" class="form-control">
+                        <option value="Select">Select</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                    </select>
+                </div>
+            </div><br>
+
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p>Amended Return:</p>
+                </div>
+
+                <div class="col-lg-2">
+                    <select name="cars" id="Month" class="form-control">
+                        <option value="Select">Select</option>
+                        <option value="2021">Yes</option>
+                        <option value="2020">No</option>
+                       
+                    </select>
+                </div>
+            </div><br>
+
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p>No. of Sheets:</p>
+                </div>
+
+                <div class="col-lg-2">
+                   <input type="text" class="form-control" placeholder="0">
+                </div>
+            </div><br>
+
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <p>It will include:</p>
+                </div>
+            </div>
+          
+            <div class="row FilterClass fontheading">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked disabled>
+                        <label class="form-check-label"  >Normal Payroll</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked disabled>
+                        <label class="form-check-label"  >13th Month</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Part Time</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Special Run</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Special Run Part Time</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >YTD Upload</label>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Final Pay</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Final Pay Part Time</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Adjustments</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Reimbursements</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
+                        <label class="form-check-label"  >Commission</label>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+
+
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-3">
+                    <button class="generate" >GENERATE DAT FILE</button>
+                    <p>Generate DAT file for all employees</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table table-bordered fonttxt">
+                        <thead>
+                            <tr class="newFont">
+                              
+                                <th><a>Select All</a>&nbsp; &nbsp; <a>Uncheck All</a></th>
+                                <th colspan="2">ALPHALIST OF EMPLOYEES</th>
+                                <th><a>Select All</a> <a>Uncheck All</a></th>
+                            </tr>
+                            <tr class="newFont">
+                                <th ></th>
+                                <th>Employee ID</th>
+                                <th>Name</th>
+                                <th>Substitute Filling</th>
+                               
+                            </tr>
+                            <tr>
+                                <td class="SelectData"><input type="checkbox" (click)="Showdata()"></td>
+                                <td>20-004</td>
+                                <td>Intal, Maria Cassandra</td>
+                                <td class="SelectData"><input type="checkbox" (click)="Showdata()"></td>
+                            </tr>
+                            <tr>
+                                <td class="SelectData"><input type="checkbox" (click)="Showdata()"></td>
+                                <td>20-003</td>
+                                <td>Olaguer, Ajel</td>
+                                <td class="SelectData"><input type="checkbox" (click)="Showdata()"></td>
+                            </tr>
+                            <tr>
+                                <td class="SelectData"><input type="checkbox" (click)="Showdata()"></td>
+                                <td>19-002</td>
+                                <td>Fernandez, Andrew</td>
+                                <td class="SelectData"><input type="checkbox" (click)="Showdata()"></td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-3"><button class="generate1" (click)="exportexcel()">GENERATE SCHEDULE 1</button><br>
+                    <span style="font-size: 9px;color: grey;">Employees who are
+                        Active, Terminated or Resigned</span></div>
+                        <div class="col-lg-2"></div>
+                <div class="col-lg-3"><button class="generate1" (click)="exportexcel()">GENERATE SCHEDULE 2</button><br>
+                    <span style="font-size: 9px;color: grey;">Employees who are
+                        Minimum wage earners</span></div>               
+            </div><br>
+
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+
+<!-- <div class="row">
+    <div class="col-lg-10"></div>
+    <div class="col-lg-2">
+        <button > Export to Excel </button>
+    </div>
+</div> -->
+
+<div class="row" *ngIf="showtable==1" >
+    <div class="col-lg-12" style="overflow:auto;">
+        <table class="table table-bordered fonttxt" id="download">
+            <thead>
+                <tr class="newFont" >
+                    <th>Seq No.</th>
+                    <th>Name Of The Employees (First Name,Last Name)</th>
+                    <th>Nationality / Resident</th>
+                    <th>Cuurent Employee Status*</th>
+                     <th>Reason of Separation </th>
+                     <th>Gross Compensation Income </th>
+                     <th>13th Month Pay and Other Benefits</th>
+                     <th>De Minimis Benefits</th>
+                     <th>SSS, GSIS, PHIC &PAG-IBIG CONTRIBUTIONS
+                        AND UNION DUES (Employee shared only)
+                     </th>
+                     <th>Salaries(P250k below) & Other Forms Of Compensation  </th>
+                     <th>Total Non-Taxable/Exempt Compensation Income</th>
+                     <th>basic Salary (Net of SSS,GSIS,PHIC,HDMF Contri,& Union Dues)</th>
+                     <th>13th Month Pay & Other Benefits </th>
+                     <th>Salaries & Other Forms of Compensation</th>
+                     <th>Total Taxable Compensation Income </th>
+                     <th>Employement Status </th>
+                     <th>Period Of Employement</th>
+                     <th>Reason of Separation ,if applicable(**)</th>
+                     <th>Gross Compensation Previous Employer </th>
+                     <th>13th Month Pay & Other Benefits </th>
+                     <th>Deminimis Benefits</th>
+                     <th>SSS,GSIS,PHIC & PAG-IBIG Contributions And Union Dues </th>
+                     <th>Salaries(P250k & below)& Other Forms of Compensation</th>
+                     <th>Total Non-Taxable/ Exempt Compensation(Previous Employer)</th>
+                     <th>Basic Salary (Net of SSS,GSIS,PHIC,HDMF Contri & Union Dues)</th>
+                     <th>13th Month Pay & Other Benefits</th>
+                     <th>Salaries & Other Forms Of Compensation</th>
+                     <th>Total  Taxable Compensation </th>
+                     <th>Total Taxable Compensation Income (Present And Previous Employee)</th>
+                     <th>Tax Due (Jan- Dec )</th>
+                     <th>Previous Employer</th>
+                     <th>Present Employer</th>
+                     <th>Amt Withheld & Paid For In December or Last Salary </th>
+                     <th>Over Withheld tax Refunded To Employee</th>
+                     <th>Amount Of Tax Withheld As Adjusted</th>
+                     <th>Subtitled Filing Yes/No</th>
+                </tr>
+                <!-- <tr>
+                    <td>21-059</td>
+                    <td>Adolfo, Noeme Marie Ayco</td>
+                    <td>Accountant/Bookkeeper</td>
+                    <td>CREFCO Team</td>
+                    <td>09/20/2021</td>
+                    <td>Active</td>
+                    <td>1094 2596 0820</td>
+                   <td>261</td>
+                   <td>30,000</td>
+                   <td>100</td>
+                   <td>30,100</td>
+                   <td>15,050</td>
+                   <td>1000</td>
+                   <td>125</td>
+                   <td>50</td>
+                   <td>0</td>
+                   <td>0</td>
+                   <td>0</td>
+                   <td>1,125</td>
+                   <td>900</td>
+                   <td>100.00</td>
+                   <td>2,225</td>
+                   <td>27,875</td>
+                   <td>30,000</td>
+                   <td>29,522.62</td>
+                   <td>598,015.08 </td>
+                   <td>0.00</td>
+                   <td>2,125.00 </td>
+                   <td>30.00</td>
+                   <td>30.00</td>
+                   <td>100.00</td>
+                </tr> -->             
+            </thead>
+        </table>
+    </div>
+</div>
