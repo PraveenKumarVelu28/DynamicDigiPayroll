@@ -1,0 +1,65 @@
+<div class="container-fluid" id="employee" class="collapse">
+    <br />
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <p style="margin-left: 83px;">Grand Total:1,01,076.55</p>
+        </div>
+        
+    </div>
+    <div class="row rowwidth">
+        <div class="col-lg-12">
+           
+                <table  class="table table-bordered fonttxt" id="downloadaplication">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Employee Id</th>
+                            <th>Employee Name</th>
+                            <th>Role</th>
+                            <th>Phone Number</th>
+                            <th>Email</th>
+                            <th>Date Of Joining</th>
+                            <th>Manager</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of stafflist">
+                            <td>
+                                <input type="checkbox" [(ngModel)]="item.checked" [value]="item.value">&nbsp;
+                            </td>
+
+                            <td>000{{item.id}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.role}}</td>
+                            <td>{{item.mobile}}</td>
+                            <td>{{item.emailID}}</td>
+                            <td>{{item.joiningDate|date}}</td>
+                            <td>
+                                <p *ngIf="item.manager==null">
+                                    NA
+                                </p>
+                                <p *ngIf="item.manager!=null">
+                                    {{item.manager}}
+                                </p>
+                            </td>
+                          
+
+                        </tr>
+                    </tbody>
+                </table>
+           
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5"></div>
+        <div class="col-lg-2">
+            <button (click)="SelectAll()" class="form-control requestbtn" type="button" id="btn_button">Run Payroll</button>
+        </div>
+    </div>
+</div>
+
+
+
