@@ -11,11 +11,11 @@ export class GovernmentComponent implements OnInit {
   constructor(private DigipayrollServiceService: DigipayrollServiceService) { }
   govtlist: any;
   ngOnInit(): void {
-    this.GetGovernmentRecords();
+    this.GetNewGovernmentRecords();
   }
 
 
-  public GetGovernmentRecords() {
+  public GetNewGovernmentRecords() {
     debugger
     this.DigipayrollServiceService.GetNewGovernmentRecords().subscribe(data => {
       debugger
@@ -40,8 +40,19 @@ export class GovernmentComponent implements OnInit {
   hdmpCalamityLoan_DatePaid: any;
 
 
+  Type:any
+  SBRORNumber:any
+  Amount:any;
+  DatePaid:any;
+
   save() {
     var json = {
+
+      "type": this.Type,
+      "sbrorNumber": this.SBRORNumber,
+      "amount": this.Amount,
+      "datePaid": this.DatePaid,
+      "attachment":this.govtattachment
 
       // "ssS_Number": this.ssS_Number,
       // "ssS_DatePaid": this.ssS_DatePaid,
@@ -57,9 +68,6 @@ export class GovernmentComponent implements OnInit {
       // "hdmfLoan_DatePaid": this.hdmfLoan_DatePaid,
       // "hdmpCalamityLoan_Number": this.hdmpCalamityLoan_Number,
       // "hdmpCalamityLoan_DatePaid": this.hdmpCalamityLoan_DatePaid,
-
-
-      
 
     };
 
