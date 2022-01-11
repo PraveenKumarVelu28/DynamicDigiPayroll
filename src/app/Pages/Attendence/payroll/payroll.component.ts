@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./payroll.component.css']
 })
 export class PayrollComponent implements OnInit {
+  viewMode = 'tab1';
+
   constructor(public DigiofficeService: DigipayrollServiceService, public router: Router) {
     this.minDate.setDate(this.minDate.getDate() - 1);
     this.maxDate.setDate(this.maxDate.getDate() + 7);
@@ -28,7 +30,6 @@ export class PayrollComponent implements OnInit {
   minDate = new Date();
   ngOnInit(): void {
     debugger
-
     this.DigiofficeService.GetMyDetails().subscribe(data => {
       debugger
       this.stafflist = data.filter(x => x.deniminimis != null);

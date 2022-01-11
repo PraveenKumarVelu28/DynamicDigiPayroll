@@ -1,5 +1,30 @@
-<div class="container-fluid" id="employee" class="collapse">
+<div class="container-fluid" >
     <br />
+    <div class="row">
+        <div class="col-md-2">
+          
+        </div>
+        <div class="col-md-2">
+            Filter By
+        </div>
+        <div class="col-md-2">
+            <input class="form-control" type="date" placeholder="startdate" id="startdate" name="startdate"
+                [(ngModel)]="startdate">
+        </div>
+        <div class=" col-md-2">
+            <input class="form-control" type="date" placeholder="enddate" id="enddate" name="enddate"
+                [(ngModel)]="enddate" (change)="getdate($event)">
+        </div>
+        <div class="col-md-2">
+            <button data-toggle="collapse" data-target="#employee"  (click)="getemployeedetails()">Fetch</button>
+        </div>
+        <!-- <div class="col-md-6">
+            <input class="form-control" type="search" [(ngModel)]="term"
+                placeholder="search for Staff , Date of joining or Role">
+        </div> -->
+    </div>
+
+
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-4"></div>
@@ -8,8 +33,9 @@
         </div>
         
     </div>
-    <div class="row rowwidth">
-        <div class="col-lg-12">
+    <div class="row rowwidth collapse" id="employee">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
            
                 <table  class="table table-bordered fonttxt" id="downloadaplication">
                     <thead>
@@ -20,6 +46,8 @@
                             <th>Role</th>
                             <th>Phone Number</th>
                             <th>Email</th>
+                            <th>No Of Days Worked</th>
+                            <th>Leave Days</th>
                             <th>Date Of Joining</th>
                             <th>Manager</th>
                             
@@ -36,6 +64,8 @@
                             <td>{{item.role}}</td>
                             <td>{{item.mobile}}</td>
                             <td>{{item.emailID}}</td>
+                            <td>{{item.workingdays}}</td>
+                            <td>{{item.leavedays}}</td>
                             <td>{{item.joiningDate|date}}</td>
                             <td>
                                 <p *ngIf="item.manager==null">
