@@ -44,6 +44,8 @@ export class GovernmentComponent implements OnInit {
   SBRORNumber:any
   Amount:any;
   DatePaid:any;
+  staffId:any;
+  staffName:any;
 
   save() {
     var json = {
@@ -52,7 +54,8 @@ export class GovernmentComponent implements OnInit {
       "sbrorNumber": this.SBRORNumber,
       "amount": this.Amount,
       "datePaid": this.DatePaid,
-      "attachment":this.govtattachment
+      "attachment":this.govtattachment,
+      "staffId":this.staffId
 
       // "ssS_Number": this.ssS_Number,
       // "ssS_DatePaid": this.ssS_DatePaid,
