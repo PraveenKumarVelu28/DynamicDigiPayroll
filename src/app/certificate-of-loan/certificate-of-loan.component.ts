@@ -1,49 +1,209 @@
 import { Component, OnInit } from '@angular/core';
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
+import { DatePipe } from '@angular/common';
+import * as XLSX from 'xlsx';
+
+import { DigipayrollServiceService } from 'src/app/digipayroll-service.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-certificate-of-loan',
   templateUrl: './certificate-of-loan.component.html',
-  styleUrls: ['./certificate-of-loan.component.css']
+  styleUrls: ['./certificate-of-loan.component.css'],
+  providers: [DatePipe]
 })
 export class CertificateOfLoanComponent implements OnInit {
   showsalary:any
   showcalamity:any
   showhdmfsalary:any
   showhdmfcalamity:any
-  constructor() { }
-
+  myDate:any;
+  constructor(public DigiofficeService: DigipayrollServiceService, private datePipe: DatePipe){}
+  stafflist:any;
+  uniquelist:any;
+  companylist:any;
+  companyname:any;
+  Address:any;
   ngOnInit(): void {
+    this.myDate = new Date();
     this.showsalary = 0;
     this.showcalamity=0;
     this.showhdmfsalary=0;
     this.showhdmfcalamity=0;
-  }
-  public showsalaryLoan(){
-    this.showsalary = 1;
-    this.showcalamity = 0;
-    this.showhdmfsalary=0;
-    this.showhdmfcalamity=0;
+
+    this.DigiofficeService.GetMyDetails().subscribe(data => {
+      debugger
+      this.stafflist = data.filter(x => x.deniminimis != null);
+
+      const key="id"
+
+      this.uniquelist  = [...new Map(this.stafflist.map((item: { [x: string]: any; }) =>
+      [(item[key]), item])).values()]
+    });
+
+ 
+
+
   }
 
+  sign:any;
+department:any;
+signname:any;
+stafflist1:any;
+public getsign(){
+  this.DigiofficeService.GetMyDetails().subscribe(data => {
+    debugger
+    this.stafflist1 = data.filter(x => x.department_name == this.sign);
+    this.signname = this.stafflist1[0].fullname
+  });
+}
+
+
+amount:any;
+employeelist: any;
+merged: any;
+results: any;
+govtlist:any;
+sssnumber:any;
+fullname:any;
+PhilHealth:any;
+hdmf:any;
+id:any;
+public GetNewGovernmentRecords(id:any) {
+  debugger
+ this.id = id 
+
+
+}
+
+
+
+
+year:any;
+month:any;
+loantype:any;
+Month:any;
+Year:any;
+DatePaid:any;
+Amount:any;
+  public showsalaryLoan(){
+
+    this.DigiofficeService.GetNewGovernmentRecords().subscribe(data => {
+      debugger
+      this.govtlist = data.filter(x => x.year == this.year && x.month == this.month && x.staffID == this.id && x.type=="SSS Loan" );
+      this.loantype =  this.govtlist[0].type,
+      this.Month =  this.govtlist[0].month,
+      this.Year =  this.govtlist[0].year,
+      this.DatePaid = this.govtlist[0].datePaid,
+      this.Amount = this.govtlist[0].amount
+
+      this.DigiofficeService.GetEmployeeSalary().subscribe(data => {
+        debugger
+        this.employeelist = data.filter(x=>x.monthstaffid==this.id);
+        this.fullname = this.employeelist[0].staffname + this.employeelist[0].lastName
+       
+         this.DigiofficeService.GetCompanyDetails().subscribe(data => {
+          debugger
+          this.companylist = data
+          this.companyname = this.companylist[0].companyName,
+          this.Address = this.companylist[0].address
+    
+    
+    
+        })
+    
+      });
+    });
+
+    
+  }
+
+
+
   public showcalamityLoan(){
-    this.showsalary = 0;
-    this.showcalamity = 1;
-    this.showhdmfsalary=0;
-    this.showhdmfcalamity=0;
+      this.DigiofficeService.GetNewGovernmentRecords().subscribe(data => {
+      debugger
+      this.govtlist = data.filter(x => x.year == this.year && x.month == this.month && x.staffID == this.id && x.type=="SSS Calamity Loan" );
+      this.loantype =  this.govtlist[0].type,
+      this.Month =  this.govtlist[0].month,
+      this.Year =  this.govtlist[0].year,
+      this.DatePaid = this.govtlist[0].datePaid,
+      this.Amount = this.govtlist[0].amount
+
+      this.DigiofficeService.GetEmployeeSalary().subscribe(data => {
+        debugger
+        this.employeelist = data.filter(x=>x.monthstaffid==this.id);
+        this.fullname = this.employeelist[0].staffname + this.employeelist[0].lastName
+       
+         this.DigiofficeService.GetCompanyDetails().subscribe(data => {
+          debugger
+          this.companylist = data
+          this.companyname = this.companylist[0].companyName,
+          this.Address = this.companylist[0].address
+    
+    
+    
+        })
+    
+      });
+    });
   }
   public showhdmfsalaryLoan(){
-    this.showsalary = 0;
-    this.showcalamity = 0;
-    this.showhdmfsalary=1;
-    this.showhdmfcalamity=0;
+    this.DigiofficeService.GetNewGovernmentRecords().subscribe(data => {
+      debugger
+      this.govtlist = data.filter(x => x.year == this.year && x.month == this.month && x.staffID == this.id && x.type=="SSS Calamity Loan" );
+      this.loantype =  this.govtlist[0].type,
+      this.Month =  this.govtlist[0].month,
+      this.Year =  this.govtlist[0].year,
+      this.DatePaid = this.govtlist[0].datePaid,
+      this.Amount = this.govtlist[0].amount
+
+      this.DigiofficeService.GetEmployeeSalary().subscribe(data => {
+        debugger
+        this.employeelist = data.filter(x=>x.monthstaffid==this.id);
+        this.fullname = this.employeelist[0].staffname + this.employeelist[0].lastName
+       
+         this.DigiofficeService.GetCompanyDetails().subscribe(data => {
+          debugger
+          this.companylist = data
+          this.companyname = this.companylist[0].companyName,
+          this.Address = this.companylist[0].address
+    
+    
+    
+        })
+    
+      });
+    });
   }
 
   public showhdmfcalamityLoan(){
-    this.showsalary = 0;
-    this.showcalamity = 0;
-    this.showhdmfsalary=0;
-    this.showhdmfcalamity=1;
+    this.DigiofficeService.GetNewGovernmentRecords().subscribe(data => {
+      debugger
+      this.govtlist = data.filter(x => x.year == this.year && x.month == this.month && x.staffID == this.id && x.type=="SSS Calamity Loan" );
+      this.loantype =  this.govtlist[0].type,
+      this.Month =  this.govtlist[0].month,
+      this.Year =  this.govtlist[0].year,
+      this.DatePaid = this.govtlist[0].datePaid,
+      this.Amount = this.govtlist[0].amount
+
+      this.DigiofficeService.GetEmployeeSalary().subscribe(data => {
+        debugger
+        this.employeelist = data.filter(x=>x.monthstaffid==this.id);
+        this.fullname = this.employeelist[0].staffname + this.employeelist[0].lastName
+       
+         this.DigiofficeService.GetCompanyDetails().subscribe(data => {
+          debugger
+          this.companylist = data
+          this.companyname = this.companylist[0].companyName,
+          this.Address = this.companylist[0].address
+    
+    
+    
+        })
+    
+      });
+    });
   }
 
   public convetToPDF1() {

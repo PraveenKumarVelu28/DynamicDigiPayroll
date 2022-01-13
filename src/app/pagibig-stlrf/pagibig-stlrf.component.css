@@ -189,3 +189,22 @@ div.cls_004 {
       height: 34px;
     
     }
+
+    .bgcolor{
+      background-color: rgb(155, 153, 153);
+  }
+  .numpadding{
+      padding: 5px;
+  }
+  table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  
+    .noborder{
+      border: 0px ;
+      border-collapse: collapse;
+    }
+    .align{
+      text-align: center;
+    }

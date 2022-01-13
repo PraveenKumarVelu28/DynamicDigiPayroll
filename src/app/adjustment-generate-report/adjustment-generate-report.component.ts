@@ -46,12 +46,28 @@ export class AdjustmentGenerateReportComponent implements OnInit {
     }
   }
 
-  showone(){
-    this.selectone = true;;
-  }
+ 
 
 
-  
+  stafflist1:any;
+  uniquelist2:any;
+public getemployee(id:any){
+ 
+ 
+  this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
+    debugger
+    this.stafflist1 = data.filter(x => x.id==id && x.loanType!=null );
+
+    const key = 'id'
+    
+    this.uniquelist2  = [...new Map(this.stafflist1.map((item: { [x: string]: any; }) =>
+    [(item[key]), item])).values()]
+  });
+
+  this.selectone = true;;
+}
+
+
   fileName = 'Approved Applicants Reports.xlsx';
   exportexcel(): void {
     /* table id is passed over here */

@@ -62,7 +62,7 @@
                 <div class="col-lg-2">
                     <select name="cars" id="Month" class="form-control"  [(ngModel)]="employeeid" (change)="showpdf()">
                         <option value="Select" >Select</option>
-                        <option value="Admin" *ngFor="let emp of uniquelist" value="{{emp.id}}">{{emp.name}}</option>
+                        <option value="Admin" *ngFor="let emp of stafflist" value="{{emp.id}}">{{emp.name}}</option>
                                                            
                       </select>
                 </div>

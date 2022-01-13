@@ -1,16 +1,21 @@
-
 import { Component, OnInit } from '@angular/core';
-import { jsPDF } from "jspdf";
+import { DigipayrollServiceService } from 'src/app/digipayroll-service.service';
+import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 import html2canvas from 'html2canvas';
+import * as XLSX from 'xlsx';
+import { jsPDF } from "jspdf";
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-pagibig-stlrf',
   templateUrl: './pagibig-stlrf.component.html',
-  styleUrls: ['./pagibig-stlrf.component.css']
+  styleUrls: ['./pagibig-stlrf.component.css'],
+  providers: [DatePipe]
 })
 export class PagibigSTLRFComponent implements OnInit {
 
-  constructor() { }
+  constructor(private DigipayrollServiceService: DigipayrollServiceService, private ActivatedRoute: ActivatedRoute, private datePipe: DatePipe) { }
 
   Month:any;
   Year:any;
@@ -18,21 +23,79 @@ export class PagibigSTLRFComponent implements OnInit {
   Person:any;
   showleaseforprint:any;
   loader:any;
+  myDate:any;
   ngOnInit(): void {
-    this.Month="jan";
-    this.Year="2021";
-    this.Loan="HDMF"
-    this.Person="Admin";
+
     this.showleaseforprint = 0;
     this.loader=false;
+
+    this.myDate = new Date();
   }
 
 
+  fullname:any;
+  sign:any;
+  department:any;
+  signname:any;
+  stafflist1:any;
+  public getsign(){
+    this.DigipayrollServiceService.GetMyDetails().subscribe(data => {
+      debugger
+      this.stafflist1 = data.filter(x => x.department_name == this.sign);
+      this.signname = this.stafflist1[0].fullname
+    });
+  }
 
 
-
+  employeelist:any;
+  uniquelist:any;
+  MonthlyAdjustment:any;
+  RemainingAmount:any;
+  paidamount:any;
+  Month_Name:any;
+  EmplyeeYear:any;
+  LoanType:any;
+  companylist:any;
+  companyname:any;
+  Address:any;
+  companyid:any;
+  MobileNumber:any;
   public showpdf(){
     this.showleaseforprint = 1;
+    this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
+      debugger
+      this.employeelist = data.filter(x=>x.employeeMonth==this.Month && x.emplyeeYear==this.Year && x.loanType==this.Loan);
+      const key = 'monthstaffid'
+
+      this.uniquelist  = [...new Map(this.employeelist.map((item: { [x: string]: any; }) =>
+        [(item[key]), item])).values()]
+
+        this.MonthlyAdjustment = 0;
+        for (let i = 0; i < this.uniquelist.length; i++) {
+          this.MonthlyAdjustment += this.uniquelist[i].monthlyAdjustment;
+        }
+
+
+        this.LoanType=this.uniquelist[0].loanType
+      
+       this.paidamount=this.uniquelist[0].paidamount,
+        this.RemainingAmount=this.uniquelist[0].remainingAmount
+       this.Month_Name==this.uniquelist[0].Month_Name,
+       this.EmplyeeYear=this.uniquelist[0].EmplyeeYear
+       this.DigipayrollServiceService.GetCompanyDetails().subscribe(data => {
+        debugger
+        this.companylist = data
+        this.companyid = this.companylist[0].id,
+        this.companyname = this.companylist[0].companyName,
+        this.Address = this.companylist[0].address
+       this.MobileNumber = this.companylist[0].address
+  
+  
+      })
+
+
+
+      });
   }
 
 
