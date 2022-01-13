@@ -65,7 +65,12 @@ export class PaySlipReportComponent implements OnInit {
   netMonthSalary:any;
   deductions:any;
   startdate:any;
+  GrossSalary:any;
   enddate:any;
+  semimonthly:any;
+  basicday:any;
+  basichour:any;
+  deniminimis_amount:any;
   public getpayslip(id:any){
     this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
       debugger
@@ -81,6 +86,7 @@ export class PaySlipReportComponent implements OnInit {
       this.PhilHealth = this.employeelist1[0].philiHealth,
       this.hdmf = this.employeelist1[0].pagiBigAccountNo,
       this.BaseSalary = this.employeelist1[0].baseSalary, 
+      this.deniminimis_amount = this.employeelist1[0].deniminimis_amount
       this.deminimisamount = this.employeelist1[0].deMINIMIS, 
       this.lopamount = this.employeelist1[0].lopamount,
       this.sssamount = this.employeelist1[0].contribution,
@@ -88,8 +94,14 @@ export class PaySlipReportComponent implements OnInit {
       this.pagBig = this.employeelist1[0].pagBig,
       this.tax = this.employeelist1[0].tax,
       this.netMonthSalary = this.employeelist1[0].netMonthSalary,
-      this.deductions = this.employeelist1[0].baseSalary - this.employeelist1[0].netMonthSalary
-
+      
+          
+      this.GrossSalary = this.employeelist1[0].grossSalary,
+      this.semimonthly = Number(this.employeelist1[0].grossSalary)/2
+      this.deductions = this.semimonthly-this.employeelist1[0].netMonthSalary,
+      this.basicday = (this.employeelist1[0].grossSalary)/30,
+      this.basichour = (this.basicday)/8
+    
 
 
 

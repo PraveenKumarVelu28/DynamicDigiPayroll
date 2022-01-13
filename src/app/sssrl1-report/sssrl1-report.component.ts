@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
 
+import { Component, OnInit } from '@angular/core';
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
+import { DigipayrollServiceService } from '../digipayroll-service.service';
 
 @Component({
   selector: 'app-sssrl1-report',
@@ -10,22 +11,83 @@ import html2canvas from 'html2canvas';
 })
 export class SSSRL1ReportComponent implements OnInit {
 
-  constructor() { }
+  constructor(public DigipayrollServiceService: DigipayrollServiceService) { }
 
   Month:any;
   Year:any;
   Person:any;
   showleaseforprint:any;
+  employeelist:any;
+  uniquelist:any;
+  uniquelist1:any;
+  companylist:any;
+  companyid:any;
+  companyname:any;
+  Address:any;
   ngOnInit(): void {
-    this.Month="jan";
-    this.Year="2021";
-    this.Person="Admin";
+  
     this.showleaseforprint = 0;
+
+  
+
+
   }
 
+  
+  month:any;
+  year:any;
+  MobileNumber:any;
+  emailaddress:any;
   public showpdf(){
-    this.showleaseforprint = 1;
+       
+    this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
+      debugger
+      this.employeelist = data.filter(x=>x.employeeMonth==this.month && x.emplyeeYear==this.year);
+      const key = 'monthstaffid'
+
+      this.uniquelist  = [...new Map(this.employeelist.map((item: { [x: string]: any; }) =>
+        [(item[key]), item])).values()]
+   
+
+        this.showleaseforprint = 1;
+
+        this.DigipayrollServiceService.GetCompanyDetails().subscribe(data => {
+          debugger
+          this.companylist = data
+          this.companyid =  this.companylist[0].id,
+          this.companyname = this.companylist[0].companyName,
+          this.Address = this.companylist[0].address
+          this.MobileNumber = this.companylist[0].mobileNumber,
+          this.emailaddress = this.companylist[0].emailID
+    
+    
+        })
+    });
+   
   }
+
+
+
+  
+  emailid:any;
+  EmployeeNo:any;
+  PhilhealthNo:any;
+  basesalary:any;
+  dateofjoining:any;
+  role:any;
+  fullname:any;
+  sign:any;
+  department:any;
+  signname:any;
+  stafflist1:any;
+  public getsign(){
+    this.DigipayrollServiceService.GetMyDetails().subscribe(data => {
+      debugger
+      this.stafflist1 = data.filter(x => x.department_name == this.sign);
+      this.signname = this.stafflist1[0].fullname
+    });
+  }
+
 
 
   public convetToPDF1() {

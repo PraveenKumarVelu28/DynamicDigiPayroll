@@ -15,18 +15,18 @@
             <div class="dropdown">
               <select class="form-control " id="Month" name="Month" [(ngModel)]="Month"><br />
                 <option value="Select">Select Month </option>
-                <option value="jan">January </option>
-                <option value="Feb">February </option>
-                <option value="Mar">March </option>
-                <option value="April">April </option>
-                <option value="May">May </option>
-                <option value="june">June </option>
-                <option value="july">July</option>
-                <option value="August">August </option>
-                <option value="Sept">September </option>
-                <option value="Oct">October </option>
-                <option value="Nov">November </option>
-                <option value="December">December </option>
+                <option value="1">January </option>
+                <option value="2">February </option>
+                <option value="3">March </option>
+                <option value="4">April </option>
+                <option value="5">May </option>
+                <option value="6">June </option>
+                <option value="7">July</option>
+                <option value="8">August </option>
+                <option value="9">September </option>
+                <option value="10">October </option>
+                <option value="11">November </option>
+                <option value="12">December </option>
               </select>
             </div>
           </div>
@@ -34,9 +34,9 @@
             <div class="dropdown">
               <select class="form-control  " id="Year" name="Year" [(ngModel)]="Year"><br />
                 <option value="Select">Select Year </option>
-                <option value="2021">2021</option>
-                <option value="2020">2020</option>
-                <option value="2019">2019</option>
+                <option value="2022">2021</option>
+                <option value="2021">2020</option>
+                <option value="2020">2019</option>
               </select>
             </div>
           </div>
@@ -50,7 +50,7 @@
             Amount Paid:
           </div>
           <div class="col-lg-4">
-            <input type="text" placeholder="0.00">
+            <input type="text" placeholder="0.00" [(ngModel)]="amount">
           </div>
           <div class="col-lg-3"></div>
         </div>
@@ -62,7 +62,7 @@
             SBR/OR Number:
           </div>
           <div class="col-lg-4">
-            <input type="text" placeholder="">
+            <input type="text" placeholder="" [(ngModel)]="sssnumber">
           </div>
           <div class="col-lg-3"></div>
         </div>
@@ -83,7 +83,7 @@
           <div class="col-lg-5">
           </div>
           <div class="col-lg-3">
-            <button class="generate" data-toggle="collapse" data-target="#demo">FETCH</button>
+            <button class="generate" data-toggle="collapse" data-target="#demo" (click)="GetNewGovernmentRecords()">FETCH</button>
           </div>
         </div>
         <br />
@@ -131,160 +131,18 @@
       </thead>
       <tbody>
 
-        <tr class="newFont">
+        <tr class="newFont"  *ngFor="let item of uniquelist">
 
-          <td>INTAL</td>
-          <td>MARIA CASSANDRA</td>
+          <td>{{item.staffname}}</td>
+          <td>{{item.lastName}}</td>
           <!-- <td>G </td> -->
-          <td>34-0101406-1 </td>
-          <td>3250.00</td>
-          <td>30.00 </td>
+          <td>{{item.sssrate}} </td>
+          <td>{{item.ss_er}}</td>
+          <td>{{item.ss_ec}} </td>
           <td>N</td>
           <!-- <td>0</td> -->
         </tr>
-        <tr class="newFont">
-
-          <td>OLAGUER </td>
-          <td>AJEL</td>
-          <!-- <td>C</td> -->
-          <td>33-9663104-1</td>
-          <td>3250.00</td>
-          <td>30.00 </td>
-          <td>N</td>
-          <!-- <td>0</td> -->
-        </tr>
-        <tr class="newFont">
-
-
-          <td>BERSAMIRA</td>
-          <td>CARLO </td>
-          <!-- <td>D</td> -->
-          <td>34-1807810-0 </td>
-          <td>2925.00</td>
-          <td>30.00 </td>
-          <td>N</td>
-          <!-- <td>0</td> -->
-        </tr>
-        <tr class="newFont">
-
-
-          <td>BERSAMIRA</td>
-          <td>ALDRIN </td>
-          <!-- <td>D</td> -->
-          <td>34-2465186-7</td>
-          <td>2860.00</td>
-          <td>30.00 </td>
-          <td>N</td>
-          <!-- <td>0</td> -->
-        </tr>
-        <tr class="newFont">
-
-
-          <td>BERSAMIRA</td>
-          <td>ALDRIN</td>
-          <!-- <td>D</td> -->
-          <td>34-2465186-7</td>
-          <td>2860.00</td>
-          <td>30.00 </td>
-          <td>N</td>
-          <!-- <td>0</td> -->
-        </tr>
-        <tr class="newFont">
-
-
-          <td>RAC </td>
-          <td>LYLA </td>
-          <!-- <td>M </td> -->
-          <td>33-3840908-2 </td>
-          <td>3250.00</td>
-          <td>30.00 </td>
-          <td>N</td>
-          <!-- <td>0</td> -->
-        </tr>
-        <tr class="newFont">
-
-
-          <td>TIAMSON </td>
-          <td> SHAIRA </td>
-          <!-- <td>E </td> -->
-          <td>33-9262410-4 </td>
-          <td>3250.00</td>
-          <td>30.00 </td>
-          <td>N</td>
-          <!-- <td>0</td> -->
-        </tr>
-        <tr class="newFont">
-
-
-          <td>JUMAO-AS </td>
-          <td>MARIA NELIA ANG </td>
-          <!-- <td>A </td> -->
-          <td>34-4343458-6 </td>
-          <td>2860.00</td>
-          <td>30.00 </td>
-          <td>N</td>
-          <!-- <td>0</td> -->
-        </tr>
-        <tr class="newFont">
-
-
-          <td>LABASAN </td>
-          <td> DIANA</td>
-          <!-- <td>A</td> -->
-          <td>33-7287034-7 </td>
-          <td>3250.00</td>
-          <td>30.00 </td>
-          <td>N</td>
-          <!-- <td>0</td> -->
-        </tr>
-        <tr class="newFont">
-
-
-          <td>DE LOS REYES</td>
-          <td>JACQUELYN </td>
-          <!-- <td>M </td> -->
-          <td>34-0790708-8 </td>
-          <td>2860.00</td>
-          <td>30.00 </td>
-          <td>N</td>
-          <!-- <td>0</td> -->
-        </tr>
-        <tr class="newFont">
-
-
-          <td>SAGER </td>
-          <td>EDMOND ALBERT M </td>
-          <!-- <td>C </td> -->
-          <td>34-2527964-6 </td>
-          <td>3250.00</td>
-          <td>30.00 </td>
-          <td>N</td>
-          <!-- <td>0</td> -->
-        </tr>
-        <tr class="newFont">
-
-
-          <td>ANCHETA </td>
-          <td>ABIGAILE </td>
-          <!-- <td>G </td> -->
-          <td>34-4198988-4 </td>
-          <td>3250.00</td>
-          <td>30.00 </td>
-          <td>N</td>
-          <!-- <td>0</td> -->
-        </tr>
-        <tr class="newFont">
-
-
-          <td>GUTIERREZ</td>
-          <td> JONALYN </td>
-          <!-- <td>A </td> -->
-          <td>33-9262410-4 </td>
-          <td>3250.00</td>
-          <td>30.00 </td>
-          <td>N</td>
-          <!-- <td>0</td> -->
-        </tr>
+        
       </tbody>
     </table>
   </div>

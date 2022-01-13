@@ -94,9 +94,10 @@ export class PayrollSummaryReportComponent implements OnInit {
       this.pagBig = this.employeelist1[0].pagBig,
       this.tax = this.employeelist1[0].tax,
       this.netMonthSalary = this.employeelist1[0].netMonthSalary,
-      this.deductions = this.employeelist1[0].baseSalary - this.employeelist1[0].netMonthSalary,
+    
       this.GrossSalary = this.employeelist1[0].grossSalary,
       this.semimonthly = Number(this.employeelist1[0].grossSalary)/2
+      this.deductions = this.semimonthly-this.employeelist1[0].netMonthSalary,
       this.basicday = (this.employeelist1[0].grossSalary)/30,
       this.basichour = (this.basicday)/8
 

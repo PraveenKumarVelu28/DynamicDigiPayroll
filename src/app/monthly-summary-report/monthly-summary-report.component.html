@@ -30,11 +30,11 @@
                                 <th>Pay Group</th>
                             </tr>
                         </thead>
-                        <tr>
-                            <td class="SelectData"><input type="checkbox" data-toggle="collapse" (change)="getpaygrouplist()" data-target="#demo">
+                        <tr *ngFor="let staff of stafflist1">
+                            <td class="SelectData"><input type="checkbox" data-toggle="collapse" (change)="getMonthandyear(staff.endyear,staff.month)" data-target="#demo">
                             </td>
-                            <td>2021</td>
-                            <td>December</td>
+                            <td>{{staff.endyear}}</td>
+                            <td>{{staff.month}}</td>
                             <td>Normal</td>
                             <td>
                                 <select class="form-control"  [(ngModel)]="paygroup" >
@@ -44,62 +44,7 @@
                                 </select>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                    data-target="#monthpayroll"></td>
-                            <td>2021</td>
-                            <td>December</td>
-                            <td>13th Month</td>
-                            <td>
-                                <select class="form-control" [(ngModel)]="paygroup">
-                                    <option value=" ">Select</option>
-                                    <option value="{{paygroup.description}}" *ngFor="let paygroup of result">
-                                        {{paygroup.description}}</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="SelectData"><input type="checkbox" data-toggle="collapse" data-target="#demo">
-                            </td>
-                            <td>2021</td>
-                            <td>December</td>
-                            <td>Final Pay</td>
-                            <td>
-                                <select class="form-control">
-                                    <option value=" ">Select</option>
-                                    <option value="description" *ngFor="let paygroup of result">
-                                        {{paygroup.description}}</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="SelectData"><input type="checkbox" data-toggle="collapse" data-target="#demo" >
-                            </td>
-                            <td>2021</td>
-                            <td>November</td>
-                            <td>Normal</td>
-                            <td>
-                                <select class="form-control"  [(ngModel)]="paygroup">
-                                    <option value=" ">Select</option>
-                                    <option value="description" *ngFor="let paygroup of result">
-                                        {{paygroup.description}}</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="SelectData"><input type="checkbox" data-toggle="collapse" data-target="#demo" >
-                            </td>
-                            <td>2021</td>
-                            <td>October</td>
-                            <td>Normal</td>
-                            <td>
-                                <select class="form-control">
-                                    <option value=" ">Select</option>
-                                    <option value="description" *ngFor="let paygroup of result">
-                                        {{paygroup.description}}</option>
-                                </select>
-                            </td>
-                        </tr>
+                       
                     </table>
                 </div>
             </div>
@@ -209,9 +154,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let item of stafflist">
+                                <tr *ngFor="let item of uniquelist1">
                                     <td>
-                                        <input type="checkbox" [(ngModel)]="item.checked" [value]="item.value" (change)="getmonthlyreport(item.name)" data-toggle="collapse" data-target="#demo1">&nbsp;
+                                        <input type="checkbox" data-toggle="collapse" data-target="#demo1"  (change)="getempdetails(item.id)" >&nbsp;
                                     </td>
     
                                     <td>000{{item.id}}</td>
@@ -250,7 +195,7 @@
                    <p style="font-size: 15px; padding-left: 16px;">Grand Total:27,875</p>
                 </div>
             </div> <br>
-            <div class="row" *ngIf="showtable==1" id="demo1" class="collapse">
+            <div class="row" id="demo1" class="collapse">
                 <div class="col-lg-12" style="overflow:auto;">
                     <!-- <table class="table table-bordered fonttxt" id="download">
                         <thead>
@@ -376,34 +321,75 @@
                     </table> -->
                     <table class="table" id="lvs">
                         <thead>
-                            <tr>
-                                <!-- <th>Check Box</th> -->
-                                <th>Start Date</th>
-                                <th>End Date</th>
-                                <th>Employee Name</th>
-                                <th>Gross Salary</th>
-                                <th>SSS Rate</th>
-                                <th>Pag big Rate</th>
-                                <th>PhilHealth Contribution</th>
-                                <th>Tax</th>
-                                <th>Lop Days</th>
-                                <th>Lop Amount</th>
-                                <th>Net Pay</th>
+                            <tr class="newFont">
+                                <th>Employee ID*</th>
+                                <th>Fullname</th>
+                                <th>Position</th>
+                                <th>Department</th>
+                                <th>Date Hired</th>
+                                <th>Employement Status</th>
+                                <th>Bank Account Number</th>
+                                <th>Work Days Per year</th>
+                                <th>Basic Monthly Salary</th>
+                                <th>De Minimis Benefits(Monthy)</th>
+                                <th>Total Monthly Salary</th>
+                                <th>Basic Salary (Semi-Monthly)</th>
+                                <th>Gross/Day</th>
+                                <th>Basic/Hr (8 hours)</th>
+                                <th>De Minimis Benefits (Semi-Monthly)</th>
+                                <th>13th Month NonTaxable</th>
+                                <th>13th Month Taxable </th>                              
+                                <th>Withholding Tax </th>
+                                <th>SSS</th>
+                                <th>Philhealth </th>
+                                <th>HDMF</th>
+                                <th>Deductions Total</th>
+                                <th>Net Pay </th>
+                                <th>Assumed 13th Month Accurual</th>
+                                <th>Tax YTD</th>
+                                <th>Net YTD</th>
+                                <th>Taxable Gross</th>
+                                <th>SSS ER</th>
+                                <th>SSS EC</th>
+                                <th>HDMF ER</th>
+                                <th>HDMF Addtitional</th>
                             </tr>
+                            
                         </thead>
                         <tbody>
-                            <tr *ngFor="let item of employeelist">
-                                <td>{{item.startdate|date}}</td>
-                                <td>{{item.enddate|date}}</td>
+                            <tr *ngFor="let item of uniquelist">
+                                <td>{{item.id}}</td>
                                 <td>{{item.staffname}}</td>
+                                <td>{{item.role}}</td>
+                                <td>{{item.department_name}}</td>
+                                <td>{{item.joiningDate}}</td>
+                                <td>Active</td>
+                                <td>{{BankAccountNumber}}</td>
+                                <td>251</td>
+                                <td>{{item.baseSalary}}</td>
+                                <td>{{item.deniminimis_amount}}</td>
                                 <td>{{item.grossSalary}}</td>
-                                <td>{{item.contribution}}</td>
-                                <td>{{item.pagBig}}</td>
-                                <td>{{item.philHealthContribution}}</td>
-                                <td>{{item.tax}}</td>
-                                <td>{{item.lopdays}}</td>
-                                <td>{{item.lopamount}}</td>
-                                <td>{{item.netMonthSalary}}</td>
+                                <td>{{item.baseSalary/2}}</td>
+                                <td>{{basicday}}</td>
+                                <td>{{basichour}}</td>
+                                <td>{{item.deniminimis_amount/2}}</td>
+                                <td></td>
+                                <td></td>
+                                <td>{{item.monthlyTax}}</td>
+                                <td>{{item.monthlySSSRate}}</td>
+                                <td>{{item.monthlyPhilihealth}}</td>
+                                <td>{{item.monthlyPagibigRate}}</td>
+                               
+                                <td>{{item.totaldeduction}}</td>
+                                <td>{{item.monthlyNetSalary}}</td>
+                                <td>NA</td>
+                                <td>{{item.yeartax}}</td>
+                                <td>{{item.yearsalary}}</td>
+                                <td>{{item.monthlyNetSalary}}</td>
+                                <td>{{item.monthlyss_er}}</td>
+                                <td>{{item.monthlyss_ec}}</td>
+                                <td>{{item.monthlyPagibigRate/2}}</td>
+                                <td>NA</td>
 
                             </tr>
                         </tbody>

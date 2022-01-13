@@ -28,41 +28,22 @@
                                     <th>Pay Group</th>
                                 <tr>
                             </thead>
-                            <tr>
+                            <tr *ngFor="let item of uniquelist">
                                 <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                        data-target="#demo"></td>
-                                <td>2021</td>
+                                        data-target="#demo" (change)="getemployee(item.emplyeeYear)"></td>
+                                <td>{{item.emplyeeYear}}</td>
                                 <td>
-                                    <select class="form-control">
+                                    <select class="form-control"  [(ngModel)]="paygroup" >
                                         <option value=" ">Select</option>
-                                        <option value="description" *ngFor="let paygroup of result">
-                                            {{paygroup.description}}</option>
+                                        <option value="Rank and File" >
+                                            Rank and File</option>
+                                            <option value="Officer-Deployed" >
+                                                Officer  Deployed</option>
                                     </select>
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                        data-target="#demo"></td>
-                                <td>2020</td>
-                                <td>
-                                    <select class="form-control">
-                                        <option value=" ">Select</option>
-                                        <option value="description" *ngFor="let paygroup of result">
-                                            {{paygroup.description}}</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                        data-target="#demo"></td>
-                                <td>2019</td>
-                                <td>
-                                    <select class="form-control">
-                                        <option value=" ">Select</option>
-                                        <option value="description" *ngFor="let paygroup of result">
-                                            {{paygroup.description}}</option>
-                                    </select>
-                                </td>
+                           
+                           
                         </table>
                     </div>
                 </div>
@@ -85,46 +66,21 @@
                                     <th>Status</th>
                                     <th>Pay Group</th>
                                 </tr>
-                                <tr>
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                        data-target="#demo1"></td>
-                                    <td>21042</td>
-                                    <td>Tan, Marina Ela Navarro</td>
+                                <tr *ngFor="let item of uniquelist1">
+                                    <td>
+                                        <input type="checkbox"  data-toggle="collapse"
+                                        data-target="#demo1" (change)="getpaydetails(item.id)">&nbsp;
+                                    </td>
+    
+                                    <td>000{{item.id}}</td>
+                                    <td>{{item.staffname}}</td>
                                     <td>Active</td>
-                                    <td>Rank & File</td>
+                                    <td>{{item.paygroup}}</td>
+                                    
+                                  
+    
                                 </tr>
-                                <tr>
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                        data-target="#demo1"></td>
-                                    <td>21077</td>
-                                    <td>Jerry Vergis</td>
-                                    <td>Active</td>
-                                    <td>Rank & File</td>
-                                </tr>
-                                <tr>
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                        data-target="#demo1"></td>
-                                    <td>21039</td>
-                                    <td>Luna Perry</td>
-                                    <td>Active</td>
-                                    <td>Rank & File</td>
-                                </tr>
-                                <tr>
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                        data-target="#demo1"></td>
-                                    <td>21067</td>
-                                    <td>Genny Loren</td>
-                                    <td>Active</td>
-                                    <td>Rank & File</td>
-                                </tr>
-                                <tr>
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                        data-target="#demo1"></td>
-                                    <td>21022</td>
-                                    <td>Helsinki Brock</td>
-                                    <td>Active</td>
-                                    <td>Rank & File</td>
-                                </tr>
+                               
                             </thead>
                         </table>
                     </div>
@@ -179,9 +135,9 @@
                         <p style="font-size: 15px;padding-left: 30px;">Grand Total: 19,050</p>
                     </div>
                 </div>
-                <div class="row Overflow">
+                <div class="row Overflow collapse" id="demo1" >
                     <div class="col-lg-12">
-                        <table class="table table-bordered fonttxt">
+                        <table class="table table-bordered fonttxt" >
                             <thead>
                                 <tr class="newFont">
                                     <th class="SelectData">Select</th>
@@ -230,45 +186,45 @@
                                    
                                    
                                 </tr>
-                                <tr>
+                                 <tr *ngFor="let item of uniquelist3">
+                                  
+
                                     <td class="SelectData"><input type="checkbox"></td>
-                                    <td>21042</td>
-                                    <td>Tan, Marina Ela Navarro</td>
-                                    <td>Head - Marketing and Product Management</td>
-                                    <td>Management Team</td>
-                                    <td>12/01/2019</td>
+                                    <td>000{{item.id}}</td>
+                                    <td>{{item.staffname}} {{item.lastName}}</td>
+                                    <td>{{item.role}}</td>
+                                    <td>{{item.department_name}}</td>
+                                    <td>{{item.joiningDate}}</td>
                                     <td>Active</td>
-                                    <td>9649036168</td>
+                                    <td>{{item.bankAccountNumber}}</td>
                                     <!-- <td>Management Team</td> -->
-                                    <!-- <td>Male</td> -->
+                                  
                                     <td>ME</td>
-                                    <td>261</td>
-                                    <td>20,000.00</td>
-                                    <td>100.00</td>
-                                    <td>20,100.00</td>
-                                    <td>80,400</td>
-                                    <td>10,000.00</td>
-                                    <td>666.66</td>
-                                    <td>83.33</td>
-                                    <td>50</td>
-                                    <td>500.00</td>
-                                    <td>20,600</td>
-                                    
-                                    <td>100.00</td>
-                                    <td>3200.00</td>
-                                    <td>2200.00</td>
-                                    <td>400.00</td>
-                                    <td>1,550.00</td>
-                                    <td>0</td>
-                                    <td>74,600</td>
-                                    <td>1,600.00</td>
-                                    <td>800.00</td>
-                                    <!-- <td>550.00</td> -->
-                                    <td>100.00</td>
-                                    <td>0.00</td>
-                                    
+                                    <td>{{Days}}</td>
+                                    <td>{{item.baseSalary}}</td>
+                                    <td>{{item.deniminimis_amount}}</td>
+                                    <td>{{item.grossSalary}}</td>
+                                    <td>{{item.yearsalary}}</td>
+                                    <td>{{item.baseSalary/2}}</td>
+                                    <td>{{item.basicperday}}</td>
+                                 
                                    
-                                </tr>
+                                    <td>{{item.basichour}}</td>
+                                    <td>{{item.deniminimis_amount/2}}</td>
+                                    <td>{{item.monthlyotamount}}</td>
+                                    <td>{{item.monthlyNetSalary}}</td>
+                                    <td>{{item.yeartax}}</td>
+                                    <td>{{item.yearSSSRate}}</td>
+                                    <td>{{item.yearPhilihealth}}</td>
+                                    <td>{{item.yearPagibigRate}}</td>
+                                    <td>{{item.yearlydeduction}}</td>
+                                    <td>{{item.yearSSSRate}}</td>
+                                    <td>{{item.yearsalary}}</td>
+                                    <td>{{item.yearss_er}}</td>
+                                    <td>{{item.yearss_ec}}</td>
+                                    <td>{{item.yearPagibigRate/2}}</td>
+                                    <td></td>
+                                </tr> 
                             </thead>
                         </table>
                     </div>

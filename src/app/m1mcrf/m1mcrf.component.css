@@ -19,6 +19,11 @@
 }
 
 
+table, th, td {
+  border: 1px solid black;
+}
+
+
 .generate2 {
   height: 39px;
   border-radius: 23px;

@@ -21,28 +21,118 @@
             </div><br>
             <div class="row">
                 <div class="col-lg-8 View">
-                    <ul>
+                    <!-- <ul>
                         <li><a class="active fontheading">View</a></li>
                         <li><a >Modify</a></li>
-                    </ul>
+                    </ul> -->
                 </div>
 
                 <div class="col-lg-2">
-                    <button class="form-control  edit" data-toggle="modal" data-target="#payroll">Run Payroll</button>
+                    <button class="form-control  edit" routerLink='/RunPayroll'>Run Payroll</button>
                 </div>
                 <div class="col-lg-2">
                     <button class="form-control  edit" data-toggle="modal" data-target="#payroll1">Bank Advice
                         List</button>
                 </div>
             </div>
-
-            <div class="container-fluid">
+            <div class="row">
+                <br /> <br /><br /> <br /><br /> <br />
+                <div class="col-lg-12 dashbutton bttn">
+                    <div class="tab-slider--nav">
+                        <ul class="tab-slider--tabs">
+                            <li class="tab-slider--trigger" [class.active]="viewMode == 'tab1'" rel="tab1"
+                                (click)="viewMode ='tab1'">
+                                Succeeded</li>
+                            <li class="tab-slider--trigger" [class.active]="viewMode == 'tab2'" rel="tab2"
+                                (click)="viewMode ='tab2'">Failed</li>
+                           
+    
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row smalltable" >
+    
+                <div class="tab-slider--container" [ngSwitch]="viewMode">
+                    <div *ngSwitchCase="'tab1'" id="tab1">
+                        <div class="row tablehead">
+                            <div class="col-lg-8"></div>
+                            <div class="col-lg-4">
+                                <h5 style="text-align: center;margin-left: 66px;"></h5>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-12 " >
+                            <table class="table" id="lvs">
+                                <thead>
+                                    <tr>
+                                        <!-- <th>Check Box</th> -->
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Employee Name</th>
+                                        <th>Gross Salary</th>
+                                        <th>SSS Rate</th>
+                                        <th>Pag big Rate</th>
+                                        <th>PhilHealth Contribution</th>
+                                        <th>Tax</th>
+                                        <th>Lop Days</th>
+                                        <th>Lop Amount</th>
+                                        <th>Net Pay</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of employeelist">
+                                        <td>{{item.startdate|date}}</td>
+                                        <td>{{item.enddate|date}}</td>
+                                        <td>{{item.staffname}}</td>
+                                        <td>{{item.grossSalary}}</td>
+                                        <td>{{item.contribution}}</td>
+                                        <td>{{item.pagBig}}</td>
+                                        <td>{{item.philHealthContribution}}</td>
+                                        <td>{{item.tax}}</td>
+                                        <td>{{item.lopdays}}</td>
+                                        <td>{{item.lopamount}}</td>
+                                        <td>{{item.netMonthSalary}}</td>
+        
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+    
+    
+                    </div>
+                    <div *ngSwitchCase="'tab2'" id="tab2">
+                        <div class="row tablehead">
+                            <div class="col-lg-8"></div>
+                            <div class="col-lg-4">
+                                <h5 style="text-align: center;margin-left: 66px;"></h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 smalltable" >
+                            <table style="overflow-x:auto;">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Complaint ID</th>
+                                    <th>Category</th>
+                                    <th>Complaint Description</th>
+                                    <th>Status</th>
+                                    <th>Assigned To</th>
+                                    <th>Attachment</th>
+                                    <!-- <th>Actions</th> -->
+                                </tr>
+                                
+    
+                            </table>
+                        </div>
+                    </div>
+            <!-- <div class="container-fluid">
                 <div class="row ">
                     <div class="col-lg-12">
                         <table class="table" id="lvs">
                             <thead>
                                 <tr>
-                                    <!-- <th>Check Box</th> -->
+                                   
                                     <th>Start Date</th>
                                     <th>End Date</th>
                                     <th>Employee Name</th>
@@ -75,7 +165,7 @@
                         </table>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="col-lg-1"></div>

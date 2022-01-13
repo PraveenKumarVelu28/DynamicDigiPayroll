@@ -13,6 +13,7 @@ export class ER2Component implements OnInit {
   constructor(public DigipayrollServiceService: DigipayrollServiceService) { }
   stafflist:any;
   employeeid:any;
+  uniquelist:any;
   ngOnInit(): void {
     this.showleaseforprint = 0;
     
@@ -20,6 +21,14 @@ export class ER2Component implements OnInit {
       debugger
       this.stafflist = data.filter(x => x.deniminimis != null);
     });
+
+    const key = 'id'
+
+    this.uniquelist  = [...new Map(this.stafflist.map((item: { [x: string]: any; }) =>
+      [(item[key]), item])).values()]
+ 
+
+
   }
 
   emailid:any;
@@ -56,10 +65,24 @@ export class ER2Component implements OnInit {
       this.department = this.stafflist[0].department_name
     });
   
+    
+    this.DigipayrollServiceService.GetCompanyDetails().subscribe(data => {
+      debugger
+      this.companylist = data
+      this.companyid =  this.companylist[0].id,
+      this.companyname = this.companylist[0].companyName,
+      this.Address = this.companylist[0].address
+
+
+
+    })
    
 
   }
-
+  companylist:any;
+  companyid:any;
+  companyname:any;
+  Address:any;
 
   public showpdf1(){
     this.showleaseforprint = 1;

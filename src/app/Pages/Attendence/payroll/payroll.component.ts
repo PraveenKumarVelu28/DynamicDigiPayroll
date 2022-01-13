@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./payroll.component.css']
 })
 export class PayrollComponent implements OnInit {
+  viewMode = 'tab1';
+
   constructor(public DigiofficeService: DigipayrollServiceService, public router: Router) {
     this.minDate.setDate(this.minDate.getDate() - 1);
     this.maxDate.setDate(this.maxDate.getDate() + 7);
@@ -28,7 +30,6 @@ export class PayrollComponent implements OnInit {
   minDate = new Date();
   ngOnInit(): void {
     debugger
-
     this.DigiofficeService.GetMyDetails().subscribe(data => {
       debugger
       this.stafflist = data.filter(x => x.deniminimis != null);
@@ -139,70 +140,71 @@ export class PayrollComponent implements OnInit {
         // })
       }
       else {
-        this.DigiofficeService.DeleteEmployeeSalary(1).subscribe(res => {
-          if (this.stafflist.every((val: { checked: boolean; }) => val.checked == true)) {
-            this.IntID = false;
-            this.ID = [];
-            this.stafflist.forEach((val: { checked: boolean; }) => { val.checked = false });
-          }
-          else {
-            this.ID1 = [];
-            debugger
-            this.stafflist.forEach((val: { checked: boolean; }) => { val.checked = true });
-            this.IntID = true;
-            Swal.fire("Payroll Processing Completed");
-            for (let i = 0; i < this.stafflist.length; i++) {
-              debugger;
-              this.ID1.push(this.stafflist[i].id);
-              //this.EmployeeID =
-              this.ID1[i];
-              this.DigiofficeService.GetStaffLeavesForPayrollByDate(this.startdate, this.enddate, this.ID1[i]).subscribe(
-                res => {
-                  debugger;
-                  if (res.length == 0) {
-                    this.LOPDays = 0;
-                    this.DigiofficeService.Get_Salary_Splits(this.ID1[i], this.LOPDays, this.startdate, this.enddate).subscribe(
-                      res => {
-                        debugger;
-                        this.StaffSalaryReports = res;
-                        this.ID1 = [];
-                        location.href = '#/Payrolldetails'
-                      }
-                    )
+        if (this.stafflist.every((val: { checked: boolean; }) => val.checked == true)) {
+          this.IntID = false;
+          this.ID = [];
+          this.stafflist.forEach((val: { checked: boolean; }) => { val.checked = false });
+        }
+        else {
+          this.ID1 = [];
+          debugger
+          this.stafflist.forEach((val: { checked: boolean; }) => { val.checked = true });
+          this.IntID = true;
+          Swal.fire("Payroll Processing Completed");
+          for (let i = 0; i < this.stafflist.length; i++) {
+            debugger;
+            this.ID1.push(this.stafflist[i].id);
+            //this.EmployeeID =
+            this.ID1[i];
+            this.DigiofficeService.GetStaffLeavesForPayrollByDate(this.startdate, this.enddate, this.ID1[i]).subscribe(
+              res => {
+                debugger;
+                if (res.length == 0) {
+                  this.LOPDays = 0;
+                  this.DigiofficeService.Get_Salary_Splits(this.ID1[i], this.LOPDays, this.startdate, this.enddate).subscribe(
+                    res => {
+                      debugger;
+                      this.StaffSalaryReports = res;
+                      this.ID1 = [];
+                      location.href = '#/Payrolldetails'
+                    }
+                  )
 
-                  } else {
-                    this.LOPDays = res[0].noOfDays;
-                    if (this.LOPDays <= 2) {
-                      this.LOPDays = this.LOPDays;
-                    }
-                    else {
-                      this.LOPDays = this.LOPDays - 2;
-                    }
-                    this.DigiofficeService.Get_Salary_Splits(this.ID1[i], this.LOPDays, this.startdate, this.enddate).subscribe(
-                      res => {
-                        debugger;
-                        this.StaffSalaryReports = res;
-                        this.ID1 = [];
-                        location.href = '#/Payrolldetails'
-                      }
-                    )
+                } else {
+                  this.LOPDays = res[0].noOfDays;
+                  if (this.LOPDays <= 2) {
+                    this.LOPDays = this.LOPDays;
                   }
-
+                  else {
+                    this.LOPDays = this.LOPDays - 2;
+                  }
+                  this.DigiofficeService.Get_Salary_Splits(this.ID1[i], this.LOPDays, this.startdate, this.enddate).subscribe(
+                    res => {
+                      debugger;
+                      this.StaffSalaryReports = res;
+                      this.ID1 = [];
+                      location.href = '#/Payrolldetails'
+                    }
+                  )
                 }
 
-
-              )
-
-            }
+              }
 
 
-            // for (let i = 0; i < this.ID1.length; i++) {
-            //   debugger;
-
-            // }
+            )
 
           }
-        })
+
+
+          // for (let i = 0; i < this.ID1.length; i++) {
+          //   debugger;
+
+          // }
+
+        }
+        // this.DigiofficeService.DeleteEmployeeSalary(1).subscribe(res => {
+        
+        // })
       }
 
 

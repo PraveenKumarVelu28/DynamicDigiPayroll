@@ -62,7 +62,7 @@
                 <div class="col-lg-2">
                     <select name="cars" id="Month" class="form-control"  [(ngModel)]="employeeid" (change)="showpdf()">
                         <option value="Select" >Select</option>
-                        <option value="Admin" *ngFor="let emp of stafflist" value="{{emp.id}}">{{emp.name}}</option>
+                        <option value="Admin" *ngFor="let emp of uniquelist" value="{{emp.id}}">{{emp.name}}</option>
                                                            
                       </select>
                 </div>
@@ -97,9 +97,9 @@
 <div id="downloadaplication" style="position:absolute;left:50%;margin-left:-396px;top:0px;width:792px;height:612px;border-style:outset;overflow:hidden;margin-top: 400px;">
     <div style="position:absolute;left:0px;top:0px">
     <img src="assets/images/ER2.jpg" width=792 height=612></div>
-    <div style="position:absolute;left:180.00px;top:96.22px" class="cls_003"><span class="cls_003">TalentUS Inc.</span></div>
-    <div style="position:absolute;left:655.20px;top:96.22px" class="cls_003"><span class="cls_003">{{EmployeeNo}}</span></div>
-    <div style="position:absolute;left:79.20px;top:117.82px" class="cls_003"><span class="cls_003">5F Phinma Plaza, 39 Phinma Dr,</span></div>
+    <div style="position:absolute;left:180.00px;top:96.22px" class="cls_003"><span class="cls_003">{{companyname}}</span></div>
+    <div style="position:absolute;left:655.20px;top:96.22px" class="cls_003"><span class="cls_003">000{{companyid}}</span></div>
+    <div style="position:absolute;left:79.20px;top:117.82px" class="cls_003"><span class="cls_003">{{Address}},</span></div>
     <div style="position:absolute;left:532.80px;top:117.82px" class="cls_003"><span class="cls_003">{{emailid}}</span></div>
     <div style="position:absolute;left:14.40px;top:190.82px" class="cls_002"><span class="cls_002">{{PhilhealthNo}}</span></div>
     <div style="position:absolute;left:122.40px;top:190.82px" class="cls_002"><span class="cls_002">{{fullname}}</span></div>
