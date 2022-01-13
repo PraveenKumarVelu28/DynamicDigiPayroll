@@ -16,6 +16,7 @@ export class GovernmentComponent implements OnInit {
   }
 
   employeelist:any;
+  staffID:any;
   merged:any;
   public GetNewGovernmentRecords() {
     debugger
@@ -27,10 +28,7 @@ export class GovernmentComponent implements OnInit {
 
     this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
       debugger
-      this.employeelist = data;
-     
-     
-  
+      this.employeelist = data
     });
      this.merged = [];
 
@@ -42,8 +40,9 @@ export class GovernmentComponent implements OnInit {
     }
     console.log('data', this.merged)
   }
-
-
+  
+  
+  
   
 
 
