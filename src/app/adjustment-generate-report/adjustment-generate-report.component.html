@@ -30,50 +30,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr *ngFor="let item of uniquelist1">
                                     <td class="SelectData"><input type="checkbox" data-toggle="collapse"
                                             data-target="#demo" (click)="showone()"></td>
-                                    <td>21028</td>
-                                    <td>Tan, Marina Ela Navarro</td>
+                                    <td>000{{item.id}}</td>
+                                    <td>{{item.staffname}} {{item.lastName}}</td>
                                     <td>Active</td>
 
                                 </tr>
-                                <tr>
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>21032</td>
-                                    <td>Rac, Lyla Gonzales</td>
-                                    <td>Terminated</td>
-
-                                </tr>
-                                <tr>
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>21037</td>
-                                    <td>Bodoso, Mary Rose banico</td>
-                                    <td>Active</td>
-                                </tr>
-                                <tr>
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>21040</td>
-                                    <td>Cedilla,Luclita Montreo</td>
-                                    <td>Terminated</td>
-                                </tr>
-                                <tr>
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>21043</td>
-                                    <td>Gumapac,Glenn Eddie</td>
-                                    <td>Active</td>
-                                </tr>
-                                <tr>
-                                    <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo"></td>
-                                    <td>21046</td>
-                                    <td>Sagala,Joaaquin Jr.Aquine</td>
-                                    <td>Active</td>
-                                </tr>
+                               
                             </tbody>
                         </table>
                     </div>

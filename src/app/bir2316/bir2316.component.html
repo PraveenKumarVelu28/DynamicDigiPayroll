@@ -38,52 +38,10 @@
                         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked disabled>
                         <label class="form-check-label"  >Normal Payroll</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked disabled>
-                        <label class="form-check-label"  >13th Month</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
-                        <label class="form-check-label"  >Part Time</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
-                        <label class="form-check-label"  >Special Run</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
-                        <label class="form-check-label"  >Special Run Part Time</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
-                        <label class="form-check-label"  >YTD Upload</label>
-                    </div>
-
+                   
                 </div>
 
-                <div class="col-lg-2">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
-                        <label class="form-check-label"  >Final Pay</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
-                        <label class="form-check-label"  >Final Pay Part Time</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
-                        <label class="form-check-label"  >Adjustments</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
-                        <label class="form-check-label"  >Reimbursements</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
-                        <label class="form-check-label"  >Commission</label>
-                    </div>
-
-                </div>
+              
             </div>
             <br>
 
@@ -142,30 +100,15 @@
                                 <th>Posting Status</th>
                                
                             </tr>
-                            <tr>
+                            <tr *ngFor="let item of uniquelist1">
                                 <td class="SelectData"><input type="checkbox"></td>
-                                <td>20-004</td>
-                                <td>Intal, Maria Cassandra</td>
+                                <td>000{{item.id}}</td>
+                                <td>{{item.name}} {{item.last_Name}}</td>
                                 <td>Active</td>
                                 <td class="SelectData"><input type="checkbox"></td>
                                 <td>Unposted</td>
                             </tr>
-                            <tr>
-                                <td class="SelectData"><input type="checkbox"></td>
-                                <td>20-003</td>
-                                <td>Olaguer, Ajel</td>
-                                <td>Active</td>
-                                <td class="SelectData"><input type="checkbox"></td>
-                                <td>Unposted</td>
-                            </tr>
-                            <tr>
-                                <td class="SelectData"><input type="checkbox"></td>
-                                <td>19-002</td>
-                                <td>Fernandez, Andrew</td>
-                                <td>Terminated</td>
-                                <td class="SelectData"><input type="checkbox"></td>
-                                <td>Unposted</td>
-                            </tr>
+                           
                         </thead>
                     </table>
                 </div>

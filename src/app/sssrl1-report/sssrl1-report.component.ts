@@ -20,6 +20,10 @@ export class SSSRL1ReportComponent implements OnInit {
   employeelist:any;
   uniquelist:any;
   uniquelist1:any;
+  companylist:any;
+  companyid:any;
+  companyname:any;
+  Address:any;
   ngOnInit(): void {
   
     this.showleaseforprint = 0;
@@ -30,25 +34,41 @@ export class SSSRL1ReportComponent implements OnInit {
   }
 
   
-
+  month:any;
+  year:any;
+  MobileNumber:any;
+  emailaddress:any;
   public showpdf(){
+       
     this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
       debugger
-      this.employeelist = data;
-      const key = 'staffname';
-      const key1 = 'month'
+      this.employeelist = data.filter(x=>x.employeeMonth==this.month && x.emplyeeYear==this.year);
+      const key = 'monthstaffid'
 
       this.uniquelist  = [...new Map(this.employeelist.map((item: { [x: string]: any; }) =>
         [(item[key]), item])).values()]
-    this.uniquelist1 =  this.uniquelist.filter((x: { month: any; })=>x.month==this.Month)
-      //  this.uniquelist = [...new Set(data.map(item => item))];
-     
-  
+   
+
+        this.showleaseforprint = 1;
+
+        this.DigipayrollServiceService.GetCompanyDetails().subscribe(data => {
+          debugger
+          this.companylist = data
+          this.companyid =  this.companylist[0].id,
+          this.companyname = this.companylist[0].companyName,
+          this.Address = this.companylist[0].address
+          this.MobileNumber = this.companylist[0].mobileNumber,
+          this.emailaddress = this.companylist[0].emailID
+    
+    
+        })
     });
-    this.showleaseforprint = 1;
+   
   }
 
 
+
+  
   emailid:any;
   EmployeeNo:any;
   PhilhealthNo:any;

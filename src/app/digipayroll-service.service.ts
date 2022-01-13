@@ -788,6 +788,13 @@ export class DigipayrollServiceService {
     return this.http.get<any[]>(this.host + "/Announcement/GetStaffLeavesForPayrollByDate?startdate=" + startdate + "&enddate=" + enddate + "&StaffID=" + StaffID);
   }
 
+  public Get_Employees_For_Payroll(startdate: any, enddate: any) {
+    debugger
+    return this.http.get<any[]>(this.host + "/Building/Get_Employees_For_Payroll?startdate=" + startdate + "&enddate=" + enddate);
+  }
+
+
+  
   public Get_Salary_Splitsfor15days(EmployeeID: any, LopdaysCount: any, startdate: any, enddate: any) {
     debugger
     return this.http.get<any[]>(this.host + "/Announcement/Get_Salary_Splitsfor15days?EmployeeID=" + EmployeeID + "&LopdaysCount=" + LopdaysCount + "&startdate=" + startdate + "&enddate=" + enddate);

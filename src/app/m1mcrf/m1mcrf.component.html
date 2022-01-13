@@ -14,28 +14,28 @@
                    <p> Select Start Month & Year</p>
                 </div>
                 <div class="col-lg-2">
-                    <select name="cars" id="Month" class="form-control">
+                    <select name="cars" id="Month" class="form-control" [(ngModel)]="month" >
                         <option value="Select">Select</option>
-                        <option value="January">January</option>
-                        <option value="February">February</option>
-                        <option value="March">March</option>
-                        <option value="April">April</option>
-                        <option value="May">May</option>
-                        <option value="June">June</option>
-                        <option value="July">July</option>
-                        <option value="August">August</option>
-                        <option value="September">September</option>
-                        <option value="October">October</option>
-                        <option value="November">November</option>
-                        <option value="December">December</option>                       
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>                       
                       </select>
                 </div>
                 <div class="col-lg-2">
-                    <select name="cars" id="Month" class="form-control">
+                    <select name="cars" id="Month" class="form-control" [(ngModel)]="year">
                         <!-- <option value="Select">Select</option> -->
+                        <option value="2022">2022</option>
                         <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>                                          
+                        <option value="2020">2020</option>                                          
                       </select>
                 </div>            
             </div><br> 
@@ -175,17 +175,20 @@
                             <th>REMARKS</th>
                         <tr>
                         </tr>
-                        <tr *ngFor="let item of employeelist">
+                        <tr *ngFor="let item of uniquelist">
+                            <td>{{item.pagiBig_ID}}</td>
+                            <td>{{item.pagiBigAccountNo}}</td>
+                            <td>{{item.pagibigMembership}}</td>
                             <td>{{item.lastName}}</td>
-                            <td>{{item.staffname}}</td>
-                            <td>{{item.philHealth}}</td>
-                            <td></td>
-                            <td>{{item.lastName}}</td>
-                            <td>{{item.staffname}}</td>
-                            <td>{{item.dob|date}}</td>
-                            <td>{{item.pagBig/2}}</td>
-                            <td>{{item.pagBig/2}}</td>
-                          
+                            <td>{{item.staffname}}  </td>
+                            <td>{{item.title}} </td>
+                            <td>{{item.monthlyPagibigRate}}</td>
+                            <td>{{item.employeeMonth}} {{item.emplyeeYear}} </td>
+                            <td>{{item.monthlyNetSalary}}</td>
+                            <td>{{item.monthlyPagibigRate/2}}</td>
+                            <td>{{item.monthlyPagibigRate/2}}</td>
+                            <td>{{item.monthlyPagibigRate}}</td>
+                           
 
                         </tr>
                         <!-- <tr>

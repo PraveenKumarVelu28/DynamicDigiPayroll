@@ -15,19 +15,27 @@ export class M1mcrfComponent implements OnInit {
   loader:any;
   constructor(public DigiofficeService: DigipayrollServiceService) { }
   employeelist:any
+  month:any;
+  year:any;
   ngOnInit(): void {
     this.showleaseforprint = 0;
     this.loader=false;
-    
-    this.DigiofficeService.GetEmployeeSalary().subscribe(data => {
-      debugger
-      this.employeelist = data;
-    });
+ 
 
   }
 
-
+  uniquelist:any;
   public showpdf(){
+       
+    this.DigiofficeService.GetEmployeeSalary().subscribe(data => {
+      debugger
+      this.employeelist = data.filter(x=>x.employeeMonth==this.month && x.emplyeeYear==this.year);
+      const key = 'monthstaffid'
+
+      this.uniquelist  = [...new Map(this.employeelist.map((item: { [x: string]: any; }) =>
+        [(item[key]), item])).values()]
+   
+    });
     this.showleaseforprint = 1;
   }
 

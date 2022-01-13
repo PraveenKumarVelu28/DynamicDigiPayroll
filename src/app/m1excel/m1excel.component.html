@@ -10,19 +10,36 @@
             </div>
             <hr>
             <div class="row FilterClass ">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-2">
-                    <p> Select Start Month & Year</p>
-                </div>
-                <div class="col-lg-3">
-                    <input class="form-control" type="date" placeholder="startdate" id="startdate" name="startdate"
-                        [(ngModel)]="startdate">
-                </div>
-                <div class=" col-lg-3">
-                    <input class="form-control" type="date" placeholder="enddate" id="enddate" name="enddate"
-                        [(ngModel)]="enddate" (change)="getdate($event)">
-                </div>
-            </div><br>
+                <div class="col-lg-2"></div>
+                   <div class="col-lg-2">
+                      <p> Select Start Month & Year</p>
+                   </div>
+                   <div class="col-lg-2">
+                       <select name="cars" id="Month" class="form-control" [(ngModel)]="month" >
+                           <option value="Select">Select</option>
+                           <option value="1">January</option>
+                           <option value="2">February</option>
+                           <option value="3">March</option>
+                           <option value="4">April</option>
+                           <option value="5">May</option>
+                           <option value="6">June</option>
+                           <option value="7">July</option>
+                           <option value="8">August</option>
+                           <option value="9">September</option>
+                           <option value="10">October</option>
+                           <option value="11">November</option>
+                           <option value="12">December</option>                       
+                         </select>
+                   </div>
+                   <div class="col-lg-2">
+                       <select name="cars" id="Month" class="form-control" [(ngModel)]="year">
+                           <!-- <option value="Select">Select</option> -->
+                           <option value="2022">2022</option>
+                           <option value="2021">2021</option>
+                           <option value="2020">2020</option>                                          
+                         </select>
+                   </div>            
+               </div><br> 
             <!-- <div class="row FilterClass fontheading">
                 <div class="col-lg-3"></div>
                 <div class="col-lg-2">
@@ -41,7 +58,7 @@
                 <div class="row">
                     <div class="col-lg-5"></div>
                     <div class="col-lg-2">
-                        <button class="generate" data-toggle="collapse" data-target="#demo" (click)="SelectAll()">GENERATE</button>
+                        <button class="generate" data-toggle="collapse" data-target="#demo" (click)="showpdf()">GENERATE</button>
                     </div>
                 </div>
             </div>
@@ -53,7 +70,7 @@
                         <P>Employer ID: </P>
                     </div>
                     <div class="col-lg-2">
-                        <h6>209754750003</h6>
+                        <h6>{{companyid}}</h6>
                     </div>
                 </div>
                 <div class="row">
@@ -61,7 +78,7 @@
                         <P>Employer Name: </P>
                     </div>
                     <div class="col-lg-2">
-                        <h6>TalentZone Inc</h6>
+                        <h6>{{companyname}}</h6>
                     </div>
                 </div>
                 <div class="row">
@@ -69,7 +86,7 @@
                         <P>Address: </P>
                     </div>
                     <div class="col-lg-6">
-                        <h6>5F Phinma Plaza, 39 Phinma Dr, Rockwell Center, Makati City.</h6>
+                        <h6>{{Address}}</h6>
                     </div>
                     <div class="col-lg-2"></div>
                     <div class="col-lg-2">
@@ -93,18 +110,18 @@
                                     <th>ER SHARE</th>
                                     <th>REMARKS</th>
                                 </tr>
-                                <tr *ngFor="let item of employeelist">
+                                <tr *ngFor="let item of uniquelist">
                                     <td><input type="checkbox" ></td>
                                     <td>{{item.pagiBig_ID}}</td>
                                     <td>{{item.pagiBigAccountNo}}</td>
-                                    <td>{{item.pagibigRemarks}}</td>
+                                    <td>{{item.pagibigMembership}}</td>
                                    
                                     <td>{{item.lastName}}</td>
                                     <td>{{item.staffname}}</td>
-                                    <td>{{item.dob|date}}</td>
-                                    <td>{{item.pagBig/2}}</td>
-                                    <td>{{item.pagBig/2}}</td>
-                                   <td></td>
+                                    <td>{{item.employeeMonth}} {{item.emplyeeYear}} </td>
+                                    <td>{{item.monthlyPagibigRate/2}}</td>
+                                    <td>{{item.monthlyPagibigRate/2}}</td>
+                                   <td>{{item.pagibigRemarks}}</td>
     
                                 </tr>
 

@@ -17,7 +17,7 @@
                     </div>
                     <div class="col-lg-2">
                         <div class="dropdown">
-                            <select class="form-control inputfield" id="Month" name="Month"  [(ngModel)]="Month" ><br/>
+                            <select class="form-control inputfield" id="Month" name="Month"  [(ngModel)]="month" ><br/>
                                 <option value="Select">Select Month </option>
                                 <option value="1">January </option>
                                 <option value="2">February </option>
@@ -41,11 +41,11 @@
                     
                         <div class="col-lg-2">
                             <div class="dropdown">
-                                <select class="form-control " id="Year" name="Year" [(ngModel)]="Year"><br/>
+                                <select class="form-control " id="Year" name="Year" [(ngModel)]="year"><br/>
                                     <option value="Select">Select Year </option>
+                                    <option value="2022">2022 </option>
                                     <option value="2021">2021 </option>
                                     <option value="2020">2020 </option>
-                                    <option value="2019">2019 </option>
                                     
                                 </select>
                             </div>
@@ -139,11 +139,11 @@
             
                         <div class="col-lg-2" style="border: 2px solid black; ">
                             <label>EMPLOYER ID NUMBER</label><br>
-                            <!-- <input> -->
+                            <!-- <input> -->{{companyid}}
                         </div>
                         <div class="col-lg-4" style="border: 2px solid black;">
                             <label>EMPLOYER NAME</label><br>
-                            <!-- <input> -->
+                            <!-- <input> -->{{companyname}}
                         </div>
                         <div class="col-lg-3" style="border: 2px solid black;">
                             <label>TYPE OF EMPLOYER</label><br>
@@ -172,7 +172,7 @@
                                     (PROVINCE)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 </span></label>
                             <br><br>
-                            <!-- <input style="margin-bottom: 10px;"> -->
+                           {{Address}}
                         </div>
                         <div class="col-lg-2" style="border: 2px solid black;">
                             <label>ZIPCODE</label><br>
@@ -201,11 +201,11 @@
                         </div>
                         <div class="col-lg-2" style="border: 2px solid black;">
                             <label>MOBILEICELLPHONE NUMBER</label><br><br>
-                            <!-- <input> -->
+                           {{MobileNumber}}
                         </div>
                         <div class="col-lg-2" style="border: 2px solid black;">
                             <label>E-MAIL ADDRESS</label><br><br>
-                            <!-- <input> -->
+                            <!-- <input> -->{{emailaddress}}
                         </div>
                         <div class="col-lg-4" style="border: 2px solid black;">
                             <label>WEBSITE it ANY</label><br><br>
@@ -242,9 +242,9 @@
                                     <td class="table-border">{{item.dob}} </td>
                                     <td class="table-border">{{item.joiningDate}} </td>
                                     <td class="table-border">NA</td>
-                                    <td class="table-border">{{item.grossSal}}</td>
+                                    <td class="table-border">{{item.monthlyGrossSalary}}</td>
                                     <td class="table-border">{{item.role}}</td>
-                                    <td class="table-border">{{item.staffname}}</td>
+                                  
                                    
                                 </tr>
                                 <!-- <tr *ngFor="let item of employeelist">
@@ -355,6 +355,8 @@
                                 <div class="col-lg-5 border">
                                     <label class="Fontsize">certify that the information provided in this form are true and
                                         correct<br>
+                                        {{signname}}  &nbsp; &nbsp; _____________ &nbsp; &nbsp; {{sign}} &nbsp; &nbsp;
+                                        ___________
                                         _____________ &nbsp; &nbsp; _____________ &nbsp; &nbsp; _________________ &nbsp; &nbsp;
                                         ___________
                                         PRINTED NAME &nbsp; &nbsp; &nbsp; SIGNATURE &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;

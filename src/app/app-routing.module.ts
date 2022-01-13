@@ -95,6 +95,7 @@ import { Bir2307Component } from './bir2307/bir2307.component';
 import { BirAnnualizationComponent } from './bir-annualization/bir-annualization.component';
 import { Biralphalist6Component } from './biralphalist6/biralphalist6.component';
 import { Biralphalist7Component } from './biralphalist7/biralphalist7.component';
+import { PagibigSTLRComponent } from './pagibig-stlr/pagibig-stlr.component';
 import { RunPayrollComponent } from './run-payroll/run-payroll.component';
 
 const routes: Routes = [
@@ -275,6 +276,7 @@ const routes: Routes = [
   { path: 'BirAnnualization', component: BirAnnualizationComponent },
   { path: 'Biralphalist6', component: Biralphalist6Component },
   { path: 'Biralphalist7', component: Biralphalist7Component },
+  { path: 'PagibigSTLR', component: PagibigSTLRComponent },
  
 
 

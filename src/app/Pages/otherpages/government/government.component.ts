@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DigipayrollServiceService } from 'src/app/digipayroll-service.service';
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-government',
   templateUrl: './government.component.html',
@@ -14,15 +15,38 @@ export class GovernmentComponent implements OnInit {
     this.GetNewGovernmentRecords();
   }
 
-
+  employeelist:any;
+  merged:any;
   public GetNewGovernmentRecords() {
     debugger
     this.DigipayrollServiceService.GetNewGovernmentRecords().subscribe(data => {
       debugger
       this.govtlist = data;
-      console.log('data', this.govtlist)
+     
     })
+
+    this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
+      debugger
+      this.employeelist = data;
+     
+     
+  
+    });
+     this.merged = [];
+
+    for(let i=0; i<this.govtlist.length; i++) {
+      this.merged.push({
+       ...this.govtlist[i], 
+       ...(this.employeelist.find((itmInner:any) => itmInner.id === this.govtlist[i].staffID))}
+      );
+    }
+    console.log('data', this.merged)
   }
+
+
+  
+
+
 
   ssS_Number: any;
   ssS_DatePaid: any;
@@ -44,6 +68,8 @@ export class GovernmentComponent implements OnInit {
   SBRORNumber:any
   Amount:any;
   DatePaid:any;
+  staffId:any;
+  staffName:any;
 
   save() {
     var json = {
@@ -52,7 +78,8 @@ export class GovernmentComponent implements OnInit {
       "sbrorNumber": this.SBRORNumber,
       "amount": this.Amount,
       "datePaid": this.DatePaid,
-      "attachment":this.govtattachment
+      "attachment":this.govtattachment,
+      "staffId":this.staffId
 
       // "ssS_Number": this.ssS_Number,
       // "ssS_DatePaid": this.ssS_DatePaid,

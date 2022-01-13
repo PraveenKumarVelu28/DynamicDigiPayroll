@@ -103,6 +103,7 @@ import { Bir2307Component } from './bir2307/bir2307.component';
 import { BirAnnualizationComponent } from './bir-annualization/bir-annualization.component';
 import { Biralphalist6Component } from './biralphalist6/biralphalist6.component';
 import { Biralphalist7Component } from './biralphalist7/biralphalist7.component';
+import { PagibigSTLRComponent } from './pagibig-stlr/pagibig-stlr.component';
 import { RunPayrollComponent } from './run-payroll/run-payroll.component';
 
 
@@ -211,6 +212,7 @@ const ngWizardConfig: NgWizardConfig = {
     BirAnnualizationComponent,
     Biralphalist6Component,
     Biralphalist7Component,
+    PagibigSTLRComponent,
     RunPayrollComponent,
 
   ],
