@@ -14,6 +14,11 @@ export class Biralphalist6Component implements OnInit {
   showleaseforprint:any;
   ngOnInit(): void {
     this.showleaseforprint = 0;
+    this.showtable1=0;
+    this.showtable2=0;
+    this.showtable3=0;
+    this.showtable4=0;
+
   }
 
   public showpdf(){
@@ -22,7 +27,7 @@ export class Biralphalist6Component implements OnInit {
  
 
 
-  fileName = 'Monthly Summary Report.xlsx';
+  fileName = 'AlphaList 6.1.xlsx';
   exportexcel(): void {
     /* table id is passed over here */
     let element = document.getElementById('download');
@@ -37,8 +42,36 @@ export class Biralphalist6Component implements OnInit {
     /* save to file */
     XLSX.writeFile(wb, this.fileName);
   }
-  Showdata(){
+  showtable1:any;
+  showtable2:any;
+  showtable3:any;
+  showtable4:any;
+  Showdata1(){
     debugger
-      this.showtable=1;   
+      this.showtable1=1;  
+      this.showtable2=0;  
+      this.showtable3=0;  
+      this.showtable4=0  
+  }
+  Showdata2(){
+    debugger
+    this.showtable1=0;  
+    this.showtable2=1;  
+    this.showtable3=0;  
+    this.showtable4=0    
+  }
+  Showdata3(){
+    debugger
+    this.showtable1=0;  
+    this.showtable2=0;  
+    this.showtable3=1;  
+    this.showtable4=0    
+  }
+  Showdata4(){
+    debugger
+    this.showtable1=0;  
+    this.showtable2=0;  
+    this.showtable3=0;  
+    this.showtable4=1;   
   }
 }

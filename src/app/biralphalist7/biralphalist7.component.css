@@ -18,8 +18,14 @@
     margin-left: -10px;
     border: none;
 }
-
-
+td{
+    background-color: white;
+}
+.rowwidth{
+    width: 90%;
+    overflow-x: scroll;
+    margin-left: 30px;
+}
 .generate2 {
     height: 39px;
     border-radius: 23px;
