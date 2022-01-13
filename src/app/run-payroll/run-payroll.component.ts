@@ -6,15 +6,18 @@ import html2canvas from 'html2canvas';
 
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
+
 @Component({
-  selector: 'app-payroll',
-  templateUrl: './payroll.component.html',
-  styleUrls: ['./payroll.component.css']
+  selector: 'app-run-payroll',
+  templateUrl: './run-payroll.component.html',
+  styleUrls: ['./run-payroll.component.css'],
+  providers: [DatePipe]
 })
-export class PayrollComponent implements OnInit {
+export class RunPayrollComponent implements OnInit {
   viewMode = 'tab1';
 
-  constructor(public DigiofficeService: DigipayrollServiceService, public router: Router) {
+  constructor(public DigiofficeService: DigipayrollServiceService, public router: Router, private datePipe: DatePipe) {
     this.minDate.setDate(this.minDate.getDate() - 1);
     this.maxDate.setDate(this.maxDate.getDate() + 7);
     this.bsRangeValue = [this.bsValue, this.maxDate];
@@ -24,16 +27,14 @@ export class PayrollComponent implements OnInit {
   term: any;
   value: any;
   employeelist:any;
+  Payrollvis:any;
   bsValue = new Date();
   bsRangeValue: Date[];
   maxDate = new Date();
   minDate = new Date();
   ngOnInit(): void {
     debugger
-    this.DigiofficeService.GetMyDetails().subscribe(data => {
-      debugger
-      this.stafflist = data.filter(x => x.deniminimis != null);
-    });
+   
 
 
     this.DigiofficeService.GetEmployeeSalary().subscribe(data => {
@@ -50,6 +51,21 @@ export class PayrollComponent implements OnInit {
     this.enddate = event.target.value;
 
   }
+
+public getemployeedetails(){
+ 
+  if (this.startdate == undefined || this.enddate == undefined) {
+    Swal.fire('Please Select Start Date and End Date')
+  }
+  else{
+    this.DigiofficeService.GetMyDetails().subscribe(data => {
+      debugger
+      this.stafflist = data.filter(x => x.deniminimis != null &&  (x.signinDate >= this.startdate && x.signinDate <= this.enddate));
+    });
+  }
+
+}
+
 
   ID1: any = [];
   startdate: any;
@@ -224,6 +240,166 @@ export class PayrollComponent implements OnInit {
   PrevLOPDays: any;
   StaffSalaryReports: any;
   public ID: any = [];
+
+ 
+  public getCheckbocdetails(evn: any) {
+    debugger
+    let temp: any = evn;
+    this.temp = Object.entries(temp);
+    debugger
+    if (this.temp.every((val: { checked: boolean; }) => val.checked == true)) {
+      this.IntID = false;
+      this.ID = [];
+      this.temp.forEach((val: { checked: boolean; }) => { val.checked = false });
+      this.IntID = false;
+    }
+    else {
+      debugger;
+
+      //  this.ID = [];
+      debugger
+      this.temp.forEach((val: { checked: boolean; }) => { val.checked = true });
+      this.IntID = true;
+      this.ID.push(evn.id);
+
+     
+        debugger;
+        this.EmployeeID = this.ID[0];
+        this.DigiofficeService.GetStaffLeavesForPayrollByDate(this.startdate, this.enddate, this.ID[0]).subscribe(
+          res => {
+            debugger;
+            if (res.length == 0) {
+              this.LOPDays = 0;
+              this.DigiofficeService.Get_Salary_Splits(this.ID[0], this.LOPDays, this.startdate, this.enddate).subscribe(
+                res => {
+                  debugger;
+                  this.StaffSalaryReports = res;
+                     this.getempdetails(evn)
+                  Swal.fire("Payroll Processing Completed");
+                  this.Payrollvis = true
+                }
+              )
+
+            } else {
+
+              this.LOPDays = res[0].noOfDays;
+              this.DigiofficeService.GetStaffLeavesForPayrollByDate(this.startdate, this.enddate, this.ID1[0]).subscribe(
+                res1 => {
+                  debugger;
+                  this.PrevLOPDays = res1[0].noOfDays;
+                  if (this.LOPDays > 2) {
+                    if (this.PrevLOPDays == 0) {
+                      this.LOPDays = this.LOPDays;
+                      this.DigiofficeService.Get_Salary_Splits(this.ID[0], this.LOPDays, this.startdate, this.enddate).subscribe(
+                        res => {
+                          debugger;
+                          this.StaffSalaryReports = res;
+                          this.getempdetails(evn)
+                          Swal.fire("Payroll Processing Completed");
+
+                          this.ID = [];
+                          this.Payrollvis = true;
+                        }
+                      )
+                    }
+                    else if (this.PrevLOPDays != 0) {
+                      let ActualLOPDays = Number(this.LOPDays) + Number(this.PrevLOPDays);
+                      if (ActualLOPDays > 4) {
+                        this.LOPDays = Number(ActualLOPDays) - 4;
+                        this.DigiofficeService.Get_Salary_Splits(this.ID[0], this.LOPDays, this.startdate, this.enddate).subscribe(
+                          res => {
+                            debugger;
+                            this.StaffSalaryReports = res;
+                               this.getempdetails(evn)
+                            Swal.fire("Payroll Processing Completed");
+                            this.ID = [];
+                            this.Payrollvis = true;
+                          }
+                        )
+                      }
+                    }
+                  }
+
+                  else {
+                    if (this.LOPDays <= 2 || this.PrevLOPDays == 0) {
+                      this.LOPDays = 0;
+                      this.DigiofficeService.Get_Salary_Splits(this.ID[0], this.LOPDays, this.startdate, this.enddate).subscribe(
+                        res => {
+                          debugger;
+                          this.StaffSalaryReports = res;
+                          this.getempdetails(evn)
+                          Swal.fire("Payroll Processing Completed");
+                          this.ID = [];
+                          this.Payrollvis = true
+                        }
+                      )
+                    }
+                  }
+
+                }
+              )
+
+            }
+
+          }
+
+        )
+      
+
+    }
+    
+  }
+
+  sssrate:any;
+  ss_ec:any;
+  ss_er:any;
+  startmonth:any;
+  endmonth:any;
+  startyear:any;
+  endyear:any;
+  myDate:any;
+  companylist:any;
+  companyname:any;
+  Address:any;
+  fullname:any;
+  paginigec:any;
+  dob:any;
+  PhilHealthEC:any;
+  joiningdate:any;
+  PhilHealth:any;
+  public getempdetails(evn:any){
+  this.DigiofficeService.GetEmployeeSalary().subscribe(data => {
+    debugger
+    this.employeelist = data.filter(x=>x.id==evn.id && x.startdate1==this.startdate && x.enddate1==this.enddate);
+    this.fullname = this.employeelist[0].staffname + this.employeelist[0].lastName
+    this.sssrate=this.employeelist[0].contribution,
+    this.ss_ec = this.employeelist[0].ss_ec,
+    this.ss_er = this.employeelist[0].ss_er,
+    this.startmonth = this.employeelist[0].startmonth,
+    this.endmonth = this.employeelist[0].endmonth,
+    this.startyear = this.employeelist[0].startyear,
+    this.endyear = this.employeelist[0].endyear,
+    this.paginigec = this.employeelist[0].pagBig/2,
+     this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
+     this.dob = this.employeelist[0].dob,
+     this.joiningdate = this.employeelist[0].joiningDate,
+     this.PhilHealth = this.employeelist[0].philHealth,
+     this.PhilHealthEC = this.employeelist[0].philHealthContribution/2,
+     this.DigiofficeService.GetCompanyDetails().subscribe(data => {
+      debugger
+      this.companylist = data
+      this.companyname = this.companylist[0].companyName,
+      this.Address = this.companylist[0].address
+
+
+
+    })
+
+  });
+}
+  
+
+
   // public getCheckbocdetails(evn: any) {
   //   debugger
   //   let temp: any = evn;
@@ -328,5 +504,5 @@ export class PayrollComponent implements OnInit {
   // }
 
 
-  
+
 }

@@ -16,7 +16,7 @@ export class Bir1601CComponent implements OnInit {
   ngOnInit(): void {
     this.showleaseforprint = 0;
     const d = new Date();
-  this.month = d.getMonth();
+  this.month = d.getMonth()+1;
   }
 
   employeelist:any;
@@ -35,10 +35,18 @@ export class Bir1601CComponent implements OnInit {
       this.employeelist = data.filter(x=>x.month==this.month);
       
       this.sum = 0;
-      this.sssec = 0;
+      this.netMonthSalary = 0;
       this.tax = 0;
-      for (let i = 0; i < this.employeelist.length; i++) {
-        this.sum += this.employeelist[i].baseSalary;
+
+      const key = 'staffname';
+      const key1 = 'id'
+
+      this.uniquelist  = [...new Map(this.employeelist.map((item: { [x: string]: any; }) =>
+        [(item[key]), item])).values()]
+ 
+
+      for (let i = 0; i < this.uniquelist.length; i++) {
+        this.sum += this.uniquelist[i].baseSalary;
       }
       for (let i = 0; i < this.employeelist.length; i++) {
         this.netMonthSalary += this.employeelist[i].netMonthSalary;

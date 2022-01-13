@@ -96,10 +96,11 @@ import { BirAnnualizationComponent } from './bir-annualization/bir-annualization
 import { Biralphalist6Component } from './biralphalist6/biralphalist6.component';
 import { Biralphalist7Component } from './biralphalist7/biralphalist7.component';
 import { PagibigSTLRComponent } from './pagibig-stlr/pagibig-stlr.component';
+import { RunPayrollComponent } from './run-payroll/run-payroll.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Login', pathMatch: 'full' },
-
+  { path: 'RunPayroll', component: RunPayrollComponent },
   { path: 'PagibigSTLRF', component: PagibigSTLRFComponent },
   { path: 'SSSML1Report', component: SSSML1ReportComponent },
   { path: 'SSSRL1Report', component: SSSRL1ReportComponent },
