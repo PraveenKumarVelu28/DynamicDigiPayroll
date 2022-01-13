@@ -21,3 +21,14 @@
     font-weight:lighter
 }
 
+/* .table-border{
+    border: solid 3px black;
+    padding-left: 10px;
+    padding-right: 10px;
+} */
+table, th, td {
+    border: 1px solid black;
+  }
+  .td{
+      width:200px;
+  }

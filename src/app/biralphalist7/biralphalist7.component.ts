@@ -8,17 +8,19 @@ import * as XLSX from 'xlsx';
   styleUrls: ['./biralphalist7.component.css']
 })
 export class Biralphalist7Component implements OnInit {
-  showtable:any;
+ 
   constructor() { }
   showleaseforprint:any;
   ngOnInit(): void {
     this.showleaseforprint = 0;
+    this.showtable1=0;   
+    this.showtable2=0;   
   }
 
 
 
 
-  fileName = 'Monthly Summary Report.xlsx';
+  fileName = 'Alphalist7.0.xlsx';
   exportexcel(): void {
     /* table id is passed over here */
     let element = document.getElementById('download');
@@ -33,8 +35,19 @@ export class Biralphalist7Component implements OnInit {
     /* save to file */
     XLSX.writeFile(wb, this.fileName);
   }
-  Showdata(){
+
+
+  showtable1:any;
+  showtable2:any
+  Showdata1(){
     debugger
-      this.showtable=1;   
+      this.showtable1=1;   
+      this.showtable2=0;   
+  }
+
+  Showdata2(){
+    debugger
+    this.showtable1=0;   
+    this.showtable2=1;   
   }
 }
