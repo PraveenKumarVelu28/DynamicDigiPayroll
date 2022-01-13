@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
+import { DigipayrollServiceService } from 'src/app/digipayroll-service.service';
 @Component({
   selector: 'app-bir2316',
   templateUrl: './bir2316.component.html',
@@ -8,9 +9,22 @@ import html2canvas from 'html2canvas';
 })
 export class Bir2316Component implements OnInit {
 
-  constructor() { }
+  constructor(public DigiofficeService: DigipayrollServiceService){}
   showleaseforprint:any;
+  stafflist:any;
+  uniquelist1:any;
   ngOnInit(): void {
+    this.DigiofficeService.GetMyDetails().subscribe(data => {
+      debugger
+      this.stafflist = data.filter(x => x.deniminimis != null);
+
+      const key="id"
+
+      this.uniquelist1  = [...new Map(this.stafflist.map((item: { [x: string]: any; }) =>
+      [(item[key]), item])).values()]
+    });
+
+
     this.showleaseforprint = 0;
   }
 

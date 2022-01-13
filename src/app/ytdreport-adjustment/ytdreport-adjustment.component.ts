@@ -25,6 +25,26 @@ export class YTDReportAdjustmentComponent implements OnInit {
       })
   }
 
+
+  stafflist:any;
+  uniquelist1:any;
+public getemployee(){
+ 
+ 
+  this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
+    debugger
+    this.stafflist = data.filter(x => x.emplyeeYear==this.year  );
+
+    const key = 'id'
+    
+    this.uniquelist1  = [...new Map(this.stafflist.map((item: { [x: string]: any; }) =>
+    [(item[key]), item])).values()]
+  });
+}
+
+
+
+  year:any;
   fileName = 'Approved Applicants Reports.xlsx';
   exportexcel(): void {
     /* table id is passed over here */

@@ -3,6 +3,8 @@ import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
 import * as XLSX from 'xlsx';
 
+import { DigipayrollServiceService } from '../digipayroll-service.service';
+
 @Component({
   selector: 'app-adjustment-generate-report',
   templateUrl: './adjustment-generate-report.component.html',
@@ -11,11 +13,24 @@ import * as XLSX from 'xlsx';
 export class AdjustmentGenerateReportComponent implements OnInit {
 
   showtable:any;
-  constructor() { }
+  constructor(public DigipayrollServiceService: DigipayrollServiceService) { }
   selecallbtn:any;
+  stafflist:any;
+  uniquelist1:any;
   ngOnInit(): void {
     this.selecallbtn = false;
     this.selectone = false;
+
+     
+  this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
+    debugger
+    this.stafflist = data;
+
+    const key = 'id'
+    
+    this.uniquelist1  = [...new Map(this.stafflist.map((item: { [x: string]: any; }) =>
+    [(item[key]), item])).values()]
+  });
   }
 
   selectone:any;

@@ -31,7 +31,7 @@
                             </tr>
                         </thead>
                         <tr *ngFor="let staff of stafflist1">
-                            <td class="SelectData"><input type="checkbox" data-toggle="collapse" (change)="getpaygrouplist()" data-target="#demo">
+                            <td class="SelectData"><input type="checkbox" data-toggle="collapse" (change)="getMonthandyear(staff.endyear,staff.month)" data-target="#demo">
                             </td>
                             <td>{{staff.endyear}}</td>
                             <td>{{staff.month}}</td>
@@ -154,9 +154,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let item of stafflist">
+                                <tr *ngFor="let item of uniquelist1">
                                     <td>
-                                        <input type="checkbox" data-toggle="collapse" data-target="#demo1"  (change)="getmonthlyreport(item.id)" >&nbsp;
+                                        <input type="checkbox" data-toggle="collapse" data-target="#demo1"  (change)="getempdetails(item.id)" >&nbsp;
                                     </td>
     
                                     <td>000{{item.id}}</td>
@@ -357,7 +357,7 @@
                             
                         </thead>
                         <tbody>
-                            <tr *ngFor="let item of employeelist">
+                            <tr *ngFor="let item of uniquelist">
                                 <td>{{item.id}}</td>
                                 <td>{{item.staffname}}</td>
                                 <td>{{item.role}}</td>
@@ -373,6 +373,24 @@
                                 <td>{{basicday}}</td>
                                 <td>{{basichour}}</td>
                                 <td>{{item.deniminimis_amount/2}}</td>
+                                <td></td>
+                                <td></td>
+                                <td>{{item.monthlyTax}}</td>
+                                <td>{{item.monthlySSSRate}}</td>
+                                <td>{{item.monthlyPhilihealth}}</td>
+                                <td>{{item.monthlyPagibigRate}}</td>
+                               
+                                <td>{{item.totaldeduction}}</td>
+                                <td>{{item.monthlyNetSalary}}</td>
+                                <td>NA</td>
+                                <td>{{item.yeartax}}</td>
+                                <td>{{item.yearsalary}}</td>
+                                <td>{{item.monthlyNetSalary}}</td>
+                                <td>{{item.monthlyss_er}}</td>
+                                <td>{{item.monthlyss_ec}}</td>
+                                <td>{{item.monthlyPagibigRate/2}}</td>
+                                <td>NA</td>
+
                             </tr>
                         </tbody>
                     </table>

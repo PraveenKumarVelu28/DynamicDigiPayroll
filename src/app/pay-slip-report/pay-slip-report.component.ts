@@ -101,6 +101,7 @@ export class PaySlipReportComponent implements OnInit {
       this.deductions = this.semimonthly-this.employeelist1[0].netMonthSalary,
       this.basicday = (this.employeelist1[0].grossSalary)/30,
       this.basichour = (this.basicday)/8
+    
 
 
 

@@ -51,44 +51,62 @@ export class RunPayrollComponent implements OnInit {
     this.enddate = event.target.value;
 
   }
-
+  uniquelist:any;
 public getemployeedetails(){
  
   if (this.startdate == undefined || this.enddate == undefined) {
     Swal.fire('Please Select Start Date and End Date')
   }
   else{
-    this.DigiofficeService.GetMyDetails().subscribe(data => {
+    this.DigiofficeService.Get_Employees_For_Payroll(this.startdate,this.enddate).subscribe(data => {
       debugger
-      this.stafflist = data.filter(x => x.deniminimis != null &&  (x.signinDate >= this.startdate && x.signinDate <= this.enddate));
+      this.stafflist = data;
+
+      const key = 'id';
+      const key1 = 'month'
+
+      this.uniquelist  = [...new Map(this.stafflist.map((item: { [x: string]: any; }) =>
+        [(item[key]), item])).values()]
+   
+      //  this.uniquelist = [...new Set(data.map(item => item))];
+     
+  
+  
     });
   }
 
 }
 
 
-  ID1: any = [];
-  startdate: any;
-  LOPDays: any;
-  NoOfDays: any
-  public SelectAll() {
-    debugger
-    var date1 = new Date(this.startdate);
-    var date2 = new Date(this.enddate);
+ID1: any = [];
+startdate: any;
+LOPDays: any;
+NoOfDays: any
+public SelectAll() {
+  debugger
+  var date1 = new Date(this.startdate);
+  var date2 = new Date(this.enddate);
 
-    var Time = date2.getTime() - date1.getTime();
-    let days: any = Time / (1000 * 3600 * 24);
+  var Time = date2.getTime() - date1.getTime();
+  let days: any = Time / (1000 * 3600 * 24);
+  if (days >= 15) {
+    this.NoOfDays = days;
+  }
+  else {
     this.NoOfDays = days + 1;
+  }
 
-    if (this.startdate == undefined || this.enddate == undefined) {
-      Swal.fire('Please Select Start Date and End Date')
-    }
-    else if (this.startdate > this.enddate) {
-      Swal.fire('End Date must be greater than start date');
-    }
-    else if (this.NoOfDays == 15 || this.NoOfDays == 30 || this.NoOfDays == 31 || this.NoOfDays == 28) {
 
-      if (this.NoOfDays == 15) {
+  if (this.startdate == undefined || this.enddate == undefined) {
+    Swal.fire('Please Select Start Date and End Date')
+  }
+  else if (this.startdate > this.enddate) {
+    Swal.fire('End Date must be greater than start date');
+  }
+  else if (this.NoOfDays == 15 || this.NoOfDays == 30 || this.NoOfDays == 31 || this.NoOfDays == 28) {
+
+    if (this.NoOfDays == 15) {
+      this.DigiofficeService.DeleteEmployeeSalary(1).subscribe(res => {
         if (this.stafflist.every((val: { checked: boolean; }) => val.checked == true)) {
           this.IntID = false;
           this.ID = [];
@@ -151,88 +169,85 @@ public getemployeedetails(){
           // }
 
         }
-        // this.DigiofficeService.DeleteEmployeeSalary(1).subscribe(res => {
-        
-        // })
-      }
-      else {
-        if (this.stafflist.every((val: { checked: boolean; }) => val.checked == true)) {
-          this.IntID = false;
-          this.ID = [];
-          this.stafflist.forEach((val: { checked: boolean; }) => { val.checked = false });
-        }
-        else {
-          this.ID1 = [];
-          debugger
-          this.stafflist.forEach((val: { checked: boolean; }) => { val.checked = true });
-          this.IntID = true;
-          Swal.fire("Payroll Processing Completed");
-          for (let i = 0; i < this.stafflist.length; i++) {
-            debugger;
-            this.ID1.push(this.stafflist[i].id);
-            //this.EmployeeID =
-            this.ID1[i];
-            this.DigiofficeService.GetStaffLeavesForPayrollByDate(this.startdate, this.enddate, this.ID1[i]).subscribe(
-              res => {
-                debugger;
-                if (res.length == 0) {
-                  this.LOPDays = 0;
-                  this.DigiofficeService.Get_Salary_Splits(this.ID1[i], this.LOPDays, this.startdate, this.enddate).subscribe(
-                    res => {
-                      debugger;
-                      this.StaffSalaryReports = res;
-                      this.ID1 = [];
-                      location.href = '#/Payrolldetails'
-                    }
-                  )
-
-                } else {
-                  this.LOPDays = res[0].noOfDays;
-                  if (this.LOPDays <= 2) {
-                    this.LOPDays = this.LOPDays;
-                  }
-                  else {
-                    this.LOPDays = this.LOPDays - 2;
-                  }
-                  this.DigiofficeService.Get_Salary_Splits(this.ID1[i], this.LOPDays, this.startdate, this.enddate).subscribe(
-                    res => {
-                      debugger;
-                      this.StaffSalaryReports = res;
-                      this.ID1 = [];
-                      location.href = '#/Payrolldetails'
-                    }
-                  )
-                }
-
-              }
-
-
-            )
-
-          }
-
-
-          // for (let i = 0; i < this.ID1.length; i++) {
-          //   debugger;
-
-          // }
-
-        }
-        // this.DigiofficeService.DeleteEmployeeSalary(1).subscribe(res => {
-        
-        // })
-      }
-
-
+      })
     }
     else {
+      this.DigiofficeService.DeleteEmployeeSalary(1).subscribe(res => {
+        if (this.stafflist.every((val: { checked: boolean; }) => val.checked == true)) {
+          this.IntID = false;
+          this.ID = [];
+          this.stafflist.forEach((val: { checked: boolean; }) => { val.checked = false });
+        }
+        else {
+          this.ID1 = [];
+          debugger
+          this.stafflist.forEach((val: { checked: boolean; }) => { val.checked = true });
+          this.IntID = true;
+          Swal.fire("Payroll Processing Completed");
+          for (let i = 0; i < this.stafflist.length; i++) {
+            debugger;
+            this.ID1.push(this.stafflist[i].id);
+            //this.EmployeeID =
+            this.ID1[i];
+            this.DigiofficeService.GetStaffLeavesForPayrollByDate(this.startdate, this.enddate, this.ID1[i]).subscribe(
+              res => {
+                debugger;
+                if (res.length == 0) {
+                  this.LOPDays = 0;
+                  this.DigiofficeService.Get_Salary_Splits(this.ID1[i], this.LOPDays, this.startdate, this.enddate).subscribe(
+                    res => {
+                      debugger;
+                      this.StaffSalaryReports = res;
+                      this.ID1 = [];
+                      location.href = '#/Payrolldetails'
+                    }
+                  )
 
-      Swal.fire('Range for Payroll either 15 days or 30 days')
+                } else {
+                  this.LOPDays = res[0].noOfDays;
+                  if (this.LOPDays <= 2) {
+                    this.LOPDays = this.LOPDays;
+                  }
+                  else {
+                    this.LOPDays = this.LOPDays - 2;
+                  }
+                  this.DigiofficeService.Get_Salary_Splits(this.ID1[i], this.LOPDays, this.startdate, this.enddate).subscribe(
+                    res => {
+                      debugger;
+                      this.StaffSalaryReports = res;
+                      this.ID1 = [];
+                      location.href = '#/Payrolldetails'
+                    }
+                  )
+                }
+
+              }
+
+
+            )
+
+          }
+
+
+          // for (let i = 0; i < this.ID1.length; i++) {
+          //   debugger;
+
+          // }
+
+        }
+      })
     }
-
 
 
   }
+  else {
+
+    Swal.fire('Range for Payroll either 15 days or 30 days')
+  }
+
+
+
+}
 
   EmployeeID: any
   temp: any;
