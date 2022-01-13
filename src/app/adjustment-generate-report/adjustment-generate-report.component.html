@@ -32,7 +32,7 @@
                             <tbody>
                                 <tr *ngFor="let item of uniquelist1">
                                     <td class="SelectData"><input type="checkbox" data-toggle="collapse"
-                                            data-target="#demo" (click)="showone()"></td>
+                                            data-target="#demo" (click)="getemployee(item.id)"></td>
                                     <td>000{{item.id}}</td>
                                     <td>{{item.staffname}} {{item.lastName}}</td>
                                     <td>Active</td>
@@ -64,7 +64,7 @@
                                                 <th>Department</th>
                                                 <th>Adjustment Type</th>
                                                 <th>Adjustment Name</th>
-                                                <th>Adjustment Code</th>
+                                               
                                                 <!-- <th>Adjustment Entry Code</th> -->
                                                 <th>Adjustment Effectivity Date</th>
                                                 <th>Adjustment Amount</th>
@@ -77,24 +77,24 @@
                                                 <th>Apply Period</th>
                                                 <th>Reference Number</th> -->
                                             </tr>
-                                            <tr>
+                                            <tr *ngFor="let item of uniquelist2">
 
-                                                <td>20-005</td>
-                                                <td>Bersamira</td>
-                                                <td>Carlo</td>
+                                                <td>000{{item.id}}</td>
+                                                <td>{{item.lastName}}</td>
+                                                <td>{{item.staffname}}</td>
                                                 <!-- <td>de Guzman</td> -->
-                                                <td>CREFCO Team</td>
-                                                <td>SSS Loan</td>
-                                                <td>SSS2 Loan</td>
-                                                <td>Sal Loan</td>
+                                                <td>{{item.department_name}}</td>
+                                                <td>{{item.loanType}}</td>
+                                                <td>{{item.loanType}}</td>
+                                               
                                                 <!-- <td></td> -->
-                                                <td>2/1/2021</td>
-                                                <td>10963.06</td>
-                                                <td>35024.48</td>
-                                                <td>for Carlo Bersamira</td>
+                                                <td>{{item.effectiveDate}}</td>
+                                                <td>{{item.paidamount}}</td>
+                                                <td>{{item.remainingAmount}}</td>
+                                                <td>{{item.comments}}</td>
                                                 <td>False</td>
                                                 <td>False</td>
-                                                <td>45987.54</td>
+                                                <td>{{item.sanctionAmount}}</td>
                                               
                                             </tr>
                                             <tr>
@@ -235,7 +235,7 @@
                                                     <th>Department</th>
                                                     <th>Adjustment Type</th>
                                                     <th>Adjustment Name</th>
-                                                    <th>Adjustment Code</th>
+                                                   
                                                     <!-- <th>Adjustment Entry Code</th> -->
                                                     <th>Adjustment Effectivity Date</th>
                                                     <th>Adjustment Amount</th>
@@ -248,27 +248,25 @@
                                                     <th>Apply Period</th>
                                                     <th>Reference Number</th> -->
                                                 </tr>
-                                                <tr>
-
-                                                    <td>20-005</td>
-                                                    <td>Bersamira</td>
-                                                    <td>Carlo</td>
+                                                <tr *ngFor="let item of uniquelist2">
+    
+                                                    <td>000{{item.id}}</td>
+                                                    <td>{{item.lastName}}</td>
+                                                    <td>{{item.staffname}}</td>
                                                     <!-- <td>de Guzman</td> -->
-                                                    <td>CREFCO Team</td>
-                                                    <td>SSS Loan</td>
-                                                    <td>SSS2 Loan</td>
-                                                    <td>Sal Loan</td>
+                                                    <td>{{item.department_name}}</td>
+                                                    <td>{{item.loanType}}</td>
+                                                    <td>{{item.loanType}}</td>
+                                                   
                                                     <!-- <td></td> -->
-                                                    <td>2/1/2021</td>
-                                                    <td>10963.06</td>
-                                                    <td>35024.48</td>
-                                                    <td>for Carlo Bersamira</td>
+                                                    <td>{{item.effectiveDate|date}}</td>
+                                                    <td>{{item.paidamount}}</td>
+                                                    <td>{{item.remainingAmount}}</td>
+                                                    <td>{{item.comments}}</td>
                                                     <td>False</td>
                                                     <td>False</td>
-                                                    <td>45987.54</td>
-                                                    <!-- <td>No</td>
-                                                    <td>0</td>
-                                                    <td></td> -->
+                                                    <td>{{item.sanctionAmount}}</td>
+                                                  
                                                 </tr>
                                             </thead>
                                         </table>

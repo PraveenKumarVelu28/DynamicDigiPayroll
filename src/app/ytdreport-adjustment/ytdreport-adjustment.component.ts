@@ -33,7 +33,7 @@ public getemployee(){
  
   this.DigipayrollServiceService.GetEmployeeSalary().subscribe(data => {
     debugger
-    this.stafflist = data.filter(x => x.emplyeeYear==this.year  );
+    this.stafflist = data.filter(x => x.emplyeeYear==this.year && x.loanType!=null );
 
     const key = 'id'
     

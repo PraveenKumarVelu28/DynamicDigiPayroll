@@ -56,8 +56,7 @@
                                     <th>Description</th>
                                     <th>Month</th>
                                     <th>Adjustment Type</th>
-                                    <th>Adjustment Name</th>
-                                    <th>Adjustment Code</th>
+                                   
                                     <th>Adjustment Amount</th>
                                     <th>Adjustment Remarks</th>
                                     <th>Apply Before Tax</th>
@@ -70,11 +69,11 @@
                                     <td>{{item.staffname}} {{item.lastName}}</td>
                                     <td>Payroll for {{item.startdate|date}} - {{item.enddate|date}} </td>
                                     <td>{{item.employeeMonth}}</td>
-                                    <td>Deminimis Allowance</td>
-                                    <td>Rice Allowance</td>
-                                    <td>RI-ALL</td>
-                                    <td>800</td>
-                                    <td>for employee discretion use</td>
+                                    <td>{{item.loanType}}</td>
+                                    <td>{{item.loanAmount}}</td>
+                                    
+                                   
+                                    <td>{{item.comments}}</td>
                                     <td>NO</td>
                                     <td>NO</td>
                                 </tr>
